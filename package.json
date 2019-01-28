@@ -1,0 +1,42 @@
+{
+  "name": "COS 426: Computer Graphics (2019) | Princeton University",
+  "description": "The Princeton University course website for the Spring 2019 term of COS 426: Computer Graphics",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Reilly Bova & Jad Bechara",
+  "keywords": [
+    "COS 426",
+    "Princeton",
+    "Graphics",
+    "Computer Science",
+    "Spring 2019"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReillyBova/COS426-Website"
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "format": "prettier --write '*.js' 'src/**/*.js'",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.4.0",
+    "@material-ui/icons": "^3.0.1",
+    "core-js": "^2.5.7",
+    "gatsby": "2.0.43",
+    "gatsby-plugin-manifest": "2.0.8",
+    "gatsby-plugin-offline": "2.0.13",
+    "gatsby-plugin-react-helmet": "3.0.1",
+    "jss": "^9.8.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.15.1"
+  }
+}
