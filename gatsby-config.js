@@ -15,7 +15,7 @@ module.exports = {
                 background_color: '#221e20',
                 theme_color: '#f58025',
                 display: 'minimal-ui',
-                icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+                icon: 'src/images/princeton-favicon.png' // This path is relative to the root of the site.
             }
         },
         'gatsby-plugin-offline'
