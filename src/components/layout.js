@@ -25,6 +25,9 @@ const Layout = ({ children, classes }) => (
                 site {
                     siteMetadata {
                         title
+                        siteUrl
+                        description
+                        keywords
                     }
                 }
             }
@@ -34,13 +37,17 @@ const Layout = ({ children, classes }) => (
                 <Helmet
                     title={data.site.siteMetadata.title}
                     meta={[
-                        { name: 'description', content: 'Sample' },
-                        { name: 'keywords', content: 'sample, something' }
+                        { name: 'description', content: data.site.siteMetadata.description },
+                        { name: 'keywords', content: data.site.siteMetadata.keywords },
+	                      { property: 'og:type', content: 'website' }
+                    ]}
+                    link={[
+                      { rel: 'canonical', href: data.site.siteMetadata.siteUrl}
                     ]}
                 >
                     <html lang="en" />
                 </Helmet>
-                <Header siteTitle={data.site.siteMetadata.title} />
+                <Header/>
                 <div className={classes.root}>{children}</div>
             </Fragment>
         )}

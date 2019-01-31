@@ -18,7 +18,11 @@ const theme = createMuiTheme({
         contrastThreshold: 2,
     },
     typography: {
-        useNextVariants: true
+        useNextVariants: true,
+        fontFamily: "Open Sans, Roboto, Helvetica, Arial, sans-serif",
+        fontWeightLight: 400,
+        fontWeightRegular: 600,
+        fontWeightMedium: 700
     }
 });
 
