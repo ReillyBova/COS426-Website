@@ -1,5 +1,5 @@
 {
-  "name": "COS 426: Computer Graphics (2019) | Princeton University",
+  "name": "cos-426-website",
   "description": "The Princeton University course website for the Spring 2019 term of COS 426: Computer Graphics",
   "version": "1.0.0",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "core-js": "^2.5.7",
     "gatsby": "2.0.43",
     "gatsby-plugin-manifest": "2.0.8",
+    "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-offline": "2.0.13",
     "gatsby-plugin-react-helmet": "3.0.1",
     "jss": "^9.8.7",

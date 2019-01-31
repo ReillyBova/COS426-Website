@@ -3,17 +3,25 @@ import { withStyles } from '@material-ui/core/styles';
 import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-
-import Header from './header';
+import { Header } from 'components';
+import { PrincetonShield } from 'images';
 
 const styles = theme => ({
     root: {
-        paddingTop: theme.spacing.unit * 2,
+        [theme.breakpoints.down('xs')]: {
+          '@media (orientation: landscape)': {
+            paddingTop: 64,
+          },
+          '@media (orientation: portrait)': {
+            paddingTop: 72,
+          }
+        },
         paddingLeft: theme.spacing.unit * 2,
         paddingRight: theme.spacing.unit * 2,
         [theme.breakpoints.up('sm')]: {
             paddingLeft: theme.spacing.unit * 3,
-            paddingRight: theme.spacing.unit * 3
+            paddingRight: theme.spacing.unit * 3,
+            paddingTop: 80,
         }
     }
 });
@@ -38,8 +46,13 @@ const Layout = ({ children, classes }) => (
                     title={data.site.siteMetadata.title}
                     meta={[
                         { name: 'description', content: data.site.siteMetadata.description },
+                        { property: 'type', content: 'website' },
+                        { property: 'image', content: PrincetonShield},
                         { name: 'keywords', content: data.site.siteMetadata.keywords },
-	                      { property: 'og:type', content: 'website' }
+                        { name: 'og:title', content: data.site.siteMetadata.title },
+                        { name: 'og:description', content: data.site.siteMetadata.description },
+                        { property: 'og:type', content: 'website' },
+                        { property: 'og:image', content: PrincetonShield}
                     ]}
                     link={[
                       { rel: 'canonical', href: data.site.siteMetadata.siteUrl}

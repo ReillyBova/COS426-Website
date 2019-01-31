@@ -16,9 +16,23 @@ module.exports = {
               background_color: '#221e20',
               theme_color: '#f58025',
               display: 'minimal-ui',
-              icon: 'src/images/princeton-favicon.png' // This path is relative to the root of the site.
+              icon: 'src/images/princeton-shield.png' // This path is relative to the root of the site.
           }
         },
-        'gatsby-plugin-offline'
+        'gatsby-plugin-offline',
+        {
+      resolve: 'gatsby-plugin-module-resolver',
+      options: {
+        root: './src', // <- will be used as a root dir
+        aliases: {
+          'components': './components', // <- will become ./src/components
+          'images': './images', // <- will become ./src/images
+          static: {
+            root: './public', // <- will used as this alias' root dir
+            alias: './static' // <- will become ./public/static
+          }
+        }
+      }
+    }
     ]
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Fab from '@material-ui/core/Fab';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
@@ -7,7 +8,8 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import { Layout } from 'components';
+
 import withRoot from '../withRoot';
 
 const styles = theme => ({
@@ -51,38 +53,34 @@ const IndexPage = ({ classes }) => (
                 </Button>
             </div>
             <div className={classes.toolbar}>
-                <Button
-                    variant="fab"
+                <Fab
                     color="primary"
                     aria-label="Add"
                     className={classes.button}
                 >
                     <AddIcon />
-                </Button>
-                <Button
-                    variant="fab"
+                </Fab>
+                <Fab
                     color="primary"
                     aria-label="Edit"
                     className={classes.button}
                 >
                     <Icon>edit_icon</Icon>
-                </Button>
-                <Button
-                    variant="fab"
+                </Fab>
+                <Fab
                     color="secondary"
                     aria-label="Delete"
                     className={classes.button}
                 >
                     <DeleteIcon />
-                </Button>
-                <Button
-                    variant="fab"
+                </Fab>
+                <Fab
                     color="secondary"
                     aria-label="Star"
                     className={classes.button}
                 >
                     <Icon>star</Icon>
-                </Button>
+                </Fab>
             </div>
         </section>
 
