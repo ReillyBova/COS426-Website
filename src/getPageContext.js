@@ -15,11 +15,11 @@ const theme = createMuiTheme({
         secondary: {
             main: '#221e20'
         },
-        contrastThreshold: 2,
+        contrastThreshold: 2
     },
     typography: {
         useNextVariants: true,
-        fontFamily: "Open Sans, Roboto, Helvetica, Arial, sans-serif",
+        fontFamily: 'Open Sans, Roboto, Helvetica, Arial, sans-serif',
         fontWeightLight: 400,
         fontWeightRegular: 600,
         fontWeightMedium: 700

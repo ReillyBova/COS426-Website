@@ -9,19 +9,19 @@ import { PrincetonShield } from 'images';
 const styles = theme => ({
     root: {
         [theme.breakpoints.down('xs')]: {
-          '@media (orientation: landscape)': {
-            paddingTop: 64,
-          },
-          '@media (orientation: portrait)': {
-            paddingTop: 72,
-          }
+            '@media (orientation: landscape)': {
+                paddingTop: 64
+            },
+            '@media (orientation: portrait)': {
+                paddingTop: 72
+            }
         },
         paddingLeft: theme.spacing.unit * 2,
         paddingRight: theme.spacing.unit * 2,
         [theme.breakpoints.up('sm')]: {
             paddingLeft: theme.spacing.unit * 3,
             paddingRight: theme.spacing.unit * 3,
-            paddingTop: 80,
+            paddingTop: 80
         }
     }
 });
@@ -45,22 +45,37 @@ const Layout = ({ children, classes }) => (
                 <Helmet
                     title={data.site.siteMetadata.title}
                     meta={[
-                        { name: 'description', content: data.site.siteMetadata.description },
+                        {
+                            name: 'description',
+                            content: data.site.siteMetadata.description
+                        },
                         { property: 'type', content: 'website' },
-                        { property: 'image', content: PrincetonShield},
-                        { name: 'keywords', content: data.site.siteMetadata.keywords },
-                        { name: 'og:title', content: data.site.siteMetadata.title },
-                        { name: 'og:description', content: data.site.siteMetadata.description },
+                        { property: 'image', content: PrincetonShield },
+                        {
+                            name: 'keywords',
+                            content: data.site.siteMetadata.keywords
+                        },
+                        {
+                            name: 'og:title',
+                            content: data.site.siteMetadata.title
+                        },
+                        {
+                            name: 'og:description',
+                            content: data.site.siteMetadata.description
+                        },
                         { property: 'og:type', content: 'website' },
-                        { property: 'og:image', content: PrincetonShield}
+                        { property: 'og:image', content: PrincetonShield }
                     ]}
                     link={[
-                      { rel: 'canonical', href: data.site.siteMetadata.siteUrl}
+                        {
+                            rel: 'canonical',
+                            href: data.site.siteMetadata.siteUrl
+                        }
                     ]}
                 >
                     <html lang="en" />
                 </Helmet>
-                <Header/>
+                <Header />
                 <div className={classes.root}>{children}</div>
             </Fragment>
         )}
