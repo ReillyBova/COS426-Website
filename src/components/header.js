@@ -72,7 +72,13 @@ function Header(props) {
                         Assignments
                     </Button>
                     <Button size="large" classes={{root: classes.navButton}} color="inherit">
+                        Exercises
+                    </Button>
+                    <Button size="large" classes={{root: classes.navButton}} color="inherit">
                         Gallery
+                    </Button>
+                    <Button size="large" classes={{root: classes.navButton}} color="inherit">
+                        Links
                     </Button>
                 </Toolbar>
             </AppBar>
