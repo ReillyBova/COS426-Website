@@ -26,25 +26,32 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-7f3a8e91f119a76e64b4.js"
+    "url": "webpack-runtime-a1df1b51e160ba1eef51.js"
   },
   {
     "url": "app.a5e967aa203528feb019.css"
   },
   {
-    "url": "app-f636fea1512c61e9f93e.js"
+    "url": "app-62ee189fc6887a9ef896.js"
+  },
+  {
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-4be88a38bd7666d7e9e6.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ed013d8cf88dd66f2b3e4873230f0f8a"
+    "revision": "3eb9655cd2ff8863d8af82d138ce3d53"
   },
   {
-    "url": "static/d/164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E.json",
-    "revision": "c2508676a2f33ea9f1f0bf472997f9a0"
+    "url": "component---src-pages-404-js-775e16ebfc58384a488b.js"
   },
   {
-    "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json",
-    "revision": "c2508676a2f33ea9f1f0bf472997f9a0"
+    "url": "0-1134f0243b788d1b75da.js"
+  },
+  {
+    "url": "static/d/164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E.json"
+  },
+  {
+    "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json"
   },
   {
     "url": "manifest.webmanifest",
@@ -54,39 +61,108 @@ self.__precacheManifest = [
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/COS426-Website/offline-plugin-app-shell-fallback/index.html", {
-  whitelist: [/^([^.?]*|[^?]*\.([^.?]{5,}|html))(\?.*)?$/],
-  blacklist: [/\?(.+&)?no-cache=1$/],
-});
+workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, workbox.strategies.staleWhileRevalidate(), 'GET');
 
-workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:/, workbox.strategies.networkFirst(), 'GET');
-"use strict";
+/* global importScripts, workbox, idbKeyval */
 
-/* global workbox */
-self.addEventListener("message", function (event) {
-  var api = event.data.api;
+importScripts(`idb-keyval-iife.min.js`)
+const WHITELIST_KEY = `custom-navigation-whitelist`
 
-  if (api === "gatsby-runtime-cache") {
-    var resources = event.data.resources;
-    var cacheName = workbox.core.cacheNames.runtime;
-    event.waitUntil(caches.open(cacheName).then(function (cache) {
-      return Promise.all(resources.map(function (resource) {
-        var request; // Some external resources don't allow
-        // CORS so get an opaque response
+const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
+  const { pathname } = new URL(event.request.url)
 
-        if (resource.match(/^https?:/)) {
-          request = fetch(resource, {
-            mode: "no-cors"
-          });
-        } else {
-          request = fetch(resource);
-        }
+  return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
+    // Respond with the offline shell if we match the custom whitelist
+    if (customWhitelist.includes(pathname)) {
+      const offlineShell = `/COS426-Website/offline-plugin-app-shell-fallback/index.html`
+      const cacheName = workbox.core.cacheNames.precache
 
-        return request.then(function (response) {
-          return cache.put(resource, response);
-        });
-      }));
-    }));
+      return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
+        if (cachedResponse) return cachedResponse
+
+        console.error(
+          `The offline shell (${offlineShell}) was not found ` +
+            `while attempting to serve a response for ${pathname}`
+        )
+
+        return fetch(offlineShell).then(response => {
+          if (response.ok) {
+            return caches.open(cacheName).then(cache =>
+              // Clone is needed because put() consumes the response body.
+              cache.put(offlineShell, response.clone()).then(() => response)
+            )
+          } else {
+            return fetch(event.request)
+          }
+        })
+      })
+    }
+
+    return fetch(event.request)
+  })
+})
+
+workbox.routing.registerRoute(navigationRoute)
+
+let updatingWhitelist = null
+
+function rawWhitelistPathnames(pathnames) {
+  if (updatingWhitelist !== null) {
+    // Prevent the whitelist from being updated twice at the same time
+    return updatingWhitelist.then(() => rawWhitelistPathnames(pathnames))
   }
-});
+
+  updatingWhitelist = idbKeyval
+    .get(WHITELIST_KEY)
+    .then((customWhitelist = []) => {
+      pathnames.forEach(pathname => {
+        if (!customWhitelist.includes(pathname)) customWhitelist.push(pathname)
+      })
+
+      return idbKeyval.set(WHITELIST_KEY, customWhitelist)
+    })
+    .then(() => {
+      updatingWhitelist = null
+    })
+
+  return updatingWhitelist
+}
+
+function rawResetWhitelist() {
+  if (updatingWhitelist !== null) {
+    return updatingWhitelist.then(() => rawResetWhitelist())
+  }
+
+  updatingWhitelist = idbKeyval.set(WHITELIST_KEY, []).then(() => {
+    updatingWhitelist = null
+  })
+
+  return updatingWhitelist
+}
+
+const messageApi = {
+  whitelistPathnames(event) {
+    let { pathnames } = event.data
+
+    pathnames = pathnames.map(({ pathname, includesPrefix }) => {
+      if (!includesPrefix) {
+        return `/COS426-Website${pathname}`
+      } else {
+        return pathname
+      }
+    })
+
+    event.waitUntil(rawWhitelistPathnames(pathnames))
+  },
+
+  resetWhitelist(event) {
+    event.waitUntil(rawResetWhitelist())
+  },
+}
+
+self.addEventListener(`message`, event => {
+  const { gatsbyApi } = event.data
+  if (gatsbyApi) messageApi[gatsbyApi](event)
+})
