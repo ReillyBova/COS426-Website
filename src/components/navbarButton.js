@@ -5,6 +5,8 @@ import { Link } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+import { isActive } from 'utils';
+
 const styles = theme => ({
     root: {
         borderRadius: 0,
@@ -23,30 +25,23 @@ const styles = theme => ({
         [theme.breakpoints.down('sm')]: {
             display: "none"
         },
-        '&:hover:not([aria-current="page"])': {
+        '&:hover:not(.active)': {
             backgroundColor: '#282828'
         }
     }
 });
 
-const isActive = (to, exact) => {
-    if (exact && window.location.pathname === to) {
-        return true;
-    } else if (!exact && window.location.pathname.match(to)) {
-        return true;
-    }
-    return false;
-};
-
 function NavbarButton(props) {
     const { classes, to, exact, children } = props;
+    const active = isActive(to || "/", exact);
     return (
         <Button
             size="large"
             component={Link}
             to={to || "/"}
+            className={(active) ? "active" : ""}
             classes={{ root: classes.root }}
-            color={isActive(to || "/", exact) ? "primary" : "inherit"}
+            color={(active) ? "primary" : "inherit"}
         >
             { children }
         </Button>

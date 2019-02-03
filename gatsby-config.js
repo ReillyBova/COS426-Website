@@ -28,6 +28,7 @@ module.exports = {
                 aliases: {
                     components: './components', // <- will become ./src/components
                     images: './images', // <- will become ./src/images
+                    utils: './utils', // <- will become ./src/images
                     static: {
                         root: './public', // <- will used as this alias' root dir
                         alias: './static' // <- will become ./public/static

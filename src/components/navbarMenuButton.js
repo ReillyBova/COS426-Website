@@ -5,27 +5,19 @@ import { Link } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 
+import { isActive } from 'utils';
+
 const styles = theme => ({
     root: {
         '&:focus:not(:hover)': {
             // Override strange focus highlight
             backgroundColor: '#ffffff'
         },
-        '&[aria-current="page"]': {
+        '&.active': {
             color: theme.palette.primary.main
         }
     }
 });
-
-// Check if the link points to the current page
-const isActive = (to, exact) => {
-    if (exact && window.location.pathname === to) {
-        return true;
-    } else if (!exact && window.location.pathname.match(to)) {
-        return true;
-    }
-    return false;
-};
 
 function NavbarMenuButton(props) {
     const { classes, onClick, to, exact, children } = props;
@@ -35,6 +27,7 @@ function NavbarMenuButton(props) {
             component={Link}
             to={to || "/"}
             onClick={onClick}
+            className={(active) ? "active" : ""}
             classes={{ root: classes.root }}
         >
             { children }
