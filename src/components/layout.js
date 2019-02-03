@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+
+import { withStyles } from '@material-ui/core/styles';
+
 import { Header } from 'components';
 import { PrincetonShield } from 'images';
 
