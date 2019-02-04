@@ -13,15 +13,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { NavbarButton, NavbarMenuButton } from 'components';
 import { PrincetonShield } from 'images';
 
-const styles = theme => ({
+const styles = (theme) => ({
     grow: {
-        flexGrow: 1
+        flexGrow: 1,
     },
     appBar: {
         // Orange border
         borderStyle: 'solid',
         borderWidth: '0px 0px 4px 0px',
-        borderColor: theme.palette.primary.main
+        borderColor: theme.palette.primary.main,
     },
     navButton: {
         // Tab-like buttons that resize with navbar
@@ -29,26 +29,26 @@ const styles = theme => ({
         fontSize: 16,
         [theme.breakpoints.down('xs')]: {
             '@media (orientation: landscape)': {
-                height: 48
+                height: 48,
             },
             '@media (orientation: portrait)': {
-                height: 56
-            }
+                height: 56,
+            },
         },
         [theme.breakpoints.up('sm')]: {
-            height: 64
-        }
+            height: 64,
+        },
     },
     menuButton: {
         [theme.breakpoints.up('md')]: {
             // Toggle display of mobile dropdown
-            display: 'none'
+            display: 'none',
         },
         '&:hover': {
             // Brighten the hover color
-            backgroundColor: '#282828'
-        }
-    }
+            backgroundColor: '#282828',
+        },
+    },
 });
 
 class Header extends React.Component {
@@ -57,7 +57,7 @@ class Header extends React.Component {
 
         // Anchor for mobile menu
         this.state = {
-            anchorEl: null
+            anchorEl: null,
         };
         this.handleMenu = this.handleMenu.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -104,7 +104,7 @@ class Header extends React.Component {
                                     textDecoration: 'none',
                                     maxHeight: 48,
                                     overflow: 'hidden',
-                                    whiteSpace: 'nowrap'
+                                    whiteSpace: 'nowrap',
                                 }}
                             >
                                 <span style={{ fontWeight: '800' }}>
@@ -144,11 +144,11 @@ class Header extends React.Component {
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right'
+                                    horizontal: 'right',
                                 }}
                                 transformOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right'
+                                    horizontal: 'right',
                                 }}
                                 open={open}
                                 onClose={this.handleClose}
@@ -200,7 +200,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Header);

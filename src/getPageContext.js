@@ -3,19 +3,19 @@
 import { SheetsRegistry } from 'jss';
 import {
     createMuiTheme,
-    createGenerateClassName
+    createGenerateClassName,
 } from '@material-ui/core/styles';
 
 // Create a theme with Gatsby brand colors. You can choose your own
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#f58025'
+            main: '#f58025',
         },
         secondary: {
-            main: '#221e20'
+            main: '#221e20',
         },
-        contrastThreshold: 2
+        contrastThreshold: 2,
     },
     typography: {
         useNextVariants: true,
@@ -24,9 +24,9 @@ const theme = createMuiTheme({
         fontWeightRegular: 600,
         fontWeightMedium: 700,
         body1: {
-            fontWeight: 400
-        }
-    }
+            fontWeight: 400,
+        },
+    },
 });
 
 function createPageContext() {
@@ -37,7 +37,7 @@ function createPageContext() {
         // This is needed in order to inject the critical CSS.
         sheetsRegistry: new SheetsRegistry(),
         // The standard class name generator.
-        generateClassName: createGenerateClassName()
+        generateClassName: createGenerateClassName(),
     };
 }
 

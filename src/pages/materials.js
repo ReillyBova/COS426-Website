@@ -12,16 +12,16 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Layout } from 'components';
 
-const styles = theme => ({
+const styles = (theme) => ({
     section: {
-        marginTop: theme.spacing.unit * 3
+        marginTop: theme.spacing.unit * 3,
     },
     toolbar: {
-        marginTop: theme.spacing.unit * 2
+        marginTop: theme.spacing.unit * 2,
     },
     button: {
-        marginRight: theme.spacing.unit
-    }
+        marginRight: theme.spacing.unit,
+    },
 });
 
 const IndexPage = ({ classes }) => (

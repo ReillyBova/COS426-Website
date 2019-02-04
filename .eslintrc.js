@@ -3,19 +3,19 @@ module.exports = {
         browser: true,
         es6: true,
         node: true,
-        mocha: true
+        mocha: true,
     },
     globals: {
-        expect: true
+        expect: true,
     },
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 6,
         ecmaFeatures: {
             experimentalObjectRestSpread: true,
-            jsx: true
+            jsx: true,
         },
-        sourceType: 'module'
+        sourceType: 'module',
     },
     plugins: ['react'],
     extends: ['eslint:recommended', 'plugin:react/recommended'],
@@ -46,6 +46,6 @@ module.exports = {
         'space-before-function-paren': ['error', 'never'],
         'space-in-parens': 'error',
         'react/display-name': 'off',
-        'react/prop-types': 'off'
-    }
+        'react/prop-types': 'off',
+    },
 };

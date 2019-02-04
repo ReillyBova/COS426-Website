@@ -5,10 +5,10 @@ import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import withRoot from '../withRoot';
 
-const styles = theme => ({
+const styles = (theme) => ({
     section: {
-        marginTop: theme.spacing.unit * 3
-    }
+        marginTop: theme.spacing.unit * 3,
+    },
 });
 
 const SecondPage = ({ classes }) => (

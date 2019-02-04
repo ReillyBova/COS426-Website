@@ -7,16 +7,16 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import { isActive } from 'utils';
 
-const styles = theme => ({
+const styles = (theme) => ({
     root: {
         '&:focus:not(:hover)': {
             // Override strange focus highlight
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff',
         },
         '&.active': {
-            color: theme.palette.primary.main
-        }
-    }
+            color: theme.palette.primary.main,
+        },
+    },
 });
 
 function NavbarMenuButton(props) {
@@ -38,7 +38,7 @@ function NavbarMenuButton(props) {
 NavbarMenuButton.propTypes = {
     classes: PropTypes.object.isRequired,
     to: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(NavbarMenuButton);

@@ -8,7 +8,7 @@ const getPageContext = require('./src/getPageContext').default;
 function replaceRenderer({
     bodyComponent,
     replaceBodyHTMLString,
-    setHeadComponents
+    setHeadComponents,
 }) {
     // Get the context of the page to collect side effects
     const muiPageContext = getPageContext();
@@ -26,9 +26,9 @@ function replaceRenderer({
             id="jss-server-side"
             key="jss-server-side"
             dangerouslySetInnerHTML={{
-                __html: muiPageContext.sheetsRegistry.toString()
+                __html: muiPageContext.sheetsRegistry.toString(),
             }}
-        />
+        />,
     ]);
 }
 
