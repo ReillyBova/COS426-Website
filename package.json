@@ -36,7 +36,8 @@
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-helmet": "^5.2.0",
-    "react-jss": "^8.6.1"
+    "react-jss": "^8.6.1",
+    "three": "^0.101.1"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",

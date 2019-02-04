@@ -22,7 +22,10 @@ const theme = createMuiTheme({
         fontFamily: 'Open Sans, Roboto, Helvetica, Arial, sans-serif',
         fontWeightLight: 400,
         fontWeightRegular: 600,
-        fontWeightMedium: 700
+        fontWeightMedium: 700,
+        body1: {
+            fontWeight: 400,
+        }
     }
 });
 
