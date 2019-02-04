@@ -13,7 +13,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { NavbarButton, NavbarMenuButton } from 'components';
 import { PrincetonShield } from 'images';
 
-
 const styles = theme => ({
     grow: {
         flexGrow: 1
@@ -43,7 +42,7 @@ const styles = theme => ({
     menuButton: {
         [theme.breakpoints.up('md')]: {
             // Toggle display of mobile dropdown
-            display: "none"
+            display: 'none'
         },
         '&:hover': {
             // Brighten the hover color
@@ -58,7 +57,7 @@ class Header extends React.Component {
 
         // Anchor for mobile menu
         this.state = {
-          anchorEl: null
+            anchorEl: null
         };
         this.handleMenu = this.handleMenu.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -66,7 +65,7 @@ class Header extends React.Component {
 
     // Mobile menu popup handler
     handleMenu(event) {
-         this.setState({ anchorEl: event.currentTarget });
+        this.setState({ anchorEl: event.currentTarget });
     }
 
     // Mobile menu popup handler
@@ -108,71 +107,90 @@ class Header extends React.Component {
                                     whiteSpace: 'nowrap'
                                 }}
                             >
-                                <span style={{ fontWeight: '800' }}>{'COS'}</span>
-                                <span style={{ fontWeight: '400' }}>{' 426'}</span>
+                                <span style={{ fontWeight: '800' }}>
+                                    {'COS'}
+                                </span>
+                                <span style={{ fontWeight: '400' }}>
+                                    {' 426'}
+                                </span>
                             </Link>
                         </Typography>
                         <NavbarButton to="/" exact={true}>
-                            {"Syllabus"}
+                            {'Syllabus'}
                         </NavbarButton>
                         <NavbarButton to="/materials">
-                            {"Materials"}
+                            {'Materials'}
                         </NavbarButton>
                         <NavbarButton to="/assignments">
-                            {"Assignments"}
+                            {'Assignments'}
                         </NavbarButton>
                         <NavbarButton to="/exercises">
-                            {"Exercises"}
+                            {'Exercises'}
                         </NavbarButton>
-                        <NavbarButton to="/gallery">
-                            {"Gallery"}
-                        </NavbarButton>
-                        <NavbarButton to="/links">
-                            {"Links"}
-                        </NavbarButton>
+                        <NavbarButton to="/gallery">{'Gallery'}</NavbarButton>
+                        <NavbarButton to="/links">{'Links'}</NavbarButton>
                         <div>
-                          <IconButton
-                            aria-owns={open ? 'menu-appbar' : undefined}
-                            aria-haspopup="true"
-                            className={classes.menuButton}
-                            onClick={this.handleMenu}
-                            color="inherit"
-                          >
-                            <MenuIcon />
-                          </IconButton>
-                          <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorEl}
-                            anchorOrigin={{
-                              vertical: 'top',
-                              horizontal: 'right',
-                            }}
-                            transformOrigin={{
-                              vertical: 'top',
-                              horizontal: 'right',
-                            }}
-                            open={open}
-                            onClose={this.handleClose}
-                          >
-                            <NavbarMenuButton to="/" exact={true} onClick={this.handleClose}>
-                                {"Syllabus"}
-                            </NavbarMenuButton>
-                            <NavbarMenuButton to="/materials" onClick={this.handleClose}>
-                                {"Materials"}
-                            </NavbarMenuButton>
-                            <NavbarMenuButton to="/assignments" onClick={this.handleClose}>
-                                {"Assignments"}
-                            </NavbarMenuButton>
-                            <NavbarMenuButton to="/exercises" onClick={this.handleClose}>
-                                {"Exercises"}
-                            </NavbarMenuButton>
-                            <NavbarMenuButton to="/gallery" onClick={this.handleClose}>
-                                {"Gallery"}
-                            </NavbarMenuButton>
-                            <NavbarMenuButton to="/links" onClick={this.handleClose}>
-                                {"Links"}
-                            </NavbarMenuButton>
-                          </Menu>
+                            <IconButton
+                                aria-owns={open ? 'menu-appbar' : undefined}
+                                aria-haspopup="true"
+                                className={classes.menuButton}
+                                onClick={this.handleMenu}
+                                color="inherit"
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorEl}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right'
+                                }}
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right'
+                                }}
+                                open={open}
+                                onClose={this.handleClose}
+                            >
+                                <NavbarMenuButton
+                                    to="/"
+                                    exact={true}
+                                    onClick={this.handleClose}
+                                >
+                                    {'Syllabus'}
+                                </NavbarMenuButton>
+                                <NavbarMenuButton
+                                    to="/materials"
+                                    onClick={this.handleClose}
+                                >
+                                    {'Materials'}
+                                </NavbarMenuButton>
+                                <NavbarMenuButton
+                                    to="/assignments"
+                                    onClick={this.handleClose}
+                                >
+                                    {'Assignments'}
+                                </NavbarMenuButton>
+                                <NavbarMenuButton
+                                    to="/exercises"
+                                    onClick={this.handleClose}
+                                >
+                                    {'Exercises'}
+                                </NavbarMenuButton>
+                                <NavbarMenuButton
+                                    to="/gallery"
+                                    onClick={this.handleClose}
+                                >
+                                    {'Gallery'}
+                                </NavbarMenuButton>
+                                <NavbarMenuButton
+                                    to="/links"
+                                    onClick={this.handleClose}
+                                >
+                                    {'Links'}
+                                </NavbarMenuButton>
+                            </Menu>
                         </div>
                     </Toolbar>
                 </AppBar>

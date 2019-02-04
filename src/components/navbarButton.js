@@ -23,7 +23,7 @@ const styles = theme => ({
             height: 64
         },
         [theme.breakpoints.down('sm')]: {
-            display: "none"
+            display: 'none'
         },
         '&:hover:not(.active)': {
             backgroundColor: '#282828'
@@ -33,17 +33,17 @@ const styles = theme => ({
 
 function NavbarButton(props) {
     const { classes, to, exact, children } = props;
-    const active = isActive(to || "/", exact);
+    const active = isActive(to || '/', exact);
     return (
         <Button
             size="large"
             component={Link}
-            to={to || "/"}
-            className={(active) ? "active" : ""}
+            to={to || '/'}
+            className={active ? 'active' : ''}
             classes={{ root: classes.root }}
-            color={(active) ? "primary" : "inherit"}
+            color={active ? 'primary' : 'inherit'}
         >
-            { children }
+            {children}
         </Button>
     );
 }

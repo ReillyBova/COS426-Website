@@ -8,10 +8,10 @@ import { Layout } from 'components';
 const IndexPage = () => (
     <Layout>
         <Typography variant="h4" gutterBottom>
-            {"Syllabus"}
+            {'Syllabus'}
         </Typography>
         <Typography variant="h6" gutterBottom>
-            {"Description"}
+            {'Description'}
             <Typography variant="body1" paragraph={true}>
                 {`Computer graphics is the intersection of computer science, geometry,
                 physics, and art. This course will study topics in this broad and remarkable
@@ -37,7 +37,7 @@ const IndexPage = () => (
             </Typography>
         </Typography>
         <Typography variant="h6" gutterBottom>
-            {"Prerequisites"}
+            {'Prerequisites'}
             <Typography variant="body1" paragraph={true}>
                 {`The course is appropriate for students who have taken COS 217
                 and COS 226 (or equivalent). Javascript will be the main
@@ -46,14 +46,14 @@ const IndexPage = () => (
             </Typography>
         </Typography>
         <Typography variant="h6" gutterBottom>
-            {"Lectures"}
+            {'Lectures'}
             <Typography variant="body1" paragraph={true}>
                 {`Lectures are held on Tuesdays and Thursdays from
                 3:00–4:20PM in Friend Center 006.`}
             </Typography>
         </Typography>
         <Typography variant="h6" gutterBottom>
-            {"Precepts"}
+            {'Precepts'}
             <Typography variant="body1" paragraph={true}>
                 {`Precept is held on Wednesday or Thursday from
                 7:30–8:20PM in Friend Center 004. Students may attend either
@@ -62,11 +62,9 @@ const IndexPage = () => (
             </Typography>
         </Typography>
         <Typography variant="h6" gutterBottom>
-            {"Required Reading"}
+            {'Required Reading'}
             <Typography variant="body1" paragraph={true}>
-                <i>
-                    {`Computer Graphics with OpenGL`}
-                </i>
+                <i>{`Computer Graphics with OpenGL`}</i>
                 {`, 4th Ed., Hearn, Baker, and
                 Carithers. Prentice Hall, 2010. ISBN: 978-0136053583.`}
             </Typography>

@@ -21,16 +21,16 @@ const styles = theme => ({
 
 function NavbarMenuButton(props) {
     const { classes, onClick, to, exact, children } = props;
-    const active = isActive(to || "/", exact);
+    const active = isActive(to || '/', exact);
     return (
         <MenuItem
             component={Link}
-            to={to || "/"}
+            to={to || '/'}
             onClick={onClick}
-            className={(active) ? "active" : ""}
+            className={active ? 'active' : ''}
             classes={{ root: classes.root }}
         >
-            { children }
+            {children}
         </MenuItem>
     );
 }
@@ -38,7 +38,7 @@ function NavbarMenuButton(props) {
 NavbarMenuButton.propTypes = {
     classes: PropTypes.object.isRequired,
     to: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(NavbarMenuButton);

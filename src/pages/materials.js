@@ -12,7 +12,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Layout } from 'components';
 
-
 const styles = theme => ({
     section: {
         marginTop: theme.spacing.unit * 3
