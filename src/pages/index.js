@@ -7,12 +7,23 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
-import { Layout } from 'components';
-import { Textbook } from 'images';
+import { Layout, ProfileCard } from 'components';
+import {
+    Textbook,
+    AdamF,
+    AustinL,
+    CarloR,
+    JaiqiS,
+    JadB,
+    ReillyB,
+    DanielC,
+    AndrewW,
+} from 'images';
 
 const styles = (theme) => ({
-    card: {
+    textbook: {
         margin: 24,
         maxWidth: 200,
         [theme.breakpoints.down('xs')]: {
@@ -23,6 +34,24 @@ const styles = (theme) => ({
         [theme.breakpoints.up('sm')]: {
             float: 'right',
         },
+    },
+    profile: {
+        maxWidth: 250,
+        margin: 'auto',
+    },
+    button: {
+        height: '100%',
+        width: '100%',
+        overflow: 'hidden',
+    },
+    profile_pic: {
+        width: '100%',
+        '&:hover': {
+            opacity: 0.8,
+        },
+    },
+    profile_text: {
+        paddingBottom: 0,
     },
 });
 
@@ -93,16 +122,19 @@ function IndexPage(props) {
                 </Typography>
                 <Typography component={'div'} paragraph={true}>
                     <Typography variant="h6">{'Required Reading'}</Typography>
-                    <Card className={classes.card}>
+                    <Card className={classes.textbook}>
                         <CardMedia
                             component="img"
                             alt="Computer Graphics with OpenGL"
-                            className={classes.media}
                             image={Textbook}
                             title="Computer Graphics with OpenGL"
                         />
                         <CardActions>
-                            <Button size="small" color="primary">
+                            <Button
+                                size="small"
+                                color="primary"
+                                href="http://www.labyrinthbooks.com/all_detail.aspx?isbn=9780136053583"
+                            >
                                 {`Labyrinth`}
                             </Button>
                         </CardActions>
@@ -137,14 +169,98 @@ function IndexPage(props) {
                     {'Staff'}
                 </Typography>
                 <Typography variant="body1" paragraph={true}>
-                    {`Below you will find our contact information, but please keep
-                    in mind that it is almost always more appropriate to post
-                    your question on Piazza rather than emailing an individual
-                    staff member.`}
+                    {`Below you will find links to staff contact information,
+                    but please keep in mind that it is almost always more
+                    appropriate to post your question on Piazza rather than
+                    emailing an individual staff member.`}
                 </Typography>
+                <Grid container spacing={24} justify="space-around">
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Adam Finklestein"
+                            role="Professor"
+                            image={AdamF}
+                            link="https://www.cs.princeton.edu/~af/"
+                            email="af@princeton.edu"
+                            website="https://www.cs.princeton.edu/~af/"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Austin Le"
+                            role="Graduate TA"
+                            image={AustinL}
+                            link="http://austinhle.com/"
+                            github="https://github.com/austinhle"
+                            email="austinle@princeton.edu"
+                            website="http://austinhle.com/"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Carlo Rosati"
+                            role="Graduate TA"
+                            image={CarloR}
+                            link="https://www.cs.princeton.edu/~crosati/"
+                            email="crosati@princeton.edu"
+                            website="https://www.cs.princeton.edu/~crosati/"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Jiaqi Su"
+                            role="Graduate TA"
+                            image={JaiqiS}
+                            link="http://www.cs.princeton.edu/~jiaqis/personal-website/index.php"
+                            email="jiaqis@princeton.edu"
+                            website="http://www.cs.princeton.edu/~jiaqis/personal-website/index.php"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Jad Bechara"
+                            role="Undergraduate TA"
+                            image={JadB}
+                            link="https://jbechara.github.io/"
+                            email="jbechara@princeton.edu"
+                            github="https://github.com/jbechara"
+                            website="https://jbechara.github.io/"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Reilly Bova"
+                            role="Undergraduate TA"
+                            image={ReillyB}
+                            link="https://www.princeton.edu/search?search=Reilly+Bova#people"
+                            email="rbova@princeton.edu"
+                            github="https://github.com/ReillyBova/"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Daniel Chae"
+                            role="Undergraduate TA"
+                            image={DanielC}
+                            link="https://www.princeton.edu/search?search=Daniel+Chae#people"
+                            email="dkchae@princeton.edu"
+                        />
+                    </Grid>
+                    <Grid item sm={4} md={3}>
+                        <ProfileCard
+                            name="Andrew Wannacott"
+                            role="Undergraduate TA"
+                            image={AndrewW}
+                            link="https://keybase.io/awonnacott"
+                            email="awonnacott@princeton.edu"
+                            github="https://github.com/awonnacott/"
+                            website="https://keybase.io/awonnacott"
+                        />
+                    </Grid>
+                </Grid>
             </Typography>
         </Layout>
     );
 }
 
-export default withStyles(styles)(withRoot(IndexPage));
+export default withRoot(withStyles(styles)(IndexPage));

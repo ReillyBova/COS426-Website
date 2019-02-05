@@ -12,6 +12,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Layout } from 'components';
 
+import { PrincetonShield } from 'images';
+
 const styles = (theme) => ({
     section: {
         marginTop: theme.spacing.unit * 3,
@@ -21,6 +23,7 @@ const styles = (theme) => ({
     },
     button: {
         marginRight: theme.spacing.unit,
+        overflow: 'hidden',
     },
 });
 
@@ -67,12 +70,8 @@ const IndexPage = ({ classes }) => (
                 >
                     <Icon>edit_icon</Icon>
                 </Fab>
-                <Fab
-                    color="secondary"
-                    aria-label="Delete"
-                    className={classes.button}
-                >
-                    <DeleteIcon />
+                <Fab aria-label="Delete" className={classes.button}>
+                    <img src={PrincetonShield} width="auto" />
                 </Fab>
                 <Fab
                     color="secondary"

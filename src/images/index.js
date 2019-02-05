@@ -1,2 +1,10 @@
 export { default as PrincetonShield } from './princeton-shield.png';
 export { default as Textbook } from './textbook.jpg';
+export { default as AdamF } from './adamf.jpg';
+export { default as AustinL } from './austinl.jpg';
+export { default as CarloR } from './carlor.jpg';
+export { default as JaiqiS } from './jiaqis.jpg';
+export { default as JadB } from './jadb.jpg';
+export { default as ReillyB } from './reillyb.jpg';
+export { default as DanielC } from './danielc.jpg';
+export { default as AndrewW } from './andreww.jpg';
