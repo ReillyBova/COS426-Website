@@ -63,6 +63,7 @@ const styles = (theme) => ({
         maxWidth: 900,
         width: '100%',
         marginTop: theme.spacing.unit * 3,
+        marginBottom: theme.spacing.unit * 3,
         marginRight: 'auto',
         marginLeft: 'auto',
         overflowX: 'auto',
@@ -201,10 +202,10 @@ class IndexPage extends React.Component {
                         {'Staff'}
                     </Typography>
                     <Typography variant="body1" paragraph={true}>
-                        {`Below you will find staff contact information, but please
-                        keep in mind that it is almost always more appropriate to
-                        post your question on Piazza rather than emailing an
-                        individual member of the course staff.`}
+                        {`Staff contact information is listed below, but students
+                        seeking help should keep in mind that it is almost always
+                        more appropriate to post their question to Piazza rather
+                        than emailing an individual member of the course staff.`}
                     </Typography>
                     <div className={classes.staff_desktop}>
                         <StaffGrid />
@@ -413,10 +414,10 @@ class IndexPage extends React.Component {
                                 three late days are automatically waived.
                                 Additional late penalties will be waived only in
                                 the case of unforeseeable circumstances like
-                                medical emergencies, as documented by your Dean
-                                or Director of Studies. Note that late days cannot
-                                be used for the final project as it is due on
-                                Dean's Date`}
+                                medical emergencies, as documented by a student's
+                                Dean or Director of Studies. Note that late days
+                                cannot be used for the final project as it is due
+                                on Dean's Date`}
                             </Typography>
                         </Typography>
                         <Typography component={'div'} paragraph={true}>
@@ -582,6 +583,167 @@ class IndexPage extends React.Component {
                             </TableBody>
                         </Table>
                     </Paper>
+                    <Typography component={'div'} paragraph={true}>
+                        <Typography variant="h6">
+                            {'Individual Solutions'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`Students must individually compose all of their own
+                            solutions. The term solutions refers to any of the
+                            products created when completing a programming
+                            assignment, such as source code (including comments),
+                            an personal understanding of all submitted work, output
+                            images, and the writeup file. It includes both finished
+                            and unfinished products, regardless of correctness or
+                            completeness.`}
+                        </Typography>
+                        <ul>
+                            <li>
+                                <Typography variant="body1" paragraph={true}>
+                                    {`Students must never share their code with
+                                    anyone (besides their current partner) who is
+                                    taking COS 426 now or who might take COS 426 in
+                                    the future. Note that sharing output artwork with
+                                    others is not only permitted but encouraged, so
+                                    long as doing so does not expose solution specifics.`}
+                                </Typography>
+                            </li>
+                            <li>
+                                <Typography variant="body1" paragraph={true}>
+                                    {`Students must never recieve or view someone
+                                    else's solutions to a programming assignment
+                                    (or variant of an assignment), besides that of
+                                    their current partner.`}
+                                </Typography>
+                            </li>
+                        </ul>
+                        <Typography variant="body1" paragraph={true}>
+                            {`All the rules above continue to apply after
+                            assignments are graded and after the end of the semester.`}
+                        </Typography>
+                        <Typography variant="h6">
+                            {'Collaboration with Course Staff'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`Students are welcome to discuss their solutions
+                            with course staff members during the precept problem
+                            sessions, in office hours, and via private Piazza
+                            posts.`}
+                        </Typography>
+                        <Typography variant="h6">
+                            {'Collaboration with Partners'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`Students may show their partial or complete solution
+                            to another student, and they may examine their solutions.
+                            However, all submitted code must be fully understood
+                            and more specifically `}
+                            <i>{`typed`}</i>
+                            {` into the computer by student submitting the
+                            assignment. If a students sees and understands another
+                            student's solution (perhaps because they are working
+                            as a pair) then they should take a minute to think
+                            about it and then type their own version of the solution.`}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`For each assignment, students must specifically
+                            state in their writeup file the names of any
+                            individuals with whom they collaborated, or from
+                            whom they received help, and the nature of the help
+                            that they received. This includes help from friends,
+                            the internet, classmates, labTAs, and course staff members,
+                            among others.`}
+                        </Typography>
+                        <Typography variant="h6">
+                            {'Collaboration with Classmates'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`Students are encouraged to discuss common
+                            concerns with classmates either in private or
+                            publicly in the Piazza course forum. These discussions
+                            must be kept at a general level, without exposing
+                            their solutions.`}
+                        </Typography>
+                        <Typography variant="h6">
+                            {'Concerning Electronic Communication'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`If a student has a question or comment that will
+                            be helpful to other students, and they need not
+                            reveal any parts of their work to express the question
+                            or comment properly, then they should post it to the
+                            course's `}
+                            <a href="https://piazza.com/princeton/spring2019/cos426/home?">{`Piazza`}</a>
+                            {` page. One of the course's
+                            instructors will reply as soon as possible.
+                            Instructors also welcome replies from other students,
+                            and may "endorse" a student's response instead of
+                            composing an instructor's response.`}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`If a student has a question or comment that will
+                            not be helpful to other students, or if they must
+                            reveal parts of their work to express their question
+                            or comment adequately, then they should post it
+                            privately on Piazza.`}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            <i>
+                                {`Students should not, under any circumstances,
+                                share code in digital form!`}
+                            </i>
+                        </Typography>
+                        <Typography variant="h6">
+                            {'Final Note'}
+                        </Typography>
+                        <Typography variant="body1" paragraph={true}>
+                            {`Please do `}
+                            <i>{`not`}</i>
+                            {` publish solutions to programming
+                            assignments in a way that could compromise their
+                            utility as pedagogical tools. For example, do not
+                            make them available on a publicly accessible web
+                            page, such as GitHub. At Princeton, this is a
+                            violation of the basic Rights, Rules,
+                            Responsibilities of members of the University community.`}
+                        </Typography>
+                    </Typography>
+                </Typography>
+                <Typography component={'div'} paragraph={true}>
+                    <Typography variant="h4" gutterBottom>
+                        {'Plagiarism'}
+                    </Typography>
+                    <Typography variant="body1" paragraph={true}>
+                        {`Plagiarism and abetting plagiarism are serious academic
+                        infractions. Programming is a creative work and the academic
+                        regulations that apply to plagiarizing prose also apply to
+                        plagiarizing code. Princeton's `}
+                        <a href="https://rrr.princeton.edu/">{`Rights, Rules, Responsibilities`}</a>
+                        {` defines plagiarism as "the use of any outside source
+                        without proper acknowledgment." It ranges from "verbatim
+                        copying" (e.g., cutting-and-pasting code) to "thorough
+                        paraphrasing" (e.g., changing variable names or rearranging
+                        code).`}
+                    </Typography>
+                    <Typography variant="h6">
+                        {'Copying from a Partner'}
+                    </Typography>
+                    <Typography variant="body1" paragraph={true}>
+                        {`The more leniant collaboration policy for this course
+                        is a privilege and built upon trust. If students are caught
+                        breaking this trust by violating the collaboration policy, encouraged to discuss common
+                        concerns with classmates either in private or
+                        publicly in the Piazza course forum. These discussions
+                        must be kept at a general level, without exposing
+                        their solutions.`}
+                    </Typography>
+                    <Typography variant="body1" paragraph={true}>
+                        {`Following review, the precept then turns into a `}
+                        <b>{`problem session`}</b>
+                        {`, during which instructors are avaliable as LabTAs
+                        to answer students' questions individually and to provide
+                        personal assignment troubleshooting.`}
+                    </Typography>
                 </Typography>
             </Layout>
         );
