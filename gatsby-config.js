@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: 'COS 426: Computer Graphics (2019) | Princeton University',
-        siteUrl: `http://www.cs.princeton.edu/courses/archive/spring19/cos426/`,
+        siteUrl: `https://reillybova.github.io/COS426-Website/`,
         description: `The Princeton University course website for the Spring 2019 term of COS 426: Computer Graphics`,
         keywords: 'COS 426, Princeton, Graphics, Computer Science, Spring 2019',
     },

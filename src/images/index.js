@@ -1,5 +1,6 @@
 export { default as PrincetonShield } from './princeton-shield.png';
 export { default as Textbook } from './textbook.jpg';
+export { default as GradeChart } from './grade-chart.png';
 export { default as AdamF } from './adamf.jpg';
 export { default as AustinL } from './austinl.jpg';
 export { default as CarloR } from './carlor.jpg';

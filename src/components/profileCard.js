@@ -16,6 +16,7 @@ import { GithubIcon } from 'components';
 const styles = () => ({
     profile: {
         maxWidth: 250,
+        height: '100%',
         margin: 'auto',
     },
     button: {

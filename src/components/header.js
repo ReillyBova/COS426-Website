@@ -52,26 +52,19 @@ const styles = (theme) => ({
 });
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // Anchor for mobile menu
-        this.state = {
-            anchorEl: null,
-        };
-        this.handleMenu = this.handleMenu.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    }
+    state = {
+        anchorEl: null,
+    };
 
     // Mobile menu popup handler
-    handleMenu(event) {
+    handleMenu = (event) => {
         this.setState({ anchorEl: event.currentTarget });
-    }
+    };
 
     // Mobile menu popup handler
-    handleClose() {
+    handleClose = () => {
         this.setState({ anchorEl: null });
-    }
+    };
 
     render() {
         const { classes } = this.props;
@@ -116,7 +109,7 @@ class Header extends React.Component {
                             </Link>
                         </Typography>
                         <NavbarButton to="/" exact={true}>
-                            {'Syllabus'}
+                            {'Overview'}
                         </NavbarButton>
                         <NavbarButton to="/materials">
                             {'Materials'}
@@ -158,7 +151,7 @@ class Header extends React.Component {
                                     exact={true}
                                     onClick={this.handleClose}
                                 >
-                                    {'Syllabus'}
+                                    {'Overview'}
                                 </NavbarMenuButton>
                                 <NavbarMenuButton
                                     to="/materials"
