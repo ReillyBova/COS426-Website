@@ -37,6 +37,15 @@ module.exports = {
                 },
             },
         },
+        `gatsby-plugin-sitemap`,
+        {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://reillybova.github.io/COS426-Website/',
+                sitemap: 'https://reillybova.github.io/COS426-Website/sitemap.xml',
+                policy: [{ userAgent: '*', allow: '/' }]
+          }
+        },
     ],
     pathPrefix: '/COS426-Website',
 };

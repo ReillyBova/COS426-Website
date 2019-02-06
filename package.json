@@ -31,6 +31,8 @@
     "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-offline": "2.0.22",
     "gatsby-plugin-react-helmet": "3.0.5",
+    "gatsby-plugin-robots-txt": "^1.4.0",
+    "gatsby-plugin-sitemap": "^2.0.5",
     "jss": "^9.8.7",
     "prop-types": "^15.6.2",
     "react": "^16.6.1",
