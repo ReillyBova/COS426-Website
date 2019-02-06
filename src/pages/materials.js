@@ -8,7 +8,6 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 import { Layout } from 'components';
 

@@ -20,9 +20,11 @@ const styles = (theme) => ({
         },
         paddingLeft: theme.spacing.unit * 2,
         paddingRight: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
         [theme.breakpoints.up('sm')]: {
             paddingLeft: theme.spacing.unit * 3,
             paddingRight: theme.spacing.unit * 3,
+            paddingBottom: theme.spacing.unit * 3,
             paddingTop: 80,
         },
     },
