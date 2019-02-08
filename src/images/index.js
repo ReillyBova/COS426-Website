@@ -9,3 +9,4 @@ export { default as JadB } from './jadb.jpg';
 export { default as ReillyB } from './reillyb.jpg';
 export { default as DanielC } from './danielc.jpg';
 export { default as AndrewW } from './andreww.jpg';
+export { default as CircleTexture } from './circle.png';
