@@ -51,7 +51,7 @@ const styles = (theme) => ({
     },
 });
 
-class Header extends React.Component {
+class Navbar extends React.Component {
     state = {
         anchorEl: null,
     };
@@ -192,8 +192,8 @@ class Header extends React.Component {
     }
 }
 
-Header.propTypes = {
+Navbar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Navbar);

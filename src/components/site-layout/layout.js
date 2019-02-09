@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import { Header } from 'components';
+import { Navbar } from 'components';
 import { PrincetonShield } from 'images';
 
 const styles = (theme) => ({
@@ -79,7 +79,7 @@ const Layout = ({ children, classes }) => (
                 >
                     <html lang="en" />
                 </Helmet>
-                <Header />
+                <Navbar />
                 <div className={classes.root}>{children}</div>
             </Fragment>
         )}

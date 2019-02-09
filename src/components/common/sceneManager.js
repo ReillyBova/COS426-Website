@@ -24,6 +24,7 @@ export default canvas => {
     let step = 0;
     const colorIndices = [0,1,2,3];
     const gradientSpeed = 0.002;
+    var c = document.getElementById('gradient')
 
     var scene, camera, renderer;
     init();
@@ -40,7 +41,7 @@ export default canvas => {
         renderer.gammaOutput = true;
         var points_mat = new THREE.PointsMaterial( {
             color: 0xffffff,
-            opacity: 0.75,
+            opacity: 0.5,
             size: 15,
             transparent: true,
             map: new THREE.TextureLoader().load(CircleTexture)
@@ -60,7 +61,7 @@ export default canvas => {
         /*
          *   Lines
          */
-        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: 0.45, transparent: true}));
+        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: 0.3, transparent: true}));
         scene.add(line);
     }
 
@@ -119,7 +120,6 @@ export default canvas => {
       let g2 = Math.round((1-step) * c1_0[1] + step * c1_1[1]);
       let b2 = Math.round((1-step) * c1_0[2] + step * c1_1[2]);
       let color2 = "rgb("+r2+","+g2+","+b2+")";
-      let c = document.getElementById('gradient')
       c.style.background = "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))";
       step += gradientSpeed;
       if ( step >= 1 )

@@ -5,8 +5,8 @@ export default containerElement => {
   const sceneManager = new SceneManager(canvas);
 
   bindEventListeners();
-  render();
-  setInterval(sceneManager.updateGradient, 25);
+  //render();
+  setInterval(sceneManager.updateGradient, 5);
 
   function createCanvas(document, containerElement) {
     const canvas = document.createElement('canvas');
