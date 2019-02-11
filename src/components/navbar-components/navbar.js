@@ -72,7 +72,7 @@ class Navbar extends React.Component {
         const open = Boolean(anchorEl);
 
         return (
-            <div className={classes.grow}>
+            <header className={classes.grow}>
                 <AppBar
                     position="fixed"
                     className={classes.appBar}
@@ -187,7 +187,7 @@ class Navbar extends React.Component {
                         </div>
                     </Toolbar>
                 </AppBar>
-            </div>
+            </header>
         );
     }
 }

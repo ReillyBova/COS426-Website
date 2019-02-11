@@ -18,10 +18,24 @@ body {
     font-family: "Open Sans", "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 14px;
 
+    /* Ease in the site with an opacity animation */
+	animation: SoftLoad 2s ease 0.5s forwards;
+	opacity: 0;
+
     /* Helps fonts on OSX look more consistent with other systems */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     /* Use momentum-based scrolling on iOS devices */
     -webkit-overflow-scrolling: touch;
+}
+
+@keyframes SoftLoad {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }

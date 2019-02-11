@@ -19,11 +19,12 @@ export default canvas => {
     // Old colors
     // let colors = [[62,35,255], [60,255,60], [255,35,98],
     //  [45,175,230], [255,0,255], [255,128,0]];
-    let colors = [[245, 128, 37], [238, 90, 98], [194, 83, 137],
-      [129, 88, 147], [70, 85, 126], [47, 72, 88]];
+    let colors = [[245, 128, 37], [238, 90, 98], [232, 88, 159],
+      [185, 105, 235], [111, 123, 252], [122, 193, 255]];
     let step = 0;
     const colorIndices = [0,1,2,3];
-    const gradientSpeed = 0.002;
+    const gradientSpeed = 0.008;
+    let rotation = 230;
     var c = document.getElementById('gradient')
 
     var scene, camera, renderer;
@@ -41,7 +42,7 @@ export default canvas => {
         renderer.gammaOutput = true;
         var points_mat = new THREE.PointsMaterial( {
             color: 0xffffff,
-            opacity: 0.5,
+            opacity: 0.2,
             size: 15,
             transparent: true,
             map: new THREE.TextureLoader().load(CircleTexture)
@@ -61,7 +62,7 @@ export default canvas => {
         /*
          *   Lines
          */
-        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: 0.3, transparent: true}));
+        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, opacity: 0.2, transparent: true}));
         scene.add(line);
     }
 
@@ -101,7 +102,6 @@ export default canvas => {
 
     function onDocumentTouchMove(event) {
         if (event.touches.length == 1) {
-            event.preventDefault();
             mousePosition.x = event.touches[0].pageX - screenDimensions.hw;
             mousePosition.y = event.touches[0].pageY - screenDimensions.hh;
         }
@@ -120,8 +120,9 @@ export default canvas => {
       let g2 = Math.round((1-step) * c1_0[1] + step * c1_1[1]);
       let b2 = Math.round((1-step) * c1_0[2] + step * c1_1[2]);
       let color2 = "rgb("+r2+","+g2+","+b2+")";
-      c.style.background = "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))";
+      c.style.background = `linear-gradient(${rotation}deg, ${color1}, ${color2})`;
       step += gradientSpeed;
+      rotation = (rotation + (10 * gradientSpeed)) % 360;
       if ( step >= 1 )
       {
         step %= 1;

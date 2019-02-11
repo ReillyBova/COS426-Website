@@ -5,8 +5,8 @@ export default containerElement => {
   const sceneManager = new SceneManager(canvas);
 
   bindEventListeners();
-  //render();
-  setInterval(sceneManager.updateGradient, 5);
+  render();
+  setInterval(sceneManager.updateGradient, 40);
 
   function createCanvas(document, containerElement) {
     const canvas = document.createElement('canvas');
@@ -16,7 +16,7 @@ export default containerElement => {
   }
 
   function bindEventListeners() {
-    window.onresize = resizeCanvas;
+	window.addEventListener( 'resize', resizeCanvas, false );
     resizeCanvas();
     document.addEventListener( 'mousemove', sceneManager.onDocumentMouseMove, false);
     document.addEventListener( 'touchstart', sceneManager.onDocumentTouchStart, false);
@@ -25,7 +25,7 @@ export default containerElement => {
 
   function resizeCanvas() {
     canvas.style.width = '100%';
-    canvas.style.height= '500px';
+    canvas.style.height= '100%';
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     sceneManager.onWindowResize();

@@ -47,11 +47,12 @@ export default function getPageContext() {
     if (!process.browser) {
         return createPageContext();
     }
-
+    /* eslint-disable */
     // Reuse context on the client-side.
     if (!global.__INIT_MATERIAL_UI__) {
         global.__INIT_MATERIAL_UI__ = createPageContext();
     }
 
     return global.__INIT_MATERIAL_UI__;
+    /* eslint-enable */
 }

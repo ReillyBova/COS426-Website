@@ -5,3 +5,4 @@ export { default as Coursework } from './coursework';
 export { default as Collaboration } from './collaboration';
 export { default as Plagiarism } from './plagiarism';
 export { default as StaffGrid } from './staffGrid';
+export { default as SiteTitle } from './siteTitle';
