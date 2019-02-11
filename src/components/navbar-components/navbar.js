@@ -51,7 +51,7 @@ const styles = (theme) => ({
     },
 });
 
-class Header extends React.Component {
+class Navbar extends React.Component {
     state = {
         anchorEl: null,
     };
@@ -72,7 +72,7 @@ class Header extends React.Component {
         const open = Boolean(anchorEl);
 
         return (
-            <div className={classes.grow}>
+            <header className={classes.grow}>
                 <AppBar
                     position="fixed"
                     className={classes.appBar}
@@ -187,13 +187,13 @@ class Header extends React.Component {
                         </div>
                     </Toolbar>
                 </AppBar>
-            </div>
+            </header>
         );
     }
 }
 
-Header.propTypes = {
+Navbar.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(Navbar);

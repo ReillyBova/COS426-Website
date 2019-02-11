@@ -42,9 +42,10 @@ module.exports = {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
                 host: 'https://reillybova.github.io/COS426-Website/',
-                sitemap: 'https://reillybova.github.io/COS426-Website/sitemap.xml',
-                policy: [{ userAgent: '*', allow: '/' }]
-          }
+                sitemap:
+                    'https://reillybova.github.io/COS426-Website/sitemap.xml',
+                policy: [{ userAgent: '*', allow: '/' }],
+            },
         },
     ],
     pathPrefix: '/COS426-Website',
