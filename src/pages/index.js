@@ -16,8 +16,8 @@ function IndexPage() {
     return (
         <Layout>
             <Banner>
-                <SiteTitle/>
-                <ThreeContainer/>
+                <SiteTitle />
+                <ThreeContainer />
             </Banner>
             <Page>
                 <Syllabus />

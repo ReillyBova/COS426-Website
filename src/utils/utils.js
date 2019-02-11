@@ -13,3 +13,13 @@ export const isActive = (to, exact) => {
     }
     return false;
 };
+
+// Check if use is on mobile
+// from: https://github.com/tengbao/vanta/blob/master/src/helpers.js
+export const mobileCheck = () => {
+    return (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        ) || window.innerWidth < 600
+    );
+};

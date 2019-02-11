@@ -7,15 +7,13 @@ const styles = (theme) => ({
     root: {
         padding: theme.spacing.unit * 3,
         [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing.unit * 4
+            padding: theme.spacing.unit * 4,
         },
     },
 });
 
 const Page = ({ children, classes }) => (
-    <section className={classes.root}>{
-        children}
-    </section>
+    <section className={classes.root}>{children}</section>
 );
 
 Page.propTypes = {

@@ -8,11 +8,11 @@ class ThreeContainer extends Component {
     render() {
         return (
             <div
-                style={{height: "100%"}}
-                ref={element => this.threeRootElement = element}
-            />);
+                style={{ height: '100%' }}
+                ref={(element) => (this.threeRootElement = element)}
+            />
+        );
     }
-
 }
 
 export default ThreeContainer;
