@@ -33,7 +33,8 @@ const defaultOptions = {
         [232, 88, 159],
         [185, 105, 235],
         [111, 123, 252],
-        [122, 193, 255], ],
+        [122, 193, 255],
+    ],
     gradientSpeed: 0.006,
 };
 
@@ -43,7 +44,13 @@ class NetworkScene extends SceneBase {
     }
 
     onInit() {
-        const { numPoints, spacing, maxDistance, fov } = this.options;
+        const {
+            numPoints,
+            spacing,
+            maxDistance,
+            fov,
+            maxOpacity,
+        } = this.options;
         // Adjust option values based on current device
         this.params = {};
         if (mobileCheck()) {
@@ -51,11 +58,13 @@ class NetworkScene extends SceneBase {
             this.params.numPoints = Math.floor(numPoints * 0.6);
             this.params.spacing = Math.floor(spacing * 0.6);
             this.params.maxDistanceSqd = Math.floor(maxDistance * 0.75) ** 2;
+            this.params.maxOpacity = maxOpacity * 0.6;
         } else {
             this.params.mobile = false;
             this.params.numPoints = numPoints;
             this.params.spacing = spacing;
             this.params.maxDistanceSqd = maxDistance ** 2;
+            this.params.maxOpacity = maxOpacity;
         }
 
         // Double number of possible lines due to line-segment implementation
@@ -98,7 +107,7 @@ class NetworkScene extends SceneBase {
 
     onUpdate() {
         const { mouseSpeed } = this.options;
-        const {mouseTarget, oddFrame } = this.params;
+        const { mouseTarget, oddFrame } = this.params;
 
         // Move camera
         if (mouseTarget) {
@@ -127,12 +136,12 @@ class NetworkScene extends SceneBase {
         }
 
         // Update different aspects of scene depending on frame parity
-        (oddFrame) ? this.updateGeometries() : this.updateCanvas();
+        oddFrame ? this.updateGeometries() : this.updateCanvas();
         this.params.oddFrame = !oddFrame;
     }
 
     onResize() {
-        if (this.params && (mobileCheck() !== this.params.mobile)) {
+        if (this.params && mobileCheck() !== this.params.mobile) {
             this.restart();
         }
     }
@@ -150,8 +159,43 @@ class NetworkScene extends SceneBase {
 
         // Camera will slowly move towards the target location
         mouseTarget.x = cameraStart.x + x * 50;
-        mouseTarget.y = cameraStart.y + y * -20;
-        mouseTarget.z = cameraStart.z + x * -50;
+        mouseTarget.y = cameraStart.y - y * 20;
+        mouseTarget.z = cameraStart.z - x * 50;
+    }
+
+    onTouchDown(x, y) {
+        const { cameraStart } = this.params;
+        if (!this.params.mouseTarget) {
+            this.params.mouseTarget = {
+                x: cameraStart.x,
+                y: cameraStart.y,
+                z: cameraStart.z,
+            };
+        }
+        const mouseTarget = this.params.mouseTarget;
+        this.params.touchDownOffsetX = x + (mouseTarget.x - cameraStart.x) / 50;
+        this.params.touchDownOffsetY = y + (cameraStart.y - mouseTarget.y) / 80;
+    }
+
+    onTouchMove(x, y) {
+        const { cameraStart, touchDownOffsetX, touchDownOffsetY } = this.params;
+        if (!this.params.mouseTarget) {
+            this.params.mouseTarget = {
+                x: cameraStart.x,
+                y: cameraStart.y,
+                z: cameraStart.z,
+            };
+        }
+
+        // Offset from touch start
+        const mouseTarget = this.params.mouseTarget;
+        const dx = clamp(touchDownOffsetX - x, -2, 2);
+        const dy = clamp(touchDownOffsetY - y, -2, 2);
+
+        // Camera will slowly move towards the target location
+        mouseTarget.x = cameraStart.x + dx * 50;
+        mouseTarget.y = cameraStart.y - dy * 80;
+        mouseTarget.z = cameraStart.z + dx * -50;
     }
 
     onRestart() {
@@ -203,17 +247,13 @@ class NetworkScene extends SceneBase {
 
     // Initialization function for points geometry
     initPoints() {
-        const {
-            color,
-            maxOpacity,
-            showPoints,
-            pointSize,
-            maxSpeed,
-        } = this.options;
-        const { numPoints, spacing } = this.params;
+        const { color, showPoints, pointSize, maxSpeed } = this.options;
+        const { numPoints, spacing, maxOpacity } = this.params;
 
         // Sprite material for point
-        const sprite = showPoints ? new TextureLoader().load(CircleTexture) : null;
+        const sprite = showPoints
+            ? new TextureLoader().load(CircleTexture)
+            : null;
         if (sprite) {
             sprite.center = new Vector2(0, 0);
         }
@@ -302,7 +342,6 @@ class NetworkScene extends SceneBase {
     }
 
     updateGeometries() {
-        const { maxOpacity } = this.options;
         const {
             maxDistanceSqd,
             linesMesh,
@@ -313,6 +352,7 @@ class NetworkScene extends SceneBase {
             rotationRadius,
             linePositions,
             lineOpacities,
+            maxOpacity,
         } = this.params;
 
         // Bookkeeping variables/indices
@@ -388,7 +428,13 @@ class NetworkScene extends SceneBase {
     }
 
     updateCanvas() {
-        const { gradientColors, gradientIndices, gradientStep, gradientSpeed, gradientRotation } = this.params;
+        const {
+            gradientColors,
+            gradientIndices,
+            gradientStep,
+            gradientSpeed,
+            gradientRotation,
+        } = this.params;
         const canvas = this.canvas;
 
         // Get current colors for gradient
@@ -398,13 +444,31 @@ class NetworkScene extends SceneBase {
         const colorB_Next = gradientColors[gradientIndices[3]];
 
         // Interpolate channels
-        const redA = Math.round((1 - gradientStep) * colorA_Current[0] + gradientStep * colorA_Next[0]);
-        const greenA = Math.round((1 - gradientStep) * colorA_Current[1] + gradientStep * colorA_Next[1]);
-        const blueA = Math.round((1 - gradientStep) * colorA_Current[2] + gradientStep * colorA_Next[2]);
+        const redA = Math.round(
+            (1 - gradientStep) * colorA_Current[0] +
+                gradientStep * colorA_Next[0]
+        );
+        const greenA = Math.round(
+            (1 - gradientStep) * colorA_Current[1] +
+                gradientStep * colorA_Next[1]
+        );
+        const blueA = Math.round(
+            (1 - gradientStep) * colorA_Current[2] +
+                gradientStep * colorA_Next[2]
+        );
         const colorA = `rgb(${redA},${greenA},${blueA})`;
-        const redB = Math.round((1 - gradientStep) * colorB_Current[0] + gradientStep * colorB_Next[0]);
-        const greenB = Math.round((1 - gradientStep) * colorB_Current[1] + gradientStep * colorB_Next[1]);
-        const blueB = Math.round((1 - gradientStep) * colorB_Current[2] + gradientStep * colorB_Next[2]);
+        const redB = Math.round(
+            (1 - gradientStep) * colorB_Current[0] +
+                gradientStep * colorB_Next[0]
+        );
+        const greenB = Math.round(
+            (1 - gradientStep) * colorB_Current[1] +
+                gradientStep * colorB_Next[1]
+        );
+        const blueB = Math.round(
+            (1 - gradientStep) * colorB_Current[2] +
+                gradientStep * colorB_Next[2]
+        );
         const colorB = `rgb(${redB},${greenB},${blueB})`;
 
         // Update gradient
@@ -412,7 +476,8 @@ class NetworkScene extends SceneBase {
 
         // Advance time
         this.params.gradientStep += gradientSpeed;
-        this.params.gradientRotation = (gradientRotation + 10 * gradientSpeed) % 360;
+        this.params.gradientRotation =
+            (gradientRotation + 10 * gradientSpeed) % 360;
 
         // Choose a new color once interpolation complete
         if (this.params.gradientStep >= 1) {

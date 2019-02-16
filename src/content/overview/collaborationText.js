@@ -18,6 +18,29 @@ const collaborationText = {
         are allowed share all their code with one another. Here
         is an executive summary:`,
     ],
+    table: {
+        headers: [
+            'Your Partner',
+            'Course Staff',
+            'COS 426 Grads',
+            'Classmates',
+            'The Internet',
+        ],
+        rows: [
+            'Discuss Concepts With:',
+            'Acknowledge Collaboration With:',
+            'Expose Code/Solutions To:',
+            'View Code/Solutions Of:',
+            'Copy Code/Solutions From:',
+        ],
+        values: [
+            [1, 1, 1, 1, 1],
+            [1, 1, 1, 1, 1],
+            [1, 1, 1, 0, 0],
+            [1, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+        ],
+    },
     individual: [
         `Students must individually compose all of their own
         solutions. The term solutions refers to any of the

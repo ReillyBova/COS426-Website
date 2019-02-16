@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Slide from '@material-ui/core/Slide';
 
-import { StaffGrid } from './';
+import { default as StaffGrid } from './staffGrid';
 import text from './staffText';
 
 const styles = (theme) => ({

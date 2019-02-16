@@ -24,7 +24,7 @@ class SceneBase {
         this.resize();
 
         // Add fps stats if in development
-        this.isDev = (process.env.NODE_ENV === 'development' || true);
+        this.isDev = process.env.NODE_ENV === 'development';
         if (this.isDev) {
             this.stats = new Stats();
             this.stats.dom.style.bottom = '52px';
@@ -56,10 +56,19 @@ class SceneBase {
     }
 
     bindEventListeners() {
-        document.addEventListener('touchstart', this.onTouchDownWrapper, false);
-        document.addEventListener('touchmove', this.onTouchMoveWrapper, false);
-        document.addEventListener('mousemove', this.onMouseMoveWrapper, false);
-        window.addEventListener('scroll', this.onMouseMoveWrapper, false);
+        document.addEventListener('touchstart', this.onTouchDownWrapper, {
+            passive: false,
+        });
+        document.addEventListener('touchmove', this.onTouchMoveWrapper, {
+            passive: false,
+        });
+        if (typeof this.onMouseMove === 'function') {
+            document.addEventListener(
+                'mousemove',
+                this.onMouseMoveWrapper,
+                false
+            );
+        }
         window.addEventListener('resize', this.resize, false);
     }
 
@@ -83,35 +92,27 @@ class SceneBase {
     onMouseMoveWrapper(e) {
         const x = (this.mouseX = e.clientX / this.width - 0.5);
         const y = (this.mouseY = e.clientY / this.height - 0.5);
-        if (!this.options.mouseEase) {
-            this.triggerMouseMove(x, y);
-        }
-    }
-
-    triggerMouseMove(x, y) {
-        if (typeof this.onMouseMove === 'function') {
-            this.onMouseMove(x, y);
-        }
+        this.onMouseMove && this.onMouseMove(x, y);
     }
 
     onTouchDownWrapper(e) {
-        if (event.touches.length > 1) {
-            e.preventDefault();
-            const x = (this.mouseX = event.clientX - this.width / 2.0);
-            const y = (this.mouseY = e.clientY - this.height / 2.0);
-            if (!this.options.mouseEase) {
-                this.triggerMouseMove(x, y);
-            }
+        if (event.touches.length > 0 && this.onTouchDown) {
+            event.touches.length > 1 && e.preventDefault();
+            const x = (this.touchDownX =
+                e.touches[0].clientX / this.width - 0.5);
+            const y = (this.touchDownY =
+                e.touches[0].clientY / this.height - 0.5);
+            this.onTouchDown && this.onTouchDown(x, y);
         }
     }
 
     onTouchMoveWrapper(e) {
-        if (event.touches.length === 1) {
-            const x = (this.mouseX = event.clientX - this.width / 2.0);
-            const y = (this.mouseY = e.clientY - this.height / 2.0);
-            if (!this.options.mouseEase) {
-                this.triggerMouseMove(x, y);
-            }
+        if (event.touches.length > 0) {
+            const x = (this.touchMoveX =
+                e.touches[0].clientX / this.width - 0.5);
+            const y = (this.touchMoveY =
+                e.touches[0].clientY / this.height - 0.5);
+            this.onTouchMove && this.onTouchMove(x, y);
         }
     }
 
@@ -190,30 +191,13 @@ class SceneBase {
         // No longer need to keep track of frame that just triggered
         this.nextFrame = null;
 
-        // Ease mouse
-        if (this.options.mouseEase) {
-            this.mouseEaseX = this.mouseEaseX || this.mouseX || 0;
-            this.mouseEaseY = this.mouseEaseY || this.mouseY || 0;
-            if (
-                Math.abs(this.mouseEaseX - this.mouseX) +
-                    Math.abs(this.mouseEaseY - this.mouseY) >
-                0.1
-            ) {
-                this.mouseEaseX =
-                    this.mouseEaseX + (this.mouseX - this.mouseEaseX) * 0.05;
-                this.mouseEaseY =
-                    this.mouseEaseY + (this.mouseY - this.mouseEaseY) * 0.05;
-                this.triggerMouseMove(this.mouseEaseX, this.mouseEaseY);
-            }
-        }
-
         // Only animate if element is within view
         if (this.isVisible()) {
             // Ask to update the screen asap
             this.registerAnimationFrame();
-            if (typeof this.onUpdate === 'function') {
-                this.onUpdate();
-            }
+
+            // Run update
+            this.onUpdate && this.onUpdate();
             if (this.scene && this.camera) {
                 this.renderer.render(this.scene, this.camera);
             }
@@ -257,10 +241,9 @@ class SceneBase {
         document.removeEventListener('touchstart', this.onTouchDownWrapper);
         document.removeEventListener('touchmove', this.onTouchMoveWrapper);
         document.removeEventListener('mousemove', this.onMouseMoveWrapper);
-        window.removeEventListener('scroll', this.onMouseMoveWrapper);
         window.removeEventListener('resize', this.resize);
-        (this.nextFrame) && window.cancelAnimationFrame(this.nextFrame);
-        (this.timeout) && clearInterval(this.timeout);
+        this.nextFrame && window.cancelAnimationFrame(this.nextFrame);
+        this.timeout && clearInterval(this.timeout);
 
         // Memory cleanup
         if (this.renderer) {

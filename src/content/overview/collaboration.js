@@ -1,36 +1,11 @@
 import React from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import CheckIcon from '@material-ui/icons/CheckCircle';
-import CancelIcon from '@material-ui/icons/Cancel';
 
+import CollaborationTable from './collaborationTable';
 import text from './collaborationText';
 
-const styles = (theme) => ({
-    collab_paper: {
-        maxWidth: 900,
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-        marginBottom: theme.spacing.unit * 3,
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        overflowX: 'auto',
-    },
-    collab_table: {
-        minWidth: 700,
-        whiteSpace: 'nowrap',
-    },
-});
-
-function CollaborationPage(props) {
-    const { classes } = props;
+function CollaborationPage() {
     return (
         <Typography component={'div'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
@@ -45,130 +20,9 @@ function CollaborationPage(props) {
             <Typography variant="body1" paragraph={true}>
                 {text.collaboration[4]}
             </Typography>
-            <Paper className={classes.collab_paper}>
-                <Table padding="dense" className={classes.collab_table}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell />
-                            <TableCell align="right">
-                                {`Your Partner`}
-                            </TableCell>
-                            <TableCell align="right">
-                                {`Course Staff`}
-                            </TableCell>
-                            <TableCell align="right">
-                                {`COS 426 Grads`}
-                            </TableCell>
-                            <TableCell align="right">{`Classmates`}</TableCell>
-                            <TableCell align="right">
-                                {`The Internet`}
-                            </TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell component="th" scope="row">
-                                {`Discuss Concepts With:`}
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row">
-                                {`Acknowledge Collaboration With:`}
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row">
-                                {`Expose Code/Solutions To:`}
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row">
-                                {`View Code/Solutions Of:`}
-                            </TableCell>
-                            <TableCell align="center">
-                                <CheckIcon color="primary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell component="th" scope="row">
-                                {`Copy Code/Solutions From:`}
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                            <TableCell align="center">
-                                <CancelIcon color="secondary" />
-                            </TableCell>
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </Paper>
+
+            <CollaborationTable table={text.table} />
+
             <Typography component={'div'} paragraph={true}>
                 <Typography variant="h6">{'Individual Solutions'}</Typography>
                 <Typography variant="body1" paragraph={true}>
@@ -239,4 +93,4 @@ function CollaborationPage(props) {
     );
 }
 
-export default withStyles(styles)(CollaborationPage);
+export default CollaborationPage;
