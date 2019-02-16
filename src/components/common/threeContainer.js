@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import threeEntryPoint from './threeEntryPoint';
+import { NetworkScene } from 'scenes';
 
 class ThreeContainer extends Component {
-    componentDidMount() {
-        threeEntryPoint(this.threeRootElement);
+    constructor(props) {
+        super(props);
+        this.threeRootElement = React.createRef();
     }
+
+    componentDidMount() {
+        this.scene = new NetworkScene(this.threeRootElement.current);
+    }
+
+    componentWillUnmount() {
+        this.scene.destroy();
+        delete this.scene;
+    }
+
     render() {
-        return (
-            <div
-                style={{ height: '100%' }}
-                ref={(element) => (this.threeRootElement = element)}
-            />
-        );
+        return <div style={{ height: '100%' }} ref={this.threeRootElement} />;
     }
 }
 

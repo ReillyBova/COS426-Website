@@ -30,6 +30,8 @@ module.exports = {
                     images: './images', // <- will become ./src/images
                     utils: './utils', // <- will become ./src/images
                     content: './content', // <- will become ./src/images
+                    scenes: './scenes', // <- will become ./src/scenes
+                    shaders: './shaders', // <- will become ./src/scenes
                     static: {
                         root: './public', // <- will used as this alias' root dir
                         alias: './static', // <- will become ./public/static

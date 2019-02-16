@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Banner(props) {
     const { children } = props;
-    return <div style={{ height: '50vh', minHeight: 250 }}>{children}</div>;
+    return <div style={{ height: '66vh', minHeight: 250 }}>{children}</div>;
 }
 
 Banner.propTypes = {

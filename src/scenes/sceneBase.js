@@ -1,22 +1,38 @@
 import { Scene, WebGLRenderer } from 'three';
 import { mobileCheck } from 'utils';
+import Stats from 'stats-js';
 
-// Adapted from https://github.com/tengbao/vanta/blob/master/src/_base.js
+// A base class for ThreeJS scenes that handles common functionality
+// API adapted from https://github.com/tengbao/vanta/blob/master/src/_base.js
 class SceneBase {
-    constructor(containerElement) {
+    constructor(containerElement, options = {}) {
         // Function bindings
         this.onMouseMoveWrapper = this.onMouseMoveWrapper.bind(this);
+        this.onTouchMoveWrapper = this.onTouchMoveWrapper.bind(this);
+        this.onTouchDownWrapper = this.onTouchDownWrapper.bind(this);
+        this.registerAnimationFrame = this.registerAnimationFrame.bind(this);
         this.resize = this.resize.bind(this);
         this.animationLoop = this.animationLoop.bind(this);
         this.restart = this.restart.bind(this);
 
         // Set container element reference
         this.el = containerElement;
-        // Alias default options into full options object
-        this.options = this.defaultOptions || {};
+        this.options = options;
+
         // Initialize environment
         this.initThree();
         this.resize();
+
+        // Add fps stats if in development
+        this.isDev = (process.env.NODE_ENV === 'development' || true);
+        if (this.isDev) {
+            this.stats = new Stats();
+            this.stats.dom.style.bottom = '52px';
+            this.stats.dom.style.top = 'auto';
+            this.stats.dom.style.position = 'relative';
+            this.el.appendChild(this.stats.dom);
+            this.statsSet = false;
+        }
 
         // Attempt to initialize subclass
         try {
@@ -27,6 +43,7 @@ class SceneBase {
             console.error(e);
             if (this.renderer) {
                 this.el.removeChild(this.renderer.domElement);
+                this.el.removeChild(this.stats.dom);
             }
             return;
         }
@@ -56,6 +73,7 @@ class SceneBase {
         const canvas = this.renderer.domElement;
         canvas.style.width = '100%';
         canvas.style.height = '100%';
+        this.canvas = canvas;
         this.el.appendChild(canvas);
         this.renderer.setPixelRatio(window.devicePixelRatio || 1.0);
         this.renderer.setSize(this.el.width, this.el.height);
@@ -63,8 +81,8 @@ class SceneBase {
     }
 
     onMouseMoveWrapper(e) {
-        const x = (this.mouseX = event.clientX - this.width / 2.0);
-        const y = (this.mouseY = e.clientY - this.height / 2.0);
+        const x = (this.mouseX = e.clientX / this.width - 0.5);
+        const y = (this.mouseY = e.clientY / this.height - 0.5);
         if (!this.options.mouseEase) {
             this.triggerMouseMove(x, y);
         }
@@ -89,7 +107,6 @@ class SceneBase {
 
     onTouchMoveWrapper(e) {
         if (event.touches.length === 1) {
-            e.preventDefault();
             const x = (this.mouseX = event.clientX - this.width / 2.0);
             const y = (this.mouseY = e.clientY - this.height / 2.0);
             if (!this.options.mouseEase) {
@@ -112,7 +129,7 @@ class SceneBase {
         this.setSize();
         const camera = this.camera;
         const renderer = this.renderer;
-        if (this.camera != null) {
+        if (this.camera) {
             camera.aspect = this.width / this.height;
             camera.updateProjectionMatrix();
         }
@@ -130,6 +147,10 @@ class SceneBase {
     }
 
     isVisible() {
+        if (document.hidden || document.visibilityState === 'hidden') {
+            return false;
+        }
+
         // Height of element
         const elHeight = this.el.offsetHeight;
         // Coordinate offsets of element from top of screen
@@ -153,14 +174,30 @@ class SceneBase {
         return minScrollTop <= scrollTop && scrollTop <= maxScrollTop;
     }
 
+    registerAnimationFrame() {
+        // No longer need to keep track of timeout that just triggered
+        this.timeout = null;
+        this.nextFrame = requestAnimationFrame(this.animationLoop);
+    }
+
     animationLoop() {
+        // Record fps if in dev
+        if (this.isDev && !this.statsSet) {
+            this.stats.begin();
+            this.statsSet = true;
+        }
+
+        // No longer need to keep track of frame that just triggered
+        this.nextFrame = null;
+
         // Ease mouse
         if (this.options.mouseEase) {
             this.mouseEaseX = this.mouseEaseX || this.mouseX || 0;
             this.mouseEaseY = this.mouseEaseY || this.mouseY || 0;
-            if (Math.abs(this.mouseEaseX - this.mouseX)
-                + Math.abs(this.mouseEaseY - this.mouseY)
-                > 0.1
+            if (
+                Math.abs(this.mouseEaseX - this.mouseX) +
+                    Math.abs(this.mouseEaseY - this.mouseY) >
+                0.1
             ) {
                 this.mouseEaseX =
                     this.mouseEaseX + (this.mouseX - this.mouseEaseX) * 0.05;
@@ -172,15 +209,30 @@ class SceneBase {
 
         // Only animate if element is within view
         if (this.isVisible()) {
+            // Ask to update the screen asap
+            this.registerAnimationFrame();
             if (typeof this.onUpdate === 'function') {
                 this.onUpdate();
             }
             if (this.scene && this.camera) {
                 this.renderer.render(this.scene, this.camera);
             }
-        }
 
-        this.nextFrame = requestAnimationFrame(this.animationLoop);
+            // Record fps if in dev
+            if (this.isDev) {
+                this.stats.end();
+                this.statsSet = false;
+            }
+        } else {
+            // Throttle callback since canvas is offscreen
+            this.timeout = setTimeout(this.registerAnimationFrame, 250);
+        }
+    }
+
+    init() {
+        if (typeof this.onInit === 'function') {
+            this.onInit();
+        }
     }
 
     restart() {
@@ -196,28 +248,27 @@ class SceneBase {
         this.init();
     }
 
-    init() {
-        if (typeof this.onInit === 'function') {
-            this.onInit();
-        }
-    }
-
     destroy() {
         if (typeof this.onDestroy === 'function') {
             this.onDestroy();
         }
 
+        // Listener cleanup
         document.removeEventListener('touchstart', this.onTouchDownWrapper);
         document.removeEventListener('touchmove', this.onTouchMoveWrapper);
         document.removeEventListener('mousemove', this.onMouseMoveWrapper);
         window.removeEventListener('scroll', this.onMouseMoveWrapper);
         window.removeEventListener('resize', this.resize);
-        window.cancelAnimationFrame(this.nextFrame);
+        (this.nextFrame) && window.cancelAnimationFrame(this.nextFrame);
+        (this.timeout) && clearInterval(this.timeout);
 
+        // Memory cleanup
         if (this.renderer) {
             this.el.removeChild(this.renderer.domElement);
-            this.renderer = null;
-            this.scene = null;
+            delete this.renderer;
+        }
+        if (this.scene) {
+            delete this.scene;
         }
     }
 }

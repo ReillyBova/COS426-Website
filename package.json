@@ -35,10 +35,12 @@
     "gatsby-plugin-sitemap": "^2.0.5",
     "jss": "^9.8.7",
     "prop-types": "^15.6.2",
+    "raw-loader": "^1.0.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
+    "stats-js": "^1.0.0",
     "three": "^0.101.1"
   },
   "devDependencies": {
