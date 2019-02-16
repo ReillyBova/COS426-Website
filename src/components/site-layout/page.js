@@ -13,7 +13,7 @@ const styles = (theme) => ({
 });
 
 const Page = ({ children, classes }) => (
-    <section className={classes.root}>{children}</section>
+    <main className={classes.root}>{children}</main>
 );
 
 Page.propTypes = {

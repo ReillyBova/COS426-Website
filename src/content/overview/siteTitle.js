@@ -57,7 +57,7 @@ const styles = (theme) => ({
 function SiteTitle(props) {
     const { classes } = props;
     return (
-        <div className={classes.alignment}>
+        <title className={classes.alignment}>
             <Typography
                 variant="h1"
                 color="inherit"
@@ -69,7 +69,7 @@ function SiteTitle(props) {
             <Typography variant="h2" color="inherit" className={classes.term}>
                 {'Spring 2019'}
             </Typography>
-        </div>
+        </title>
     );
 }
 

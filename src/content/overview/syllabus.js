@@ -28,7 +28,7 @@ const styles = (theme) => ({
 function Syllabus(props) {
     const { classes } = props;
     return (
-        <Typography component="div" paragraph={true}>
+        <Typography component={'section'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
                 {'Syllabus'}
             </Typography>

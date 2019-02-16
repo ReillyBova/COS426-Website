@@ -27,7 +27,7 @@ const styles = (theme) => ({
 function Coursework(props) {
     const { classes } = props;
     return (
-        <Typography component={'div'} paragraph={true}>
+        <Typography component={'section'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
                 {'Coursework'}
             </Typography>

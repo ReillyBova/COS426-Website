@@ -38,7 +38,7 @@ class Staff extends React.Component {
         const { show_people } = this.state;
 
         return (
-            <Typography component="div" paragraph={true}>
+            <Typography component={'section'} paragraph={true}>
                 <Typography variant="h4" gutterBottom>
                     {'Staff'}
                 </Typography>

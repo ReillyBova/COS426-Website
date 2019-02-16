@@ -6,7 +6,7 @@ import text from './preceptsText';
 
 function Precepts() {
     return (
-        <Typography component={'div'} paragraph={true}>
+        <Typography component={'section'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
                 {'Precepts'}
             </Typography>

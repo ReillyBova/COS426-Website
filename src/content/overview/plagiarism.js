@@ -6,7 +6,7 @@ import text from './plagiarismText';
 
 function Plagiarism() {
     return (
-        <Typography component={'div'} paragraph={true}>
+        <Typography component={'section'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
                 {'Plagiarism'}
             </Typography>

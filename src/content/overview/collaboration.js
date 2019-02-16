@@ -7,7 +7,7 @@ import text from './collaborationText';
 
 function CollaborationPage() {
     return (
-        <Typography component={'div'} paragraph={true}>
+        <Typography component={'section'} paragraph={true}>
             <Typography variant="h4" gutterBottom>
                 {'Collaboration Policy'}
             </Typography>
