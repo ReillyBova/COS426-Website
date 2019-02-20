@@ -25,7 +25,7 @@ class SceneBase {
         this.onResizeWrapper();
 
         // Add fps stats if in development
-        this.isDev = process.env.NODE_ENV === 'development';
+        this.isDev = process.env.NODE_ENV === 'development' && false;
         if (this.isDev) {
             this.stats = new Stats();
             this.stats.dom.style.bottom = '52px';

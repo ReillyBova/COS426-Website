@@ -30,6 +30,10 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+canvas {
+    display: block;
+}
+
 @keyframes SoftLoad {
 	0% {
 		opacity: 0;

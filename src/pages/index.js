@@ -15,7 +15,7 @@ import {
 function IndexPage() {
     return (
         <Layout>
-            <Banner height={66}>
+            <Banner height={'66vh'}>
                 <SiteTitle />
                 <ThreeContainer />
             </Banner>

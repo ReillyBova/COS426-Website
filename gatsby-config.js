@@ -20,7 +20,6 @@ module.exports = {
                 icon: 'src/images/princeton-shield.png', // This path is relative to the root of the site.
             },
         },
-        'gatsby-plugin-offline',
         {
             resolve: 'gatsby-plugin-module-resolver',
             options: {
@@ -49,6 +48,7 @@ module.exports = {
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
+        'gatsby-plugin-offline',
     ],
     pathPrefix: '/COS426-Website',
 };

@@ -10,6 +10,7 @@ const styles = (theme) => ({
         height: 'inherit',
         minHeight: 'inherit',
         width: '100%',
+        overflow: 'hidden',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
@@ -22,44 +23,45 @@ const styles = (theme) => ({
     },
     header: {
         textShadow: '3px 4px 4px rgba(0,0,0,0.1)',
-        fontWeight: 600,
+        fontWeight: 700,
+        marginBottom: '1rem',
         [theme.breakpoints.only('xl')]: {
-            fontSize: '6rem',
+            fontSize: '24rem',
         },
         [theme.breakpoints.only('lg')]: {
-            fontSize: '5rem',
+            fontSize: '20rem',
         },
         [theme.breakpoints.only('md')]: {
-            fontSize: '4rem',
+            fontSize: '16rem',
         },
         [theme.breakpoints.only('sm')]: {
-            fontSize: '3rem',
+            fontSize: '12rem',
         },
         [theme.breakpoints.only('xs')]: {
-            fontSize: '2rem',
+            fontSize: '8rem',
         },
     },
     term: {
         textShadow: '3px 4px 4px rgba(0,0,0,0.1)',
         [theme.breakpoints.only('xl')]: {
-            fontSize: '4.5rem',
+            fontSize: '2.7rem',
         },
         [theme.breakpoints.only('lg')]: {
-            fontSize: '3.75rem',
-        },
-        [theme.breakpoints.only('md')]: {
-            fontSize: '3rem',
-        },
-        [theme.breakpoints.only('sm')]: {
             fontSize: '2.25rem',
         },
+        [theme.breakpoints.only('md')]: {
+            fontSize: '1.8rem',
+        },
+        [theme.breakpoints.only('sm')]: {
+            fontSize: '1.35rem',
+        },
         [theme.breakpoints.only('xs')]: {
-            fontSize: '1.5rem',
+            fontSize: '0.9rem',
         },
     },
 });
 
-function SiteTitle(props) {
+function Message404(props) {
     const { classes } = props;
     return (
         <title className={classes.alignment}>
@@ -67,15 +69,15 @@ function SiteTitle(props) {
                 variant="h1"
                 color="inherit"
                 className={classes.header}
-                gutterBottom
             >
-                {'COS 426: Computer Graphics'}
+                {'404'}
             </Typography>
-            <Typography variant="h2" color="inherit" className={classes.term}>
-                {'Spring 2019'}
+            <Typography variant="body1" color="inherit" className={classes.term}>
+                {'The page you are looking for lies outside of the view '}
+                <span style={{whiteSpace: 'nowrap'}}> {'frustrum :('} </span>
             </Typography>
         </title>
     );
 }
 
-export default withStyles(styles)(SiteTitle);
+export default withStyles(styles)(Message404);
