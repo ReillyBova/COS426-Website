@@ -124,7 +124,7 @@ class CollaborationTable extends React.Component {
                                     {rowName}
                                 </TableCell>
                                 <TableCell>
-                                    {table.values[value][i] ? (
+                                    {table.values[i][value] ? (
                                         <CheckIcon color="primary" />
                                     ) : (
                                         <CancelIcon color="secondary" />

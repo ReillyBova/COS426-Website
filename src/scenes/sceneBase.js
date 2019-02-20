@@ -10,8 +10,9 @@ class SceneBase {
         this.onMouseMoveWrapper = this.onMouseMoveWrapper.bind(this);
         this.onTouchMoveWrapper = this.onTouchMoveWrapper.bind(this);
         this.onTouchDownWrapper = this.onTouchDownWrapper.bind(this);
+        this.onScrollWrapper = this.onScrollWrapper.bind(this);
+        this.onResizeWrapper = this.onResizeWrapper.bind(this);
         this.registerAnimationFrame = this.registerAnimationFrame.bind(this);
-        this.resize = this.resize.bind(this);
         this.animationLoop = this.animationLoop.bind(this);
         this.restart = this.restart.bind(this);
 
@@ -21,7 +22,7 @@ class SceneBase {
 
         // Initialize environment
         this.initThree();
-        this.resize();
+        this.onResizeWrapper();
 
         // Add fps stats if in development
         this.isDev = process.env.NODE_ENV === 'development';
@@ -69,7 +70,8 @@ class SceneBase {
                 false
             );
         }
-        window.addEventListener('resize', this.resize, false);
+        window.addEventListener('scroll', this.onScrollWrapper, false);
+        window.addEventListener('resize', this.onResizeWrapper, false);
     }
 
     initThree() {
@@ -116,6 +118,16 @@ class SceneBase {
         }
     }
 
+    onScrollWrapper() {
+        const scroll = (window.pageYOffset ||
+            (
+                document.documentElement ||
+                document.body.parentNode ||
+                document.body
+            ).scrollTop);
+        this.onScroll && this.onScroll(scroll);
+    }
+
     setSize() {
         if (mobileCheck() && this.options.scaleMobile) {
             this.scale = this.options.scaleMobile;
@@ -126,7 +138,7 @@ class SceneBase {
         this.height = this.el.offsetHeight || window.innerHeight;
     }
 
-    resize() {
+    onResizeWrapper() {
         this.setSize();
         const camera = this.camera;
         const renderer = this.renderer;
@@ -197,7 +209,7 @@ class SceneBase {
             this.registerAnimationFrame();
 
             // Run update
-            this.onUpdate && this.onUpdate();
+            this.onRender && this.onRender();
             if (this.scene && this.camera) {
                 this.renderer.render(this.scene, this.camera);
             }
@@ -241,7 +253,8 @@ class SceneBase {
         document.removeEventListener('touchstart', this.onTouchDownWrapper);
         document.removeEventListener('touchmove', this.onTouchMoveWrapper);
         document.removeEventListener('mousemove', this.onMouseMoveWrapper);
-        window.removeEventListener('resize', this.resize);
+        window.removeEventListener('scroll', this.onScrollWrapper);
+        window.removeEventListener('resize', this.onResizeWrapper);
         this.nextFrame && window.cancelAnimationFrame(this.nextFrame);
         this.timeout && clearInterval(this.timeout);
 

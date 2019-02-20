@@ -36,13 +36,20 @@ const defaultOptions = {
         [122, 193, 255],
     ],
     gradientSpeed: 0.006,
+    mouseSensitivityX: 50,
+    mouseSensitivityY: 25,
+    touchSensitivityX: 70,
+    touchSensitivityY: 35,
+    scrollSensitivity: .1,
 };
 
 class NetworkScene extends SceneBase {
     constructor(containerElement, options = defaultOptions) {
+        // Call parent constructor SceneBase() on default options
         super(containerElement, options);
     }
 
+    // Initialize scene-specific variables (called by SceneBase)
     onInit() {
         const {
             numPoints,
@@ -51,6 +58,7 @@ class NetworkScene extends SceneBase {
             fov,
             maxOpacity,
         } = this.options;
+
         // Adjust option values based on current device
         this.params = {};
         if (mobileCheck()) {
@@ -85,7 +93,20 @@ class NetworkScene extends SceneBase {
             y: spacing / 6,
             z: spacing * 0.8,
         };
+
+        // Init interaction controls
         this.params.cameraStart = cameraStart;
+        this.params.movingCamera = false;
+        this.params.scrollOffset = 0;
+        this.params.touchDownOffsetX = 0;
+        this.params.touchDownOffsetY = 0;
+        this.params.currentX = 0;
+        this.params.currentY = 0;
+        this.params.mouseTarget = {
+            x: cameraStart.x,
+            y: cameraStart.y,
+            z: cameraStart.z,
+        };
 
         if (!this.camera) {
             this.camera = new PerspectiveCamera(
@@ -105,12 +126,13 @@ class NetworkScene extends SceneBase {
         this.params.oddFrame = false;
     }
 
-    onUpdate() {
+    // Render function (called every frame by SceneBase)
+    onRender() {
         const { mouseSpeed } = this.options;
-        const { mouseTarget, oddFrame } = this.params;
+        const { mouseTarget, oddFrame, movingCamera } = this.params;
 
         // Move camera
-        if (mouseTarget) {
+        if (movingCamera) {
             const c = this.camera;
             const dx = mouseTarget.x - c.position.x;
             const dy = mouseTarget.y - c.position.y;
@@ -132,6 +154,8 @@ class NetworkScene extends SceneBase {
 
             if (adjustCamera) {
                 c.lookAt(new Vector3(0, 0, 0));
+            } else {
+                this.params.movingCamera = false;
             }
         }
 
@@ -140,72 +164,75 @@ class NetworkScene extends SceneBase {
         this.params.oddFrame = !oddFrame;
     }
 
+    // Window resize behavior (called by SceneBase)
     onResize() {
+        // Reinitialize scene in different device mode
         if (this.params && mobileCheck() !== this.params.mobile) {
             this.restart();
         }
     }
 
+    // Mouse movement behavior (called by SceneBase)
     onMouseMove(x, y) {
-        const { cameraStart } = this.params;
-        if (!this.params.mouseTarget) {
-            this.params.mouseTarget = {
-                x: cameraStart.x,
-                y: cameraStart.y,
-                z: cameraStart.z,
-            };
-        }
-        const mouseTarget = this.params.mouseTarget;
+        const { mouseSensitivityX, mouseSensitivityY } = this.options;
 
         // Camera will slowly move towards the target location
-        mouseTarget.x = cameraStart.x + x * 50;
-        mouseTarget.y = cameraStart.y - y * 20;
-        mouseTarget.z = cameraStart.z - x * 50;
+        this.moveCamera(x * mouseSensitivityX, y * mouseSensitivityY);
     }
 
+    // Screen touch-down behavior (called by SceneBase)
     onTouchDown(x, y) {
-        const { cameraStart } = this.params;
-        if (!this.params.mouseTarget) {
-            this.params.mouseTarget = {
-                x: cameraStart.x,
-                y: cameraStart.y,
-                z: cameraStart.z,
-            };
-        }
-        const mouseTarget = this.params.mouseTarget;
-        this.params.touchDownOffsetX = x + (mouseTarget.x - cameraStart.x) / 50;
-        this.params.touchDownOffsetY = y + (cameraStart.y - mouseTarget.y) / 80;
+        const { cameraStart, mouseTarget } = this.params;
+        const { touchSensitivityX, touchSensitivityY } = this.options;
+
+        this.params.touchDownOffsetX = x + (mouseTarget.x - cameraStart.x) / touchSensitivityX;
+        this.params.touchDownOffsetY = y + (cameraStart.y - mouseTarget.y) / touchSensitivityY;
     }
 
+    // Screen touch-move behavior (called by SceneBase)
     onTouchMove(x, y) {
-        const { cameraStart, touchDownOffsetX, touchDownOffsetY } = this.params;
-        if (!this.params.mouseTarget) {
-            this.params.mouseTarget = {
-                x: cameraStart.x,
-                y: cameraStart.y,
-                z: cameraStart.z,
-            };
-        }
+        const { touchDownOffsetX, touchDownOffsetY } = this.params;
+        const { touchSensitivityX, touchSensitivityY } = this.options;
 
         // Offset from touch start
-        const mouseTarget = this.params.mouseTarget;
-        const dx = clamp(touchDownOffsetX - x, -2, 2);
-        const dy = clamp(touchDownOffsetY - y, -2, 2);
+        const dx = touchDownOffsetX - x;
+        const dy = touchDownOffsetY - y;
 
         // Camera will slowly move towards the target location
-        mouseTarget.x = cameraStart.x + dx * 50;
-        mouseTarget.y = cameraStart.y - dy * 80;
-        mouseTarget.z = cameraStart.z + dx * -50;
+        this.moveCamera(dx * touchSensitivityX, dy * touchSensitivityY);
     }
 
+    // Page scrolling behavior (called by SceneBase)
+    onScroll(y) {
+        const { scrollSensitivity } = this.options;
+        const { currentX, currentY } = this.params;
+
+        this.params.scrollOffset = y * scrollSensitivity;
+
+        // Camera will slowly move towards the target location
+        this.moveCamera(currentX, currentY);
+    }
+
+    // Memory cleanup for scene restart
     onRestart() {
         this.scene.remove(this.params.linesMesh);
         this.scene.remove(this.params.points);
+
+        delete this.params.linesMesh;
+        delete this.params.points;
+        delete this.params.pointPositions;
+        delete this.params.rotationSpeeds;
+        delete this.params.rotationRadii;
+        delete this.params.linePositions;
+        delete this.params.lineOpacities;
     }
 
+    // Memory cleaup for deletion
     onDestroy() {
         this.onRestart();
         this.scene.remove(this.camera);
+
+        delete this.camera;
     }
 
     // Initialization function for line geometry
@@ -277,7 +304,7 @@ class NetworkScene extends SceneBase {
 
         // Initialize position and speed for each point
         this.params.rotationSpeeds = new Float32Array(numPoints);
-        this.params.rotationRadius = new Float32Array(numPoints);
+        this.params.rotationRadii = new Float32Array(numPoints);
         let index = 0;
         for (let i = 0; i < numPoints; i++) {
             let x = randFloat(0, spacing);
@@ -314,7 +341,7 @@ class NetworkScene extends SceneBase {
 
             // Set speed
             const dist = Math.sqrt(x ** 2 + z ** 2);
-            this.params.rotationRadius[i] = dist;
+            this.params.rotationRadii[i] = dist;
             this.params.rotationSpeeds[i] =
                 dist > 0.1
                     ? (randFloat(-maxSpeed, maxSpeed) * spacing) / dist
@@ -329,6 +356,7 @@ class NetworkScene extends SceneBase {
         this.scene.add(this.params.points);
     }
 
+    // Initialization function for multicolor gradient on canvas
     initCanvas() {
         const { gradientColors, gradientSpeed } = this.options;
 
@@ -341,6 +369,7 @@ class NetworkScene extends SceneBase {
         this.updateCanvas();
     }
 
+    // Update method for scene geometries
     updateGeometries() {
         const {
             maxDistanceSqd,
@@ -349,7 +378,7 @@ class NetworkScene extends SceneBase {
             numPoints,
             pointPositions,
             rotationSpeeds,
-            rotationRadius,
+            rotationRadii,
             linePositions,
             lineOpacities,
             maxOpacity,
@@ -375,8 +404,8 @@ class NetworkScene extends SceneBase {
             if (rotationSpeeds[i] !== 0) {
                 let ang = Math.atan2(pz, px);
                 ang += 0.0005 * rotationSpeeds[i];
-                pointPositions[x] = rotationRadius[i] * Math.cos(ang);
-                pointPositions[z] = rotationRadius[i] * Math.sin(ang);
+                pointPositions[x] = rotationRadii[i] * Math.cos(ang);
+                pointPositions[z] = rotationRadii[i] * Math.sin(ang);
             }
 
             // Test if we should draw a line between this points and other points
@@ -427,6 +456,7 @@ class NetworkScene extends SceneBase {
         points.geometry.attributes.position.needsUpdate = true;
     }
 
+    // Update method for animated canvas gradient
     updateCanvas() {
         const {
             gradientColors,
@@ -491,6 +521,24 @@ class NetworkScene extends SceneBase {
             gradientIndices[1] %= gradientColors.length;
             gradientIndices[3] %= gradientColors.length;
         }
+    }
+
+    // Helper function for camera movement
+    moveCamera(x, y) {
+        const { cameraStart, scrollOffset, mouseTarget } = this.params;
+
+        this.params.currentX = x;
+        this.params.currentY = y;
+
+        const dx = clamp(x, -100, 100);
+        const dy = clamp(y + scrollOffset, -50, 50);
+
+        // Camera will slowly move towards the target location
+        mouseTarget.x = cameraStart.x + dx;
+        mouseTarget.y = cameraStart.y - dy;
+        mouseTarget.z = cameraStart.z - dx;
+
+        this.params.movingCamera = true;
     }
 }
 
