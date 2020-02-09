@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://reillybova.github.io/COS426-Website/sitemap.xml
-Host: https://reillybova.github.io
