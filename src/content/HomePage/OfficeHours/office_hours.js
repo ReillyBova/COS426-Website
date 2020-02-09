@@ -45,6 +45,14 @@ const office_hours = {
         staff will either state what part of it is wrong, and / or ask a
         question to give the student something to think about.`,
     ],
+    schedule: [
+        `Undergraduate LabTAs are avaliable to help students during both precepts.
+        LabTAs are also avaliable in the Friend Fishbowl room Friday 11am–4pm,
+        Saturday 12–3pm, and Sunday 1–5pm & 9–11pm.`,
+        `Graduate course staff are avaliable in CS 003 from 3–5pm on Mondays,
+        and 1–2pm on Tuesdays. Professor Heide's office hours are held Tuesday
+        after class in CS 104 or CS 410.`
+    ]
 };
 
 export default office_hours;

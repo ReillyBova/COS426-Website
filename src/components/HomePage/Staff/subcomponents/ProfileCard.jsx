@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 // UI imports
@@ -15,12 +15,22 @@ import EmailIcon from '@material-ui/icons/Email';
 import GithubIcon from 'mdi-material-ui/GithubCircle';
 
 // Custom styling for component
-const profileCardStyles = makeStyles(() => ({
+const profileCardStyles = makeStyles((theme) => ({
     profile: {
-        maxWidth: 250,
         height: '100%',
         margin: 'auto',
-        minWidth: 175,
+        display: 'flex',
+        flexDirection: 'column',
+        width: 250,
+        [theme.breakpoints.down('md')]: {
+            width: 225,
+            [theme.breakpoints.down('sm')]: {
+                width: 180,
+                [theme.breakpoints.down('xs')]: {
+                    width: 250,
+                }
+            }
+        }
     },
     button: {
         height: '100%',
@@ -37,11 +47,16 @@ const profileCardStyles = makeStyles(() => ({
     profile_text: {
         paddingTop: 0,
         paddingBottom: 0,
+        flexGrow: 1
     },
+    lightText: {
+        fontWeight: 300
+    }
 }));
 
-function ProfileCard({ name, role, image, link, email, github, website }) {
+function ProfileCard({ name, role, officeHours, image, link, email, github, website }) {
     const classes = profileCardStyles();
+
     return (
         <Card className={classes.profile}>
             <CardContent align='center'>
@@ -63,10 +78,20 @@ function ProfileCard({ name, role, image, link, email, github, website }) {
                 )}
             </CardContent>
             <CardContent className={classes.profile_text}>
+                <Typography variant='body2'>{role}</Typography>
                 <Typography variant='subtitle1' gutterBottom>
                     {name}
                 </Typography>
-                <Typography variant='body1'>{role}</Typography>
+                {officeHours &&
+                    <Fragment>
+                        <Typography variant='body1'>
+                            {"Office Hours"}
+                        </Typography>
+                        <Typography className={classes.lightText} variant='body2'>
+                            {officeHours}
+                        </Typography>
+                    </Fragment>
+                }
             </CardContent>
             <CardActions>
                 {email && (

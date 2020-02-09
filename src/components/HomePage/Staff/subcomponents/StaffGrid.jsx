@@ -17,6 +17,7 @@ export const instructorDataFragment = graphql`
             featuredURL
             githubURL
             websiteURL
+            officeHours
         }
     }
 `;
@@ -104,6 +105,7 @@ const StaffGrid = forwardRef((props, ref) => {
                         link={frontmatter.featuredURL}
                         github={frontmatter.githubURL}
                         website={frontmatter.websiteURL}
+                        officeHours={frontmatter.officeHours}
                     />
                 </Grid>
             ))}
@@ -126,6 +128,7 @@ const StaffGrid = forwardRef((props, ref) => {
                         link={frontmatter.featuredURL}
                         github={frontmatter.githubURL}
                         website={frontmatter.websiteURL}
+                        officeHours={frontmatter.officeHours}
                     />
                 </Grid>
             ))}
@@ -148,6 +151,7 @@ const StaffGrid = forwardRef((props, ref) => {
                         link={frontmatter.featuredURL}
                         github={frontmatter.githubURL}
                         website={frontmatter.websiteURL}
+                        officeHours={frontmatter.officeHours}
                     />
                 </Grid>
             ))}

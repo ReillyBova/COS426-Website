@@ -13,4 +13,6 @@ featuredURL: "https://github.com/ReillyBova/"
 githubURL: "https://github.com/ReillyBova/"
 # Website URL
 websiteURL: ""
+# Office Hours
+officeHours: "Sunday 2–4pm in the Friend Fishbowl, as well as Precept Problem Sessions in Friend 008"
 ---

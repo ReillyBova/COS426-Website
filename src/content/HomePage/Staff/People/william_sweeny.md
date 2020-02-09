@@ -13,4 +13,6 @@ featuredURL: "https://github.com/kattusite"
 githubURL: "https://github.com/kattusite"
 # Website URL
 websiteURL: ""
+# Office Hours
+officeHours: "Friday 11am–1pm, and Sunday 3–5pm in the Friend Fishbowl, as well as Precept Problem Sessions in Friend 008"
 ---

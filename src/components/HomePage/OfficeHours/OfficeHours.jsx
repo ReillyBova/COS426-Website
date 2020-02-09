@@ -43,6 +43,15 @@ function OfficeHours() {
                     {office_hours.notes[2]}
                 </Typography>
             </Typography>
+            <Typography component={'div'} paragraph={true}>
+                <Typography variant='h6'>{'Schedule'}</Typography>
+                <Typography variant='body1' paragraph={true}>
+                    {office_hours.schedule[0]}
+                </Typography>
+                <Typography variant='body1' paragraph={true}>
+                    {office_hours.schedule[1]}
+                </Typography>
+            </Typography>
         </Typography>
     );
 }

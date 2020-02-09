@@ -13,4 +13,6 @@ featuredURL: "https://www.cs.princeton.edu/~dhaller/"
 githubURL: ""
 # Website URL
 websiteURL: "https://www.cs.princeton.edu/~dhaller/"
+# Office Hours
+officeHours: "Tuesday 1–2pm in CS 003"
 ---

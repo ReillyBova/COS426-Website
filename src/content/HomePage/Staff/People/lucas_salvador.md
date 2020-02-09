@@ -13,4 +13,6 @@ featuredURL: "https://www.princeton.edu/search?search=lucas%20salvador#people"
 githubURL: ""
 # Website URL
 websiteURL: ""
+# Office Hours
+officeHours: "Friday 12–2pm in the Friend Fishbowl"
 ---
