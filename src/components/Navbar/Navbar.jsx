@@ -81,7 +81,9 @@ function Navbar({ classes }) {
                     })}
                     <div>
                         <IconButton
-                            aria-owns={open ? 'menu-appbar' : undefined}
+                            aria-owns={
+                                isDropdownOpen ? 'menu-appbar' : undefined
+                            }
                             aria-haspopup='true'
                             className={menuButton}
                             onClick={handleMenu}

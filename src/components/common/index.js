@@ -1,3 +1,4 @@
+export * from './AnchorLink';
 export * from './Banner';
 export * from './Content';
 export * from './InternalLink';

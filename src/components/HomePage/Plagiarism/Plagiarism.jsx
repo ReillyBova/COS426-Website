@@ -1,6 +1,7 @@
 // Library imports
 import React from 'react';
 // Project imports
+import { AnchorLink } from 'components';
 import { plagiarism } from 'content';
 import { urlify } from 'utils';
 // UI imports
@@ -10,8 +11,8 @@ function Plagiarism() {
     const title = 'Plagiarism';
     return (
         <Typography component={'section'} paragraph={true}>
-            <Typography variant='h4' id={urlify(title)} gutterBottom>
-                {title}
+            <Typography variant='h4' gutterBottom>
+                <AnchorLink id={urlify(title)}>{title}</AnchorLink>
             </Typography>
             <Typography variant='body1' paragraph={true}>
                 {plagiarism.plagiarism[0]}

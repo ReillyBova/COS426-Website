@@ -13,19 +13,19 @@ const office_hours = {
     help: [
         {
             scenario: `Course staff are happy to help explain course concepts or general techniques that students may be confused about.`,
-            example: `Could you please explain image convolution?`
+            example: `Could you please explain image convolution?`,
         },
         {
             scenario: `Course staff are happy to clarify assignment specs, provided the clarification is not about an intentional ambiguity.`,
-            example: `Should this filter rotate the image clockwise or counterclockwise?`
+            example: `Should this filter rotate the image clockwise or counterclockwise?`,
         },
         {
             scenario: `Course staff are happy to give the occasional starting hint (but no more) to put students on the right track for a certain problem.`,
-            example: `The runtime of the brush filter should not exceed 4r^2 per center.`
+            example: `The runtime of the brush filter should not exceed 4r^2 per center.`,
         },
         {
             scenario: `Course staff are happy to answer questions about JavaScript syntax.`,
-            example: `How can I iterate over entries in an Object?`
+            example: `How can I iterate over entries in an Object?`,
         },
         {
             scenario: `Course staff will give modest debugging assistance only once students
@@ -43,7 +43,7 @@ const office_hours = {
         simply state what region of the code looks wrong. Also, if a student's
         explanation is incorrect, instructors will not fix it for them. Course
         staff will either state what part of it is wrong, and / or ask a
-        question to give the student something to think about.`
+        question to give the student something to think about.`,
     ],
 };
 

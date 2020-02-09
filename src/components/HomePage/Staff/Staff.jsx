@@ -1,6 +1,7 @@
 // Library imports
 import React, { useState } from 'react';
 // Project imports
+import { AnchorLink } from 'components';
 import { staff } from 'content';
 import { urlify } from 'utils';
 // UI imports
@@ -41,8 +42,8 @@ function Staff() {
 
     return (
         <Typography component={'section'} paragraph={true}>
-            <Typography variant='h4' id={urlify(title)} gutterBottom>
-                {title}
+            <Typography variant='h4' gutterBottom>
+                <AnchorLink id={urlify(title)}>{title}</AnchorLink>
             </Typography>
             <Typography variant='body1' paragraph={true}>
                 {staff.text[0]}

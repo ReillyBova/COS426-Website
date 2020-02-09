@@ -1,6 +1,7 @@
 // Library imports
 import React from 'react';
 // Project imports
+import { AnchorLink } from 'components';
 import { Textbook } from 'images';
 import { syllabus } from 'content';
 import { urlify } from 'utils';
@@ -32,8 +33,8 @@ function Syllabus() {
     const title = 'Syllabus';
     return (
         <Typography component={'section'} paragraph={true}>
-            <Typography variant='h4' id={urlify(title)} gutterBottom>
-                {title}
+            <Typography variant='h4' gutterBottom>
+                <AnchorLink id={urlify(title)}>{title}</AnchorLink>
             </Typography>
             <Typography component='div' paragraph={true}>
                 <Typography variant='h6'>{'Description'}</Typography>
