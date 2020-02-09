@@ -1,1 +1,2 @@
-export * from './utilFunctions';
+export * from './graphics_utils';
+export * from './web_utils';

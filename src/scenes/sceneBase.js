@@ -12,6 +12,7 @@ class SceneBase {
         this.onTouchDownWrapper = this.onTouchDownWrapper.bind(this);
         this.onScrollWrapper = this.onScrollWrapper.bind(this);
         this.onResizeWrapper = this.onResizeWrapper.bind(this);
+        this.onVisibilityChange = this.onVisibilityChange.bind(this);
         this.registerAnimationFrame = this.registerAnimationFrame.bind(this);
         this.animationLoop = this.animationLoop.bind(this);
         this.restart = this.restart.bind(this);
@@ -25,7 +26,7 @@ class SceneBase {
         this.onResizeWrapper();
 
         // Add fps stats if in development
-        this.isDev = process.env.NODE_ENV === 'development' && false;
+        this.isDev = process.env.NODE_ENV === 'development';
         if (this.isDev) {
             this.stats = new Stats();
             this.stats.dom.style.bottom = '52px';
@@ -51,6 +52,14 @@ class SceneBase {
 
         // Bind event listeners safely now that we have initialized
         this.bindEventListeners();
+
+        // Setup intersection observer
+        this.isVisible = true;
+        this.intersectionObserver = new IntersectionObserver(
+            this.onVisibilityChange,
+            { threshold: 0.0 }
+        );
+        this.intersectionObserver.observe(this.renderer.domElement);
 
         // Start animation
         this.animationLoop();
@@ -119,13 +128,17 @@ class SceneBase {
     }
 
     onScrollWrapper() {
-        const scroll = (window.pageYOffset ||
+        const scroll =
+            window.pageYOffset ||
             (
                 document.documentElement ||
                 document.body.parentNode ||
                 document.body
-            ).scrollTop);
-        this.onScroll && this.onScroll(scroll);
+            ).scrollTop;
+
+        if (typeof this.onScroll === 'function') {
+            this.onScroll(scroll);
+        }
     }
 
     setSize() {
@@ -159,38 +172,25 @@ class SceneBase {
         }
     }
 
-    isVisible() {
-        if (document.hidden || document.visibilityState === 'hidden') {
-            return false;
+    onVisibilityChange(entries) {
+        if (entries.length < 1) {
+            return;
         }
 
-        // Height of element
-        const elHeight = this.el.offsetHeight;
-        // Coordinate offsets of element from top of screen
-        const elRect = this.el.getBoundingClientRect();
-        // Y coord for top of visible window/document/viewport
-        const scrollTop =
-            window.pageYOffset ||
-            (
-                document.documentElement ||
-                document.body.parentNode ||
-                document.body
-            ).scrollTop;
-        // Vertical distance between top of element and top of visible screen
-        const offsetTop = elRect.top + scrollTop;
-        // Min scrollTop value at which object becomes invisible
-        const minScrollTop = offsetTop - window.innerHeight;
-        // Max scrollTop value at which object becomes invisible
-        const maxScrollTop = offsetTop + elHeight;
+        // Restart animation if necessary
+        const entry = entries[0];
+        if (!this.isVisible && entry.isIntersecting) {
+            this.registerAnimationFrame();
+        }
 
-        // Test for visibility
-        return minScrollTop <= scrollTop && scrollTop <= maxScrollTop;
+        // Record visibility state
+        this.isVisible = entry.isIntersecting;
     }
 
     registerAnimationFrame() {
-        // No longer need to keep track of timeout that just triggered
-        this.timeout = null;
-        this.nextFrame = requestAnimationFrame(this.animationLoop);
+        if (!this.nextFrame) {
+            this.nextFrame = requestAnimationFrame(this.animationLoop);
+        }
     }
 
     animationLoop() {
@@ -204,7 +204,7 @@ class SceneBase {
         this.nextFrame = null;
 
         // Only animate if element is within view
-        if (this.isVisible()) {
+        if (this.isVisible) {
             // Ask to update the screen asap
             this.registerAnimationFrame();
 
@@ -219,9 +219,6 @@ class SceneBase {
                 this.stats.end();
                 this.statsSet = false;
             }
-        } else {
-            // Throttle callback since canvas is offscreen
-            this.timeout = setTimeout(this.registerAnimationFrame, 250);
         }
     }
 
@@ -255,8 +252,9 @@ class SceneBase {
         document.removeEventListener('mousemove', this.onMouseMoveWrapper);
         window.removeEventListener('scroll', this.onScrollWrapper);
         window.removeEventListener('resize', this.onResizeWrapper);
+        this.intersectionObserver.disconnect();
+        this.isVisible = false;
         this.nextFrame && window.cancelAnimationFrame(this.nextFrame);
-        this.timeout && clearInterval(this.timeout);
 
         // Memory cleanup
         if (this.renderer) {

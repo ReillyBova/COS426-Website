@@ -1,7 +1,5 @@
 require('./src/styles/styles.css');
 
-// onClientEntry() must be included for the requires above to be triggered,
-// even if it is empty!
 exports.onClientEntry = () => {
     // Load Roboto font to support Material Design
     const pathRoboto =

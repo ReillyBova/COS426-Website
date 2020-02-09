@@ -1,54 +1,49 @@
+const plugins = require('./gatsby-plugins.js');
+
+// Settings
+const numLecturesPosted = 1; // Increment every time a lecture is posted
+const numPreceptsPosted = 1; // Increment every time a precept is posted
+const semester = 2020; // Increment every year
+const firstDayOfSemester = '02-03'; // Adjust based off of academic calendar
+const firstLecture = 'Tuesday'; // Change based off of Registrar scheduling
+const secondLecture = 'Thursday'; // Change based off of Registrar scheduling
+
 module.exports = {
     siteMetadata: {
-        title: 'COS 426: Computer Graphics (2019) | Princeton University',
+        courseSettings: {
+            numLecturesPosted,
+            numPreceptsPosted,
+            semester,
+            firstDayOfSemester,
+            firstLecture,
+            secondLecture,
+        },
+        title: `COS 426: Computer Graphics (${semester}) | Princeton University`,
         siteUrl: `https://reillybova.github.io/COS426-Website/`,
-        description: `The Princeton University course website for the Spring 2019 term of COS 426: Computer Graphics`,
-        keywords: 'COS 426, Princeton, Graphics, Computer Science, Spring 2019',
+        description: `The Princeton University course website for the Spring ${semester} term of COS 426: Computer Graphics`,
+        author: 'ReillyBova',
+        keywords: [
+            'COS 426',
+            'Princeton',
+            'Graphics',
+            'Computer Science',
+            `Spring ${semester}`,
+        ],
+        relatedLinks: {
+            university: 'princeton.edu',
+            copyright: 'princeton.edu/meet-princeton/copyright-infringement',
+            privacy: 'princeton.edu/privacy-notice',
+        },
+        navigation: [
+            'Overview',
+            'Materials',
+            'Assignments',
+            'Exercises',
+            'Gallery',
+            'Links',
+        ],
+        homePage: 'Overview',
     },
-    plugins: [
-        'gatsby-plugin-react-helmet',
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name:
-                    'COS 426: Computer Graphics (2019) | Princeton University',
-                short_name: 'COS 426',
-                start_url: '/',
-                background_color: '#221e20',
-                theme_color: '#f58025',
-                display: 'minimal-ui',
-                icon: 'src/images/princeton-shield.png', // This path is relative to the root of the site.
-            },
-        },
-        {
-            resolve: 'gatsby-plugin-module-resolver',
-            options: {
-                root: './src', // <- will be used as a root dir
-                aliases: {
-                    components: './components', // <- will become ./src/components
-                    images: './images', // <- will become ./src/images
-                    utils: './utils', // <- will become ./src/images
-                    content: './content', // <- will become ./src/images
-                    scenes: './scenes', // <- will become ./src/scenes
-                    shaders: './shaders', // <- will become ./src/scenes
-                    static: {
-                        root: './public', // <- will used as this alias' root dir
-                        alias: './static', // <- will become ./public/static
-                    },
-                },
-            },
-        },
-        `gatsby-plugin-sitemap`,
-        {
-            resolve: 'gatsby-plugin-robots-txt',
-            options: {
-                host: 'https://reillybova.github.io/COS426-Website/',
-                sitemap:
-                    'https://reillybova.github.io/COS426-Website/sitemap.xml',
-                policy: [{ userAgent: '*', allow: '/' }],
-            },
-        },
-        'gatsby-plugin-offline',
-    ],
     pathPrefix: '/COS426-Website',
+    plugins: plugins,
 };

@@ -1,1 +1,1 @@
-export { default as NetworkScene } from './networkScene';
+export { default as NetworkScene } from './NetworkScene';

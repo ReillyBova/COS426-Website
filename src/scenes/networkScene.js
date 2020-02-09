@@ -12,6 +12,7 @@ import {
     PointsMaterial,
     TextureLoader,
     Points,
+    DynamicDrawUsage,
 } from 'three';
 import { OpacityFragmentShader, OpacityVertexShader } from 'shaders';
 import { CircleTexture } from 'images';
@@ -22,7 +23,7 @@ const defaultOptions = {
     numPoints: 150,
     maxDistance: 40,
     maxSpeed: 2,
-    mouseSpeed: 0.025,
+    cameraSpeed: 0.025,
     spacing: 100,
     showPoints: true,
     pointSize: 4,
@@ -40,7 +41,7 @@ const defaultOptions = {
     mouseSensitivityY: 25,
     touchSensitivityX: 70,
     touchSensitivityY: 35,
-    scrollSensitivity: .1,
+    scrollSensitivity: 0.1,
 };
 
 class NetworkScene extends SceneBase {
@@ -60,7 +61,7 @@ class NetworkScene extends SceneBase {
         } = this.options;
 
         // Adjust option values based on current device
-        this.params = {};
+        this.params = Object.assign({}, this.options);
         if (mobileCheck()) {
             this.params.mobile = true;
             this.params.numPoints = Math.floor(numPoints * 0.6);
@@ -69,16 +70,12 @@ class NetworkScene extends SceneBase {
             this.params.maxOpacity = maxOpacity * 0.6;
         } else {
             this.params.mobile = false;
-            this.params.numPoints = numPoints;
-            this.params.spacing = spacing;
             this.params.maxDistanceSqd = maxDistance ** 2;
-            this.params.maxOpacity = maxOpacity;
         }
 
         // Double number of possible lines due to line-segment implementation
         // (requires two attributes per line)
-        const numLines = 2 * numPoints ** 2;
-        this.params.numLines = numLines;
+        this.params.numLines = 2 * numPoints ** 2;
 
         // Allocate line mesh for scene
         this.initLines();
@@ -96,7 +93,7 @@ class NetworkScene extends SceneBase {
 
         // Init interaction controls
         this.params.cameraStart = cameraStart;
-        this.params.movingCamera = false;
+        this.params.movingCamera = true;
         this.params.scrollOffset = 0;
         this.params.touchDownOffsetX = 0;
         this.params.touchDownOffsetY = 0;
@@ -128,8 +125,12 @@ class NetworkScene extends SceneBase {
 
     // Render function (called every frame by SceneBase)
     onRender() {
-        const { mouseSpeed } = this.options;
-        const { mouseTarget, oddFrame, movingCamera } = this.params;
+        const {
+            cameraSpeed,
+            mouseTarget,
+            oddFrame,
+            movingCamera,
+        } = this.params;
 
         // Move camera
         if (movingCamera) {
@@ -140,15 +141,15 @@ class NetworkScene extends SceneBase {
             let adjustCamera = false;
 
             if (Math.abs(dx) > 0.01) {
-                c.position.x += dx * mouseSpeed;
+                c.position.x += dx * cameraSpeed;
                 adjustCamera = true;
             }
             if (Math.abs(dy) > 0.01) {
-                c.position.y += dy * mouseSpeed;
+                c.position.y += dy * cameraSpeed;
                 adjustCamera = true;
             }
             if (Math.abs(dz) > 0.01) {
-                c.position.z += dz * mouseSpeed;
+                c.position.z += dz * cameraSpeed;
                 adjustCamera = true;
             }
 
@@ -174,7 +175,7 @@ class NetworkScene extends SceneBase {
 
     // Mouse movement behavior (called by SceneBase)
     onMouseMove(x, y) {
-        const { mouseSensitivityX, mouseSensitivityY } = this.options;
+        const { mouseSensitivityX, mouseSensitivityY } = this.params;
 
         // Camera will slowly move towards the target location
         this.moveCamera(x * mouseSensitivityX, y * mouseSensitivityY);
@@ -182,17 +183,27 @@ class NetworkScene extends SceneBase {
 
     // Screen touch-down behavior (called by SceneBase)
     onTouchDown(x, y) {
-        const { cameraStart, mouseTarget } = this.params;
-        const { touchSensitivityX, touchSensitivityY } = this.options;
+        const {
+            cameraStart,
+            mouseTarget,
+            touchSensitivityX,
+            touchSensitivityY,
+        } = this.params;
 
-        this.params.touchDownOffsetX = x + (mouseTarget.x - cameraStart.x) / touchSensitivityX;
-        this.params.touchDownOffsetY = y + (cameraStart.y - mouseTarget.y) / touchSensitivityY;
+        this.params.touchDownOffsetX =
+            x + (mouseTarget.x - cameraStart.x) / touchSensitivityX;
+        this.params.touchDownOffsetY =
+            y + (cameraStart.y - mouseTarget.y) / touchSensitivityY;
     }
 
     // Screen touch-move behavior (called by SceneBase)
     onTouchMove(x, y) {
-        const { touchDownOffsetX, touchDownOffsetY } = this.params;
-        const { touchSensitivityX, touchSensitivityY } = this.options;
+        const {
+            touchDownOffsetX,
+            touchDownOffsetY,
+            touchSensitivityX,
+            touchSensitivityY,
+        } = this.params;
 
         // Offset from touch start
         const dx = touchDownOffsetX - x;
@@ -204,8 +215,7 @@ class NetworkScene extends SceneBase {
 
     // Page scrolling behavior (called by SceneBase)
     onScroll(y) {
-        const { scrollSensitivity } = this.options;
-        const { currentX, currentY } = this.params;
+        const { currentX, currentY, scrollSensitivity } = this.params;
 
         this.params.scrollOffset = y * scrollSensitivity;
 
@@ -255,13 +265,17 @@ class NetworkScene extends SceneBase {
         // Two custom attributes
         this.params.linePositions = new Float32Array(numLines * 3);
         this.params.lineOpacities = new Float32Array(numLines);
-        bufferGeometry.addAttribute(
+        bufferGeometry.setAttribute(
             'position',
-            new BufferAttribute(this.params.linePositions, 3).setDynamic(true)
+            new BufferAttribute(this.params.linePositions, 3).setUsage(
+                DynamicDrawUsage
+            )
         );
-        bufferGeometry.addAttribute(
+        bufferGeometry.setAttribute(
             'opacity',
-            new BufferAttribute(this.params.lineOpacities, 1).setDynamic(true)
+            new BufferAttribute(this.params.lineOpacities, 1).setUsage(
+                DynamicDrawUsage
+            )
         );
 
         // Do not draw anything until ready
@@ -274,8 +288,15 @@ class NetworkScene extends SceneBase {
 
     // Initialization function for points geometry
     initPoints() {
-        const { color, showPoints, pointSize, maxSpeed } = this.options;
-        const { numPoints, spacing, maxOpacity } = this.params;
+        const {
+            numPoints,
+            spacing,
+            maxOpacity,
+            color,
+            showPoints,
+            pointSize,
+            maxSpeed,
+        } = this.params;
 
         // Sprite material for point
         const sprite = showPoints
@@ -297,9 +318,11 @@ class NetworkScene extends SceneBase {
         // Buffer Geometry for efficiency
         const bufferGeometry = new BufferGeometry();
         this.params.pointPositions = new Float32Array(numPoints * 3);
-        bufferGeometry.addAttribute(
+        bufferGeometry.setAttribute(
             'position',
-            new BufferAttribute(this.params.pointPositions, 3).setDynamic(true)
+            new BufferAttribute(this.params.pointPositions, 3).setUsage(
+                DynamicDrawUsage
+            )
         );
 
         // Initialize position and speed for each point
@@ -358,7 +381,7 @@ class NetworkScene extends SceneBase {
 
     // Initialization function for multicolor gradient on canvas
     initCanvas() {
-        const { gradientColors, gradientSpeed } = this.options;
+        const { gradientColors, gradientSpeed } = this.params;
 
         this.params.gradientColors = gradientColors;
         this.params.gradientSpeed = gradientSpeed;

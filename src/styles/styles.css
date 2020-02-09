@@ -14,9 +14,10 @@ html, body, div {
 }
 
 body {
-    background: #fafafa;
+    background: #f2f2f2;
     font-family: "Open Sans", "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
+    min-width: 300px;
+    overflow-x: scroll;
 
     /* Ease in the site with an opacity animation */
 	animation: SoftLoad 2s ease 0.5s forwards;
@@ -28,6 +29,22 @@ body {
 
     /* Use momentum-based scrolling on iOS devices */
     -webkit-overflow-scrolling: touch;
+
+    /* Adjust text sizes */
+    -webkit-text-size-adjust: 100%;
+
+}
+
+body.scroll-freeze {
+    overflow-y: hidden;
+}
+
+a {
+  color: #f58025;
+}
+
+a:not(:hover) {
+    text-decoration: none;
 }
 
 canvas {
