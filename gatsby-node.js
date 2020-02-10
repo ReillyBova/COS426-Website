@@ -9,6 +9,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 },
             ],
         },
-        devtool: 'none',
     });
 };
