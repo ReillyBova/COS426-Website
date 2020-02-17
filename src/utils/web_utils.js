@@ -1,19 +1,18 @@
 import { withPrefix } from 'gatsby';
+import { useLocation } from "@reach/router";
 
 // Check if the link points to the current page.
 export const isActive = (to, exact) => {
-    if (typeof window === 'undefined') {
-        return false;
-    }
+    const location = useLocation();
 
     if (exact) {
         if (
-            window.location.pathname === withPrefix(to) ||
-            (to === '/' && window.location.pathname === withPrefix(''))
+            location.pathname === withPrefix(to) ||
+            (to === '/' && location.pathname === withPrefix(''))
         ) {
             return true;
         }
-    } else if (window.location.pathname.match('^' + withPrefix(to))) {
+    } else if (location.pathname.match('^' + withPrefix(to))) {
         return true;
     }
     return false;

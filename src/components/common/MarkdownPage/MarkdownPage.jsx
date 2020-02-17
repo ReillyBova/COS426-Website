@@ -1,9 +1,9 @@
 // Library imports
 import React, { createElement } from 'react';
 import rehypeReact from "rehype-react";
-import { useStaticQuery, graphql, withPrefix } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 // Project imports
-import { AnchorLink, ExternalLink, Content, TableOfContents } from 'components';
+import { AnchorLink, ExternalLink, Content, TableOfContents, InternalLink } from 'components';
 import { urlify } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -78,10 +78,12 @@ function MarkdownPage({ title, markdown, components={} }) {
                     {children}
                 </ExternalLink>
             )),
-            "hash-link": (({ href, children }) => (
-                <a href={withPrefix(href)}>
+            "internal-link": (({ href, children }) => (
+                <InternalLink
+                    to={href}
+                >
                     {children}
-                </a>
+                </InternalLink>
             )),
             "piazza-link": (() => (
                 <ExternalLink to={piazzaURL}>
