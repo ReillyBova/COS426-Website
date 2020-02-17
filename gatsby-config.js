@@ -46,6 +46,6 @@ module.exports = {
         ],
         homePage: 'Overview',
     },
-    pathPrefix: '/COS426-Website',
+    pathPrefix: 'COS426-Website',
     plugins: plugins,
 };

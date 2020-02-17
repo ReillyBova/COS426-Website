@@ -92,7 +92,7 @@ function TableOfContents({ headings }) {
             let closestResult = contentIndex;
 
             // Look at the neighbors of our previous active index in the direction we scrolled.
-            if (scrolls.length > 0 && target < scrolls[0] + 50) {
+            if ((target <= 100) || (scrolls.length > 0 && target < scrolls[0])) {
                 // We are reasonably above the content, so nothing is active
                 closestResult = -1;
             } else if (target === prevClosest) {
