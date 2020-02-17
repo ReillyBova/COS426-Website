@@ -22,11 +22,11 @@ const profileCardStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         width: 250,
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('lg')]: {
             width: 225,
-            [theme.breakpoints.down('sm')]: {
+            [theme.breakpoints.down('md')]: {
                 width: 180,
-                [theme.breakpoints.down('xs')]: {
+                [theme.breakpoints.down('sm')]: {
                     width: 250,
                 }
             }
@@ -40,6 +40,7 @@ const profileCardStyles = makeStyles((theme) => ({
     },
     profile_pic: {
         width: '100%',
+        transition: 'opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
         '&:hover': {
             opacity: 0.8,
         },

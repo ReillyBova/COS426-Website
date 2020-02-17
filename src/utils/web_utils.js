@@ -19,6 +19,30 @@ export const isActive = (to, exact) => {
     return false;
 };
 
+// Determine how far down the page the user has scrolled
+export const scrollTop = () => {
+    if (typeof window !== 'undefined') {
+        return (
+            window.pageYOffset ||
+            (
+                document.documentElement ||
+                document.body.parentNode ||
+                document.body
+            ).scrollTop
+        );
+    }
+};
+
+// Determine how tall the browser window is
+export const winHeight = () => {
+    if (typeof window !== 'undefined') {
+        return (
+            window.innerHeight ||
+            (document.documentElement || document.body).clientHeight
+        );
+    }
+};
+
 // Map string to URL
 export const urlify = (string) =>
     string

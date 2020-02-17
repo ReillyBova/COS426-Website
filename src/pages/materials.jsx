@@ -194,12 +194,10 @@ function Materials() {
     return (
         <PageLayout title={'Materials'}>
             <Content>
-                <Typography component={'section'} paragraph={true}>
-                    <Typography variant='h4' gutterBottom>
-                        {'Materials'}
-                    </Typography>
-                    <MaterialsTable schedule={simplifiedSchedule} />
+                <Typography variant='h3' gutterBottom>
+                    {'Materials'}
                 </Typography>
+                <MaterialsTable schedule={simplifiedSchedule} />
             </Content>
         </PageLayout>
     );

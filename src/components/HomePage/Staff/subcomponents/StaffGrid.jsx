@@ -29,7 +29,7 @@ const StaffGrid = forwardRef((props, ref) => {
             query {
                 professors: allMarkdownRemark(
                     filter: {
-                        fileAbsolutePath: {regex: "/\\/src\\/content\\/HomePage\\/Staff\\/People\\/.*\\.md$/"},
+                        fileAbsolutePath: {regex: "/\\/src\\/content\\/People\\/.*\\.md$/"},
                         frontmatter: {role: {eq: "Professor"}}
                     },
                     sort: {fields: frontmatter___name}
@@ -40,7 +40,7 @@ const StaffGrid = forwardRef((props, ref) => {
                 }
                 gradTAs: allMarkdownRemark(
                     filter: {
-                        fileAbsolutePath: {regex: "/\\/src\\/content\\/HomePage\\/Staff\\/People\\/.*\\.md$/"},
+                        fileAbsolutePath: {regex: "/\\/src\\/content\\/People\\/.*\\.md$/"},
                         frontmatter: {role: {eq: "Graduate TA"}}
                     },
                     sort: {fields: frontmatter___name}
@@ -51,7 +51,7 @@ const StaffGrid = forwardRef((props, ref) => {
                 }
                 undergradTAs: allMarkdownRemark(
                     filter: {
-                        fileAbsolutePath: {regex: "/\\/src\\/content\\/HomePage\\/Staff\\/People\\/.*\\.md$/"},
+                        fileAbsolutePath: {regex: "/\\/src\\/content\\/People\\/.*\\.md$/"},
                         frontmatter: {role: {eq: "Undergraduate TA"}}
                     },
                     sort: {fields: frontmatter___name}
@@ -90,8 +90,8 @@ const StaffGrid = forwardRef((props, ref) => {
                 <Grid
                     key={`professors-${frontmatter.name}-${i}`}
                     item
-                    sm={4}
-                    md={3}
+                    md={4}
+                    lg={3}
                 >
                     <ProfileCard
                         name={frontmatter.name}
@@ -113,8 +113,8 @@ const StaffGrid = forwardRef((props, ref) => {
                 <Grid
                     key={`gradTAs-${frontmatter.name}-${i}`}
                     item
-                    sm={4}
-                    md={3}
+                    md={4}
+                    lg={3}
                 >
                     <ProfileCard
                         name={frontmatter.name}
@@ -136,8 +136,8 @@ const StaffGrid = forwardRef((props, ref) => {
                 <Grid
                     key={`undergrad-${frontmatter.name}-${i}`}
                     item
-                    sm={4}
-                    md={3}
+                    md={4}
+                    lg={3}
                 >
                     <ProfileCard
                         name={frontmatter.name}

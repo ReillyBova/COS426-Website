@@ -2,6 +2,8 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
+// Project imports
+import { ExternalLink } from 'components';
 // UI imports
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
@@ -66,16 +68,12 @@ function Footer({ classes }) {
                     </Grid>
                     <Grid container item lg={6} md={6} sm={6} xs={12}>
                         <div className={signatures}>
-                            <a
-                                href={`https://www.${relatedLinks.university}`}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
+                            <ExternalLink to={`https://www.${relatedLinks.university}`}>
                                 <img
                                     src={PrincetonSignature}
                                     className={brandSignature}
                                 />
-                            </a>
+                            </ExternalLink>
                         </div>
                     </Grid>
                     <Grid
@@ -94,21 +92,13 @@ function Footer({ classes }) {
                                 {'© 2020 The Trustees of Princeton University'}
                             </div>
                             <div>
-                                <a
-                                    href={`https://www.${relatedLinks.copyright}`}
-                                    target='_blank'
-                                    rel='nofollow noopener noreferrer'
-                                >
+                                <ExternalLink to={`https://www.${relatedLinks.copyright}`}>
                                     {'Copyright Infringement'}
-                                </a>
+                                </ExternalLink>
                                 {' | '}
-                                <a
-                                    href={`https://www.${relatedLinks.privacy}`}
-                                    target='_blank'
-                                    rel='nofollow noopener noreferrer'
-                                >
+                                <ExternalLink to={`https://www.${relatedLinks.privacy}`}>
                                     {'Privacy Notice'}
-                                </a>
+                                </ExternalLink>
                             </div>
                         </div>
                     </Grid>

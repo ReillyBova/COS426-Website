@@ -41,6 +41,9 @@ module.exports = [
             },
         },
     },
+    // Image support
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     // Markdown support
     {
         resolve: `gatsby-transformer-remark`,
@@ -52,6 +55,12 @@ module.exports = [
                         dashes: 'oldschool',
                     },
                 },
+                {
+                    resolve: `gatsby-remark-images`,
+                    options: {
+                        maxWidth: 960,
+                    },
+                }
             ],
         },
     },
@@ -63,9 +72,6 @@ module.exports = [
             path: `${__dirname}/src/content`,
         },
     },
-    // Image support
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
         resolve: `gatsby-source-filesystem`,
         options: {

@@ -1,6 +1,8 @@
 // Library imports
 import React, { Fragment } from 'react';
 import { withPrefix, useStaticQuery, graphql } from 'gatsby';
+// Project imports
+import { ExternalLink } from 'components';
 // UI imports
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -35,15 +37,13 @@ function Lecture({
             <TableCell className={nowrap}>{date}</TableCell>
             <TableCell>
                 {lectureNumber < numLecturesPosted ? (
-                    <a
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        href={withPrefix(
+                    <ExternalLink
+                        to={withPrefix(
                             `lectures/Lecture-${lectureNumber}.pdf`
                         )}
                     >
                         {lectureString}
-                    </a>
+                    </ExternalLink>
                 ) : (
                     lectureString
                 )}
@@ -62,26 +62,18 @@ function Lecture({
                             <Fragment key={i}>
                                 {seperator}
                                 {selection}{' '}
-                                <a
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    href={pdfLink}
-                                >
+                                <ExternalLink to={pdfLink}>
                                     {link}
-                                </a>
+                                </ExternalLink>
                             </Fragment>
                         );
                     } else {
                         return (
                             <Fragment key={i}>
                                 {seperator}
-                                <a
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    href={pdfLink}
-                                >
+                                <ExternalLink to={pdfLink}>
                                     {link}
-                                </a>
+                                </ExternalLink>
                             </Fragment>
                         );
                     }
