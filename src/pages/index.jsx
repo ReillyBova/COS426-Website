@@ -1,8 +1,18 @@
 // Library imports
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 // Project imports
-import { Banner, ThreeContainer, Title, Textbook, Staff, PageLayout, MarkdownPage, Coursework, CollaborationTable } from 'components';
+import {
+    Banner,
+    ThreeContainer,
+    Title,
+    Textbook,
+    Staff,
+    PageLayout,
+    MarkdownPage,
+    Coursework,
+    CollaborationTable,
+} from 'components';
 import { NetworkScene } from 'scenes';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,8 +25,8 @@ const homePageStyles = makeStyles(() => ({
         },
         '&>ul': {
             marginBottom: 0,
-        }
-    }
+        },
+    },
 }));
 
 // Home page of website
@@ -26,22 +36,20 @@ function HomePage({ data }) {
 
     // Custom components to generate from markdown html
     const customComponents = {
-        "textbook": (() => (<Textbook />)),
-        "staff": (() => (<Staff />)),
-        "coursework": (() => (<Coursework />)),
-        "collaboration-table": (() => (<CollaborationTable />)),
-        "li": (({ children }) => (
-            <li className={listSpacing}>
-                {children}
-            </li>
-        )),
+        textbook: () => <Textbook />,
+        staff: () => <Staff />,
+        coursework: () => <Coursework />,
+        'collaboration-table': () => <CollaborationTable />,
+        li: ({ children }) => <li className={listSpacing}>{children}</li>,
     };
 
     // Render
     return (
         <PageLayout>
             <Banner height={'66vh'}>
-                <Title semester={data.site.siteMetadata.courseSettings.semester} />
+                <Title
+                    semester={data.site.siteMetadata.courseSettings.semester}
+                />
                 <ThreeContainer Scene={NetworkScene} />
             </Banner>
             <MarkdownPage

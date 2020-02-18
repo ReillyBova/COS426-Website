@@ -5,16 +5,12 @@ import { InternalButtonLink } from 'components';
 import Button from '@material-ui/core/Button';
 
 // A card preview of an assignment
-function AssignmentButton({to, href, available, children, ...props}) {
+function AssignmentButton({ to, href, available, children, ...props }) {
     if (to) {
         // Render as internal link if url is defined
         return (
-            <InternalButtonLink
-                disabled={!available}
-                to={to}
-                {...props}
-            >
-              {children}
+            <InternalButtonLink disabled={!available} to={to} {...props}>
+                {children}
             </InternalButtonLink>
         );
     } else {
@@ -27,8 +23,8 @@ function AssignmentButton({to, href, available, children, ...props}) {
                 rel='noopener noreferrer'
                 {...props}
             >
-              {children}
-          </Button>
+                {children}
+            </Button>
         );
     }
 }

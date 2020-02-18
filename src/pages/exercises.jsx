@@ -1,6 +1,6 @@
 // Library imports
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 // Project imports
 import { AnchorLink, PageLayout, MarkdownPage } from 'components';
 import { urlify } from 'utils';
@@ -9,23 +9,20 @@ import Typography from '@material-ui/core/Typography';
 
 // Generate exercises from markdown content
 function Exercises({ data }) {
-
     // Custom components to generate from markdown html
     const customComponents = {
-        "h1": (({ children }) => (
+        h1: ({ children }) => (
             <Typography variant='h6'>
-                <AnchorLink id={urlify(children[0])}>
-                    {children}
-                </AnchorLink>
+                <AnchorLink id={urlify(children[0])}>{children}</AnchorLink>
             </Typography>
-        )),
+        ),
     };
 
     // Render
     return (
-        <PageLayout title={"Exercises"}>
+        <PageLayout title={'Exercises'}>
             <MarkdownPage
-                title={"Exercises"}
+                title={'Exercises'}
                 markdown={data.markdownRemark}
                 components={customComponents}
             />

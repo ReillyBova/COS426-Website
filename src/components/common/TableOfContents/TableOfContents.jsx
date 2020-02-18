@@ -1,6 +1,6 @@
 // Library imports
 import React, { useState, useLayoutEffect, useMemo, useRef } from 'react';
-import clsx from "clsx";
+import clsx from 'clsx';
 // Project imports
 import { Content } from 'components';
 import { urlify, scrollTop, winHeight } from 'utils';
@@ -22,7 +22,7 @@ const contentTableStyles = makeStyles((theme) => ({
         top: 64,
         maxHeight: 'calc(100vh - 64px)',
         overflowY: 'auto',
-        scrollBehavior: 'smooth'
+        scrollBehavior: 'smooth',
     },
     contentTitle: {
         paddingLeft: theme.spacing(1),
@@ -44,8 +44,8 @@ const contentTableStyles = makeStyles((theme) => ({
         display: 'block',
 
         // Spacing
-        paddingTop: theme.spacing(.5),
-        paddingBottom: theme.spacing(.5),
+        paddingTop: theme.spacing(0.5),
+        paddingBottom: theme.spacing(0.5),
         paddingLeft: theme.spacing(1),
         borderLeft: '4px solid transparent',
 
@@ -57,7 +57,7 @@ const contentTableStyles = makeStyles((theme) => ({
 
         '&:hover': {
             borderLeft: `4px solid ${theme.palette.grey[400]}`,
-        }
+        },
     },
     nestedItem: {
         paddingLeft: `${theme.spacing(2.5)}px !important`,
@@ -88,18 +88,20 @@ function TableOfContents({ headings }) {
             const target = scrollTop() + 100;
 
             // Determine what were looking at
-            const prevClosest = (contentIndex >= 0 && contentIndex < scrolls.length)? scrolls[contentIndex]: -1;
+            const prevClosest =
+                contentIndex >= 0 && contentIndex < scrolls.length
+                    ? scrolls[contentIndex]
+                    : -1;
             let closestResult = contentIndex;
 
             // Look at the neighbors of our previous active index in the direction we scrolled.
-            if ((target <= 100) || (scrolls.length > 0 && target < scrolls[0])) {
+            if (target <= 100 || (scrolls.length > 0 && target < scrolls[0])) {
                 // We are reasonably above the content, so nothing is active
                 closestResult = -1;
             } else if (target === prevClosest) {
                 // We can quit early if we are equal
                 return;
-            }
-            else if (target > prevClosest) {
+            } else if (target > prevClosest) {
                 for (let i = contentIndex + 1; i < scrolls.length; i++) {
                     // Active header is lowest one not below our target
                     if (target >= scrolls[i]) {
@@ -126,17 +128,22 @@ function TableOfContents({ headings }) {
                 // Scroll to new active header if necessary
                 if (scrollingRef.current) {
                     if (closestResult >= 0) {
-                        const id = `${urlify(headings[closestResult].value)}-toc-link`;
+                        const id = `${urlify(
+                            headings[closestResult].value
+                        )}-toc-link`;
                         const activeElement = document.getElementById(id);
                         const viewportHeight = winHeight();
-                        const distanceFromTop = activeElement.getBoundingClientRect().top;
-                        if (distanceFromTop < (viewportHeight * 0.25)) {
+                        const distanceFromTop = activeElement.getBoundingClientRect()
+                            .top;
+                        if (distanceFromTop < viewportHeight * 0.25) {
                             // Element is too high — scroll it down 2/3vh
-                            const targetScroll = distanceFromTop - (viewportHeight * .667);
+                            const targetScroll =
+                                distanceFromTop - viewportHeight * 0.667;
                             scrollingRef.current.scrollTop += targetScroll;
-                        } else if (distanceFromTop > (viewportHeight * 0.75)) {
+                        } else if (distanceFromTop > viewportHeight * 0.75) {
                             // Element is too low — scroll it up to 1/3vh
-                            const targetScroll = distanceFromTop - (viewportHeight * .333);
+                            const targetScroll =
+                                distanceFromTop - viewportHeight * 0.333;
                             scrollingRef.current.scrollTop += targetScroll;
                         }
                     } else {
@@ -150,9 +157,10 @@ function TableOfContents({ headings }) {
         // Resize event handler
         function handleResize() {
             // Compute scroll offset of each header
-            scrolls = headings.map(({ value }) => (
-                document.getElementById(urlify(value)).offsetTop || 0
-            ));
+            scrolls = headings.map(
+                ({ value }) =>
+                    document.getElementById(urlify(value)).offsetTop || 0
+            );
 
             handleScroll();
         }
@@ -179,7 +187,7 @@ function TableOfContents({ headings }) {
             // Elements deeper than 1 get pushed to depth buffer
             if (depth > 1) {
                 // Add heading to nested sublist
-                depthBuffer.push({ value, index: i});
+                depthBuffer.push({ value, index: i });
             } else {
                 // Flush depth buffer if necessary
                 if (depthBuffer.length > 0) {
@@ -188,7 +196,7 @@ function TableOfContents({ headings }) {
                 }
 
                 // Add heading to list
-                result.push({ values: [{value, index: i}], depth: 1 });
+                result.push({ values: [{ value, index: i }], depth: 1 });
             }
         });
 
@@ -201,7 +209,14 @@ function TableOfContents({ headings }) {
     }, [headings]);
 
     // Classes for styling
-    const { contentWrapper, contentPositioner, contentTitle, contentList, contentItem, nestedItem } = contentTableStyles();
+    const {
+        contentWrapper,
+        contentPositioner,
+        contentTitle,
+        contentList,
+        contentItem,
+        nestedItem,
+    } = contentTableStyles();
 
     // Ref for tracking the scrolling div
     const scrollingRef = useRef();
@@ -220,26 +235,35 @@ function TableOfContents({ headings }) {
                         {`Contents`}
                     </Typography>
                     <ul className={contentList}>
-                        { groupedHeadings.map(({ values, depth }, i) => {
+                        {groupedHeadings.map(({ values, depth }, i) => {
                             if (depth > 1) {
                                 // Nested headers are arrays of values
                                 return (
-                                    <ul className={contentList} key={`${i}-${depth}`}>
-                                        { values.map(({value, index}) => (
+                                    <ul
+                                        className={contentList}
+                                        key={`${i}-${depth}`}
+                                    >
+                                        {values.map(({ value, index }) => (
                                             <Typography
-                                                color={(index === contentIndex)? "textPrimary" : "textSecondary"}
-                                                component="li"
+                                                color={
+                                                    index === contentIndex
+                                                        ? 'textPrimary'
+                                                        : 'textSecondary'
+                                                }
+                                                component='li'
                                                 key={value}
                                             >
                                                 <a
-                                                    className={
-                                                        clsx(
-                                                            contentItem,
-                                                            nestedItem,
-                                                            (index === contentIndex) && 'active'
-                                                        )
-                                                    }
-                                                    id={`${urlify(value)}-toc-link`}
+                                                    className={clsx(
+                                                        contentItem,
+                                                        nestedItem,
+                                                        index ===
+                                                            contentIndex &&
+                                                            'active'
+                                                    )}
+                                                    id={`${urlify(
+                                                        value
+                                                    )}-toc-link`}
                                                     href={`#${urlify(value)}`}
                                                 >
                                                     {value}
@@ -253,17 +277,20 @@ function TableOfContents({ headings }) {
                                 const { value, index } = values[0];
                                 return (
                                     <Typography
-                                        color={(index === contentIndex)? "textPrimary" : "textSecondary"}
-                                        component="li"
+                                        color={
+                                            index === contentIndex
+                                                ? 'textPrimary'
+                                                : 'textSecondary'
+                                        }
+                                        component='li'
                                         key={value}
                                     >
                                         <a
-                                            className={
-                                                clsx(
-                                                    contentItem,
-                                                    (index === contentIndex) && 'active'
-                                                )
-                                            }
+                                            className={clsx(
+                                                contentItem,
+                                                index === contentIndex &&
+                                                    'active'
+                                            )}
                                             id={`${urlify(value)}-toc-link`}
                                             href={`#${urlify(value)}`}
                                         >

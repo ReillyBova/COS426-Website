@@ -1,6 +1,6 @@
 // Library imports
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 // Project imports
 import { AssignmentCard, PageLayout, Content } from 'components';
 // UI imports
@@ -16,15 +16,15 @@ function Assignments({ data }) {
 
         // Corner case for non assignments
         if (numberB < 0 || numberA < 0) {
-            return (numberB - numberA);
+            return numberB - numberA;
         }
         // Otherwise, order by number
-        return (numberA - numberB);
+        return numberA - numberB;
     });
 
     // Map images by name
     const imageMap = {};
-    data.featuredImages.nodes.forEach(({name, childImageSharp}) => {
+    data.featuredImages.nodes.forEach(({ name, childImageSharp }) => {
         imageMap[name] = childImageSharp.fluid;
     });
 
@@ -36,26 +36,23 @@ function Assignments({ data }) {
                     {'Assignments'}
                 </Typography>
                 <Grid container spacing={3}>
-                    { assignmentData.map(({ node }) => {
+                    {assignmentData.map(({ node }) => {
                         const { frontmatter, fields } = node;
                         const { imageName } = frontmatter;
                         const { slug } = fields;
                         const fluidImage = imageMap[imageName];
 
                         return (
-                            <Grid
-                                key={slug}
-                                item
-                                md={4}
-                                sm={6}
-                                xs={12}
-                            >
-                                <AssignmentCard slug={slug} frontmatter={frontmatter} fluidImage={fluidImage} />
+                            <Grid key={slug} item md={4} sm={6} xs={12}>
+                                <AssignmentCard
+                                    slug={slug}
+                                    frontmatter={frontmatter}
+                                    fluidImage={fluidImage}
+                                />
                             </Grid>
                         );
                     })}
                 </Grid>
-
             </Content>
         </PageLayout>
     );

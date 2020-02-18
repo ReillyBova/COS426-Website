@@ -1,5 +1,5 @@
 import { withPrefix } from 'gatsby';
-import { useLocation } from "@reach/router";
+import { useLocation } from '@reach/router';
 
 // Check if the link points to the current page.
 export const isActive = (to, exact) => {

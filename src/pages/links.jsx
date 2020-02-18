@@ -1,6 +1,6 @@
 // Library imports
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby';
 // Project imports
 import { PageLayout, MarkdownPage } from 'components';
 // UI imports
@@ -9,9 +9,9 @@ import { PageLayout, MarkdownPage } from 'components';
 function Links({ data }) {
     // Render
     return (
-        <PageLayout title={"Links"}>
+        <PageLayout title={'Links'}>
             <MarkdownPage
-                title={"Useful Links"}
+                title={'Useful Links'}
                 markdown={data.markdownRemark}
             />
         </PageLayout>

@@ -36,7 +36,7 @@ function Staff() {
     const classes = staffStyles();
 
     return (
-        <Typography component="div" paragraph>
+        <Typography component='div' paragraph>
             <div className={classes.staff_desktop}>
                 <StaffGrid />
             </div>

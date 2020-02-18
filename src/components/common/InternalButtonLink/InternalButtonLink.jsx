@@ -14,7 +14,10 @@ const buttonStyles = makeStyles(() => ({
 }));
 
 // Gatsby Link wrapped in a material UI Button
-const InternalButtonLink = React.forwardRef(function Link({className, ...props}, ref) {
+const InternalButtonLink = React.forwardRef(function Link(
+    { className, ...props },
+    ref
+) {
     // CSS classes
     const { button } = buttonStyles();
 

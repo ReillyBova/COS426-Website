@@ -60,7 +60,7 @@ module.exports = [
                     options: {
                         maxWidth: 960,
                     },
-                }
+                },
             ],
         },
     },

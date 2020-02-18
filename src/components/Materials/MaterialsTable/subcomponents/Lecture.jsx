@@ -38,9 +38,7 @@ function Lecture({
             <TableCell>
                 {lectureNumber < numLecturesPosted ? (
                     <ExternalLink
-                        to={withPrefix(
-                            `lectures/Lecture-${lectureNumber}.pdf`
-                        )}
+                        to={withPrefix(`lectures/Lecture-${lectureNumber}.pdf`)}
                     >
                         {lectureString}
                     </ExternalLink>
@@ -62,18 +60,14 @@ function Lecture({
                             <Fragment key={i}>
                                 {seperator}
                                 {selection}{' '}
-                                <ExternalLink to={pdfLink}>
-                                    {link}
-                                </ExternalLink>
+                                <ExternalLink to={pdfLink}>{link}</ExternalLink>
                             </Fragment>
                         );
                     } else {
                         return (
                             <Fragment key={i}>
                                 {seperator}
-                                <ExternalLink to={pdfLink}>
-                                    {link}
-                                </ExternalLink>
+                                <ExternalLink to={pdfLink}>{link}</ExternalLink>
                             </Fragment>
                         );
                     }

@@ -68,7 +68,9 @@ function Footer({ classes }) {
                     </Grid>
                     <Grid container item lg={6} md={6} sm={6} xs={12}>
                         <div className={signatures}>
-                            <ExternalLink to={`https://www.${relatedLinks.university}`}>
+                            <ExternalLink
+                                to={`https://www.${relatedLinks.university}`}
+                            >
                                 <img
                                     src={PrincetonSignature}
                                     className={brandSignature}
@@ -92,11 +94,15 @@ function Footer({ classes }) {
                                 {'© 2020 The Trustees of Princeton University'}
                             </div>
                             <div>
-                                <ExternalLink to={`https://www.${relatedLinks.copyright}`}>
+                                <ExternalLink
+                                    to={`https://www.${relatedLinks.copyright}`}
+                                >
                                     {'Copyright Infringement'}
                                 </ExternalLink>
                                 {' | '}
-                                <ExternalLink to={`https://www.${relatedLinks.privacy}`}>
+                                <ExternalLink
+                                    to={`https://www.${relatedLinks.privacy}`}
+                                >
                                     {'Privacy Notice'}
                                 </ExternalLink>
                             </div>

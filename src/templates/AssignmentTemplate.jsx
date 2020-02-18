@@ -1,7 +1,7 @@
 // Library imports
 import React from 'react';
-import { graphql, withPrefix } from "gatsby";
-import clsx from "clsx";
+import { graphql, withPrefix } from 'gatsby';
+import clsx from 'clsx';
 // Project imports
 import { PageLayout, ExternalLink, MarkdownPage } from 'components';
 // UI imports
@@ -10,10 +10,11 @@ import { makeStyles } from '@material-ui/core/styles';
 const assignmentStyles = makeStyles((theme) => ({
     imageShadow: {
         boxShadow: `${theme.shadows[4]} !important`,
-        transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important',
+        transition:
+            'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important',
         '&:hover': {
             boxShadow: `${theme.shadows[8]} !important`,
-        }
+        },
     },
 }));
 
@@ -25,19 +26,19 @@ function AssignmentTemplate({ data }) {
 
     // Custom components to generate from markdown html
     const customComponents = {
-        "assignment-link": (({ children }) => (
-            <ExternalLink to={withPrefix(`zips/Assignment-${assignmentNumber}.zip`)}>
+        'assignment-link': ({ children }) => (
+            <ExternalLink
+                to={withPrefix(`zips/Assignment-${assignmentNumber}.zip`)}
+            >
                 {children}
             </ExternalLink>
-        )),
-        "submit-link": (({ children }) => (
-            <ExternalLink to={submitURL}>
-                {children}
-            </ExternalLink>
-        )),
-        "img": (({className, ...props}) => (
+        ),
+        'submit-link': ({ children }) => (
+            <ExternalLink to={submitURL}>{children}</ExternalLink>
+        ),
+        img: ({ className, ...props }) => (
             <img className={clsx(className, imageShadow)} {...props} />
-        )),
+        ),
     };
 
     // Render
@@ -45,7 +46,7 @@ function AssignmentTemplate({ data }) {
         <PageLayout title={`Assignment ${assignmentNumber}`}>
             <MarkdownPage
                 title={`Assignment ${assignmentNumber}: ${assignmentName}`}
-                markdown={{htmlAst, headings}}
+                markdown={{ htmlAst, headings }}
                 components={customComponents}
             />
         </PageLayout>
@@ -63,8 +64,8 @@ export const pageQuery = graphql`
                 submitURL
             }
             headings {
-              value
-              depth
+                value
+                depth
             }
         }
     }

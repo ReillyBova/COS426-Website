@@ -24,8 +24,8 @@ const courseworkStyles = makeStyles((theme) => ({
     },
     image: {
         padding: 8,
-        width: '100%'
-    }
+        width: '100%',
+    },
 }));
 
 function Coursework() {
@@ -33,10 +33,7 @@ function Coursework() {
     return (
         <Card raised className={piechart}>
             <CardActions>
-                <img
-                    className={image}
-                    src={GradeChart}
-                />
+                <img className={image} src={GradeChart} />
             </CardActions>
         </Card>
     );

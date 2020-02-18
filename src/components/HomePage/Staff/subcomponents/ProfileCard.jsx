@@ -28,9 +28,9 @@ const profileCardStyles = makeStyles((theme) => ({
                 width: 180,
                 [theme.breakpoints.down('sm')]: {
                     width: 250,
-                }
-            }
-        }
+                },
+            },
+        },
     },
     button: {
         height: '100%',
@@ -48,14 +48,23 @@ const profileCardStyles = makeStyles((theme) => ({
     profile_text: {
         paddingTop: 0,
         paddingBottom: 0,
-        flexGrow: 1
+        flexGrow: 1,
     },
     lightText: {
-        fontWeight: 300
-    }
+        fontWeight: 300,
+    },
 }));
 
-function ProfileCard({ name, role, officeHours, image, link, email, github, website }) {
+function ProfileCard({
+    name,
+    role,
+    officeHours,
+    image,
+    link,
+    email,
+    github,
+    website,
+}) {
     const classes = profileCardStyles();
 
     return (
@@ -83,16 +92,19 @@ function ProfileCard({ name, role, officeHours, image, link, email, github, webs
                 <Typography variant='subtitle1' gutterBottom>
                     {name}
                 </Typography>
-                {officeHours &&
+                {officeHours && (
                     <Fragment>
                         <Typography variant='body1'>
-                            {"Office Hours"}
+                            {'Office Hours'}
                         </Typography>
-                        <Typography className={classes.lightText} variant='body2'>
+                        <Typography
+                            className={classes.lightText}
+                            variant='body2'
+                        >
                             {officeHours}
                         </Typography>
                     </Fragment>
-                }
+                )}
             </CardContent>
             <CardActions>
                 {email && (

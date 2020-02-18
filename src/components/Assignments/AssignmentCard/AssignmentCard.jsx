@@ -20,16 +20,16 @@ const assignmentCardStyles = makeStyles((theme) => ({
         maxWidth: 400,
         [theme.breakpoints.down('sm')]: {
             margin: 'auto',
-        }
+        },
     },
     imageStyle: {
-        height: 250
+        height: 250,
     },
     contentStyle: {
-        paddingBottom: 0
+        paddingBottom: 0,
     },
     textStyle: {
-        fontWeight: 400
+        fontWeight: 400,
     },
     actionsStyle: {
         flexWrap: 'wrap',
@@ -37,7 +37,9 @@ const assignmentCardStyles = makeStyles((theme) => ({
     },
     buttonStyle: {
         flexGrow: 1,
-        margin: `0px ${theme.spacing(.5)}px ${theme.spacing(1)}px ${theme.spacing(.5)}px !important`,
+        margin: `0px ${theme.spacing(0.5)}px ${theme.spacing(
+            1
+        )}px ${theme.spacing(0.5)}px !important`,
     },
 }));
 
@@ -50,7 +52,7 @@ function AssignmentCard({ frontmatter, slug, fluidImage }) {
         contentStyle,
         textStyle,
         actionsStyle,
-        buttonStyle
+        buttonStyle,
     } = assignmentCardStyles();
 
     const {
@@ -59,7 +61,7 @@ function AssignmentCard({ frontmatter, slug, fluidImage }) {
         submitURL,
         feedbackURL,
         available,
-        description
+        description,
     } = frontmatter;
 
     // Compute assignment title
@@ -73,61 +75,59 @@ function AssignmentCard({ frontmatter, slug, fluidImage }) {
     // Render
     return (
         <Card className={cardStyle}>
-            { fluidImage &&
-                <Image className={imageStyle} fluid={fluidImage}/>
-            }
+            {fluidImage && <Image className={imageStyle} fluid={fluidImage} />}
             <CardContent className={contentStyle}>
-              <Typography gutterBottom variant="h5" component="h2">
-                  {assignmentTitle}
-              </Typography>
-                  <Typography
-                      className={textStyle}
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
+                <Typography gutterBottom variant='h5' component='h2'>
+                    {assignmentTitle}
+                </Typography>
+                <Typography
+                    className={textStyle}
+                    variant='body2'
+                    color='textSecondary'
+                    component='p'
                 >
                     {description}
-                  </Typography>
+                </Typography>
             </CardContent>
             <CardActions className={actionsStyle}>
                 <AssignmentButton
                     href={feedbackURL}
                     available={available}
                     className={buttonStyle}
-                    size="small"
-                    color="primary"
+                    size='small'
+                    color='primary'
                     startIcon={<ListAltIcon />}
                 >
-                  {"Feedback"}
+                    {'Feedback'}
                 </AssignmentButton>
                 <AssignmentButton
                     available={available}
                     className={buttonStyle}
-                    size="small"
-                    color="primary"
+                    size='small'
+                    color='primary'
                     startIcon={<PhotoLibraryIcon />}
                 >
-                  {"Gallery"}
+                    {'Gallery'}
                 </AssignmentButton>
                 <AssignmentButton
                     href={submitURL}
                     available={available}
                     className={buttonStyle}
-                    size="small"
-                    color="primary"
+                    size='small'
+                    color='primary'
                     startIcon={<CloudUploadIcon />}
                 >
-                  {"Submit"}
+                    {'Submit'}
                 </AssignmentButton>
                 <AssignmentButton
                     to={slug}
                     available={available}
                     className={buttonStyle}
-                    variant="contained"
-                    color="primary"
+                    variant='contained'
+                    color='primary'
                     endIcon={<ForwardIcon />}
                 >
-                  {"View Specs"}
+                    {'View Specs'}
                 </AssignmentButton>
             </CardActions>
         </Card>

@@ -7,7 +7,7 @@ const semester = 2020; // Increment every year
 const firstDayOfSemester = '02-03'; // Adjust based off of academic calendar
 const firstLecture = 'Tuesday'; // Change based off of Registrar scheduling
 const secondLecture = 'Thursday'; // Change based off of Registrar scheduling
-const piazzaURL = "https://piazza.com/princeton/spring2020/cos426/home";
+const piazzaURL = 'https://piazza.com/princeton/spring2020/cos426/home';
 
 module.exports = {
     siteMetadata: {
