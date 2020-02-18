@@ -120,7 +120,7 @@ function AssignmentCard({ frontmatter, slug, fluidImage }) {
                     {'Submit'}
                 </AssignmentButton>
                 <AssignmentButton
-                    to={slug}
+                    to={`/${slug}`}
                     available={available}
                     className={buttonStyle}
                     variant='contained'
