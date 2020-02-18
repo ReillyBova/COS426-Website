@@ -21,12 +21,7 @@ Precept is held on Wednesday and Thursday from 7:30–8:20PM in Friend Center 00
 
 There is one required textbook for this course:
 
-<ul>
-    <i>
-        Computer Graphics with OpenGL
-    </i>
-    , 4th Ed., Hearn, Baker, and Carithers. Prentice Hall, 2010. ISBN: 978-0136053583.
-</ul>
+> *Computer Graphics with OpenGL*, 4th Ed., Hearn, Baker, and Carithers. Prentice Hall, 2010. ISBN: 978-0136053583.
 
 In the past, most students have found it is possible to pass the course without opening the textbook once, as almost all graded material is provided through lecture and precepts; nevertheless, this textbook will prove extremely useful for especially eager and motivated students who wish to pursue further studies in computer graphics. In addition to covering graphics concepts that could not otherwise squeeze into this course, the textbook contains wonderful C++ and OpenGL implementations that all graphics programmers would be well-suited to know.
 

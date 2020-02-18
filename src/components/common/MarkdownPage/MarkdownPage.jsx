@@ -10,13 +10,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 // Custom styling for component
-const markdownStyles = makeStyles(() => ({
+const markdownStyles = makeStyles((theme) => ({
     flexWrapper: {
         display: 'flex',
     },
     grow: {
         flexGrow: 1,
     },
+    code: {
+        fontSize: 16,
+        lineHeight: '1rem',
+        backgroundColor: theme.palette.grey[300]
+    }
 }));
 
 // Wrapper for pages generated from markdown content
@@ -38,7 +43,7 @@ function MarkdownPage({ title, markdown, components={} }) {
     const piazzaURL = site.siteMetadata.courseSettings.piazzaURL;
 
     // Custom CSS classes
-    const { flexWrapper, grow } = markdownStyles();
+    const { flexWrapper, grow, code } = markdownStyles();
 
     // Inject markdown with theme and define custom components
     const renderAst = new rehypeReact({
@@ -62,6 +67,11 @@ function MarkdownPage({ title, markdown, components={} }) {
                 <Typography variant='body1' paragraph>
                     {children}
                 </Typography>
+            )),
+            "code": (({ children }) => (
+                <code className={code} >
+                    {children}
+                </code>
             )),
             "ul": (({ children }) => (
                 <Typography variant='body1' component="ul" paragraph>

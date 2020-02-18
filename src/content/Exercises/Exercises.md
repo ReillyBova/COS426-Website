@@ -1,3 +1,5 @@
+The following exercises are primarily provided so that students may test and challenge their graphics knowledge, thereby facilitating and expanding students' learning. In the past, students have also found these questions helpful when preparing for the exam. Note that the questions on the exam may not necessarily reflect the exercises below, and that there may be material on the exam that is not covered by the below questions (and vice versa). In particular, students should expect that exam questions will be more quantitative in nature than these provided exercises.
+
 # Raster Graphics and Color Spaces
 1. Describe how a color CRT works.
 2. Describe the tristimulus theory of color perception and its relevance to computer displays.
