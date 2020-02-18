@@ -1,127 +1,62 @@
 // Library imports
-import React, { createElement } from 'react';
-import rehypeReact from "rehype-react";
-import { graphql, withPrefix } from "gatsby";
-import clsx from "clsx";
+import React from 'react';
+import { graphql } from "gatsby";
 // Project imports
-import { AnchorLink, PageLayout, Content, TableOfContents } from 'components';
-import { urlify } from 'utils';
+import { AssignmentCard, PageLayout, Content } from 'components';
 // UI imports
-import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const assignmentStyles = makeStyles((theme) => ({
-    imageShadow: {
-        boxShadow: `${theme.shadows[4]} !important`,
-        transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important',
-        '&:hover': {
-            boxShadow: `${theme.shadows[8]} !important`,
-        }
-    },
-    flexWrapper: {
-        display: 'flex'
-    },
-    grow: {
-        flexGrow: 1
-    },
-}));
-
-
 function Assignments({ data }) {
-    const piazzaURL = data.site.siteMetadata.courseSettings.piazzaURL;
-    const { htmlAst, frontmatter, headings } = data.assignments.edges[0].node;
-    const { assignmentNumber, assignmentName, submitURL } = frontmatter;
-    const { imageShadow, flexWrapper, grow } = assignmentStyles();
-    const renderAst = new rehypeReact({
-        createElement: createElement,
-        components: {
-            "h1": (({ children }) => (
-                <Typography variant='h4'>
-                    <AnchorLink id={urlify(children[0])}>
-                        {children}
-                    </AnchorLink>
-                </Typography>
-            )),
-            "h2": (({ children }) => (
-                <Typography variant='h6'>
-                    <AnchorLink id={urlify(children[0])}>
-                        {children}
-                    </AnchorLink>
-                </Typography>
-            )),
-            "p": (({ children }) => (
-                <Typography variant='body1' paragraph={true}>
-                    {children}
-                </Typography>
-            )),
-            "ul": (({ children }) => (
-                <Typography variant='body1' component="ul" paragraph={true}>
-                    {children}
-                </Typography>
-            )),
-            "a": (({ href, children }) => (
-                <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href={href}
-                >
-                    {children}
-                </a>
-            )),
-            "assignment-link": (({ children }) => (
-                <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href={withPrefix(
-                        `assignments/Assignment-${assignmentNumber}.zip`
-                    )}
-                >
-                    {children}
-                </a>
-            )),
-            "submit-link": (({ children }) => (
-                <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href={submitURL}
-                >
-                    {children}
-                </a>
-            )),
-            "hash-link": (({ href, children }) => (
-                <a href={withPrefix(href)}>
-                    {children}
-                </a>
-            )),
-            "piazza-link": (() => (
-                <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href={piazzaURL}
-                >
-                    {"Piazza"}
-                </a>
-            )),
-            "img": (({className, ...props}) => (
-                <img className={clsx(className, imageShadow)} {...props} />
-            )),
-        },
-    }).Compiler;
+    // Extract data from query and sort by assignment number
+    const assignmentData = data.assignments.edges;
+    assignmentData.sort((a, b) => {
+        const numberA = a.node.frontmatter.assignmentNumber;
+        const numberB = b.node.frontmatter.assignmentNumber;
+
+        // Corner case for non assignments
+        if (numberB < 0 || numberA < 0) {
+            return (numberB - numberA);
+        }
+        // Otherwise, order by number
+        return (numberA - numberB);
+    });
+
+    // Map images by name
+    const imageMap = {};
+    data.featuredImages.nodes.forEach(({name, childImageSharp}) => {
+        imageMap[name] = childImageSharp.fluid;
+    });
 
     // Render
     return (
         <PageLayout title={'Assignments'}>
-                <div className={flexWrapper}>
-                    <div className={grow}>
-                        <Content>
-                            <Typography variant='h3' gutterBottom>
-                                {`Assignment ${assignmentNumber}: ${assignmentName}`}
-                            </Typography>
-                            { renderAst(htmlAst) }
-                        </Content>
-                    </div>
-                    <TableOfContents headings={headings} />
-                </div>
+            <Content>
+                <Typography variant='h3' gutterBottom>
+                    {'Assignments'}
+                </Typography>
+                <Grid container spacing={3}>
+                    { assignmentData.map(({ node }) => {
+                        const { frontmatter, fields } = node;
+                        const { imageName } = frontmatter;
+                        const { slug } = fields;
+                        const fluidImage = imageMap[imageName];
+
+                        return (
+                            <Grid
+                                key={slug}
+                                item
+                                md={4}
+                                sm={6}
+                                xs={12}
+                            >
+                                <AssignmentCard slug={slug} frontmatter={frontmatter} fluidImage={fluidImage} />
+                            </Grid>
+                        );
+                    })}
+                </Grid>
+
+            </Content>
         </PageLayout>
     );
 }
@@ -135,23 +70,33 @@ export const pageQuery = graphql`
         ) {
             edges {
                 node {
-                    htmlAst
                     frontmatter {
                         assignmentName
                         assignmentNumber
+                        imageName
                         submitURL
+                        feedbackURL
+                        available
+                        description
                     }
-                    headings {
-                      value
-                      depth
+                    fields {
+                        slug
                     }
                 }
             }
         }
-        site {
-            siteMetadata {
-                courseSettings {
-                    piazzaURL
+        featuredImages: allFile(
+            filter: {
+                sourceInstanceName: { eq: "images" }
+                relativeDirectory: { eq: "assignments" }
+            }
+        ) {
+            nodes {
+                name
+                childImageSharp {
+                    fluid(maxWidth: 500, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 // Library imports
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
+import clsx from 'clsx';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import MuiButton from '@material-ui/core/Button';
@@ -13,13 +14,13 @@ const buttonStyles = makeStyles(() => ({
 }));
 
 // Gatsby Link wrapped in a material UI Button
-const InternalButtonLink = React.forwardRef(function Link(props, ref) {
+const InternalButtonLink = React.forwardRef(function Link({className, ...props}, ref) {
     // CSS classes
     const { button } = buttonStyles();
 
     return (
         <MuiButton
-            className={button}
+            className={clsx(button, className)}
             component={GatsbyLink}
             ref={ref}
             {...props}

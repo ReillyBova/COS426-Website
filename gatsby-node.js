@@ -47,9 +47,12 @@ exports.createPages = async({graphql, actions}) => {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+                available
+            }
             fields {
-              slug
-              type
+                slug
+                type
             }
           }
         }
@@ -58,14 +61,16 @@ exports.createPages = async({graphql, actions}) => {
   `);
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      if (node.fields && node.fields.type === 'assignment') {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(`./src/templates/AssignmentTemplate.jsx`),
-          context: {
-            slug: node.fields.slug,
-          },
-      });
+      if ((node.fields && node.fields.type === 'assignment')) {
+          if (node.frontmatter.available) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(`./src/templates/AssignmentTemplate.jsx`),
+              context: {
+                slug: node.fields.slug,
+              },
+          });
+      }
     }
 });
 };

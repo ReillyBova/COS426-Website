@@ -5,3 +5,4 @@ export * from './Navbar';
 export * from './PageLayout';
 export * from './SiteLayout';
 export * from './Materials';
+export * from './Assignments';
