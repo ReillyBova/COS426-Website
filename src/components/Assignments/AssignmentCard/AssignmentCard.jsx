@@ -31,7 +31,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
     },
     contentStyle: {
         paddingBottom: 0,
-        flexGrow: 1
+        flexGrow: 1,
     },
     textStyle: {
         fontWeight: 400,
@@ -80,13 +80,29 @@ function AssignmentCard({ frontmatter, slug, fluidImage, gifImage, dueDate }) {
     // Render
     return (
         <Card className={cardStyle}>
-            {fluidImage && <Image className={imageStyle} alt={assignmentTitle} fluid={fluidImage} />}
-            {gifImage && <CardMedia className={imageStyle} alt={assignmentTitle} image={gifImage} />}
+            {fluidImage && (
+                <Image
+                    className={imageStyle}
+                    alt={assignmentTitle}
+                    fluid={fluidImage}
+                />
+            )}
+            {gifImage && (
+                <CardMedia
+                    className={imageStyle}
+                    alt={assignmentTitle}
+                    image={gifImage}
+                />
+            )}
             <CardContent className={contentStyle}>
                 <Typography variant='h5' component='h2'>
                     {assignmentTitle}
                 </Typography>
-                <Typography gutterBottom color='textSecondary' variant='subtitle2'>
+                <Typography
+                    gutterBottom
+                    color='textSecondary'
+                    variant='subtitle2'
+                >
                     {`Due: ${dueDate}`}
                 </Typography>
                 <Typography

@@ -1,8 +1,8 @@
 const plugins = require('./gatsby-plugins.js');
 
 // Settings
-const numLecturesPosted = 1; // Increment every time a lecture is posted
-const numPreceptsPosted = 1; // Increment every time a precept is posted
+const numLecturesPosted = 5; // Increment every time a lecture is posted
+const numPreceptsPosted = 2; // Increment every time a precept is posted
 const semester = 2020; // Increment every year
 const firstDayOfSemester = '02-03'; // Adjust based off of academic calendar
 const firstLecture = 'Tuesday'; // Change based off of Registrar scheduling

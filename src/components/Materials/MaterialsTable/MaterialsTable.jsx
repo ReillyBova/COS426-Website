@@ -46,11 +46,18 @@ const materialTableStyles = makeStyles((theme) => ({
         whiteSpace: 'nowrap',
     },
     primaryLink: {
-        color: 'white'
-    }
+        color: 'white',
+    },
 }));
 function MaterialsTable({ schedule }) {
-    const { table, orange, black, lastRow, nowrap, primaryLink } = materialTableStyles();
+    const {
+        table,
+        orange,
+        black,
+        lastRow,
+        nowrap,
+        primaryLink,
+    } = materialTableStyles();
     let lectureCount = 0;
     let preceptCount = 0;
     return (

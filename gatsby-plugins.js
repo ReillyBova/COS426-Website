@@ -73,13 +73,13 @@ module.exports = [
                 },
                 {
                     // Handle LaTeX rendering
-                  resolve: `gatsby-remark-katex`,
-                  options: {
-                    strict: `ignore`
-                  }
-              },
-              // Copy other files like GIFs over
-              `gatsby-remark-copy-linked-files`
+                    resolve: `gatsby-remark-katex`,
+                    options: {
+                        strict: `ignore`,
+                    },
+                },
+                // Copy other files like GIFs over
+                `gatsby-remark-copy-linked-files`,
             ],
         },
     },

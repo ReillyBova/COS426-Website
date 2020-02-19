@@ -44,10 +44,12 @@ export const winHeight = () => {
 
 // Map string to URL
 export const urlify = (string) =>
-     encodeURI(string
-        .replace(/\s+/g, '-')
-        .replace(/’/g, '')
-        .toLowerCase());
+    encodeURI(
+        string
+            .replace(/\s+/g, '-')
+            .replace(/’/g, '')
+            .toLowerCase()
+    );
 
 // Function to compute date from week and day
 export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
@@ -68,10 +70,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
             }
         `
     );
-    const {
-        semester,
-        firstDayOfSemester,
-    } = site.siteMetadata.courseSettings;
+    const { semester, firstDayOfSemester } = site.siteMetadata.courseSettings;
 
     // Compute first day of the semester
     const firstDay = new Date(`${semester}-${firstDayOfSemester}Z`);
@@ -116,9 +115,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
         adjustedWeekNumber += 1;
     }
     result.setUTCDate(
-        result.getUTCDate() +
-            7 * adjustedWeekNumber +
-            dayToNumber[dayOfWeek]
+        result.getUTCDate() + 7 * adjustedWeekNumber + dayToNumber[dayOfWeek]
     );
     return formatDate(result);
 };

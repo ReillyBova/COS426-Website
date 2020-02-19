@@ -31,8 +31,8 @@ const markdownStyles = makeStyles((theme) => ({
     tableStyle: {
         width: '100%',
         marginBottom: theme.spacing(2),
-        tableLayout: 'fixed'
-    }
+        tableLayout: 'fixed',
+    },
 }));
 
 // Wrapper for pages generated from markdown content
@@ -94,10 +94,8 @@ function MarkdownPage({ title, subtitle, markdown, components = {} }) {
             a: ({ href, children }) => (
                 <ExternalLink to={href}>{children}</ExternalLink>
             ),
-            'table': ({children}) => (
-                <table className={tableStyle}>
-                    {children}
-                </table>
+            table: ({ children }) => (
+                <table className={tableStyle}>{children}</table>
             ),
             'internal-link': ({ href, children }) => (
                 <InternalLink to={href}>{children}</InternalLink>
@@ -123,11 +121,15 @@ function MarkdownPage({ title, subtitle, markdown, components = {} }) {
                             <Typography variant='h3' gutterBottom={!subtitle}>
                                 {title}
                             </Typography>
-                                {subtitle && (
-                                    <Typography variant='h6' color="textSecondary" gutterBottom>
-                                        {subtitle}
-                                    </Typography>
-                                )}
+                            {subtitle && (
+                                <Typography
+                                    variant='h6'
+                                    color='textSecondary'
+                                    gutterBottom
+                                >
+                                    {subtitle}
+                                </Typography>
+                            )}
                         </Fragment>
                     )}
                     {renderAst(htmlAst)}

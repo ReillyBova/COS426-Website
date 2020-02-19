@@ -12,13 +12,16 @@ function Assignment({ date, assignment, className, nowrap, primaryLink }) {
         <TableRow className={className}>
             <TableCell className={nowrap}>{date}</TableCell>
             <TableCell colSpan={2}>
-                { (assignment.available && assignment.slug)?
-                    <InternalLink className={primaryLink} to={`/${assignment.slug}`}>
+                {assignment.available && assignment.slug ? (
+                    <InternalLink
+                        className={primaryLink}
+                        to={`/${assignment.slug}`}
+                    >
                         {assignment.calendarName}
                     </InternalLink>
-                :
-                    (assignment.calendarName)
-                }
+                ) : (
+                    assignment.calendarName
+                )}
                 {` due at ${assignment.dueTime}`}
             </TableCell>
         </TableRow>

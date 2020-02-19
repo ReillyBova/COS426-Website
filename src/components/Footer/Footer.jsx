@@ -117,10 +117,8 @@ function Footer({ classes }) {
                         xs={12}
                     >
                         <div className={engineer}>
-                            {"Website built and designed by "}
-                            <ExternalLink
-                                to={`https://github.com/ReillyBova`}
-                            >
+                            {'Website built and designed by '}
+                            <ExternalLink to={`https://github.com/ReillyBova`}>
                                 {`Reilly Bova ’20`}
                             </ExternalLink>
                         </div>

@@ -3,7 +3,12 @@ import React from 'react';
 import { graphql, withPrefix } from 'gatsby';
 import clsx from 'clsx';
 // Project imports
-import { PageLayout, ExternalLink, MarkdownPage, ScoreCalculator } from 'components';
+import {
+    PageLayout,
+    ExternalLink,
+    MarkdownPage,
+    ScoreCalculator,
+} from 'components';
 import { semesterOffsetToDateString } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,13 +32,29 @@ const assignmentStyles = makeStyles((theme) => ({
 // A template that generating assignment specs from markdown content
 function AssignmentTemplate({ data }) {
     const { htmlAst, frontmatter, headings } = data.markdownRemark;
-    const { assignmentNumber, assignmentName, submitURL, dueWeek, dueDay, dueTime, requiredPoints, optionalPoints, dimReturnTop, dimReturnBottom } = frontmatter;
+    const {
+        assignmentNumber,
+        assignmentName,
+        submitURL,
+        dueWeek,
+        dueDay,
+        dueTime,
+        requiredPoints,
+        optionalPoints,
+        dimReturnTop,
+        dimReturnBottom,
+    } = frontmatter;
     const { imageShadow, codeStyle } = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
-        'td': ({ children, ...props }) => (
-            <Typography variant='subtitle1' component='td' color="textSecondary" {...props}>
+        td: ({ children, ...props }) => (
+            <Typography
+                variant='subtitle1'
+                component='td'
+                color='textSecondary'
+                {...props}
+            >
                 {children}
             </Typography>
         ),
@@ -47,33 +68,29 @@ function AssignmentTemplate({ data }) {
         'submit-link': ({ children }) => (
             <ExternalLink to={submitURL}>{children}</ExternalLink>
         ),
-        'img': ({ className, ...props }) => (
+        img: ({ className, ...props }) => (
             <img className={clsx(className, imageShadow)} {...props} />
         ),
-        'total': () => (
-            <code className={codeStyle}>
-                { requiredPoints + optionalPoints }
-            </code>
+        total: () => (
+            <code className={codeStyle}>{requiredPoints + optionalPoints}</code>
         ),
-        'required': () => (
-            <code className={codeStyle}>
-                { requiredPoints }
-            </code>
-        ),
-        'optional': () => (
-            <code className={codeStyle}>
-                { optionalPoints }
-            </code>
-        ),
-        'dim': () => (
+        required: () => <code className={codeStyle}>{requiredPoints}</code>,
+        optional: () => <code className={codeStyle}>{optionalPoints}</code>,
+        dim: () => (
             <code
                 className={codeStyle}
-                dangerouslySetInnerHTML={
-                    {__html: `&frac${dimReturnTop}${dimReturnBottom};`}
-                }
+                dangerouslySetInnerHTML={{
+                    __html: `&frac${dimReturnTop}${dimReturnBottom};`,
+                }}
             />
         ),
-        'score-calculator': () => (<ScoreCalculator requiredPoints={requiredPoints} optionalPoints={optionalPoints} dimFactor={dimReturnTop / dimReturnBottom} />)
+        'score-calculator': () => (
+            <ScoreCalculator
+                requiredPoints={requiredPoints}
+                optionalPoints={optionalPoints}
+                dimFactor={dimReturnTop / dimReturnBottom}
+            />
+        ),
     };
 
     // Compute due date string for the assignment

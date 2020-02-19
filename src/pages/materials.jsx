@@ -11,12 +11,13 @@ import Typography from '@material-ui/core/Typography';
 function Materials({ data }) {
     // Grab semester and first day of semester
     const { site, assignments } = data;
-    const { firstLecture, secondLecture, } = site.siteMetadata.courseSettings;
+    const { firstLecture, secondLecture } = site.siteMetadata.courseSettings;
 
     // Extract assignment query into array
-    const assignmentList = assignments.edges.map(({ node }) => (
-        { ...node.frontmatter, ...node.fields }
-    ));
+    const assignmentList = assignments.edges.map(({ node }) => ({
+        ...node.frontmatter,
+        ...node.fields,
+    }));
 
     // Organize assignments and events by week
     const weekToAssignments = {};
@@ -82,7 +83,10 @@ function Materials({ data }) {
         if (weekToAssignments[week]) {
             weekToAssignments[week].forEach((assignment) => {
                 const day = assignment.dueDay;
-                const date = semesterOffsetToDateString(week, assignment.dueDay);
+                const date = semesterOffsetToDateString(
+                    week,
+                    assignment.dueDay
+                );
                 weekSchedule[day].push({ assignment: assignment, date });
             });
         }

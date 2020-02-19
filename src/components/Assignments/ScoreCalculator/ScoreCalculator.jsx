@@ -17,17 +17,17 @@ const scoreCalculatorStyles = makeStyles((theme) => ({
     contentStyle: {
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'flex-end'
-  },
-      textField: {
-          marginRight: theme.spacing(1),
-          marginLeft: theme.spacing(1),
-          maxWidth: 100
-      }
+        alignItems: 'flex-end',
+    },
+    textField: {
+        marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(1),
+        maxWidth: 100,
+    },
 }));
 
 // A card preview of an assignment
-function ScoreCalculator({ requiredPoints, optionalPoints, dimFactor}) {
+function ScoreCalculator({ requiredPoints, optionalPoints, dimFactor }) {
     // CSS classes for styling
     const { cardStyle, contentStyle, textField } = scoreCalculatorStyles();
 
@@ -40,65 +40,76 @@ function ScoreCalculator({ requiredPoints, optionalPoints, dimFactor}) {
     const requiredFeatureScore = Math.min(requiredPoints, requiredScore);
     const optionalFeatureScore = Math.min(optionalPoints, optionalScore);
     const extraFeatureScore = Math.max(optionalScore - optionalPoints, 0);
-    const diminishingExtraScore = dimFactor * (1 - Math.pow(dimFactor, extraFeatureScore)) / (1 - dimFactor);
+    const diminishingExtraScore =
+        (dimFactor * (1 - Math.pow(dimFactor, extraFeatureScore))) /
+        (1 - dimFactor);
     const artContentScore = artScore;
 
-    const floatingPointScore = (
-        requiredFeatureScore
-        + optionalFeatureScore
-        + diminishingExtraScore
-        + artContentScore
-    );
+    const floatingPointScore =
+        requiredFeatureScore +
+        optionalFeatureScore +
+        diminishingExtraScore +
+        artContentScore;
     const finalScore = Math.round(floatingPointScore * 2.0) / 2.0;
 
     // Functions to update state on input
     const handleChange = (setState, value) => {
         const number = parseFloat(value);
-        setState(isNaN(number)? 0 : number);
+        setState(isNaN(number) ? 0 : number);
     };
     const requiredChange = (event) => {
         handleChange(setRequiredScore, event.target.value);
-     };
-     const optionalChange = (event) => {
-         handleChange(setOptionalScore, event.target.value);
-      };
-      const artChange = (event) => {
-          handleChange(setArtScore, event.target.value);
-       };
+    };
+    const optionalChange = (event) => {
+        handleChange(setOptionalScore, event.target.value);
+    };
+    const artChange = (event) => {
+        handleChange(setArtScore, event.target.value);
+    };
 
     // Render
     return (
-        <Card className={cardStyle} component="form">
+        <Card className={cardStyle} component='form'>
             <CardContent className={contentStyle}>
                 <TextField
                     defaultValue={requiredPoints}
-                    helperText="Required score"
-                    label="r"
+                    helperText='Required score'
+                    label='r'
                     onChange={requiredChange}
-                    type="number"
+                    type='number'
                     className={textField}
                 />
                 <TextField
                     defaultValue={optionalPoints}
-                    helperText="Optional score"
-                    label="n"
+                    helperText='Optional score'
+                    label='n'
                     onChange={optionalChange}
-                    type="number"
+                    type='number'
                     className={textField}
                 />
                 <TextField
                     defaultValue={1}
-                    helperText="Art score"
-                    label="a"
+                    helperText='Art score'
+                    label='a'
                     onChange={artChange}
-                    type="number"
+                    type='number'
                     className={textField}
                 />
-            <div>
-                <Typography variant="h2" component="div"> { finalScore }</Typography>
-                <Typography variant="caption" color="textSecondary" component="div"> {"Total score"}</Typography>
-            </div>
-</CardContent>
+                <div>
+                    <Typography variant='h2' component='div'>
+                        {' '}
+                        {finalScore}
+                    </Typography>
+                    <Typography
+                        variant='caption'
+                        color='textSecondary'
+                        component='div'
+                    >
+                        {' '}
+                        {'Total score'}
+                    </Typography>
+                </div>
+            </CardContent>
         </Card>
     );
 }

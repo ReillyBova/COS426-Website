@@ -1,6 +1,6 @@
 require('./src/styles/styles.css');
-require("prismjs/themes/prism-tomorrow.css");
-require("katex/dist/katex.min.css");
+require('prismjs/themes/prism-tomorrow.css');
+require('katex/dist/katex.min.css');
 
 exports.onClientEntry = () => {
     // Load Roboto font to support Material Design

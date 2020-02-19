@@ -46,7 +46,12 @@ function Assignments({ data }) {
                 <Grid container spacing={3}>
                     {assignmentData.map(({ node }) => {
                         const { frontmatter, fields } = node;
-                        const { imageName, dueWeek, dueDay, dueTime } = frontmatter;
+                        const {
+                            imageName,
+                            dueWeek,
+                            dueDay,
+                            dueTime,
+                        } = frontmatter;
                         const { slug } = fields;
 
                         // Source image if possible
@@ -54,7 +59,10 @@ function Assignments({ data }) {
                         const gifImage = gifMap[imageName];
 
                         // Compute due date string
-                        const date = semesterOffsetToDateString(dueWeek - 1, dueDay);
+                        const date = semesterOffsetToDateString(
+                            dueWeek - 1,
+                            dueDay
+                        );
 
                         return (
                             <Grid key={slug} item md={4} sm={6} xs={12}>
