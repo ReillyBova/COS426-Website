@@ -73,7 +73,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
     const { semester, firstDayOfSemester } = site.siteMetadata.courseSettings;
 
     // Compute first day of the semester
-    const firstDay = new Date(`${semester}-${firstDayOfSemester}Z`);
+    const firstDay = new Date(`${semester}-${firstDayOfSemester}T00:00:00Z`);
 
     // String mapping days to indices
     const dayToNumber = {
