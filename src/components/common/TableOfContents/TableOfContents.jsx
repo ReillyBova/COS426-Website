@@ -128,10 +128,17 @@ function TableOfContents({ headings }) {
                 // Scroll to new active header if necessary
                 if (scrollingRef.current) {
                     if (closestResult >= 0) {
+                        // Grab element
                         const id = `${urlify(
                             headings[closestResult].value
                         )}-toc-link`;
                         const activeElement = document.getElementById(id);
+
+                        if (!activeElement) {
+                            return;
+                        }
+
+                        // Compare the scroll height
                         const viewportHeight = winHeight();
                         const distanceFromTop = activeElement.getBoundingClientRect()
                             .top;
@@ -158,8 +165,10 @@ function TableOfContents({ headings }) {
         function handleResize() {
             // Compute scroll offset of each header
             scrolls = headings.map(
-                ({ value }) =>
-                    document.getElementById(urlify(value)).offsetTop || 0
+                ({ value }) => {
+                    const element = document.getElementById(urlify(value));
+                    return ((element && element.offsetTop) || 0);
+                }
             );
 
             handleScroll();
