@@ -3,6 +3,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
 import { AssignmentCard, PageLayout, Content } from 'components';
+import { semesterOffsetToDateString } from 'utils';
+import { AssignmentGIFs } from 'gifs';
 // UI imports
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -11,21 +13,27 @@ function Assignments({ data }) {
     // Extract data from query and sort by assignment number
     const assignmentData = data.assignments.edges;
     assignmentData.sort((a, b) => {
-        const numberA = a.node.frontmatter.assignmentNumber;
-        const numberB = b.node.frontmatter.assignmentNumber;
+        const weekA = a.node.frontmatter.dueWeek;
+        const weekB = b.node.frontmatter.dueWeek;
 
-        // Corner case for non assignments
-        if (numberB < 0 || numberA < 0) {
-            return numberB - numberA;
+        // Corner case for same week
+        if (weekA === weekB) {
+            // Order by day
+            return a.node.frontmatter.dueDay - b.node.frontmatter.dueDay;
         }
-        // Otherwise, order by number
-        return numberA - numberB;
+        // Otherwise, order by week
+        return weekA - weekB;
     });
 
-    // Map images by name
+    // Map images and gifs by name
     const imageMap = {};
     data.featuredImages.nodes.forEach(({ name, childImageSharp }) => {
         imageMap[name] = childImageSharp.fluid;
+    });
+
+    const gifMap = {};
+    Object.entries(AssignmentGIFs).forEach(([name, gif]) => {
+        gifMap[name] = gif;
     });
 
     // Render
@@ -38,9 +46,15 @@ function Assignments({ data }) {
                 <Grid container spacing={3}>
                     {assignmentData.map(({ node }) => {
                         const { frontmatter, fields } = node;
-                        const { imageName } = frontmatter;
+                        const { imageName, dueWeek, dueDay, dueTime } = frontmatter;
                         const { slug } = fields;
+
+                        // Source image if possible
                         const fluidImage = imageMap[imageName];
+                        const gifImage = gifMap[imageName];
+
+                        // Compute due date string
+                        const date = semesterOffsetToDateString(dueWeek - 1, dueDay);
 
                         return (
                             <Grid key={slug} item md={4} sm={6} xs={12}>
@@ -48,6 +62,8 @@ function Assignments({ data }) {
                                     slug={slug}
                                     frontmatter={frontmatter}
                                     fluidImage={fluidImage}
+                                    gifImage={gifImage}
+                                    dueDate={`${date} at ${dueTime}`}
                                 />
                             </Grid>
                         );
@@ -62,7 +78,8 @@ export const pageQuery = graphql`
     query {
         assignments: allMarkdownRemark(
             filter: {
-                fileAbsolutePath: {regex: "/\\/src\\/content\\/Assignments\\/.*\\.md$/"}
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Assignments\\/.*\\.md$/"},
+                frontmatter: { visible: { eq: true } }
             }
         ) {
             edges {
@@ -70,6 +87,9 @@ export const pageQuery = graphql`
                     frontmatter {
                         assignmentName
                         assignmentNumber
+                        dueWeek
+                        dueDay
+                        dueTime
                         imageName
                         submitURL
                         feedbackURL

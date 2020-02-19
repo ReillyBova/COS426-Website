@@ -5,6 +5,7 @@ import Image from 'gatsby-image';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
@@ -17,7 +18,10 @@ import { AssignmentButton } from './subcomponents';
 // Custom styling for component
 const assignmentCardStyles = makeStyles((theme) => ({
     cardStyle: {
+        height: '100%',
         maxWidth: 400,
+        display: 'flex',
+        flexDirection: 'column',
         [theme.breakpoints.down('sm')]: {
             margin: 'auto',
         },
@@ -27,6 +31,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
     },
     contentStyle: {
         paddingBottom: 0,
+        flexGrow: 1
     },
     textStyle: {
         fontWeight: 400,
@@ -44,7 +49,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
 }));
 
 // A card preview of an assignment
-function AssignmentCard({ frontmatter, slug, fluidImage }) {
+function AssignmentCard({ frontmatter, slug, fluidImage, gifImage, dueDate }) {
     // Custom styling
     const {
         cardStyle,
@@ -75,10 +80,14 @@ function AssignmentCard({ frontmatter, slug, fluidImage }) {
     // Render
     return (
         <Card className={cardStyle}>
-            {fluidImage && <Image className={imageStyle} fluid={fluidImage} />}
+            {fluidImage && <Image className={imageStyle} alt={assignmentTitle} fluid={fluidImage} />}
+            {gifImage && <CardMedia className={imageStyle} alt={assignmentTitle} image={gifImage} />}
             <CardContent className={contentStyle}>
-                <Typography gutterBottom variant='h5' component='h2'>
+                <Typography variant='h5' component='h2'>
                     {assignmentTitle}
+                </Typography>
+                <Typography gutterBottom color='textSecondary' variant='subtitle2'>
+                    {`Due: ${dueDate}`}
                 </Typography>
                 <Typography
                     className={textStyle}

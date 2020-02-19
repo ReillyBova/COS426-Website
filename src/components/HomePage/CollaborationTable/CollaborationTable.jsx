@@ -24,23 +24,15 @@ const collabStyles = makeStyles((theme) => ({
         marginRight: 'auto',
         marginLeft: 'auto',
         overflowX: 'auto',
-        [theme.breakpoints.down('md')]: {
-            maxWidth: 600,
-            [theme.breakpoints.down('sm')]: {
-                maxWidth: 400,
-                [theme.breakpoints.down('xs')]: {
-                    maxWidth: 250,
-                },
-            },
-        },
     },
     table_desktop: {
-        [theme.breakpoints.down('md')]: {
+        whiteSpace: 'nowrap',
+        [theme.breakpoints.down('sm')]: {
             display: 'none',
         },
     },
     table_mobile: {
-        [theme.breakpoints.up('lg')]: {
+        [theme.breakpoints.up('md')]: {
             display: 'none',
         },
     },

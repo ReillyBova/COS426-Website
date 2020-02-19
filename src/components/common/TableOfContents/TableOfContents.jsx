@@ -185,7 +185,7 @@ function TableOfContents({ headings }) {
         let depthBuffer = [];
         headings.forEach(({ value, depth }, i) => {
             // Elements deeper than 1 get pushed to depth buffer
-            if (depth > 1) {
+            if (depth > 2) {
                 // Add heading to nested sublist
                 depthBuffer.push({ value, index: i });
             } else {

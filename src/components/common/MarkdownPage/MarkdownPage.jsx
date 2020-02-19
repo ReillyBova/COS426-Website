@@ -1,5 +1,5 @@
 // Library imports
-import React, { createElement } from 'react';
+import React, { Fragment, createElement } from 'react';
 import rehypeReact from 'rehype-react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Project imports
@@ -22,16 +22,21 @@ const markdownStyles = makeStyles((theme) => ({
     },
     grow: {
         flexGrow: 1,
+        minWidth: 0,
     },
     code: {
         fontSize: 16,
         lineHeight: '1rem',
-        backgroundColor: theme.palette.grey[300],
     },
+    tableStyle: {
+        width: '100%',
+        marginBottom: theme.spacing(2),
+        tableLayout: 'fixed'
+    }
 }));
 
 // Wrapper for pages generated from markdown content
-function MarkdownPage({ title, markdown, components = {} }) {
+function MarkdownPage({ title, subtitle, markdown, components = {} }) {
     // Query piazza URl from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -49,7 +54,7 @@ function MarkdownPage({ title, markdown, components = {} }) {
     const piazzaURL = site.siteMetadata.courseSettings.piazzaURL;
 
     // Custom CSS classes
-    const { flexWrapper, grow, code } = markdownStyles();
+    const { flexWrapper, grow, code, tableStyle } = markdownStyles();
 
     // Inject markdown with theme and define custom components
     const renderAst = new rehypeReact({
@@ -61,6 +66,11 @@ function MarkdownPage({ title, markdown, components = {} }) {
                 </Typography>
             ),
             h2: ({ children }) => (
+                <Typography variant='h5' gutterBottom>
+                    <AnchorLink id={urlify(children[0])}>{children}</AnchorLink>
+                </Typography>
+            ),
+            h3: ({ children }) => (
                 <Typography variant='h6'>
                     <AnchorLink id={urlify(children[0])}>{children}</AnchorLink>
                 </Typography>
@@ -84,6 +94,11 @@ function MarkdownPage({ title, markdown, components = {} }) {
             a: ({ href, children }) => (
                 <ExternalLink to={href}>{children}</ExternalLink>
             ),
+            'table': ({children}) => (
+                <table className={tableStyle}>
+                    {children}
+                </table>
+            ),
             'internal-link': ({ href, children }) => (
                 <InternalLink to={href}>{children}</InternalLink>
             ),
@@ -104,9 +119,16 @@ function MarkdownPage({ title, markdown, components = {} }) {
             <div className={grow}>
                 <Content>
                     {title && (
-                        <Typography variant='h3' gutterBottom>
-                            {title}
-                        </Typography>
+                        <Fragment>
+                            <Typography variant='h3' gutterBottom={!subtitle}>
+                                {title}
+                            </Typography>
+                                {subtitle && (
+                                    <Typography variant='h6' color="textSecondary" gutterBottom>
+                                        {subtitle}
+                                    </Typography>
+                                )}
+                        </Fragment>
                     )}
                     {renderAst(htmlAst)}
                 </Content>

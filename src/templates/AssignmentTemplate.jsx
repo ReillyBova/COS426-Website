@@ -4,8 +4,10 @@ import { graphql, withPrefix } from 'gatsby';
 import clsx from 'clsx';
 // Project imports
 import { PageLayout, ExternalLink, MarkdownPage } from 'components';
+import { semesterOffsetToDateString } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const assignmentStyles = makeStyles((theme) => ({
     imageShadow: {
@@ -16,16 +18,25 @@ const assignmentStyles = makeStyles((theme) => ({
             boxShadow: `${theme.shadows[8]} !important`,
         },
     },
+    codeStyle: {
+        fontSize: 16,
+        lineHeight: '1rem',
+    },
 }));
 
 // A template that generating assignment specs from markdown content
 function AssignmentTemplate({ data }) {
     const { htmlAst, frontmatter, headings } = data.markdownRemark;
-    const { assignmentNumber, assignmentName, submitURL } = frontmatter;
-    const { imageShadow } = assignmentStyles();
+    const { assignmentNumber, assignmentName, submitURL, dueWeek, dueDay, dueTime, requiredPoints, optionalPoints, dimReturnTop, dimReturnBottom } = frontmatter;
+    const { imageShadow, codeStyle } = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
+        'td': ({ children, ...props }) => (
+            <Typography variant='subtitle1' component='td' color="textSecondary" {...props}>
+                {children}
+            </Typography>
+        ),
         'assignment-link': ({ children }) => (
             <ExternalLink
                 to={withPrefix(`zips/Assignment-${assignmentNumber}.zip`)}
@@ -36,16 +47,44 @@ function AssignmentTemplate({ data }) {
         'submit-link': ({ children }) => (
             <ExternalLink to={submitURL}>{children}</ExternalLink>
         ),
-        img: ({ className, ...props }) => (
+        'img': ({ className, ...props }) => (
             <img className={clsx(className, imageShadow)} {...props} />
         ),
+        'total': () => (
+            <code className={codeStyle}>
+                { requiredPoints + optionalPoints }
+            </code>
+        ),
+        'required': () => (
+            <code className={codeStyle}>
+                { requiredPoints }
+            </code>
+        ),
+        'optional': () => (
+            <code className={codeStyle}>
+                { optionalPoints }
+            </code>
+        ),
+        'dim': () => (
+            <code
+                className={codeStyle}
+                dangerouslySetInnerHTML={
+                    {__html: `&frac${dimReturnTop}${dimReturnBottom};`}
+                }
+            />
+        ),
     };
+
+    // Compute due date string for the assignment
+    const date = semesterOffsetToDateString(dueWeek - 1, dueDay);
+    const dueString = `Due: ${date} at ${dueTime}`;
 
     // Render
     return (
         <PageLayout title={`Assignment ${assignmentNumber}`}>
             <MarkdownPage
                 title={`Assignment ${assignmentNumber}: ${assignmentName}`}
+                subtitle={dueString}
                 markdown={{ htmlAst, headings }}
                 components={customComponents}
             />
@@ -61,7 +100,14 @@ export const pageQuery = graphql`
             frontmatter {
                 assignmentName
                 assignmentNumber
+                dueWeek
+                dueDay
+                dueTime
                 submitURL
+                requiredPoints
+                optionalPoints
+                dimReturnTop
+                dimReturnBottom
             }
             headings {
                 value

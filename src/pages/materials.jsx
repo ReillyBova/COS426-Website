@@ -1,92 +1,27 @@
 // Library imports
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 // Project imports
 import { PageLayout, Content, MaterialsTable } from 'components';
 import { materials } from 'content';
+import { semesterOffsetToDateString } from 'utils';
 // UI imports
 import Typography from '@material-ui/core/Typography';
 
-function Materials() {
+function Materials({ data }) {
     // Grab semester and first day of semester
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        courseSettings {
-                            semester
-                            firstDayOfSemester
-                            firstLecture
-                            secondLecture
-                        }
-                    }
-                }
-            }
-        `
-    );
-    const {
-        semester,
-        firstDayOfSemester,
-        firstLecture,
-        secondLecture,
-    } = site.siteMetadata.courseSettings;
-    const firstDay = new Date(`${semester}-${firstDayOfSemester}Z`);
+    const { site, assignments } = data;
+    const { firstLecture, secondLecture, } = site.siteMetadata.courseSettings;
 
-    // Function to compute date from week and day
-    const computeAndFormatDate = (weekNumber, dayOfWeek) => {
-        // String mapping
-        const dayToNumber = {
-            Monday: 0,
-            Tuesday: 1,
-            Wednesday: 2,
-            Thursday: 3,
-            Friday: 4,
-            Saturday: 5,
-            Sunday: 6,
-        };
-
-        // Format function
-        const dateFormatOptions = {
-            timeZone: 'UTC',
-            weekday: 'short',
-            month: 'short',
-            day: 'numeric',
-        };
-        const formatDate = (date) =>
-            date.toLocaleDateString(undefined, dateFormatOptions);
-
-        // Allocate fresh memory for the result
-        const result = new Date(firstDay);
-        // Corner case
-        if (!dayToNumber[dayOfWeek]) {
-            console.warn(`Error: ${dayOfWeek} is not a day of the week`);
-            return formatDate(result);
-        }
-
-        // Compute result
-        let adjustedWeekNumber = weekNumber;
-        if (adjustedWeekNumber > 5) {
-            // Add an extra week for spring break
-            adjustedWeekNumber += 1;
-        }
-        if (adjustedWeekNumber > 12) {
-            // Add an extra week for reading period
-            adjustedWeekNumber += 1;
-        }
-        result.setUTCDate(
-            result.getUTCDate() +
-                7 * adjustedWeekNumber +
-                dayToNumber[dayOfWeek]
-        );
-        return formatDate(result);
-    };
+    // Extract assignment query into array
+    const assignmentList = assignments.edges.map(({ node }) => (
+        { ...node.frontmatter, ...node.fields }
+    ));
 
     // Organize assignments and events by week
     const weekToAssignments = {};
-    materials.assignments.forEach((assignment) => {
-        const { week } = assignment.due;
-        const weekIndex = week - 1;
+    assignmentList.forEach((assignment) => {
+        const weekIndex = assignment.dueWeek - 1;
         if (!weekToAssignments[weekIndex]) {
             weekToAssignments[weekIndex] = [];
         }
@@ -131,14 +66,14 @@ function Materials() {
                 weekSchedule[firstLecture].push({
                     lecture: firstLectureData,
                     readings: firstReadingsData,
-                    date: computeAndFormatDate(week, firstLecture),
+                    date: semesterOffsetToDateString(week, firstLecture),
                 });
             }
             if (secondLectureData) {
                 weekSchedule[secondLecture].push({
                     lecture: secondLectureData,
                     readings: secondReadingsData,
-                    date: computeAndFormatDate(week, secondLecture),
+                    date: semesterOffsetToDateString(week, secondLecture),
                 });
             }
         }
@@ -146,8 +81,8 @@ function Materials() {
         // Assignments have second priority
         if (weekToAssignments[week]) {
             weekToAssignments[week].forEach((assignment) => {
-                const day = assignment.due.day;
-                const date = computeAndFormatDate(week, day);
+                const day = assignment.dueDay;
+                const date = semesterOffsetToDateString(week, assignment.dueDay);
                 weekSchedule[day].push({ assignment: assignment, date });
             });
         }
@@ -169,7 +104,7 @@ function Materials() {
         if (weekToEvents[week]) {
             weekToEvents[week].forEach((otherEvent) => {
                 const day = otherEvent.due.day;
-                const date = computeAndFormatDate(week, day);
+                const date = semesterOffsetToDateString(week, day);
                 weekSchedule[day].push({ otherEvent: otherEvent, date });
             });
         }
@@ -202,5 +137,38 @@ function Materials() {
         </PageLayout>
     );
 }
+
+export const pageQuery = graphql`
+    query {
+        site {
+            siteMetadata {
+                courseSettings {
+                    firstLecture
+                    secondLecture
+                }
+            }
+        }
+        assignments: allMarkdownRemark(
+            filter: {
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Assignments\\/.*\\.md$/"}
+            }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        calendarName
+                        dueWeek
+                        dueDay
+                        dueTime
+                        available
+                    }
+                    fields {
+                        slug
+                    }
+                }
+            }
+        }
+    }
+`;
 
 export default Materials;

@@ -31,8 +31,8 @@ module.exports = [
         options: {
             root: './src', // <- will be used as a root dir
             aliases: {
-                branding: './assets/branding', // <- will become ./src/assets/branding
                 images: './assets/images', // <- will become ./src/assets/images
+                gifs: './assets/gifs', // <- will become ./src/assets/gifs
                 components: './components', // <- will become ./src/components
                 content: './content', // <- will become ./src/content
                 scenes: './scenes', // <- will become ./src/scenes
@@ -50,17 +50,36 @@ module.exports = [
         options: {
             plugins: [
                 {
+                    // Handle quotes, en/em dashes, and the like
                     resolve: 'gatsby-remark-smartypants',
                     options: {
                         dashes: 'oldschool',
                     },
                 },
                 {
+                    // Handle images
                     resolve: `gatsby-remark-images`,
                     options: {
                         maxWidth: 960,
                     },
                 },
+                {
+                    // Handle syntax highlighting
+                    resolve: `gatsby-remark-prismjs`,
+                    options: {
+                        showLineNumbers: true,
+                        noInlineHighlight: true,
+                    },
+                },
+                {
+                    // Handle LaTeX rendering
+                  resolve: `gatsby-remark-katex`,
+                  options: {
+                    strict: `ignore`
+                  }
+              },
+              // Copy other files like GIFs over
+              `gatsby-remark-copy-linked-files`
             ],
         },
     },

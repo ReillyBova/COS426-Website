@@ -68,36 +68,6 @@ const materials = {
         [],
         [], // Week 12
     ],
-    assignments: [
-        {
-            title: 'Assignment 0 (JS Paint)',
-            due: { week: 2, day: 'Tuesday', time: '11:55pm' },
-        },
-        {
-            title: 'Assignment 1 (Photo Editor)',
-            due: { week: 3, day: 'Sunday', time: '11:55pm' },
-        },
-        {
-            title: 'Assignment 2 (Mesh Editor)',
-            due: { week: 5, day: 'Sunday', time: '11:55pm' },
-        },
-        {
-            title: 'Assignment 3 (Raytracer)',
-            due: { week: 8, day: 'Sunday', time: '11:55pm' },
-        },
-        {
-            title: 'Assignment 4 (Rasterizer)',
-            due: { week: 10, day: 'Sunday', time: '11:55pm' },
-        },
-        {
-            title: 'Assignment 5 (Cloth Simulator)',
-            due: { week: 11, day: 'Sunday', time: '11:55pm' },
-        },
-        {
-            title: "Dean's Date: Final Project",
-            due: { week: 13, day: 'Tuesday', time: '11:55pm' },
-        },
-    ],
     other: [
         {
             title: 'In-class Exam (on content through Week 5)',
