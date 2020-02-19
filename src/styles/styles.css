@@ -51,6 +51,11 @@ canvas {
     display: block;
 }
 
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 @keyframes SoftLoad {
 	0% {
 		opacity: 0;

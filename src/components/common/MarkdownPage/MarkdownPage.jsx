@@ -24,6 +24,10 @@ const markdownStyles = makeStyles((theme) => ({
         flexGrow: 1,
         minWidth: 0,
     },
+    paragraph: {
+        overflow: 'auto',
+        textOverflow: 'ellipsis',
+    },
     code: {
         fontSize: 16,
         lineHeight: '1rem',
@@ -54,7 +58,7 @@ function MarkdownPage({ title, subtitle, markdown, components = {} }) {
     const piazzaURL = site.siteMetadata.courseSettings.piazzaURL;
 
     // Custom CSS classes
-    const { flexWrapper, grow, code, tableStyle } = markdownStyles();
+    const { flexWrapper, grow, paragraph, code, tableStyle } = markdownStyles();
 
     // Inject markdown with theme and define custom components
     const renderAst = new rehypeReact({
@@ -76,7 +80,7 @@ function MarkdownPage({ title, subtitle, markdown, components = {} }) {
                 </Typography>
             ),
             p: ({ children }) => (
-                <Typography variant='body1' paragraph>
+                <Typography variant='body1' className={paragraph} paragraph>
                     {children}
                 </Typography>
             ),
