@@ -46,6 +46,7 @@ function Footer({ classes }) {
         brandSignature,
         legalese,
         signatures,
+        engineer,
     } = classes;
 
     // Render
@@ -106,6 +107,22 @@ function Footer({ classes }) {
                                     {'Privacy Notice'}
                                 </ExternalLink>
                             </div>
+                        </div>
+                    </Grid>
+                    <Grid
+                        container
+                        item
+                        justify='center'
+                        alignItems='center'
+                        xs={12}
+                    >
+                        <div className={engineer}>
+                            {"Website built and designed by "}
+                            <ExternalLink
+                                to={`https://github.com/ReillyBova`}
+                            >
+                                {`Reilly Bova ’20`}
+                            </ExternalLink>
                         </div>
                     </Grid>
                 </Grid>

@@ -105,6 +105,23 @@ const footerStyles = makeStyles((theme) => ({
             justifyContent: 'center',
         },
     },
+    engineer: {
+        // Text styling
+        color: 'white',
+        fontSize: 12,
+        textAlign: 'right',
+
+        // Spacing
+        margin: theme.spacing(1),
+
+        // Link styling overrides
+        '& a:hover': {
+            textDecoration: 'underline',
+        },
+        '& a:not(:hover)': {
+            color: 'white !important',
+        },
+    },
 }));
 
 export default footerStyles;
