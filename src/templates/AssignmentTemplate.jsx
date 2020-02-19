@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql, withPrefix } from 'gatsby';
 import clsx from 'clsx';
 // Project imports
-import { PageLayout, ExternalLink, MarkdownPage } from 'components';
+import { PageLayout, ExternalLink, MarkdownPage, ScoreCalculator } from 'components';
 import { semesterOffsetToDateString } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -73,6 +73,7 @@ function AssignmentTemplate({ data }) {
                 }
             />
         ),
+        'score-calculator': () => (<ScoreCalculator requiredPoints={requiredPoints} optionalPoints={optionalPoints} dimFactor={dimReturnTop / dimReturnBottom} />)
     };
 
     // Compute due date string for the assignment
