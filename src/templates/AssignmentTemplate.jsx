@@ -28,9 +28,6 @@ const assignmentStyles = makeStyles((theme) => ({
         fontSize: 16,
         lineHeight: '1rem',
     },
-    gifStretch: {
-        width: '100%'
-    }
 }));
 
 // A template that generating assignment specs from markdown content
@@ -48,7 +45,7 @@ function AssignmentTemplate({ data }) {
         dimReturnTop,
         dimReturnBottom,
     } = frontmatter;
-    const { imageShadow, codeStyle, gifStretch} = assignmentStyles();
+    const { imageShadow, codeStyle} = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -74,11 +71,6 @@ function AssignmentTemplate({ data }) {
         ),
         img: ({ className, ...props }) => (
             <img className={clsx(className, imageShadow)} {...props} />
-        ),
-        gif: ({ children }) => (
-            <div className={gifStretch}>
-                {children}
-            </div>
         ),
         total: () => (
             <code className={codeStyle}>{requiredPoints + optionalPoints}</code>
