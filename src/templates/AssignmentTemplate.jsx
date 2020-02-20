@@ -16,6 +16,7 @@ import Typography from '@material-ui/core/Typography';
 
 const assignmentStyles = makeStyles((theme) => ({
     imageShadow: {
+        width: '100%',
         boxShadow: `${theme.shadows[4]} !important`,
         transition:
             'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important',
@@ -27,6 +28,9 @@ const assignmentStyles = makeStyles((theme) => ({
         fontSize: 16,
         lineHeight: '1rem',
     },
+    gifStretch: {
+        width: '100%'
+    }
 }));
 
 // A template that generating assignment specs from markdown content
@@ -44,7 +48,7 @@ function AssignmentTemplate({ data }) {
         dimReturnTop,
         dimReturnBottom,
     } = frontmatter;
-    const { imageShadow, codeStyle } = assignmentStyles();
+    const { imageShadow, codeStyle, gifStretch} = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -70,6 +74,11 @@ function AssignmentTemplate({ data }) {
         ),
         img: ({ className, ...props }) => (
             <img className={clsx(className, imageShadow)} {...props} />
+        ),
+        gif: ({ children }) => (
+            <div className={gifStretch}>
+                {children}
+            </div>
         ),
         total: () => (
             <code className={codeStyle}>{requiredPoints + optionalPoints}</code>
