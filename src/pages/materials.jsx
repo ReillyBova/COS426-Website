@@ -165,6 +165,7 @@ export const pageQuery = graphql`
                         dueDay
                         dueTime
                         available
+                        visible
                     }
                     fields {
                         slug
