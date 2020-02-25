@@ -23,13 +23,21 @@ const scoreCalculatorStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(1),
         marginLeft: theme.spacing(1),
         maxWidth: 100,
+        maxHeight: 70,
     },
+    totalScore: {
+        paddingRight: 16,
+        paddingBottom: 19,
+    },
+    totalScoreSubtitle: {
+        position: 'absolute'
+    }
 }));
 
 // A card preview of an assignment
 function ScoreCalculator({ requiredPoints, optionalPoints, dimFactor }) {
     // CSS classes for styling
-    const { cardStyle, contentStyle, textField } = scoreCalculatorStyles();
+    const { cardStyle, contentStyle, textField, totalScore, totalScoreSubtitle } = scoreCalculatorStyles();
 
     // Hooks to keep track of user input
     const [requiredScore, setRequiredScore] = useState(requiredPoints);
@@ -95,17 +103,16 @@ function ScoreCalculator({ requiredPoints, optionalPoints, dimFactor }) {
                     type='number'
                     className={textField}
                 />
-                <div>
+            <div className={totalScore}>
                     <Typography variant='h2' component='div'>
-                        {' '}
                         {finalScore}
                     </Typography>
                     <Typography
                         variant='caption'
                         color='textSecondary'
                         component='div'
+                        className={totalScoreSubtitle}
                     >
-                        {' '}
                         {'Total score'}
                     </Typography>
                 </div>

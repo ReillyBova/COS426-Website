@@ -45,7 +45,7 @@ function AssignmentTemplate({ data }) {
         dimReturnTop,
         dimReturnBottom,
     } = frontmatter;
-    const { imageShadow, codeStyle} = assignmentStyles();
+    const { imageShadow, codeStyle } = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
