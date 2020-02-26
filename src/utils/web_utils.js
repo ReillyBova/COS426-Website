@@ -99,7 +99,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
     // Allocate fresh memory for the result
     const result = new Date(firstDay);
     // Corner case
-    if (!dayToNumber[dayOfWeek]) {
+    if (dayToNumber[dayOfWeek] === undefined) {
         console.warn(`Error: ${dayOfWeek} is not a day of the week`);
         return formatDate(result);
     }
