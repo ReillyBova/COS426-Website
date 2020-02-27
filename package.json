@@ -20,8 +20,8 @@
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write '*.js' '*.jsx' 'src/**/*.js' 'src/**/*.jsx'",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean"
   },
   "dependencies": {

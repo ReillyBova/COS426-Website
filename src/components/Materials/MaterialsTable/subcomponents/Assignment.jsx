@@ -12,7 +12,9 @@ function Assignment({ date, assignment, className, nowrap, primaryLink }) {
         <TableRow className={className}>
             <TableCell className={nowrap}>{date}</TableCell>
             <TableCell colSpan={2}>
-                {assignment.visible && assignment.available && assignment.slug ? (
+                {assignment.visible &&
+                assignment.available &&
+                assignment.slug ? (
                     <InternalLink
                         className={primaryLink}
                         to={`/${assignment.slug}`}

@@ -164,12 +164,10 @@ function TableOfContents({ headings }) {
         // Resize event handler
         function handleResize() {
             // Compute scroll offset of each header
-            scrolls = headings.map(
-                ({ value }) => {
-                    const element = document.getElementById(urlify(value));
-                    return ((element && element.offsetTop) || 0);
-                }
-            );
+            scrolls = headings.map(({ value }) => {
+                const element = document.getElementById(urlify(value));
+                return (element && element.offsetTop) || 0;
+            });
 
             handleScroll();
         }

@@ -21,7 +21,7 @@ module.exports = {
             piazzaURL,
         },
         title: `COS 426: Computer Graphics (${semester}) | Princeton University`,
-        siteUrl: `https://reillybova.github.io/COS426-Website/`,
+        siteUrl: `https://www.cs.princeton.edu/courses/archive/spring20/cos426/`,
         description: `The Princeton University course website for the Spring ${semester} term of COS 426: Computer Graphics`,
         author: 'ReillyBova',
         keywords: [
@@ -46,6 +46,6 @@ module.exports = {
         ],
         homePage: 'Overview',
     },
-    pathPrefix: 'COS426-Website',
+    pathPrefix: 'courses/archive/spring20/cos426',
     plugins: plugins,
 };
