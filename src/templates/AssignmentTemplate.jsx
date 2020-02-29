@@ -28,6 +28,9 @@ const assignmentStyles = makeStyles((theme) => ({
         fontSize: 16,
         lineHeight: '1rem',
     },
+    textOverflow: {
+        overflowWrap: 'break-word'
+    },
 }));
 
 // A template that generating assignment specs from markdown content
@@ -45,7 +48,7 @@ function AssignmentTemplate({ data }) {
         dimReturnTop,
         dimReturnBottom,
     } = frontmatter;
-    const { imageShadow, codeStyle } = assignmentStyles();
+    const { imageShadow, codeStyle, textOverflow } = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -54,6 +57,7 @@ function AssignmentTemplate({ data }) {
                 variant='subtitle1'
                 component='td'
                 color='textSecondary'
+                className={textOverflow}
                 {...props}
             >
                 {children}
