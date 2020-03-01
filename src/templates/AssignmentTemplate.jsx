@@ -29,7 +29,7 @@ const assignmentStyles = makeStyles((theme) => ({
         lineHeight: '1rem',
     },
     textOverflow: {
-        overflowWrap: 'break-word'
+        overflowWrap: 'break-word',
     },
 }));
 
