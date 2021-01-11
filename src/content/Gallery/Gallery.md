@@ -934,3 +934,246 @@ I created the "Newton's Cradle", by doing a bit of physics to find the path of t
 |:-:|
 | ![](./examples/a3/maf6.gif) |
 | Fletcher's Cradle (maf6) |
+
+# Assignment 5 Gallery
+
+### Winners (A5)
+
+<div><student gallery=5 place=1>Christy Lee (christyl)</student></div>
+
+For the art contest, I experimented with several "colorful" scenes. I think this one turned out best!
+
+|   |
+|:-:|
+| ![](./examples/a5/christyl.gif) |
+| Colors in the Wind (christyl) |
+
+<div><student gallery=5 place=2>Anna Qin (alqin)</student></div>
+
+I am submitting two series of art for this assignment's contest. The first one, *Fine*, uses textures to recreate the "This is Fine" meme with the cartoon dog surrounded by fire. It is a reflection of the current mood.
+
+|   |
+|:-:|
+| ![](./examples/a5/alqin1.png) |
+| Fine (alqin) |
+
+For the second series of photos, *Lace*, I use a transparent and white image of a mandala pattern to create a pretty lace cloth that we drape over a box-table and a sphere. I think it turned out really well!
+
+|   |   |   |
+|:-:|:-:|:-:|
+| ![](./examples/a5/alqin2.png) |![](./examples/a5/alqin3.png) |![](./examples/a5/alqin4.png) |
+| Lace 1 (alqin) | Lace 2 (alqin) | Lace 3 (alqin) |
+
+<div><student gallery=5 place=2>Jake Kirkham (jak4)</student></div>
+
+It is clear that a ton of work has gone into making Assignment 5 interesting, fun, and educational --- from quality of life to documentation, A5 is on a level above the others. As such, I think A5 deserves to be the face of the course; so, I made a logo!
+
+For my custom extension, I implemented tearable cloth by selectively enforcing constraints and hiding cut-away particles. The effect, though "hacky", ends up looking pretty neat in real-time with other forces. By binding tear to my mouse cursor plus a key press, I realized it also let me "draw" on the cloth by tearing away particles to reveal the background beneath. By adjusting the ground color and turning off gravity (so that my lettering did not simply fall down), I was able to make a fun set of letters in RGB complementary colors. I then used photoshop to cut the different letters together into a full COS 426 logo.
+
+As part of my art submission, I've included a few shots of tearing with forces added, as the feature itself is also pretty neat looking on its own.
+
+|   |
+|:-:|
+| ![](./examples/a5/jak41.png) |
+| The Face of the Course (jak4) |
+
+|   |   |
+|:-:|:-:|
+| ![](./examples/a5/jak42.gif) |![](./examples/a5/jak43.gif) |
+| RIP 1 (jak4) | RIP 2 (jak4) |
+
+<div><student gallery=5 place=2>Jason Kim (jjk7)</student></div>
+
+I combined the effects of my custom force, custom scene, and custom textures/materials to create the effect of a bobbing ocean and the sun setting over it. The custom force randomly perturbs particles up and down to create a wave bobbing effect. The custom scene makes the cloth larger and lower to the ground and moves the sphere into a position where it looks like a sun on the horizon. The custom textures make the cloth look like water and add a bump map to the cloth to give it more depth.
+
+If you enable the effects from my custom scene and custom textures/materials, you should be able to re-create the art contest submission with [this link](http://localhost:8000/index.html?fabricLength=1000&gravity=false&customForce=true&customFStrength=9.9&customFRate=7&object=Sphere&wireframe=false&clothColor=7030941&clothSpecular=15744831&groundColor=5917346&fogColor=16764108&showClothTexture=true&clothTexture=water.png).
+
+|   |
+|:-:|
+| ![](./examples/a5/jjk7.gif) |
+| Beyond the Horizon (jjk7) |
+
+<div><student gallery=5 place=2>uris (uris)</student></div>
+
+For my art contest, I realized that I got a very cool looking cloth texture when I only had bending constraints on. This maintained the squares formed by the diagonal constraints, but nothing else. I dropped this cloth onto the box shape, and adjusted some of the color settings, which yielded the following artistic result.
+
+|   |
+|:-:|
+| ![](./examples/a5/uris.gif) |
+| Bending Tiles (uris) |
+
+<div><student gallery=5 place=3>Jingwen Guo (jingweng)</student></div>
+
+For my art contest submission, I used my custom cloth and ground textures to create a ghost hovering over a graveyard background. To create the ghost, I decreased the size of the default sphere and changed its movement to be a periodic up-and-down motion. While the cloth is pinned in the four-corner configuration, I hid the poles by decreasing their height to `0`. I experimented with different ways to drape the cloth over the moving sphere, but I realized that removing all pins resulted in the cloth quickly sliding off the sphere, no matter the size of the cloth or movement of the sphere. To complete the scene, I added the ground texture and darkened the ground and fog colors.
+
+|   |
+|:-:|
+| ![](./examples/a5/jingweng.gif) |
+| Trick or Treat (jingweng) |
+
+<div><student gallery=5 place=3>Sharon Zhang (sharonz)</student></div>
+
+I hope you are all doing well in these trying/difficult/tough/hard/challenging times. (I really do though!)
+Stay safe, stay sane, and stay home!
+
+|   |
+|:-:|
+| ![](./examples/a5/sharonz.gif) |
+| Stay Home (sharonz) |
+
+<div><student gallery=5 place=4>Sean-Wynn Ng (seanwynn)</student></div>
+
+I don't know what this is, but I beleive I've created a monster. Is this how Dr. Frankenstein felt?
+
+|   |
+|:-:|
+| ![](./examples/a5/seanwynn.png) |
+| Monster Girl (seanwynn) |
+
+<div><student gallery=5 place=4>Taylor Beckett (tbeckett)</student></div>
+
+The cloth in wind reminded me of a pirate flag, I decided to make one! I added the pirate flag texture to the cloth and water texture to the ground using two images off the internet. Next, I removed all but one of the poles. I added a function in `particle.js` called "lockToBottom" that would pin a particle to the middle of the remaining pole. Next, I modified `sim.js` so that when `fourCorners()` is called for pinning, I would lock the bottom left corner of the cloth to the pole, left the top let corner pinned at the top, and let the other two corners fly free. Then I added rain and wind force to the scene to let the flag fly! Below is a screenshot of the scene.
+
+|   |
+|:-:|
+| ![](./examples/a5/tbeckett.png) |
+| The Jolly Roger (tbeckett) |
+
+<div><student gallery=5 place=5>Christine Kwon (cmkwon)</student></div>
+
+For my submission, I used a custom texture I created in Adobe Illustrator, which consists of a transparent background scattered with circles of varying opacities. I draped this over a sphere to display its reflective properties.
+
+|   |
+|:-:|
+| ![](./examples/a5/cmkwon.gif) |
+| Bouncing Bubbles (cmkwon) |
+
+<div><student gallery=5 place=5>Henry Wang (htwang)</student></div>
+
+I had a funny self-intersection bug, so I decided to make the most of it!
+
+|   |   |
+|:-:|:-:|
+| ![](./examples/a5/htwang1.gif) | ![](./examples/a5/htwang2.gif) |
+| Dumbledore's Pensive (htwang) | The Pulsating Mass (htwang) |
+
+<div><student gallery=5 place=5>Julian Knodt (jknodt)</student></div>
+
+This work of art is inspired by a bug that looked cool and made me laugh. I reworked it into something a bit more trippy but this is the quarantine mood.
+
+|   |
+|:-:|
+| ![](./examples/a5/jknodt.gif) |
+| The Clothy Way (jknodt) |
+
+<div><student gallery=5 place=5>Michael Fletcher (maf6)</student></div>
+
+I really messed up my plane implementation and it made a cool swirly boi. I call it: *Cotton Candy*.
+
+|   |
+|:-:|
+| ![](./examples/a5/maf6.gif) |
+| Cotton Candy (maf6) |
+
+### Honorable Mentions (A5)
+
+<div><student gallery=5>Anabelle Chang (anabelle)</student></div>
+
+For my custom scene, I digitally drew out a red flower and turned it into a texture for the cloth. I placed it against a grassy scene, as you can see below.
+
+|   |
+|:-:|
+| ![](./examples/a5/anabelle.gif) |
+| Red Flower (anabelle) |
+
+<div><student gallery=5>Claire Guthrie (cguthrie)</student></div>
+
+My art contest are the custom scene and textures that I created!
+
+|   |
+|:-:|
+| ![](./examples/a5/cguthrie.png) |
+| Stranded in the Desert (cguthrie) |
+
+<div><student gallery=5>Gabriel Roth (gjroth)</student></div>
+
+For this art contest I made a parasailing parachute by altering the strength and direction of gravity. With wind turned on, the cloth looks like a parasailing parachute on the ocean and in the wind!
+
+|   |
+|:-:|
+| ![](./examples/a5/gjroth.gif) |
+| Parasails Away! (gjroth) |
+
+<div><student gallery=5>Johana Leanos (jleanos)</student></div>
+
+I decided to use my custom filter to tell a story. I noticed that the fluttering looked like a bird in the cloth so I can up with a story.
+
+*The Clips and the Sudden Storm*
+
+> "It was a sunny summer afternoon. The linen was hanging to dry, gently flowing in the wind. The linen's owner had purchased magical clips last winter that guaranteed the garments wouldn't fly off the clothes lines. Well so far none have been taken by the wind so maybe the $1000 were worth it. Although this particular afternoon posed a challenge. A dark overcast slowly took over as a bird flew under the linen. It was flying so fast that it got caught in the middle of the linen and started to flutter upwards rapidly. Just then, the sky darkened and a tornado appeared. The linen and the bird were flung round and round as the tornado passed through. Just as the linen was sure gone, the tornado was gone and sky brighten up. The bird escaped the linen as it settled down once more. The clips lived to see another day.
+
+|   |
+|:-:|
+| ![](./examples/a5/jleanos.gif) |
+| The Clips and the Sudden Storm (jleanos) |
+
+<div><student gallery=5>Johan Ospina (jospina)</student></div>
+
+|   |
+|:-:|
+| ![](./examples/a5/jospina.png) |
+| Bulldog Blowing in the Wind (jospina) |
+
+<div><student gallery=5>Lauren Johnston (lej2)</student></div>
+
+First, I created a custom water texture in Figma (a free design tool) and used that as the floor texture for an underwater effect. I also used a public Domain image of a 16th century carpet from the Metropolitan Museum of Art!
+
+|   |
+|:-:|
+| ![](./examples/a5/lej2.gif) |
+| The Underwater Magic Carpet Awaits (lej2) |
+
+<div><student gallery=5>Labib Hussain (lhussain)</student></div>
+
+For my art contest submission, I present an "illusion" that is the effect of my custom force.
+
+|   |
+|:-:|
+| ![](./examples/a5/lhussain.gif) |
+| Superposition (lhussain) |
+
+<div><student gallery=5>Emre Cakir (mecakir)</student></div>
+
+I added two new textures for my art contest submission. The first one I added was the `pigmen.png` for the cloth. This is a skin of the "pigmen" mob from Minecraft. The second texture I added was `lava.jpg` for the ground. I also changed the ground material to use `MeshPhysicalMaterial`, and I changed the metalness and the reflectivity, all to better match lava. I felt that these textures gave the scene a real "Minecraft Nether" look.
+
+|   |
+|:-:|
+| ![](./examples/a5/mecakir.png) |
+| The Nether (mecakir) |
+
+<div><student gallery=5>Oliver Schwartz (os4)</student></div>
+
+My art submission is an interesting effect I obtained when I was implementing by explosion. Here, I am holding down the explosion button, which makes particles bounce rapidly between far away randomly computed positions and `(0, 0, 0)`. This creates the interesting effect of a 'singularity', where we have almost an energy ball about to explode. In the video below, I hold `e` for a good amount of time, release it, and then press it again for an explosion.
+
+|   |
+|:-:|
+| ![](./examples/a5/os4.gif) |
+| The Singularity (os4) |
+
+<div><student gallery=5>Scott Aravena (saravena)</student></div>
+
+My art contest submission was inspired by something that has taken up a lot of my time during quarantine: memes. In particular, the dancing [pallbearer meme](https://www.youtube.com/watch?v=qgDCM91f7NY) that has taken the internet by storm. After implementing my gravity hotkey, the motion of the cloth going up and down after repeatedly hitting the `G` key reminded me of the dancing pallbearers. As such, I found an image of the pallbearers for the ground texture and an image of a coffin for the cloth texture and recreated my favorite meme at the moment. Be sure to play Astronomia 2k19 by Stephan F. in the background. Enjoy!
+
+|   |
+|:-:|
+| ![](./examples/a5/saravena.gif) |
+| The Pallbearers (saravena) |
+
+<div><student gallery=5>xc11 (xc11)</student></div>
+
+My art contest submission sets cloth texture and ground to my cat Evelyn's photos. Additionally, I add the rain, wind and custom anti-gravity forces to the scene to make it more interesting.
+
+|   |
+|:-:|
+| ![](./examples/a5/xc11.gif) |
+| Evelyn (xc11) |
