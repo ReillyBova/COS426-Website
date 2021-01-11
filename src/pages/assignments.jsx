@@ -100,6 +100,7 @@ export const pageQuery = graphql`
                         dueTime
                         imageName
                         submitURL
+                        galleryID
                         feedbackURL
                         available
                         description

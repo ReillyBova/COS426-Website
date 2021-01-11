@@ -53,6 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         frontmatter {
                             available
+                            visible
                         }
                         fields {
                             slug
@@ -69,6 +70,16 @@ exports.createPages = async ({ graphql, actions }) => {
             if (node.frontmatter.available) {
                 createPage({
                     path: node.fields.slug,
+                    component: path.resolve(
+                        `./src/templates/AssignmentTemplate.jsx`
+                    ),
+                    context: {
+                        slug: node.fields.slug,
+                    },
+                });
+            } else if (node.frontmatter.visible) {
+                createPage({
+                    path: `staging/${node.fields.slug}`,
                     component: path.resolve(
                         `./src/templates/AssignmentTemplate.jsx`
                     ),

@@ -104,6 +104,7 @@ function Navbar({ classes }) {
                             }}
                             open={isDropdownOpen}
                             onClose={handleClose}
+                            disableScrollLock
                         >
                             {navigation.map((pageName) => {
                                 const isHomePage = pageName === homePage;
@@ -116,6 +117,7 @@ function Navbar({ classes }) {
                                         exact={isHomePage}
                                         key={pageName}
                                         classes={classes}
+                                        onClick={handleClose}
                                     >
                                         {pageName}
                                     </NavbarDropdownButton>

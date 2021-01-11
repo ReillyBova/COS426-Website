@@ -48,6 +48,7 @@ export const urlify = (string) =>
         string
             .replace(/\s+/g, '-')
             .replace(/’/g, '')
+            .replace(/–/g, '-')
             .toLowerCase()
     );
 

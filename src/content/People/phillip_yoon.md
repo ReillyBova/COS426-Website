@@ -14,5 +14,5 @@ githubURL: "https://github.com/yoonphillip"
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "Friday 2–4pm, and Sunday 9–11pm in the Friend Fishbowl"
+officeHours: "Friday 2–4pm, and Sunday 9–11pm"
 ---

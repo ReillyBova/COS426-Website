@@ -64,6 +64,7 @@ function AssignmentCard({ frontmatter, slug, fluidImage, gifImage, dueDate }) {
         assignmentName,
         assignmentNumber,
         submitURL,
+        galleryID,
         feedbackURL,
         available,
         description,
@@ -126,6 +127,7 @@ function AssignmentCard({ frontmatter, slug, fluidImage, gifImage, dueDate }) {
                     {'Feedback'}
                 </AssignmentButton>
                 <AssignmentButton
+                    to={galleryID && `/gallery#${galleryID}-gallery`}
                     available={available}
                     className={buttonStyle}
                     size='small'

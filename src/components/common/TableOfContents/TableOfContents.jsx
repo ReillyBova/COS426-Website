@@ -67,7 +67,7 @@ const contentTableStyles = makeStyles((theme) => ({
 // Generates a table of contents from Markdown
 function TableOfContents({ headings }) {
     // Media query to determine if we should render at all
-    const isVisible = useMediaQuery('(min-width:768px)');
+    const isVisible = useMediaQuery('(min-width:768px)', { defaultMatches: true });
 
     // contentIndex is the index of the heading of the on-screen content
     const [contentIndex, setContentIndex] = useState(-1);

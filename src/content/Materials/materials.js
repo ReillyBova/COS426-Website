@@ -20,9 +20,9 @@ const materials = {
         'Non-photorealistic Rendering', // Week 9
         'Passive Dynamics & Particle Systems',
         'Character Animation', // Week 10
-        'Games',
-        'Production F/X', // Week 11
-        '3D Fabrication',
+        'Production F/X',
+        '3D Fabrication', // Week 11
+        'Virtual & Augmented Reality (Doug Lanman, Facebook Reality Labs)',
         '', // Week 12
     ],
     precepts: [
@@ -34,10 +34,10 @@ const materials = {
         'Open Office Hours (Wed only; no Thu precept)', // Week 6
         'GLSL & Raytracing I', // Week 7
         'Raytracing II', // Week 8
-        'Rasterization I', // Week 9
-        'Rasterization II', // Week 10
-        'Animation', // Week 11
-        'Open Office Hours (Wed only; no Thu precept)', // Week 12
+        'Rasterization', // Week 9
+        'Simulation & Animation', // Week 10
+        'Web Graphics', // Week 11
+        'Final Project Starter Code', // Week 12
     ],
     readings: [
         [{ text: 'Ch. 1, 2, & 19' }],
@@ -70,20 +70,20 @@ const materials = {
     ],
     other: [
         {
-            title: 'In-class Exam (on content through Week 5)',
+            title: 'Exam POSTPONED due to COVID-19',
             due: { week: 6, day: 'Thursday' },
         },
         {
-            title: 'In-class Project Proposals',
+            title: 'Virtual Midterm Exam (see Piazza)',
+            due: { week: 7, day: 'Friday' },
+        },
+        {
+            title: 'Project Proposals over Zoom',
             due: { week: 12, day: 'Thursday' },
         },
         {
-            title: 'Final Project Presentations I (Tentative Date)',
-            due: { week: 13, day: 'Friday' },
-        },
-        {
-            title: 'Final Project Presentations II (Tentative Date)',
-            due: { week: 13, day: 'Saturday' },
+            title: 'Final Project Presentations over Zoom (Scheduling and Logistics TBD)',
+            due: { week: 13, day: 'Thursday' },
         },
     ],
 };

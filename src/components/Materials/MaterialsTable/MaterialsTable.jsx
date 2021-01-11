@@ -47,6 +47,7 @@ const materialTableStyles = makeStyles((theme) => ({
     },
     primaryLink: {
         color: 'white',
+        fontWeight: 700,
     },
 }));
 function MaterialsTable({ schedule }) {

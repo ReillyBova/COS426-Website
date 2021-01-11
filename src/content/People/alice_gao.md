@@ -14,5 +14,5 @@ githubURL: "https://www.github.com/atgao"
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "Friday 11am–12pm, Saturday 12–2pm, and Sunday 2–3pm in the Friend Fishbowl"
+officeHours: "Friday 11am–12pm, Saturday 12–2pm, and Sunday 2–3pm"
 ---

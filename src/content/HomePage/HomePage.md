@@ -8,7 +8,7 @@ Topics include: color theory, sampling, image processing, image compositing, mes
 The course is appropriate for students who have taken COS 217 and COS 226 (or equivalent). JavaScript will be the main programming language; however no prior knowledge of the language is required for students who wish to enroll in this course.
 
 ### Lectures and Precepts
-Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM in CS 104.
+Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM over Zoom.
 
 Precept is held on Wednesday and Thursday from 7:30–8:20PM in Friend Center 008. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
 
@@ -61,7 +61,7 @@ Unless a student has a JavaScript syntax question, **instructors will not look a
 ### Schedule
 Undergraduate LabTAs are available to help students during both precepts. LabTAs are also available in the Friend Fishbowl room Friday 11am–4pm, Saturday 12–3pm, and Sunday 1–5pm & 9–11pm.
 
-Graduate course staff are available in CS 003 from 3–5pm on Mondays, and 1–2pm on Tuesdays. Professor Heide's office hours are held Tuesday after class in CS 104 or CS 410.
+Graduate course staff are available over Zoom from 3–5pm on Mondays, and 1–2pm on Tuesdays. Professor Heide's office hours are held Tuesday after class in the Zoom lecture meeting.
 
 # Coursework
 ### Course Grades
@@ -93,7 +93,7 @@ Students are welcome to recycle code infrastructure provided for previous assign
 ### Late Policy
 Assignments are due at 11:55PM on their posted due dates, where submission time is determined by the file date of the file upload. Following a very brief grace period (which students should confirm with an instructor beforehand), one minute late is the same as one day late. Note that if any part of an assignment is submitted late, the entire assignment will be marked late. To submit an assignment late, remove all uploads from the online submission system, since instructors will grade partial submissions as-is (whereas no submissions are marked late). Note that work cannot be accepted after Dean's Date without a Dean's recommendation.
 
-Late assignments are marked down 1/4 of the full grade *per day or partial day* late. The penalties for a student's first three late days are automatically waived. Additional late penalties will be waived only in the case of unforeseeable circumstances like medical emergencies, as documented by a student's Dean or Director of Studies. Note that late days cannot be used for the final project as it is due on Dean's Date
+Late assignments are marked down 1/4 of the full grade *per day or partial day* late. This said, students may elect to wave up to three days of late penalties. Additional late penalties will be waived only in the case of unforeseeable circumstances like medical emergencies, as documented by a student's Dean or Director of Studies. Note that late days cannot be used for the final project as it is due on Dean's Date
 
 ### Regrades
 Students who feel they have been incorrectly graded may write a short private <piazza-link></piazza-link> post describing the potential grading mistake. All regrade requests must be posted within two weeks of when the potential grading error was made.
@@ -149,3 +149,6 @@ Students are only permitted to copy or adapt that is not theirs if it comes from
 
 ### Plagiarism Penalties
 We refer alleged academic violations (including plagiarism and abetting plagiarism) to the [Committee on Discipline](https://rrr.princeton.edu/#comp25). If found responsible, the typical penalty is an F as a course grade plus whatever penalty that the CoD imposes. (The typical CoD penalty for plagiarism is suspension from the University for one year.) Violators of course policies that are not adjudicated by the CoD will receive penalties based on the severity of the violation, ranging from a warning (for violations that are both unintentional and innocuous) to an F in the course (for violations that are both intentional and serious).
+
+# Acknowledgements
+The COS 426 course staff would like to thank former COS 426 undergraduate and two-time TA Reilly Bova ’20 for creating this beautiful website and revising all the assignment specifications. We would also like to thank William Sweeney ’20 and Reilly Bova together for rewriting the precept slides and compiling supplementary content for the course.

@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: "https://www.cs.princeton.edu/~yutingy/"
 # Office Hours
-officeHours: "Monday 3–4pm in CS 003"
+officeHours: "Monday 3–4pm"
 ---

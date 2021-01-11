@@ -12,7 +12,7 @@ import Fab from '@material-ui/core/Fab';
 import IconButton from '@material-ui/core/IconButton';
 import PublicIcon from '@material-ui/icons/Public';
 import EmailIcon from '@material-ui/icons/Email';
-import GithubIcon from 'mdi-material-ui/GithubCircle';
+import GithubIcon from 'mdi-material-ui/Github';
 
 // Custom styling for component
 const profileCardStyles = makeStyles((theme) => ({

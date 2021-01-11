@@ -16,6 +16,7 @@ html, body, div {
 body {
     background: #f2f2f2;
     font-family: "Open Sans", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-display: swap;
     min-width: 300px;
     overflow-x: scroll;
 

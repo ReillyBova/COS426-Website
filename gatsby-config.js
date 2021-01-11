@@ -1,13 +1,17 @@
 const plugins = require('./gatsby-plugins.js');
 
-// Settings
-const numLecturesPosted = 8; // Increment every time a lecture is posted
-const numPreceptsPosted = 4; // Increment every time a precept is posted
+// Weekly Settings
+const numLecturesPosted = 21; // Increment every time a lecture is posted
+const numPreceptsPosted = 11; // Increment every time a precept is posted
+// Annual Settings
 const semester = 2020; // Increment every year
 const firstDayOfSemester = '02-03'; // Adjust based off of academic calendar
 const firstLecture = 'Tuesday'; // Change based off of Registrar scheduling
 const secondLecture = 'Thursday'; // Change based off of Registrar scheduling
-const piazzaURL = 'https://piazza.com/princeton/spring2020/cos426/home';
+const piazzaURL = 'https://piazza.com/princeton/spring2020/cos426/home'; // Piazza Link
+// NB: INCLUDE a leading slash; EXCLUDE a trailing slash
+const pathURL = '/courses/archive/spring20/cos426'; // Subfolder location; necessary for internal links.
+const baseURL = 'https://www.cs.princeton.edu'; // Root host domain for site
 
 module.exports = {
     siteMetadata: {
@@ -21,7 +25,7 @@ module.exports = {
             piazzaURL,
         },
         title: `COS 426: Computer Graphics (${semester}) | Princeton University`,
-        siteUrl: `https://www.cs.princeton.edu/courses/archive/spring20/cos426/`,
+        siteUrl: `${baseURL}${pathURL}`,
         description: `The Princeton University course website for the Spring ${semester} term of COS 426: Computer Graphics`,
         author: 'ReillyBova',
         keywords: [
@@ -46,6 +50,6 @@ module.exports = {
         ],
         homePage: 'Overview',
     },
-    pathPrefix: 'courses/archive/spring20/cos426',
+    pathPrefix: pathURL,
     plugins: plugins,
 };

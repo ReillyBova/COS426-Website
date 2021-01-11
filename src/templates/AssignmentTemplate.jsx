@@ -1,11 +1,11 @@
 // Library imports
 import React from 'react';
 import { graphql, withPrefix } from 'gatsby';
-import clsx from 'clsx';
 // Project imports
 import {
     PageLayout,
     ExternalLink,
+    HoverImage,
     MarkdownPage,
     ScoreCalculator,
 } from 'components';
@@ -14,16 +14,7 @@ import { semesterOffsetToDateString } from 'utils';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-const assignmentStyles = makeStyles((theme) => ({
-    imageShadow: {
-        width: '100%',
-        boxShadow: `${theme.shadows[4]} !important`,
-        transition:
-            'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important',
-        '&:hover': {
-            boxShadow: `${theme.shadows[8]} !important`,
-        },
-    },
+const assignmentStyles = makeStyles(() => ({
     codeStyle: {
         fontSize: 16,
         lineHeight: '1rem',
@@ -48,7 +39,7 @@ function AssignmentTemplate({ data }) {
         dimReturnTop,
         dimReturnBottom,
     } = frontmatter;
-    const { imageShadow, codeStyle, textOverflow } = assignmentStyles();
+    const { codeStyle, textOverflow } = assignmentStyles();
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -65,7 +56,10 @@ function AssignmentTemplate({ data }) {
         ),
         'assignment-link': ({ children }) => (
             <ExternalLink
-                to={withPrefix(`zips/Assignment-${assignmentNumber}.zip`)}
+                to={(assignmentNumber < 0) ?
+                    withPrefix(`zips/COS-426-${assignmentName.replace(/\s+/g, '-')}.zip`)
+                    : withPrefix(`zips/COS-426-Assignment-${assignmentNumber}.zip`)
+                }
             >
                 {children}
             </ExternalLink>
@@ -73,8 +67,8 @@ function AssignmentTemplate({ data }) {
         'submit-link': ({ children }) => (
             <ExternalLink to={submitURL}>{children}</ExternalLink>
         ),
-        img: ({ className, ...props }) => (
-            <img className={clsx(className, imageShadow)} {...props} />
+        img: (props) => (
+            <HoverImage {...props} />
         ),
         total: () => (
             <code className={codeStyle}>{requiredPoints + optionalPoints}</code>
@@ -102,11 +96,21 @@ function AssignmentTemplate({ data }) {
     const date = semesterOffsetToDateString(dueWeek - 1, dueDay);
     const dueString = `Due: ${date} at ${dueTime}`;
 
+    // Compute strings for titles
+    let shortTitle, fullTitle;
+    if (assignmentNumber >= 0) {
+        shortTitle = `Assignment ${assignmentNumber}`;
+        fullTitle = `Assignment ${assignmentNumber}: ${assignmentName}`;
+    } else {
+        shortTitle = assignmentName;
+        fullTitle = assignmentName;
+    }
+
     // Render
     return (
-        <PageLayout title={`Assignment ${assignmentNumber}`}>
+        <PageLayout title={shortTitle}>
             <MarkdownPage
-                title={`Assignment ${assignmentNumber}: ${assignmentName}`}
+                title={fullTitle}
                 subtitle={dueString}
                 markdown={{ htmlAst, headings }}
                 components={customComponents}

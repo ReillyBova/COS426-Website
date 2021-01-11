@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "Friday 1–3pm, and Saturday 2–3pm in the Friend Fishbowl"
+officeHours: "Friday 1–3pm, and Saturday 2–3pm"
 ---

@@ -98,7 +98,7 @@ function NotFoundPage() {
                         }
                         <span style={{ whiteSpace: 'nowrap' }}>
                             {' '}
-                            {'frustrum :('}{' '}
+                            {'frustum :('}{' '}
                         </span>
                     </Typography>
                 </main>

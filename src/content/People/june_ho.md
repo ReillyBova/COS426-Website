@@ -14,5 +14,5 @@ githubURL: "https://github.com/junehosoft"
 # Website URL
 websiteURL: "https://www.junehopark.com/"
 # Office Hours
-officeHours: "Sunday 1–3pm in the Friend Fishbowl, as well as Precept Problem Sessions in Friend 008"
+officeHours: "Sunday 1–3pm, as well as Precept Problem Sessions"
 ---
