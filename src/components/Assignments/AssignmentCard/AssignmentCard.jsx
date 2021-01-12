@@ -30,6 +30,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
         height: 250,
     },
     contentStyle: {
+        paddingTop: theme.spacing(1.5),
         paddingBottom: 0,
         flexGrow: 1,
     },
