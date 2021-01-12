@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A0/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A4/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A1/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/Final-Project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A5/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/A3/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/Final-Project/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/assignments/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/exercises/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.cs.princeton.edu/courses/archive/spring20/cos426/courses/archive/spring20/cos426/gallery/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
