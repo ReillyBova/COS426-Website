@@ -14,17 +14,17 @@ The greater the input value, the larger the tiles grow, and thus the more abstra
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/gjroth1.png) | ![](./examples/a0/gjroth2.png) |
+| ![](./art/a0/gjroth1.png) | ![](./art/a0/gjroth2.png) |
 | Abstract Flower Mosaic (gjroth) | Detailed Flower Mosaic (gjroth) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/gjroth3.png) | ![](./examples/a0/gjroth4.png) |
+| ![](./art/a0/gjroth3.png) | ![](./art/a0/gjroth4.png) |
 | Abstract Golden Gate Mosaic (gjroth) | Detailed Golden Gate Mosaic (gjroth) |
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a0/gjroth5.png) | ![](./examples/a0/gjroth6.png) | ![](./examples/a0/gjroth7.png) |
+| ![](./art/a0/gjroth5.png) | ![](./art/a0/gjroth6.png) | ![](./art/a0/gjroth7.png) |
 | A Tiled Man (gjroth) | A Mosaic of a Mesa (gjroth) | A Mosaic of a Doge (gjroth) |
 
 <div><student gallery=0 place=2>David Todd (dtodd)</student></div>
@@ -33,12 +33,12 @@ First, I sampled a random number of pixels (inversely proportional to the user-i
 
 |   |
 |:-:|
-| ![](./examples/a0/dtodd1.jpg) |
+| ![](./art/a0/dtodd1.jpg) |
 | Leaf Topologies (dtodd) |
 
 |   |
 |:-:|
-| ![](./examples/a0/dtodd2.jpg) |
+| ![](./art/a0/dtodd2.jpg) |
 | A Golden Cartoon (dtodd) |
 
 <div><student gallery=0 place=3>Audrey Cheng (accheng)</student></div>
@@ -47,7 +47,7 @@ I simulated intense light coming out of the windows of the town for my art proje
 
 |   |
 |:-:|
-| ![](./examples/a0/accheng.gif) |
+| ![](./art/a0/accheng.gif) |
 | Santorini Lights (accheng) |
 
 <div><student gallery=0 place=3>Brandy Chen (brandyc)</student></div>
@@ -56,7 +56,7 @@ For the Art Contest, I drew a landscape of a mountain. I used the soft brush for
 
 |   |
 |:-:|
-| ![](./examples/a0/brandyc.jpg) |
+| ![](./art/a0/brandyc.jpg) |
 | the mountains are calling and i must go (brandyc) |
 
 <div><student gallery=0 place=3>Yujin Yamahara (yamahara)</student></div>
@@ -65,12 +65,12 @@ My custom filter covers about a quarter of the image with circles of a randomly 
 
 |   |
 |:-:|
-| ![](./examples/a0/yamahara1.png) |
+| ![](./art/a0/yamahara1.png) |
 | The Cheetah Slurps (yamahara) |
 
 |   |
 |:-:|
-| ![](./examples/a0/yamahara2.png) |
+| ![](./art/a0/yamahara2.png) |
 | The Fun Flowerpot (yamahara) |
 
 <div><student gallery=0 place=4>Ofek Peres (operes)</student></div>
@@ -85,7 +85,7 @@ Both of my convolution functions are able to handle variable inputs for radius, 
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-| ![](./examples/a0/operes1.png) | ![](./examples/a0/operes2.png) | ![](./examples/a0/operes3.png) | ![](./examples/a0/operes4.png) |
+| ![](./art/a0/operes1.png) | ![](./art/a0/operes2.png) | ![](./art/a0/operes3.png) | ![](./art/a0/operes4.png) |
 | Trippy Fall (operes) | The Edge of Man (operes) | The Rainbow Gate (operes) | A Yellow Sun (operes) |
 
 <div><student gallery=0 place=4>Christine Kwon (cmkwon)</student></div>
@@ -96,7 +96,7 @@ The overall effect resembles shards of green glass or crystal.
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/cmkwon1.png) | ![](./examples/a0/cmkwon2.png) |
+| ![](./art/a0/cmkwon1.png) | ![](./art/a0/cmkwon2.png) |
 | Leaves in Oz (cmkwon) | The Emerald Sun (cmkwon) |
 
 <div><student gallery=0 place=4>Lily Zhang (llzhang)</student></div>
@@ -104,7 +104,7 @@ The overall effect resembles shards of green glass or crystal.
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/llzhang1.png) | ![](./examples/a0/llzhang2.png) |
+| ![](./art/a0/llzhang1.png) | ![](./art/a0/llzhang2.png) |
 | Hazy Portrait Pic in SF (llzhang) | Sunflower Seeded (llzhang) |
 
 <div><student gallery=0 place=4>Tyler Campbell (tylercc)</student></div>
@@ -115,12 +115,12 @@ If the input parameter is less than `.5`, my filter will do image processing in 
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/tylercc1.png) | ![](./examples/a0/tylercc2.png) |
+| ![](./art/a0/tylercc1.png) | ![](./art/a0/tylercc2.png) |
 | Sunflower Sketch (tylercc) | Colorized Sunflower Sketch (tylercc) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/tylercc3.png) | ![](./examples/a0/tylercc4.png) |
+| ![](./art/a0/tylercc3.png) | ![](./art/a0/tylercc4.png) |
 | Golden Gate Sketch (tylercc) | Colorized Golden Gate Sketch (tylercc) |
 
 <div><student gallery=0 place=4>Zak Dasaro (zdasaro)</student></div>
@@ -129,7 +129,7 @@ For the art contest, I implemented a spiral feature. It rotates every concentric
 
 |   |
 |:-:|
-| ![](./examples/a0/zdasaro.gif) |
+| ![](./art/a0/zdasaro.gif) |
 | Spiraling Doge (zdasaro) |
 
 ### Honorable Mentions (A0)
@@ -140,7 +140,7 @@ For the art contest, I made two images. The first uses the fill, brush, and soft
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/dorothyz1.png) | ![](./examples/a0/dorothyz2.png) |
+| ![](./art/a0/dorothyz1.png) | ![](./art/a0/dorothyz2.png) |
 | Sunset Mountain (dorothyz) | Rise of the Ice Black Sun (dorothyz) |
 
 <div><student gallery=0>Daniel Wey (dwey)</student></div>
@@ -149,7 +149,7 @@ My submission reflects an original image on a horizontal axis along the photo’
 
 |   |
 |:-:|
-| ![](./examples/a0/dwey.png) |
+| ![](./art/a0/dwey.png) |
 | Clouded Reflection (dwey) |
 
 <div><student gallery=0>Henry Wang (htwang)</student></div>
@@ -164,7 +164,7 @@ few frames were made through a simple application of the brush filter.
 
 |   |   |   |
 |:-:|:-:|:-:|
-|   | ![](./examples/a0/htwang.gif) |   |
+|   | ![](./art/a0/htwang.gif) |   |
 |   | Spiral Into Madness: Thesis 2020 (htwang) |   |
 
 <div><student gallery=0>Jake Kirkham (jak4)</student></div>
@@ -173,7 +173,7 @@ For my art contest submission, I created a surreal, truly-golden Golden Gate Bri
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/jak41.png) | ![](./examples/a0/jak42.png) |
+| ![](./art/a0/jak41.png) | ![](./art/a0/jak42.png) |
 | True Gold (jak4) | The Wicked Twist (jak4) |
 
 <div><student gallery=0>Jamie Guo (jamieguo)</student></div>
@@ -184,7 +184,7 @@ I also created a custom filter that pixellates the image, using an integer value
 
 |   |
 |:-:|
-| ![](./examples/a0/jamieguo.png) |
+| ![](./art/a0/jamieguo.png) |
 | computer graphics is my passion (jamieguo) |
 
 <div><student gallery=0>Jingwen Guo (jingweng)</student></div>
@@ -193,7 +193,7 @@ For the art contest, I created a custom filter with adjustable brightness. I cre
 
 |   |
 |:-:|
-| ![](./examples/a0/jingweng.gif) |
+| ![](./art/a0/jingweng.gif) |
 | Bay Area Lights (jingweng) |
 
 <div><student gallery=0>Chi Qi (jinyuanq)</student></div>
@@ -204,7 +204,7 @@ I also added some random colored pixels to imitate signal noise on a TV, and I a
 
 |   |
 |:-:|
-| ![](./examples/a0/jinyuanq.gif) |
+| ![](./art/a0/jinyuanq.gif) |
 | Santorini TV (jinyuanq) |
 
 <div><student gallery=0>Jason Kim (jjk7)</student></div>
@@ -215,12 +215,12 @@ Then I added clouds to both images below. The result is an attempt to create ima
 
 |   |   |   |
 |:-:|:-:|:-:|
-|   | ![](./examples/a0/jjk71.png) |   |
+|   | ![](./art/a0/jjk71.png) |   |
 |   | Alien World (jjk7) |   |
 
 |   |
 |:-:|
-| ![](./examples/a0/jjk72.png) |
+| ![](./art/a0/jjk72.png) |
 | Blue Star (jjk7) |
 
 <div><student gallery=0>Joanna Kuo (jkuo)</student></div>
@@ -233,12 +233,12 @@ Using this illusion, I decided to color parts of black and white images with alt
 
 |   |
 |:-:|
-| ![](./examples/a0/jkuo1.jpg) |
+| ![](./art/a0/jkuo1.jpg) |
 | Seeing Colors (jkuo) |
 
 |   |
 |:-:|
-| ![](./examples/a0/jkuo2.jpg) |
+| ![](./art/a0/jkuo2.jpg) |
 | Purple Lilies? (jkuo) |
 
 <div><student gallery=0>Lauren Johnston (lej2)</student></div>
@@ -249,7 +249,7 @@ I then translated HSL back to RGB and used alpha blending to combine sepia-tone 
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a0/lej21.png) | ![](./examples/a0/lej22.png) |
+| ![](./art/a0/lej21.png) | ![](./art/a0/lej22.png) |
 | Elephants (lej2) | Jaipur (lej2) |
 
 <div><student gallery=0>Sharon Zhang (sharonz)</student></div>
@@ -261,7 +261,7 @@ My art project is a filter that simulates the effects of old, grainy film. Movin
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a0/sharonz1.png) | ![](./examples/a0/sharonz2.png) | ![](./examples/a0/sharonz3.png) |
+| ![](./art/a0/sharonz1.png) | ![](./art/a0/sharonz2.png) | ![](./art/a0/sharonz3.png) |
 | Sepia San Fransisco (sharonz) | Fall Tones (sharonz) | Santorini Snapshot (sharonz) |
 
 <div><student gallery=0>Thomas Martinson (tmm2)</student></div>
@@ -270,7 +270,7 @@ I decided to implement a median filter, as described in lecture. I did this by g
 
 |   |
 |:-:|
-| ![](./examples/a0/tmm2.png) |
+| ![](./art/a0/tmm2.png) |
 | A Smooth Sunset (tmm2) |
 
 # Assignment 1 Gallery
@@ -283,12 +283,12 @@ I implemented my "Cursed Image Filter" by performing operations similar to those
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a1/yamahara1.png) | ![](./examples/a1/yamahara2.png) | ![](./examples/a1/yamahara3.png) |
+| ![](./art/a1/yamahara1.png) | ![](./art/a1/yamahara2.png) | ![](./art/a1/yamahara3.png) |
 | Cursed Man (yamahara) | Cursed Clown (yamahara) | Cursed Doge (yamahara) |
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-|   | ![](./examples/a1/yamahara4.png) | ![](./examples/a1/yamahara5.png) |    |
+|   | ![](./art/a1/yamahara4.png) | ![](./art/a1/yamahara5.png) |    |
 |    | Friendly Doll | Cursed Doll (yamahara) |   |
 
 <div><student gallery=1 place=2>Joanna Kuo (jkuo)</student></div>
@@ -299,7 +299,7 @@ This morph of Joaquin Phoenix into his iconic Joker character was generated usin
 
 |   |
 |:-:|
-| ![](./examples/a1/jkuo.gif) |
+| ![](./art/a1/jkuo.gif) |
 | “When you bring me out, can you introduce me as Joker?” (jkuo) |
 
 <div><student gallery=1 place=2>Johan Ospina (jospina)</student></div>
@@ -308,7 +308,7 @@ First, I created a morph for my significant other. Then I realized the POTUS, in
 
 |   |   |   |
 |:-:|:-:|:-:|
-|   | ![](./examples/a1/jospina.gif) |   |
+|   | ![](./art/a1/jospina.gif) |   |
 |   | I Smell Like a Beefy Cheeto (jospina) |   |
 
 <div><student gallery=1 place=2>Jake Waksbaum (waksbaum)</student></div>
@@ -317,14 +317,14 @@ I made this using my painting filter!
 
 |   |
 |:-:|
-| ![](./examples/a1/waksbaum1.png) |
+| ![](./art/a1/waksbaum1.png) |
 | A Sponge Painted Flower (waksbaum) |
 
 This was the result of a bug in my morph implementation, and I thought it looked cool:
 
 |   |
 |:-:|
-| ![](./examples/a1/waksbaum2.png) |
+| ![](./art/a1/waksbaum2.png) |
 | Trump Visits his Dentist from the 5th Dimension (waksbaum) |
 
 <div><student gallery=1 place=3>Benjamin Huang (bdhuang)</student></div>
@@ -333,7 +333,7 @@ While I was debugging the bilateral filter, I found that my buggy implementation
 
 |   |
 |:-:|
-| ![](./examples/a1/bdhuang.png) |
+| ![](./art/a1/bdhuang.png) |
 | Digital Pointilism (bdhuang) |
 
 <div><student gallery=1 place=3>Elizabeth Petrov (epetrov)</student></div>
@@ -342,14 +342,14 @@ While trying to implement the rotate filter, I ended up creating a kaleidoscope 
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-| ![](./examples/a1/epetrov1.png) | ![](./examples/a1/epetrov2.png) | ![](./examples/a1/epetrov3.png) | ![](./examples/a1/epetrov4.png) |
+| ![](./art/a1/epetrov1.png) | ![](./art/a1/epetrov2.png) | ![](./art/a1/epetrov3.png) | ![](./art/a1/epetrov4.png) |
 | Kaleidoscope 1 (epetrov) | Kaleidoscope 2 (epetrov) | Kaleidoscope 3 (epetrov) | Kaleidoscope 4 (epetrov) |
 
 Here I implemented swirl with the distance squared, leading to a really interesting effect that I applied onto the mesa and leaves images.
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/epetrov5.png) | ![](./examples/a1/epetrov6.png) |
+| ![](./art/a1/epetrov5.png) | ![](./art/a1/epetrov6.png) |
 | Swirly Mesa (epetrov) | Swirly Leaves (epetrov) |
 
 <div><student gallery=1 place=3>Yunzi Shi (yunzis)</student></div>
@@ -359,12 +359,12 @@ implementing CMYK, but by using the filters developed in this assignment). I cre
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/yunzis1.png) | ![](./examples/a1/yunzis2.png) |
+| ![](./art/a1/yunzis1.png) | ![](./art/a1/yunzis2.png) |
 | Halftone Santorini (yunzis) | Halftone Man (yunzis) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/yunzis3.gif) | ![](./examples/a1/yunzis4.gif) |
+| ![](./art/a1/yunzis3.gif) | ![](./art/a1/yunzis4.gif) |
 | Halftone Woman (yunzis) | Halftone Golden Gate (yunzis) |
 
 <div><student gallery=1 place=3>Zak Dasaro (zdasaro)</student></div>
@@ -373,7 +373,7 @@ For the art contest, I used the paint feature and the composite feature to combi
 
 |   |
 |:-:|
-| ![](./examples/a1/zdasaro.png) |
+| ![](./art/a1/zdasaro.png) |
 | Golden Gate Jazz (zdasaro) |
 
 ### Honorable Mentions (A1)
@@ -384,7 +384,7 @@ First, I found a palette using the k-means algorithm. Then I applied Floyd-Stein
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/dtodd1.png) | ![](./examples/a1/dtodd2.png) |
+| ![](./art/a1/dtodd1.png) | ![](./art/a1/dtodd2.png) |
 | Golden Gate Palette Dither (dtodd) | Palette Dithered Donald (dtodd) |
 
 
@@ -396,7 +396,7 @@ I implemented the Tilt Shift Photography filter by creating a linearly increasin
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-| ![](./examples/a1/gjroth1.png) | ![](./examples/a1/gjroth2.png) | ![](./examples/a1/gjroth3.png) | ![](./examples/a1/gjroth4.png) |
+| ![](./art/a1/gjroth1.png) | ![](./art/a1/gjroth2.png) | ![](./art/a1/gjroth3.png) | ![](./art/a1/gjroth4.png) |
 | Tilt Shift Santorini (gjroth) | Tilt Shift Mesa (gjroth) | Tilt Shift Golden Gate (gjroth) | Tilt Shift Flower (gjroth) |
 
 <div><student gallery=1>HJ Suh (hjsuh)</student></div>
@@ -405,7 +405,7 @@ I used a custom filter to first create two images that had the same dimensions. 
 
 |   |
 |:-:|
-| ![](./examples/a1/hjsuh.gif) |
+| ![](./art/a1/hjsuh.gif) |
 | Mad Bilbo (hjsuh) |
 
 <div><student gallery=1>Lauren Johnston (lej2)</student></div>
@@ -414,7 +414,7 @@ I combined a custom filter (an edge filter without inversion) with a Gaussian bl
 
 |   |
 |:-:|
-| ![](./examples/a1/lej2.png) |
+| ![](./art/a1/lej2.png) |
 | Neon Leaves (lej2) |
 
 <div><student gallery=1>Michael Stambler (mas16)</student></div>
@@ -424,18 +424,18 @@ The selected work here represents the absolute best of my bugs ---
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/mas161.png) | ![](./examples/a1/mas162.png) |
+| ![](./art/a1/mas161.png) | ![](./art/a1/mas162.png) |
 | Gold Leaf (mas16) | Seeing Green (mas16) |
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a1/mas163.jpg) | ![](./examples/a1/mas164.jpg) | ![](./examples/a1/mas165.jpg) |
+| ![](./art/a1/mas163.jpg) | ![](./art/a1/mas164.jpg) | ![](./art/a1/mas165.jpg) |
 | Rd Flwr (mas16) | ngry Hmn (mas16) | Ht Mntn (mas16) |
 
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a1/mas166.png) | ![](./examples/a1/mas167.png) | ![](./examples/a1/mas168.png) |
+| ![](./art/a1/mas166.png) | ![](./art/a1/mas167.png) | ![](./art/a1/mas168.png) |
 | Corruption (mas16) | Picasso, Is That You? (mas16) | Sauron (mas16) |
 
 <div><student gallery=1>Robert Freeman (raf5)</student></div>
@@ -444,7 +444,7 @@ I noticed that the number of pictures of Trump was surprisingly low in the colle
 
 |   |
 |:-:|
-| ![](./examples/a1/raf5.png) |
+| ![](./art/a1/raf5.png) |
 | The Beauty of the Beast (raf5) |
 
 <div><student gallery=1>Richard Wolf (rwolf)</student></div>
@@ -455,7 +455,7 @@ After this, I then convert my polar coordinates back to cartesian coordinates an
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a1/rwolf1.gif) | ![](./examples/a1/rwolf2.jpg) |
+| ![](./art/a1/rwolf1.gif) | ![](./art/a1/rwolf2.jpg) |
 | Colorful Hyperswirl (rwolf) | Atomic Energy (rwolf) |
 
 # Assignment 2 Gallery
@@ -468,7 +468,7 @@ For this art, I modified extrude slightly to achieve a "spiraling" effect. After
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/bdhuang1.png) | ![](./examples/a2/bdhuang2.png) | ![](./examples/a2/bdhuang3.png) |
+| ![](./art/a2/bdhuang1.png) | ![](./art/a2/bdhuang2.png) | ![](./art/a2/bdhuang3.png) |
 | Pigtails (bdhuang) | Twisted (bdhuang) | Dancer (bdhuang) |
 
 <div><student gallery=2 place=1>Elizabeth Petrov (epetrov)</student></div>
@@ -477,7 +477,7 @@ I called catmull-clark and extrude multiple times to produce a cool fractal effe
 
 |   |
 |:-:|
-| ![](./examples/a2/epetrov.png) |
+| ![](./art/a2/epetrov.png) |
 | Colored Snowflake (epetrov) |
 
 <div><student gallery=2 place=1>Jason Kim (jjk7)</student></div>
@@ -486,7 +486,7 @@ My Wacky  essentially swirls the mesh around all three axes. I realized that whe
 
 |   |
 |:-:|
-| ![](./examples/a2/jjk7.gif) |
+| ![](./art/a2/jjk7.gif) |
 | Inky the Octopus (jjk7) |
 
 <div><student gallery=2 place=1>Yunzi Shi (yunzis)</student></div>
@@ -495,7 +495,7 @@ For my first submission, I applied noise and an adapted version of extrude to a 
 
 |   |
 |:-:|
-| ![](./examples/a2/yunzis.gif) |
+| ![](./art/a2/yunzis.gif) |
 | Life Cycles (yunzis) |
 
 <div><student gallery=2 place=2>Daniel Wey (dwey)</student></div>
@@ -504,7 +504,7 @@ I created this artwork through a series of extrusions on randomly selected faces
 
 |   |
 |:-:|
-| ![](./examples/a2/dwey.png) |
+| ![](./art/a2/dwey.png) |
 | Overwhelming Thoughts (dwey) |
 
 <div><student gallery=2 place=2>Gabriel Roth (gjroth)</student></div>
@@ -513,12 +513,12 @@ Behold my "Spiky Filter", which adds a new vertex on the centroid of every face 
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/gjroth1.png) | ![](./examples/a2/gjroth2.png) | ![](./examples/a2/gjroth3.png) |
+| ![](./art/a2/gjroth1.png) | ![](./art/a2/gjroth2.png) | ![](./art/a2/gjroth3.png) |
 | Don't Step on Me (gjroth) | Spiky Ball (gjroth) | Pins and Needles (gjroth) |
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/gjroth4.png) | ![](./examples/a2/gjroth5.png) | ![](./examples/a2/gjroth6.png) |
+| ![](./art/a2/gjroth4.png) | ![](./art/a2/gjroth5.png) | ![](./art/a2/gjroth6.png) |
 | Fuzzy Pony (gjroth) | New Course Logo (gjroth) | Medieval Cheetah (gjroth) |
 
 <div><student gallery=2 place=2>Julian Knodt (jknodt)</student></div>
@@ -527,7 +527,7 @@ Just random bugs and nice looking images :)
 
 |   |   |   |   |
 |:-:|:-:|:-:|:-:|
-| ![](./examples/a2/jknodt1.png) | ![](./examples/a2/jknodt2.png) | ![](./examples/a2/jknodt3.png) | ![](./examples/a2/jknodt4.png) |
+| ![](./art/a2/jknodt1.png) | ![](./art/a2/jknodt2.png) | ![](./art/a2/jknodt3.png) | ![](./art/a2/jknodt4.png) |
 | Black Panther (jknodt) | UFO (jknodt) | Folding Ball (jknodt) | Regular Crystals (jknodt) |
 
 <div><student gallery=2 place=3>David Todd (dtodd)</student></div>
@@ -536,7 +536,7 @@ To make these works, I first iteratively truncated all convex vertices. To make 
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/dtodd1.jpg) | ![](./examples/a2/dtodd2.jpg) | ![](./examples/a2/dtodd3.jpg) |
+| ![](./art/a2/dtodd1.jpg) | ![](./art/a2/dtodd2.jpg) | ![](./art/a2/dtodd3.jpg) |
 | Fusion Ball (dtodd) | Radioactive Ball (dtodd) | Toxic Ball (dtodd) |
 
 <div><student gallery=2 place=3>Henry Wang (htwang)</student></div>
@@ -545,14 +545,14 @@ Chester the Cheetah decided to try those "rainbow" colored Cheetos. Only, they w
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/htwang1.png) | ![](./examples/a2/htwang2.png) | ![](./examples/a2/htwang3.png) |
+| ![](./art/a2/htwang1.png) | ![](./art/a2/htwang2.png) | ![](./art/a2/htwang3.png) |
 | Chester the Table (htwang) | Chester Takes the L on A2 (htwang) | Chester the Mad Hatter (htwang) |
 
 Additionally, here's a disco ball and a disco ball that's done the twist:
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/htwang4.png) | ![](./examples/a2/htwang5.png) |
+| ![](./art/a2/htwang4.png) | ![](./art/a2/htwang5.png) |
 | Disco Ball (htwang) | Disco Party (htwang) |
 
 <div><student gallery=2 place=3>Heidi Kim (hyunsunk)</student></div>
@@ -561,7 +561,7 @@ While creating my quad topology filter, I tried toying around with the displacem
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/hyunsunk1.png) | ![](./examples/a2/hyunsunk2.png) | ![](./examples/a2/hyunsunk3.png) |
+| ![](./art/a2/hyunsunk1.png) | ![](./art/a2/hyunsunk2.png) | ![](./art/a2/hyunsunk3.png) |
 | Corona (hyunsunk) | A Bigger Box (hyunsunk) | The Firebird (hyunsunk) |
 
 <div><student gallery=2 place=3>Jake Kirkham (jak4)</student></div>
@@ -570,7 +570,7 @@ I aimed to create a desktop wallpaper. I did this by extruding the biresolution 
 
 |   |
 |:-:|
-| ![](./examples/a2/jak4.png) |
+| ![](./art/a2/jak4.png) |
 | The Cage (jak4) |
 
 <div><student gallery=2 place=3>Jamie Guo (jamieguo)</student></div>
@@ -579,7 +579,7 @@ Here's an animation of my wacky filter on the biresolution sphere, ranging from 
 
 |   |
 |:-:|
-| ![](./examples/a2/jamieguo.gif) |
+| ![](./art/a2/jamieguo.gif) |
 | Orbitals (jamieguo) |
 
 <div><student gallery=2 place=3>Joanna Kuo (jkuo)</student></div>
@@ -588,17 +588,17 @@ All the submissions below are cool looking bugs that I encountered while impleme
 
 |   |
 |:-:|
-| ![](./examples/a2/jkuo4.png) |
+| ![](./art/a2/jkuo4.png) |
 | Teapotception (jkuo) |
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/jkuo1.png) | ![](./examples/a2/jkuo2.png) | ![](./examples/a2/jkuo3.png) |
+| ![](./art/a2/jkuo1.png) | ![](./art/a2/jkuo2.png) | ![](./art/a2/jkuo3.png) |
 | Butterflies (jkuo) | Porcelain Teapot (jkuo) | Ergonomic Cheetah (jkuo) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/jkuo5.png) | ![](./examples/a2/jkuo6.png) |
+| ![](./art/a2/jkuo5.png) | ![](./art/a2/jkuo6.png) |
 | Oragami (jkuo) | Striped Ball (jkuo) |
 
 ### Honorable Mentions (A2)
@@ -609,7 +609,7 @@ To create my submission for the art contest, I first applied vertex colors and t
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/cyclu1.png) | ![](./examples/a2/cyclu2.png) |
+| ![](./art/a2/cyclu1.png) | ![](./art/a2/cyclu2.png) |
 | Off Balance (cyclu) | Cheetah Skipped Leg Day (cyclu) |
 
 <div><student gallery=2>Donovan Coronado (dtc2)</student></div>
@@ -618,7 +618,7 @@ When I was trying to implement wacky, I messed something up and just ended up fl
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/dtc21.png) | ![](./examples/a2/dtc22.png) |
+| ![](./art/a2/dtc21.png) | ![](./art/a2/dtc22.png) |
 | Flat Horsey 1 (dtc2) | Flat Horsey 2 (dtc2) |
 
 <div><student gallery=2>Jonah Lytle (jlytle)</student></div>
@@ -627,19 +627,19 @@ My first artwork is a play on the triangle topology function. I changed up the w
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a2/jlytle1.png) | ![](./examples/a2/jlytle2.png) | ![](./examples/a2/jlytle3.png) |
+| ![](./art/a2/jlytle1.png) | ![](./art/a2/jlytle2.png) | ![](./art/a2/jlytle3.png) |
 | Halfedge Flower (jlytle) | Rainbow Scrunchie (jlytle) | Cheetah Cub (jlytle) |
 
 <div><student gallery=2>Lydia You (lgyou)</student></div>
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/lgyou1.png) | ![](./examples/a2/lgyou2.gif) |
+| ![](./art/a2/lgyou1.png) | ![](./art/a2/lgyou2.gif) |
 | Curvature (lgyou) | Shrink Wrap (lgyou) |
 
 |   |
 |:-:|
-| ![](./examples/a2/lgyou3.png) |
+| ![](./art/a2/lgyou3.png) |
 | The Kraken (lgyou) |
 
 <div><student gallery=2>Nicholas Liu (nl3)</student></div>
@@ -648,7 +648,7 @@ A serpentine Chinese dragon rises into the air! I created this artwork by first 
 
 |   |
 |:-:|
-| ![](./examples/a2/nl3.png) |
+| ![](./art/a2/nl3.png) |
 | A Dragon Rises (nl3) |
 
 <div><student gallery=2>Sophie Kader (skader)</student></div>
@@ -657,7 +657,7 @@ For my art contest I decided to mimic the flowy-hair days of Justin Bieber. I ac
 
 |   |
 |:-:|
-| ![](./examples/a2/skader.png) |
+| ![](./art/a2/skader.png) |
 | Justin's Hair (skader) |
 
 <div><student gallery=2>Taylor Beckett (tbeckett)</student></div>
@@ -666,7 +666,7 @@ My art contest uses a filter similar to twist, except instead of just multiplyin
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a2/tbeckett1.png) | ![](./examples/a2/tbeckett2.png) |
+| ![](./art/a2/tbeckett1.png) | ![](./art/a2/tbeckett2.png) |
 | Twisted Plus (tbeckett) | Decorated Twisted Plus (tbeckett) |
 
 <div><student gallery=2>William Li (wl14)</student></div>
@@ -675,7 +675,7 @@ To create this artwork, I took the default cube, truncated it, and extruded the 
 
 |   |
 |:-:|
-| ![](./examples/a2/wl14.png) |
+| ![](./art/a2/wl14.png) |
 | Groovy (wl14) |
 
 # Assignment 3 Gallery
@@ -688,7 +688,7 @@ For my submission, I recreated the Great Hall from Harry Potter but made it infi
 
 |   |
 |:-:|
-| ![](./examples/a3/axue.png) |
+| ![](./art/a3/axue.png) |
 | The Great Hall (axue) |
 
 <div><student gallery=3 place=2>David Todd (dtodd)</student></div>
@@ -697,7 +697,7 @@ Let's face it: the checkerboard floor is pretty boring. But what if it weren't s
 
 |   |
 |:-:|
-| ![](./examples/a3/dtodd.gif) |
+| ![](./art/a3/dtodd.gif) |
 | The Trip (dtodd) |
 
 <div><student gallery=3 place=3>Jake Kirkham (jak4)</student></div>
@@ -708,7 +708,7 @@ While there's not a lot you can do to fight the virus (that we know of, right no
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/jak41.png) |![](./examples/a3/jak42.png) |
+| ![](./art/a3/jak41.png) |![](./art/a3/jak42.png) |
 | Soap Bubble (jak4) | Stop the Spread (jak4) |
 
 <div><student gallery=3 place=3>Jingwen Guo (jingweng)</student></div>
@@ -717,7 +717,7 @@ I reorganized the primitive components of the default scene into something spook
 
 |   |
 |:-:|
-| ![](./examples/a3/jingweng.png) |
+| ![](./art/a3/jingweng.png) |
 | A Dark Place (jingweng) |
 
 <div><student gallery=3 place=3>Joanna Kuo (jkuo)</student></div>
@@ -726,7 +726,7 @@ Two words: Social Distancing!!!
 
 |   |
 |:-:|
-| ![](./examples/a3/jkuo.gif) |
+| ![](./art/a3/jkuo.gif) |
 | Too Little, Too Late (jkuo) |
 
 <div><student gallery=3 place=4>Anabelle Chang (anabelle)</student></div>
@@ -735,7 +735,7 @@ My art project is a tribute to Kobe Bryant. Adorned with a purple ceiling and a 
 
 |   |
 |:-:|
-| ![](./examples/a3/anabelle.gif) |
+| ![](./art/a3/anabelle.gif) |
 | Too Little, Too Late (anabelle) |
 
 <div><student gallery=3 place=4>Elizabeth Petrov (epetrov)</student></div>
@@ -746,12 +746,12 @@ When playing around with special material, I created a granite-like effect that 
 
 |   |
 |:-:|
-| ![](./examples/a3/epetrov1.gif) |
+| ![](./art/a3/epetrov1.gif) |
 | Whitted's Spheres, Revisited (epetrov) |
 
 |   |
 |:-:|
-| ![](./examples/a3/epetrov2.png) |
+| ![](./art/a3/epetrov2.png) |
 | Cotton Candy Culture (epetrov) |
 
 <div><student gallery=3 place=4>Sharon Zhang (sharonz)</student></div>
@@ -760,7 +760,7 @@ First, I played around with the custom scene I made and tried to give it some mo
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/sharonz1.gif) |![](./examples/a3/sharonz2.jpg) |
+| ![](./art/a3/sharonz1.gif) |![](./art/a3/sharonz2.jpg) |
 | RealD 3D (sharonz) | Your Next Album Cover (sharonz) |
 
 <div><student gallery=3 place=4>Zak Dasaro (zdasaro)</student></div>
@@ -769,7 +769,7 @@ This submission combines my custom scene with my bouncing sphere animation. I ar
 
 |   |
 |:-:|
-| ![](./examples/a3/zdasaro.gif) |
+| ![](./art/a3/zdasaro.gif) |
 | Bounce Lighting (zdasaro) |
 
 <div><student gallery=3 place=5>Hollis Ma (hollism)</student></div>
@@ -778,7 +778,7 @@ I originally wanted to simulate an ocean with balls of light floating around and
 
 |   |
 |:-:|
-| ![](./examples/a3/hollism.gif) |
+| ![](./art/a3/hollism.gif) |
 | Hold Your Breath (hollism) |
 
 <div><student gallery=3 place=5>Heidi Kim (hyunsunk)</student></div>
@@ -789,7 +789,7 @@ From left to right, my scene includes what's on one of my kitchen shelves right 
 
 |   |
 |:-:|
-| ![](./examples/a3/hyunsunk.png) |
+| ![](./art/a3/hyunsunk.png) |
 | Stockpile (hyunsunk) |
 
 <div><student gallery=3 place=5>Jamie Guo (jamieguo)</student></div>
@@ -798,7 +798,7 @@ Bears on bears on bears. I used spheres, cones, and cylinders to make a big ol' 
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/jamieguo1.png) |![](./examples/a3/jamieguo2.png) |
+| ![](./art/a3/jamieguo1.png) |![](./art/a3/jamieguo2.png) |
 | Bears on Bears on Bears 1 (jamieguo) | Bears on Bears on Bears 2 (jamieguo) |
 
 <div><student gallery=3 place=5>Emre Cakir (mecakir)</student></div>
@@ -807,7 +807,7 @@ I created the Minecraft chicken using a custom scene. Do you think it'll lay an 
 
 |   |
 |:-:|
-| ![](./examples/a3/mecakir.jpeg) |
+| ![](./art/a3/mecakir.jpeg) |
 | Chicken (mecakir) |
 
 <div><student gallery=3 place=5>Yunzi Shi (yunzis)</student></div>
@@ -816,7 +816,7 @@ I was interested in simulating a scene of a cyberpunk cityscape with dark skyscr
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/yunzis1.jpg) |![](./examples/a3/yunzis2.jpg) |
+| ![](./art/a3/yunzis1.jpg) |![](./art/a3/yunzis2.jpg) |
 | Cyberpunk 1977 1 (yunzis) | Cyberpunk 1977 2 (yunzis) |
 
 ### Honorable Mentions (A3)
@@ -827,7 +827,7 @@ These are different views and lighting of the scene in `scenes/creative.json`. T
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a3/alqin1.jpg) |![](./examples/a3/alqin2.jpg) |![](./examples/a3/alqin3.jpg) |
+| ![](./art/a3/alqin1.jpg) |![](./art/a3/alqin2.jpg) |![](./art/a3/alqin3.jpg) |
 | The Cave in Grey (alqin) | The Cave in Blue (alqin) | A Wet Ceiling (alqin) |
 
 <div><student gallery=3>Abigail Rettew (arettew)</student></div>
@@ -836,7 +836,7 @@ For my art contest submission, I am entering my custom scene. I used one straigh
 
 |   |
 |:-:|
-| ![](./examples/a3/arettew.png) |
+| ![](./art/a3/arettew.png) |
 | An Aesthetic (arettew) |
 
 <div><student gallery=3>Arman Medghalchi (armanm)</student></div>
@@ -845,7 +845,7 @@ My art contest submission is my attempt to create a time-lapse of my mental stat
 
 |   |
 |:-:|
-| ![](./examples/a3/armanm.gif) |
+| ![](./art/a3/armanm.gif) |
 | March Sadness (armanm) |
 
 <div><student gallery=3>Brandy Chen (brandyc)</student></div>
@@ -854,7 +854,7 @@ For the art contest, I animated my custom scene. In the custom scene, I decided 
 
 |   |
 |:-:|
-| ![](./examples/a3/brandyc.gif) |
+| ![](./art/a3/brandyc.gif) |
 | Who Lives beneath a Rock under the Sea? (brandyc) |
 
 <div><student gallery=3>Christine Lu (cyclu)</student></div>
@@ -863,7 +863,7 @@ For my art submission, I am submitting the gif I created in the animation sectio
 
 |   |
 |:-:|
-| ![](./examples/a3/cyclu.gif) |
+| ![](./art/a3/cyclu.gif) |
 | The Playground (cyclu) |
 
 <div><student gallery=3>Dora Zhao (dorothyz)</student></div>
@@ -873,7 +873,7 @@ For my art project, I am turning in my custom scene. I was inspired by Japanese 
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/dorothyz1.jpg) |![](./examples/a3/dorothyz2.jpg) |
+| ![](./art/a3/dorothyz1.jpg) |![](./art/a3/dorothyz2.jpg) |
 | Infinity Room 1 (dorothyz) | Infinity Room 2 (dorothyz) |
 
 <div><student gallery=3>Gabriel Roth (gjroth)</student></div>
@@ -882,7 +882,7 @@ For the Art Contest I am submitting the Custom Scene that I made with my `custom
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a3/gjroth1.png) |![](./examples/a3/gjroth3.png) |![](./examples/a3/gjroth2.png) |
+| ![](./art/a3/gjroth1.png) |![](./art/a3/gjroth3.png) |![](./art/a3/gjroth2.png) |
 | Chess 1 (gjroth) | Chess 2 (gjroth) | Chess 3 (gjroth) |
 
 <div><student gallery=3>Greg Umali (gumali)</student></div>
@@ -891,7 +891,7 @@ I have always wanted to know what it would be like to be in a room where all the
 
 |   |
 |:-:|
-| ![](./examples/a3/gumali.png) |
+| ![](./art/a3/gumali.png) |
 | Dimensional Disco (gumali) |
 
 <div><student gallery=3>Henry Wang (htwang)</student></div>
@@ -900,7 +900,7 @@ Why render simple shapes when you can render the birth of the universe instead?
 
 |   |
 |:-:|
-| ![](./examples/a3/htwang.gif) |
+| ![](./art/a3/htwang.gif) |
 | Big Bang (htwang) |
 
 <div><student gallery=3>Jason Kim (jjk7)</student></div>
@@ -909,12 +909,12 @@ My submission is a combination of my animation and custom scene. Each of my thre
 
 |   |
 |:-:|
-| ![](./examples/a3/jjk71.gif) |
+| ![](./art/a3/jjk71.gif) |
 | Two Visible (jjk7) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a3/jjk72.gif) |![](./examples/a3/jjk73.gif)
+| ![](./art/a3/jjk72.gif) |![](./art/a3/jjk73.gif)
 | Two Dark (jjk7) | Two Star (jjk7) |
 
 <div><student gallery=3>Jonah Lytle (jlytle)</student></div>
@@ -923,7 +923,7 @@ For my custom scene, I played around with the materials and orientation of the c
 
 |   |
 |:-:|
-| ![](./examples/a3/jlytle.jpg) |
+| ![](./art/a3/jlytle.jpg) |
 | Circuit City (jlytle) |
 
 <div><student gallery=3>Michael Fletcher (maf6)</student></div>
@@ -932,7 +932,7 @@ I created the "Newton's Cradle", by doing a bit of physics to find the path of t
 
 |   |
 |:-:|
-| ![](./examples/a3/maf6.gif) |
+| ![](./art/a3/maf6.gif) |
 | Fletcher's Cradle (maf6) |
 
 # Assignment 5 Gallery
@@ -945,7 +945,7 @@ For the art contest, I experimented with several "colorful" scenes. I think this
 
 |   |
 |:-:|
-| ![](./examples/a5/christyl.gif) |
+| ![](./art/a5/christyl.gif) |
 | Colors in the Wind (christyl) |
 
 <div><student gallery=5 place=2>Anna Qin (alqin)</student></div>
@@ -954,14 +954,14 @@ I am submitting two series of art for this assignment's contest. The first one, 
 
 |   |
 |:-:|
-| ![](./examples/a5/alqin1.png) |
+| ![](./art/a5/alqin1.png) |
 | Fine (alqin) |
 
 For the second series of photos, *Lace*, I use a transparent and white image of a mandala pattern to create a pretty lace cloth that we drape over a box-table and a sphere. I think it turned out really well!
 
 |   |   |   |
 |:-:|:-:|:-:|
-| ![](./examples/a5/alqin2.png) |![](./examples/a5/alqin3.png) |![](./examples/a5/alqin4.png) |
+| ![](./art/a5/alqin2.png) |![](./art/a5/alqin3.png) |![](./art/a5/alqin4.png) |
 | Lace 1 (alqin) | Lace 2 (alqin) | Lace 3 (alqin) |
 
 <div><student gallery=5 place=2>Jake Kirkham (jak4)</student></div>
@@ -974,12 +974,12 @@ As part of my art submission, I've included a few shots of tearing with forces a
 
 |   |
 |:-:|
-| ![](./examples/a5/jak41.png) |
+| ![](./art/a5/jak41.png) |
 | The Face of the Course (jak4) |
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a5/jak42.gif) |![](./examples/a5/jak43.gif) |
+| ![](./art/a5/jak42.gif) |![](./art/a5/jak43.gif) |
 | RIP 1 (jak4) | RIP 2 (jak4) |
 
 <div><student gallery=5 place=2>Jason Kim (jjk7)</student></div>
@@ -990,7 +990,7 @@ If you enable the effects from my custom scene and custom textures/materials, yo
 
 |   |
 |:-:|
-| ![](./examples/a5/jjk7.gif) |
+| ![](./art/a5/jjk7.gif) |
 | Beyond the Horizon (jjk7) |
 
 <div><student gallery=5 place=2>uris (uris)</student></div>
@@ -999,7 +999,7 @@ For my art contest, I realized that I got a very cool looking cloth texture when
 
 |   |
 |:-:|
-| ![](./examples/a5/uris.gif) |
+| ![](./art/a5/uris.gif) |
 | Bending Tiles (uris) |
 
 <div><student gallery=5 place=3>Jingwen Guo (jingweng)</student></div>
@@ -1008,7 +1008,7 @@ For my art contest submission, I used my custom cloth and ground textures to cre
 
 |   |
 |:-:|
-| ![](./examples/a5/jingweng.gif) |
+| ![](./art/a5/jingweng.gif) |
 | Trick or Treat (jingweng) |
 
 <div><student gallery=5 place=3>Sharon Zhang (sharonz)</student></div>
@@ -1018,7 +1018,7 @@ Stay safe, stay sane, and stay home!
 
 |   |
 |:-:|
-| ![](./examples/a5/sharonz.gif) |
+| ![](./art/a5/sharonz.gif) |
 | Stay Home (sharonz) |
 
 <div><student gallery=5 place=4>Sean-Wynn Ng (seanwynn)</student></div>
@@ -1027,7 +1027,7 @@ I don't know what this is, but I beleive I've created a monster. Is this how Dr.
 
 |   |
 |:-:|
-| ![](./examples/a5/seanwynn.png) |
+| ![](./art/a5/seanwynn.png) |
 | Monster Girl (seanwynn) |
 
 <div><student gallery=5 place=4>Taylor Beckett (tbeckett)</student></div>
@@ -1036,7 +1036,7 @@ The cloth in wind reminded me of a pirate flag, I decided to make one! I added t
 
 |   |
 |:-:|
-| ![](./examples/a5/tbeckett.png) |
+| ![](./art/a5/tbeckett.png) |
 | The Jolly Roger (tbeckett) |
 
 <div><student gallery=5 place=5>Christine Kwon (cmkwon)</student></div>
@@ -1045,7 +1045,7 @@ For my submission, I used a custom texture I created in Adobe Illustrator, which
 
 |   |
 |:-:|
-| ![](./examples/a5/cmkwon.gif) |
+| ![](./art/a5/cmkwon.gif) |
 | Bouncing Bubbles (cmkwon) |
 
 <div><student gallery=5 place=5>Henry Wang (htwang)</student></div>
@@ -1054,7 +1054,7 @@ I had a funny self-intersection bug, so I decided to make the most of it!
 
 |   |   |
 |:-:|:-:|
-| ![](./examples/a5/htwang1.gif) | ![](./examples/a5/htwang2.gif) |
+| ![](./art/a5/htwang1.gif) | ![](./art/a5/htwang2.gif) |
 | Dumbledore's Pensive (htwang) | The Pulsating Mass (htwang) |
 
 <div><student gallery=5 place=5>Julian Knodt (jknodt)</student></div>
@@ -1063,7 +1063,7 @@ This work of art is inspired by a bug that looked cool and made me laugh. I rewo
 
 |   |
 |:-:|
-| ![](./examples/a5/jknodt.gif) |
+| ![](./art/a5/jknodt.gif) |
 | The Clothy Way (jknodt) |
 
 <div><student gallery=5 place=5>Michael Fletcher (maf6)</student></div>
@@ -1072,7 +1072,7 @@ I really messed up my plane implementation and it made a cool swirly boi. I call
 
 |   |
 |:-:|
-| ![](./examples/a5/maf6.gif) |
+| ![](./art/a5/maf6.gif) |
 | Cotton Candy (maf6) |
 
 ### Honorable Mentions (A5)
@@ -1083,7 +1083,7 @@ For my custom scene, I digitally drew out a red flower and turned it into a text
 
 |   |
 |:-:|
-| ![](./examples/a5/anabelle.gif) |
+| ![](./art/a5/anabelle.gif) |
 | Red Flower (anabelle) |
 
 <div><student gallery=5>Claire Guthrie (cguthrie)</student></div>
@@ -1092,7 +1092,7 @@ My art contest are the custom scene and textures that I created!
 
 |   |
 |:-:|
-| ![](./examples/a5/cguthrie.png) |
+| ![](./art/a5/cguthrie.png) |
 | Stranded in the Desert (cguthrie) |
 
 <div><student gallery=5>Gabriel Roth (gjroth)</student></div>
@@ -1101,7 +1101,7 @@ For this art contest I made a parasailing parachute by altering the strength and
 
 |   |
 |:-:|
-| ![](./examples/a5/gjroth.gif) |
+| ![](./art/a5/gjroth.gif) |
 | Parasails Away! (gjroth) |
 
 <div><student gallery=5>Johana Leanos (jleanos)</student></div>
@@ -1114,14 +1114,14 @@ I decided to use my custom filter to tell a story. I noticed that the fluttering
 
 |   |
 |:-:|
-| ![](./examples/a5/jleanos.gif) |
+| ![](./art/a5/jleanos.gif) |
 | The Clips and the Sudden Storm (jleanos) |
 
 <div><student gallery=5>Johan Ospina (jospina)</student></div>
 
 |   |
 |:-:|
-| ![](./examples/a5/jospina.png) |
+| ![](./art/a5/jospina.png) |
 | Bulldog Blowing in the Wind (jospina) |
 
 <div><student gallery=5>Lauren Johnston (lej2)</student></div>
@@ -1130,7 +1130,7 @@ First, I created a custom water texture in Figma (a free design tool) and used t
 
 |   |
 |:-:|
-| ![](./examples/a5/lej2.gif) |
+| ![](./art/a5/lej2.gif) |
 | The Underwater Magic Carpet Awaits (lej2) |
 
 <div><student gallery=5>Labib Hussain (lhussain)</student></div>
@@ -1139,7 +1139,7 @@ For my art contest submission, I present an "illusion" that is the effect of my 
 
 |   |
 |:-:|
-| ![](./examples/a5/lhussain.gif) |
+| ![](./art/a5/lhussain.gif) |
 | Superposition (lhussain) |
 
 <div><student gallery=5>Emre Cakir (mecakir)</student></div>
@@ -1148,7 +1148,7 @@ I added two new textures for my art contest submission. The first one I added wa
 
 |   |
 |:-:|
-| ![](./examples/a5/mecakir.png) |
+| ![](./art/a5/mecakir.png) |
 | The Nether (mecakir) |
 
 <div><student gallery=5>Oliver Schwartz (os4)</student></div>
@@ -1157,7 +1157,7 @@ My art submission is an interesting effect I obtained when I was implementing by
 
 |   |
 |:-:|
-| ![](./examples/a5/os4.gif) |
+| ![](./art/a5/os4.gif) |
 | The Singularity (os4) |
 
 <div><student gallery=5>Scott Aravena (saravena)</student></div>
@@ -1166,7 +1166,7 @@ My art contest submission was inspired by something that has taken up a lot of m
 
 |   |
 |:-:|
-| ![](./examples/a5/saravena.gif) |
+| ![](./art/a5/saravena.gif) |
 | The Pallbearers (saravena) |
 
 <div><student gallery=5>xc11 (xc11)</student></div>
@@ -1175,5 +1175,11 @@ My art contest submission sets cloth texture and ground to my cat Evelyn's photo
 
 |   |
 |:-:|
-| ![](./examples/a5/xc11.gif) |
+| ![](./art/a5/xc11.gif) |
 | Evelyn (xc11) |
+
+# Final Project Gallery
+
+### Project Award Winners
+
+<div><project></project></div>
