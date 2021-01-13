@@ -3,19 +3,6 @@ require('prismjs/themes/prism-tomorrow.css');
 require('katex/dist/katex.min.css');
 
 exports.onClientEntry = () => {
-    // Load Roboto font to support Material Design
-    const pathRoboto =
-        'https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap';
-    const loadRoboto = document.createElement('link');
-    const linkRoboto = document.createElement('link');
-    loadRoboto.setAttribute('rel', 'preload');
-    loadRoboto.setAttribute('as', 'style');
-    linkRoboto.setAttribute('rel', 'stylesheet');
-    loadRoboto.setAttribute('href', pathRoboto);
-    linkRoboto.setAttribute('href', pathRoboto);
-    document.head.appendChild(loadRoboto);
-    document.head.appendChild(linkRoboto);
-
     // Load Open Sans font to support Material Design
     const pathOpenSans =
         'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap';
