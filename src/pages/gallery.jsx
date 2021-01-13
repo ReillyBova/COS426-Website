@@ -2,7 +2,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
-import { AnchorLink, PageLayout, HoverImage, MarkdownPage } from 'components';
+import {
+    AnchorLink,
+    PageLayout,
+    HoverImage,
+    MarkdownPage,
+    Project,
+} from 'components';
 import { urlify } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,7 +26,45 @@ function Gallery({ data }) {
     const { textOverflow } = galleryStyles();
 
     // Emoji prizes
-    const prizes = ["🥇", "🥈", "🥉", "🌟", "⭐", "✨"];
+    const prizes = ['🥇', '🥈', '🥉', '🌟', '⭐', '✨'];
+
+    // Build image map for projects
+    const imageMap = {};
+    data.projectImages.nodes.forEach(({ name, childImageSharp }) => {
+        imageMap[name] = childImageSharp.fluid;
+    });
+
+    // Seperate out award winning projects
+    const isWinner = ({ node }) => {
+        const {
+            instructorAwards,
+            instructorMentions,
+            studentAwards,
+            studentMentions,
+        } = node.frontmatter;
+        return (
+            instructorAwards ||
+            instructorMentions ||
+            studentAwards ||
+            studentMentions
+        );
+    };
+    const projectWinners = data.projects?.edges?.filter(isWinner);
+    const projectMentions = data.projects?.edges?.filter(
+        (project) => !isWinner(project)
+    );
+
+    // Function to turn projects into JSX
+    const makeProjects = ({ node }) => {
+        const { title, imageName } = node.frontmatter;
+        return (
+            <Project
+                project={node}
+                fluidImage={imageMap[imageName]}
+                key={title}
+            />
+        );
+    };
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -35,9 +79,7 @@ function Gallery({ data }) {
                 {children}
             </Typography>
         ),
-        img: (props) => (
-            <HoverImage {...props} />
-        ),
+        img: (props) => <HoverImage {...props} />,
         h3: ({ children }) => (
             <Typography variant='h5' gutterBottom>
                 <AnchorLink id={urlify(children[0])}>{children}</AnchorLink>
@@ -52,7 +94,13 @@ function Gallery({ data }) {
                     {children}
                 </AnchorLink>
             </Typography>
-        )
+        ),
+        ['project-winners']: () => {
+            return projectWinners.map(makeProjects);
+        },
+        ['project-mentions']: () => {
+            return projectMentions.map(makeProjects);
+        },
     };
 
     // Render
@@ -60,7 +108,7 @@ function Gallery({ data }) {
         <PageLayout title={'Gallery'}>
             <MarkdownPage
                 title={'Art Gallery'}
-                markdown={data.markdownRemark}
+                markdown={data.gallery}
                 components={customComponents}
             />
         </PageLayout>
@@ -70,13 +118,52 @@ function Gallery({ data }) {
 // Query markdown content
 export const pageQuery = graphql`
     query {
-        markdownRemark(
+        gallery: markdownRemark(
             fileAbsolutePath: {regex: "/Gallery\\/Gallery\\.md$/"}
         ) {
             htmlAst
             headings {
               value
               depth
+            }
+        }
+
+        projects: allMarkdownRemark(
+            filter: {
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Gallery\\/projects/.*\\.md$/"}
+            }
+        ) {
+            edges {
+                node {
+                    htmlAst
+                    frontmatter {
+                        title
+                        authors
+                        imageName
+                        demoURL
+                        repoURL
+                        writeupURL
+                        instructorAwards
+                        instructorMentions
+                        studentAwards
+                        studentMentions
+                    }
+                }
+            }
+        }
+        projectImages: allFile(
+            filter: {
+                sourceInstanceName: { eq: "projects" }
+                relativeDirectory: { eq: "images" }
+            }
+        ) {
+            nodes {
+                name
+                childImageSharp {
+                    fluid(maxWidth: 480, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
             }
         }
     }

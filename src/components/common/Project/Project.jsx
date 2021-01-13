@@ -22,6 +22,7 @@ const projectCardStyles = makeStyles((theme) => ({
         height: '100%',
         maxWidth: 800,
         marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(3),
         display: 'flex',
         flexDirection: 'column',
     },

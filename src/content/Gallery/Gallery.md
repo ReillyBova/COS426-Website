@@ -1182,4 +1182,9 @@ My art contest submission sets cloth texture and ground to my cat Evelyn's photo
 
 ### Project Award Winners
 
-<div><project></project></div>
+<div><project-winners></project-winners></div>
+
+
+### Project Honorable Mentions
+
+<div><project-mentions></project-mentions></div>

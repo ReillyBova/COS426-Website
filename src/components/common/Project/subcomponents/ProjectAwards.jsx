@@ -40,7 +40,7 @@ const processAwards = (awardsString, isInstructor, isAward) => {
                 <Chip
                     size='small'
                     variant={isInstructor ? 'outlined' : 'default'}
-                    color={isAward ? 'primary' : ''}
+                    color={isAward ? 'primary' : 'default'}
                     label={label}
                 />
             </Grid>
