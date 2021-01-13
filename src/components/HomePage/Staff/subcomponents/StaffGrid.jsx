@@ -69,8 +69,8 @@ const StaffGrid = forwardRef((props, ref) => {
                     nodes {
                         name
                         childImageSharp {
-                            fluid(maxWidth: 500, quality: 100) {
-                                ...GatsbyImageSharpFluid_withWebp_noBase64
+                            fluid(maxWidth: 300, quality: 100) {
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                     }
