@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function ThreeContainer({ Scene, delay = 500 }) {
+function ThreeContainer({ Scene, delay }) {
     const ref = useRef();
 
     useEffect(

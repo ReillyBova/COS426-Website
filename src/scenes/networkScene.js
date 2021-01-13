@@ -42,7 +42,7 @@ const defaultOptions = {
     touchSensitivityX: 70,
     touchSensitivityY: 35,
     scrollSensitivity: 0.1,
-    fadeInDelay: 2000,
+    fadeInDelay: 1500,
 };
 
 class NetworkScene extends SceneBase {
