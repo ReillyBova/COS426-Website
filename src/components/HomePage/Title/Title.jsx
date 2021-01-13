@@ -67,7 +67,7 @@ const titleStyles = makeStyles((theme) => ({
 function Title({ semester }) {
     const classes = titleStyles();
     return (
-        <title className={classes.alignment}>
+        <div className={classes.alignment}>
             <Typography
                 variant='h1'
                 color='inherit'
@@ -79,7 +79,7 @@ function Title({ semester }) {
             <Typography variant='h2' color='inherit' className={classes.term}>
                 {`Spring ${semester}`}
             </Typography>
-        </title>
+        </div>
     );
 }
 
