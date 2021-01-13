@@ -50,7 +50,7 @@ function HomePage({ data }) {
                 <Title
                     semester={data.site.siteMetadata.courseSettings.semester}
                 />
-                <ThreeContainer Scene={NetworkScene} />
+            <ThreeContainer Scene={NetworkScene} delay={500} />
             </Banner>
             <MarkdownPage
                 markdown={data.markdownRemark}

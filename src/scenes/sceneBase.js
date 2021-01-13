@@ -60,8 +60,9 @@ class SceneBase {
             { threshold: 0.0 }
         );
         this.intersectionObserver.observe(this.renderer.domElement);
+    }
 
-        // Start animation
+    start() {
         this.animationLoop();
     }
 

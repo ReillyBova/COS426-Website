@@ -42,6 +42,7 @@ const defaultOptions = {
     touchSensitivityX: 70,
     touchSensitivityY: 35,
     scrollSensitivity: 0.1,
+    fadeInDelay: 2000,
 };
 
 class NetworkScene extends SceneBase {
@@ -83,6 +84,8 @@ class NetworkScene extends SceneBase {
         this.initPoints();
         // Init parameters for the canvas and draw gradient
         this.initCanvas();
+        // Init parameters for fade in
+        this.initFadeIn();
 
         // Init camera
         const cameraStart = {
@@ -130,6 +133,7 @@ class NetworkScene extends SceneBase {
             mouseTarget,
             oddFrame,
             movingCamera,
+            opacity
         } = this.params;
 
         // Move camera
@@ -163,6 +167,12 @@ class NetworkScene extends SceneBase {
         // Update different aspects of scene depending on frame parity
         oddFrame ? this.updateGeometries() : this.updateCanvas();
         this.params.oddFrame = !oddFrame;
+
+        // Update the opacity if necessary
+        if (opacity < 1 && oddFrame) {
+            this.params.opacity += 1.0 / (this.options.fadeInDelay / 30);
+            this.canvas.style.opacity = this.params.opacity;
+        }
     }
 
     // Window resize behavior (called by SceneBase)
@@ -392,6 +402,17 @@ class NetworkScene extends SceneBase {
         this.updateCanvas();
     }
 
+    // Initialization function for fading in lines
+    initFadeIn() {
+        const { fadeInDelay } = this.options;
+
+        if (fadeInDelay > 0) {
+            this.params.opacity = 0;
+        } else {
+            this.params.opacity = 1;
+        }
+    }
+
     // Update method for scene geometries
     updateGeometries() {
         const {
@@ -488,7 +509,7 @@ class NetworkScene extends SceneBase {
             gradientSpeed,
             gradientRotation,
         } = this.params;
-        const canvas = this.canvas;
+        const container = this.el;
 
         // Get current colors for gradient
         const colorA_Current = gradientColors[gradientIndices[0]];
@@ -525,7 +546,7 @@ class NetworkScene extends SceneBase {
         const colorB = `rgb(${redB},${greenB},${blueB})`;
 
         // Update gradient
-        canvas.style.background = `linear-gradient(${gradientRotation}deg,${colorA},${colorB})`;
+        container.style.background = `linear-gradient(${gradientRotation}deg,${colorA},${colorB})`;
 
         // Advance time
         this.params.gradientStep += gradientSpeed;
