@@ -19,6 +19,11 @@ const processAwards = (awardsString, isInstructor, isAward) => {
     return awardArray.map((awardString, i) => {
         let label, key;
 
+        // Corner case
+        if (!awardString || awardString.length === 0) {
+            return null;
+        }
+
         if (isInstructor) {
             const firstSpaceIndex = awardString.indexOf(' ');
             const emojiIcon = awardString.substr(0, firstSpaceIndex);
@@ -45,7 +50,7 @@ const processAwards = (awardsString, isInstructor, isAward) => {
                 />
             </Grid>
         );
-    });
+    }).filter((element) => element !== null);
 };
 
 // Generate awards from frontmatter strings
