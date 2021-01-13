@@ -39,7 +39,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
     },
     actionsStyle: {
         flexWrap: 'wrap',
-        justifyContent: 'space-end',
+        justifyContent: 'flex-end',
     },
     buttonStyle: {
         flexGrow: 1,
