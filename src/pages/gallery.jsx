@@ -49,10 +49,28 @@ function Gallery({ data }) {
             studentMentions
         );
     };
-    const projectWinners = data.projects?.edges?.filter(isWinner);
-    const projectMentions = data.projects?.edges?.filter(
-        (project) => !isWinner(project)
-    );
+    const visibilityCmp = (propsA, propsB) => {
+        const visibilityRankA =
+            parseInt(propsA.node.frontmatter.visibilityRank) || 0;
+        const visibilityRankB =
+            parseInt(propsB.node.frontmatter.visibilityRank) || 0;
+
+        if (visibilityRankB !== visibilityRankA) {
+            return visibilityRankB - visibilityRankA;
+        }
+
+        const titleA = propsA.node.frontmatter.title;
+        const titleB = propsB.node.frontmatter.title;
+
+        return titleA > titleB ? 1 : -1;
+    };
+
+    const projectWinners = data.projects?.edges
+        ?.filter(isWinner)
+        .sort(visibilityCmp);
+    const projectMentions = data.projects?.edges
+        ?.filter((project) => !isWinner(project))
+        .sort(visibilityCmp);
 
     // Function to turn projects into JSX
     const makeProjects = ({ node }) => {
@@ -143,6 +161,7 @@ export const pageQuery = graphql`
                         demoURL
                         repoURL
                         writeupURL
+                        visibilityRank
                         instructorAwards
                         instructorMentions
                         studentAwards

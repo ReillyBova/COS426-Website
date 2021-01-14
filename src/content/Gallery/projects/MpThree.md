@@ -13,7 +13,7 @@ repoURL: "https://github.com/mayoyoyo/mp3js"
 writeupURL: "https://github.com/mayoyoyo/mp3js/blob/master/COS_426_Final_Project_Report_mpthreejs.pdf"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 1
 # Awards
 instructorAwards: "🎧 Audio Award"
 instructorMentions: "🏛️ Hall of Fame"

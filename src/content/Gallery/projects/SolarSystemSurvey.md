@@ -13,7 +13,7 @@ repoURL: "https://github.com/zdasaro/Solar-System-Survey"
 writeupURL: "https://github.com/zdasaro/Solar-System-Survey/blob/master/Written%20Report.pdf"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 4
 # Awards
 instructorAwards: "⚙️ Execution Award"
 instructorMentions: "🥈 Best Overall Runner-up, 🏛️ Hall of Fame"

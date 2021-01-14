@@ -109,7 +109,7 @@ function Project({ project, fluidImage }) {
 
     return (
         <Card className={cardStyle}>
-            <Image className={imageStyle} alt={title} fluid={fluidImage} />
+            { fluidImage && <Image className={imageStyle} alt={title} fluid={fluidImage} /> }
             <CardContent className={contentStyle}>
                 <ProjectTitle
                     isAccordion={isAccordion}

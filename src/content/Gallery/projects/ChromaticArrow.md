@@ -13,7 +13,7 @@ repoURL: "https://github.com/WillPower264/Chromatic-Arrow"
 writeupURL: "https://github.com/WillPower264/Chromatic-Arrow/blob/master/Final%20Report.pdf"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 2
 # Awards
 instructorAwards: "💻 Interaction Award"
 instructorMentions: "🏛️ Hall of Fame"

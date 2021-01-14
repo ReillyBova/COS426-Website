@@ -13,7 +13,7 @@ repoURL: "https://github.com/karenying/drivers-ed"
 writeupURL: "https://karenying.com/drivers-ed-writeup/"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 3
 # Awards
 instructorAwards: "🎨 Art Direction Award"
 instructorMentions: "🥉 Best Overall Runner-up, 🏛️ Hall of Fame"

@@ -13,7 +13,7 @@ repoURL: "https://github.com/oliverschwartz/going-viral"
 writeupURL: "https://github.com/oliverschwartz/going-viral/blob/master/COS%20426_%20Final%20Write%20Up.pdf"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 1
 # Awards
 instructorAwards: "🤪 Meme Award"
 instructorMentions: "🏛️ Hall of Fame"

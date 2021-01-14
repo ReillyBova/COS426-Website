@@ -13,7 +13,7 @@ repoURL: "https://github.com/MichaelF49/Pacman3D"
 writeupURL: "https://github.com/MichaelF49/Pacman3D/blob/master/Final%20Report.pdf"
 # A value that determines project visibility. The higher the number, the closer it will appear to the top
 # For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
-visibilityRank: 0
+visibilityRank: 1
 # Awards
 instructorAwards: "🎮 Gameplay Award"
 instructorMentions: "🏛️ Hall of Fame"
