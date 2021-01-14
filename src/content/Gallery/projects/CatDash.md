@@ -20,4 +20,6 @@ instructorMentions: "🏛️ Hall of Fame"
 studentAwards: ""
 studentMentions: "Best Overall Runner-up"
 ---
-Endless runner games have become increasingly popular in recent years. Inspired by the successful work of Temple Run and Subway Surfers, I implemented a similar game called Cat Dash, where players control a cat to avoid obstacles and earn rewards. To enrich the game interface, scenery are randomly generated and spawned along sides of the cat's moving tracks. Optimizations have been done to guarantee the game's playability and compatibility, and enhance algorithm efficiency. Based on the comprehensive experiments and tests, the game runs buglessly and smoothly with different screen sizes and browsers.
+Endless runner games have become increasingly popular in recent years. Inspired by the successful work of Temple Run and Subway Surfers, I implemented a similar game called Cat Dash, where players control a cat to avoid obstacles and earn rewards. To enrich the game interface, scenery are randomly generated and spawned along sides of the cat's moving tracks. Optimizations have been done to guarantee the game's playability and compatibility, and enhance algorithm efficiency.
+
+Based on the comprehensive experiments and tests, the game runs smoothly and bug-free with different screen sizes and browsers.

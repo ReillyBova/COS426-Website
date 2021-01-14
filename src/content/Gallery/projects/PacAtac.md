@@ -20,4 +20,6 @@ instructorMentions: "🏛️ Hall of Fame"
 studentAwards: ""
 studentMentions: ""
 ---
-Pac-Atac is an exciting first person shooter game inspired by nostalgic Pac-Man aesthetics and first person shooter classics.  Players play as Pac-Man and attempt to survive for as many waves as possible by shooting cherries and other assorted fruits to defeat the unrelenting ghosts. Developed using the Three.js Javascript library, Pac-Atac reconciles dynamic game-design and visually-exciting graphics concepts to promise an action-packed 2.5D experience in the spirit of Pac-Man.
+Pac-Atac is an exciting first person shooter game inspired by nostalgic Pac-Man aesthetics and first person shooter classics.  Players play as Pac-Man and attempt to survive for as many waves as possible by shooting cherries and other assorted fruits to defeat the unrelenting ghosts.
+
+Developed using ThreeJS, Pac-Atac reconciles dynamic game-design and visually-exciting graphics concepts to promise an action-packed 2.5D experience in the spirit of Pac-Man.

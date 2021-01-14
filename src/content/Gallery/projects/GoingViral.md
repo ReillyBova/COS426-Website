@@ -20,4 +20,4 @@ instructorMentions: "🏛️ Hall of Fame"
 studentAwards: ""
 studentMentions: ""
 ---
-This paper details the approach, implementation, and results of Going Viral, a COVID-19 themed arcade-type survival game. You, the player, control a healthy white cell while trying to avoid infection by enemy virus particles. You control your cell with the arrow keys and the spacebar (to jump). As you successfully complete levels, the game becomes more difficult, challenging the user to be more daring. Stay Healthy!
+Going Viral is a COVID-19 themed arcade-type survival game. You, the player, control a healthy white cell while trying to avoid infection by enemy virus particles. You control your cell with the arrow keys and the spacebar (to jump). As you successfully complete levels, the game becomes more difficult, challenging the user to be more daring. Stay Healthy!
