@@ -13,7 +13,7 @@ const awardsStyles = makeStyles(() => ({
     },
 }));
 
-const processAwards = (awardsString, isInstructor, isAward) => {
+const processAwards = (awardsString = "", isInstructor, isAward) => {
     const awardArray = awardsString.split(',');
 
     return awardArray.map((awardString, i) => {
