@@ -8,6 +8,7 @@ import { urlify } from 'utils';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
@@ -58,7 +59,7 @@ const projectCardStyles = makeStyles((theme) => ({
 }));
 
 // Generate a project card from markdown content
-function Project({ project, fluidImage }) {
+function Project({ project, fluidImage, gifImage }) {
     const {
         cardStyle,
         imageStyle,
@@ -109,7 +110,20 @@ function Project({ project, fluidImage }) {
 
     return (
         <Card className={cardStyle}>
-            { fluidImage && <Image className={imageStyle} alt={title} fluid={fluidImage} /> }
+            {fluidImage && (
+                <Image
+                    className={imageStyle}
+                    alt={title}
+                    fluid={fluidImage}
+                />
+            )}
+            {gifImage && (
+                <CardMedia
+                    className={imageStyle}
+                    alt={title}
+                    image={gifImage}
+                />
+            )}
             <CardContent className={contentStyle}>
                 <ProjectTitle
                     isAccordion={isAccordion}

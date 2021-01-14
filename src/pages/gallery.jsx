@@ -10,6 +10,7 @@ import {
     Project,
 } from 'components';
 import { urlify } from 'utils';
+import { ProjectGIFs } from 'gifs';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -32,6 +33,10 @@ function Gallery({ data }) {
     const imageMap = {};
     data.projectImages.nodes.forEach(({ name, childImageSharp }) => {
         imageMap[name] = childImageSharp.fluid;
+    });
+    const gifMap = {};
+    Object.entries(ProjectGIFs).forEach(([name, gif]) => {
+        gifMap[name] = gif;
     });
 
     // Seperate out award winning projects
@@ -79,6 +84,7 @@ function Gallery({ data }) {
             <Project
                 project={node}
                 fluidImage={imageMap[imageName]}
+                gifImage = {gifMap[imageName]}
                 key={title}
             />
         );
