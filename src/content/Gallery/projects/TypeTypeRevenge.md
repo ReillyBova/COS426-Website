@@ -11,6 +11,9 @@ demoURL: "https://belle-chang.github.io/type-type-revenge/"
 repoURL: "https://github.com/belle-chang/type-type-revenge"
 # Writeup url
 writeupURL: "https://github.com/belle-chang/type-type-revenge/blob/master/type-type-revenge_final-report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: "🏛️ Hall of Fame"

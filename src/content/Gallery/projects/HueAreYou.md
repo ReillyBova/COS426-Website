@@ -11,6 +11,9 @@ demoURL: "https://emerthomas13.github.io/hue-are-you/"
 repoURL: "https://github.com/emerthomas13/hue-are-you"
 # Writeup url
 writeupURL: "https://github.com/emerthomas13/hue-are-you/blob/master/Written_Report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

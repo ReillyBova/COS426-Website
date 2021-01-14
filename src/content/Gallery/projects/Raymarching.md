@@ -11,6 +11,9 @@ demoURL: "https://jbaum98.github.io/cos426_final_project/editor"
 repoURL: "https://git.sr.ht/~jakewaksbaum/shader_visualizer/"
 # Writeup url
 writeupURL: "https://jbaum98.github.io/cos426_final_project/writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: "🧠 Technical Achievement Award"
 instructorMentions: "🏛️ Hall of Fame"

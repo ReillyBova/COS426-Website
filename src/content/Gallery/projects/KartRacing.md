@@ -11,6 +11,9 @@ demoURL: "https://charlie-minns.github.io/color-kart/"
 repoURL: "https://github.com/charlie-minns/color-kart"
 # Writeup url
 writeupURL: "https://github.com/charlie-minns/color-kart/blob/master/writeup.html"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

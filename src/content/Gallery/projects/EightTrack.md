@@ -11,6 +11,9 @@ demoURL: "http://yz-shi.github.io/8-track-payback/"
 repoURL: "https://github.com/YZ-Shi/8-track-payback"
 # Writeup url
 writeupURL: "https://github.com/YZ-Shi/8-track-payback/blob/master/426%20Final%20Project%20Report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

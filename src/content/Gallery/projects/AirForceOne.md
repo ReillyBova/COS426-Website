@@ -11,6 +11,9 @@ demoURL: "https://hjsuh18.github.io/airforceone"
 repoURL: "https://github.com/hjsuh18/airforceone"
 # Writeup url
 writeupURL: "https://drive.google.com/file/d/1Rb7uATUrfwtYdJRGqmCXWD6jJlw_aSNE/view?usp=sharing"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

@@ -11,6 +11,9 @@ demoURL: "https://teferiemmanuel.github.io/2020-A-Princeton-Space-Odyssey/"
 repoURL: "https://github.com/teferiemmanuel/2020-A-Princeton-Space-Odyssey"
 # Writeup url
 writeupURL: "https://github.com/teferiemmanuel/2020-A-Princeton-Space-Odyssey/blob/master/FinalWriteup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: "🏛️ Hall of Fame"

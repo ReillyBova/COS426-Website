@@ -11,6 +11,9 @@ demoURL: "https://littlecatevelyn.github.io/Cat-Dash/"
 repoURL: "https://github.com/littleCatEvelyn/Cat-Dash"
 # Writeup url
 writeupURL: "https://github.com/littleCatEvelyn/Cat-Dash/blob/master/COS426FinalReport.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: "👻 Spirit Award"
 instructorMentions: "🏛️ Hall of Fame"

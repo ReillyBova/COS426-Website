@@ -11,6 +11,9 @@ demoURL: "http://ink-renderer.herokuapp.com/"
 repoURL: "https://github.com/JulianKnodt/gfx-final-project"
 # Writeup url
 writeupURL: "https://github.com/JulianKnodt/gfx-final-project/blob/master/writeup.md"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

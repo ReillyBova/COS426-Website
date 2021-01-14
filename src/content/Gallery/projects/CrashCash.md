@@ -11,6 +11,9 @@ demoURL: "https://armanm27.github.io/need-for-shapes/"
 repoURL: "https://github.com/armanm27/need-for-shapes"
 # Writeup url
 writeupURL: "https://github.com/armanm27/need-for-shapes/blob/master/Written_Report_Medghalchi_Beckett.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

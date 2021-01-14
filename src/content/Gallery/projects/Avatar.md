@@ -11,6 +11,9 @@ demoURL: "https://cyu6.github.io/avatar-runner"
 repoURL: "https://github.com/cyu6/avatar-runner"
 # Writeup url
 writeupURL: "https://github.com/cyu6/avatar-runner/blob/master/COS426%20Project%20Writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

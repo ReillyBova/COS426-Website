@@ -11,6 +11,9 @@ demoURL: "https://jlytle21.github.io/knockout/"
 repoURL: "https://github.com/jlytle21/knockout"
 # Writeup url
 writeupURL: "https://github.com/jlytle21/knockout/blob/master/Knockout%20Written%20Report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: "🏛️ Hall of Fame"

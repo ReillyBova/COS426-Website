@@ -11,6 +11,9 @@ demoURL: "https://t-campbell18.github.io/"
 repoURL: "https://github.com/T-Campbell18/t-campbell18.github.io"
 # Writeup url
 writeupURL: "https://github.com/T-Campbell18/t-campbell18.github.io/blob/master/writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

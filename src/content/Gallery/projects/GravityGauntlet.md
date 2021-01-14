@@ -11,6 +11,9 @@ demoURL: "https://vr2amesh.github.io/Graphics-Final-Project/"
 repoURL: "https://github.com/vr2amesh/Graphics-Final-Project"
 # Writeup url
 writeupURL: "https://docs.google.com/document/d/1pv8GkjumKBorUlc5aZ-Urn_5k5vTqiUBb5QoICEytr4/edit?usp=sharing"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

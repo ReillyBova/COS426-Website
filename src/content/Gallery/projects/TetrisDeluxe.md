@@ -11,6 +11,9 @@ demoURL: "https://mstambler.github.io/3DTetrisDeluxe/"
 repoURL: "https://github.com/mstambler/3DTetrisDeluxe"
 # Writeup url
 writeupURL: "https://github.com/mstambler/3DTetrisDeluxe/blob/master/report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""

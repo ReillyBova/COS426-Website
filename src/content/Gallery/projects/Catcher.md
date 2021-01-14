@@ -11,6 +11,9 @@ demoURL: "https://kirkhamj16.github.io/426-catcher/"
 repoURL: "https://github.com/kirkhamj16/426-catcher"
 # Writeup url
 writeupURL: "https://github.com/kirkhamj16/426-catcher/blob/master/Catcher%20Writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 0
 # Awards
 instructorAwards: ""
 instructorMentions: ""
