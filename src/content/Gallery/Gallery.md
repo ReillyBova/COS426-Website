@@ -993,7 +993,7 @@ If you enable the effects from my custom scene and custom textures/materials, yo
 | ![](./art/a5/jjk7.gif) |
 | Beyond the Horizon (jjk7) |
 
-<div><student gallery=5 place=2>uris (uris)</student></div>
+<div><student gallery=5 place=2>Uri Schwartz (uris)</student></div>
 
 For my art contest, I realized that I got a very cool looking cloth texture when I only had bending constraints on. This maintained the squares formed by the diagonal constraints, but nothing else. I dropped this cloth onto the box shape, and adjusted some of the color settings, which yielded the following artistic result.
 
@@ -1169,7 +1169,7 @@ My art contest submission was inspired by something that has taken up a lot of m
 | ![](./art/a5/saravena.gif) |
 | The Pallbearers (saravena) |
 
-<div><student gallery=5>xc11 (xc11)</student></div>
+<div><student gallery=5>Xi Chen (xc11)</student></div>
 
 My art contest submission sets cloth texture and ground to my cat Evelyn's photos. Additionally, I add the rain, wind and custom anti-gravity forces to the scene to make it more interesting.
 
