@@ -23,7 +23,10 @@ const collabStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(3),
         marginRight: 'auto',
         marginLeft: 'auto',
-        overflowX: 'auto',
+        overflowX: 'overlay',
+        fallbacks: {
+            overflowX: 'auto',
+        },
     },
     table_desktop: {
         whiteSpace: 'nowrap',

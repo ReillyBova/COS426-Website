@@ -21,8 +21,14 @@ const contentTableStyles = makeStyles((theme) => ({
         position: 'sticky',
         top: 64,
         maxHeight: 'calc(100vh - 64px)',
-        overflowY: 'auto',
+        overflowY: 'overlay',
+        fallbacks: {
+            overflowY: 'auto'
+        },
         scrollBehavior: 'smooth',
+        "&::-webkit-scrollbar": {
+            display: 'none'
+        }
     },
     contentTitle: {
         paddingLeft: theme.spacing(1),

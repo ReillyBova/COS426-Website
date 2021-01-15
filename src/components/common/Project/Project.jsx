@@ -48,8 +48,7 @@ const projectCardStyles = makeStyles((theme) => ({
     },
     textStyle: {
         fontWeight: 400,
-        overflow: 'auto',
-        textOverflow: 'ellipsis',
+        overflowWrap: 'anywhere'
     },
     actionsStyle: {
         paddingLeft: theme.spacing(2),
@@ -111,11 +110,7 @@ function Project({ project, fluidImage, gifImage }) {
     return (
         <Card className={cardStyle}>
             {fluidImage && (
-                <Image
-                    className={imageStyle}
-                    alt={title}
-                    fluid={fluidImage}
-                />
+                <Image className={imageStyle} alt={title} fluid={fluidImage} />
             )}
             {gifImage && (
                 <CardMedia

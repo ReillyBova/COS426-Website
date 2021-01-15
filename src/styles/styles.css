@@ -18,7 +18,8 @@ body {
     font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
     font-display: swap;
     min-width: 300px;
-    overflow-x: scroll;
+    overflow: auto;
+    overflow: overlay;
 
     /* Helps fonts on OSX look more consistent with other systems */
     -webkit-font-smoothing: antialiased;
@@ -50,5 +51,58 @@ canvas {
 
 .katex-display {
     overflow-x: auto;
+    overflow-x: overlay;
     overflow-y: hidden;
+}
+
+/* Customize website's scrollbar like Mac OS
+
+/* Entire scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0,0,0,0);
+}
+
+/* Scrollbar background */
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    background-color: rgba(255,255,255,0);
+    transition: background-color 200ms ease;
+}
+::-webkit-scrollbar-track:hover {
+    background-color: #f4f4f4;
+    background-color: rgba(245, 245, 245, 0.8);
+    border: 1px solid lightgrey;
+}
+
+/* Scrollbar Element */
+::-webkit-scrollbar-thumb {
+    min-height:50px;
+    background-color: #babac0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 16px;
+    border: 3px solid #fff;
+    border: 3px solid rgba(0,0,0,0);
+
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    border: 1px solid #fff;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
+}
+
+::-webkit-scrollbar-track-piece {
+display: none;
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+    display: none;
 }

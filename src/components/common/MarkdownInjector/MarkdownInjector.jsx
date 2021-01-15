@@ -3,11 +3,7 @@ import React, { Fragment, createElement } from 'react';
 import rehypeReact from 'rehype-react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Project imports
-import {
-    AnchorLink,
-    ExternalLink,
-    InternalLink,
-} from 'components';
+import { AnchorLink, ExternalLink, InternalLink } from 'components';
 import { urlify } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,8 +12,7 @@ import Typography from '@material-ui/core/Typography';
 // Custom styling for component
 const markdownStyles = makeStyles((theme) => ({
     paragraph: {
-        overflow: 'auto',
-        textOverflow: 'ellipsis',
+        overflowWrap: 'anywhere'
     },
     code: {
         fontSize: 16,

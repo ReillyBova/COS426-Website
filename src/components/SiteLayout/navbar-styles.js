@@ -12,6 +12,12 @@ const navbarStyles = makeStyles((theme) => ({
         borderWidth: '0px 0px 4px 0px',
         borderColor: theme.palette.primary.main,
     },
+    scrolling: {
+        overflowX: 'overlay',
+        fallbacks: {
+            overflowX: 'auto',
+        },
+    },
     brandLogo: {
         margin: 3,
         height: 42,

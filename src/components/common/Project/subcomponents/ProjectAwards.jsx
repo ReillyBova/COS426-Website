@@ -13,44 +13,46 @@ const awardsStyles = makeStyles(() => ({
     },
 }));
 
-const processAwards = (awardsString = "", isInstructor, isAward) => {
+const processAwards = (awardsString = '', isInstructor, isAward) => {
     const awardArray = awardsString.split(',');
 
-    return awardArray.map((awardString, i) => {
-        let label, key;
+    return awardArray
+        .map((awardString, i) => {
+            let label, key;
 
-        // Corner case
-        if (!awardString || awardString.length === 0) {
-            return null;
-        }
+            // Corner case
+            if (!awardString || awardString.length === 0) {
+                return null;
+            }
 
-        if (isInstructor) {
-            const firstSpaceIndex = awardString.indexOf(' ');
-            const emojiIcon = awardString.substr(0, firstSpaceIndex);
-            const titleString = awardString.substr(firstSpaceIndex + 1);
-            label = (
-                <span>
-                    {emojiIcon} <span> </span>
-                    <span> </span> {titleString}
-                </span>
+            if (isInstructor) {
+                const firstSpaceIndex = awardString.indexOf(' ');
+                const emojiIcon = awardString.substr(0, firstSpaceIndex);
+                const titleString = awardString.substr(firstSpaceIndex + 1);
+                label = (
+                    <span>
+                        {emojiIcon} <span> </span>
+                        <span> </span> {titleString}
+                    </span>
+                );
+                key = `${titleString}-${i}`;
+            } else {
+                label = `${awardString} (Students' Choice)`;
+                key = `${awardString}-${i}`;
+            }
+
+            return (
+                <Grid item key={key}>
+                    <Chip
+                        size='small'
+                        variant={isInstructor ? 'outlined' : 'default'}
+                        color={isAward ? 'primary' : 'default'}
+                        label={label}
+                    />
+                </Grid>
             );
-            key = `${titleString}-${i}`;
-        } else {
-            label = `${awardString} (Students' Choice)`;
-            key = `${awardString}-${i}`;
-        }
-
-        return (
-            <Grid item key={key}>
-                <Chip
-                    size='small'
-                    variant={isInstructor ? 'outlined' : 'default'}
-                    color={isAward ? 'primary' : 'default'}
-                    label={label}
-                />
-            </Grid>
-        );
-    }).filter((element) => element !== null);
+        })
+        .filter((element) => element !== null);
 };
 
 // Generate awards from frontmatter strings

@@ -47,13 +47,13 @@ function Navbar({ classes }) {
     };
 
     // CSS classes for styling
-    const { grow, appBar, brandLogo, brandLink, menuButton } = classes;
+    const { grow, appBar, scrolling, brandLogo, brandLink, menuButton } = classes;
 
     // Render
     return (
         <header>
             <AppBar position='fixed' className={appBar} color='secondary'>
-                <Toolbar component='nav'>
+                <Toolbar component='nav' className={scrolling}>
                     <Link to='/'>
                         <img src={PrincetonShield} className={brandLogo} />
                     </Link>
