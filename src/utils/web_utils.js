@@ -46,9 +46,12 @@ export const winHeight = () => {
 export const urlify = (string) =>
     encodeURI(
         string
-            .replace(/\s+/g, '-')
             .replace(/’/g, '')
+            .replace(/[^\x00-\x7F]+/g, '')
+            .replace(/^\s+/g, '')
+            .replace(/\s+/g, '-')
             .replace(/–/g, '-')
+            .replace(/:/g, '')
             .toLowerCase()
     );
 

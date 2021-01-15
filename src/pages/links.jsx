@@ -3,7 +3,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
 import { PageLayout, MarkdownPage } from 'components';
-// UI imports
 
 // Generate exercises from markdown content
 function Links({ data }) {

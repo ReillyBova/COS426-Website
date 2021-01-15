@@ -16,6 +16,9 @@ const contentTableStyles = makeStyles((theme) => ({
         maxWidth: 275,
         flex: 'initial',
         position: 'relative',
+        '@media screen and (max-width: 767.95px)': {
+            display: 'none',
+        },
     },
     contentPositioner: {
         position: 'sticky',
@@ -67,7 +70,9 @@ const contentTableStyles = makeStyles((theme) => ({
 // Generates a table of contents from Markdown
 function TableOfContents({ headings }) {
     // Media query to determine if we should render at all
-    const isVisible = useMediaQuery('(min-width:768px)', { defaultMatches: true });
+    const isVisible = useMediaQuery('(min-width:768px)', {
+        defaultMatches: true,
+    });
 
     // contentIndex is the index of the heading of the on-screen content
     const [contentIndex, setContentIndex] = useState(-1);

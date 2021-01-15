@@ -1,8 +1,8 @@
 // Library imports
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'gatsby-image';
 // Project imports
-import { AnchorLink, MarkdownInjector } from 'components';
+import { AnchorLink, AnchorTarget, MarkdownInjector } from 'components';
 import { urlify } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,7 +26,9 @@ const projectCardStyles = makeStyles((theme) => ({
         width: '100%',
         maxWidth: 800,
         marginTop: theme.spacing(2),
+        marginRight: 'auto',
         marginBottom: theme.spacing(3),
+        marginLeft: 'auto',
         display: 'flex',
         flexDirection: 'column',
     },
@@ -48,7 +50,26 @@ const projectCardStyles = makeStyles((theme) => ({
     },
     textStyle: {
         fontWeight: 400,
-        overflowWrap: 'anywhere'
+        overflowWrap: 'anywhere',
+    },
+    desktopBodyStyle: {
+        '@media screen and (min-width: 768px)': {
+            [theme.breakpoints.down('sm')]: {
+                display: 'none',
+            },
+        },
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
+    },
+    mobileBodyStyle: {
+        display: 'block',
+        '@media screen and (min-width: 768px)': {
+            display: 'none',
+            [theme.breakpoints.down('xs')]: {
+                display: 'block',
+            },
+        },
     },
     actionsStyle: {
         paddingLeft: theme.spacing(2),
@@ -58,12 +79,14 @@ const projectCardStyles = makeStyles((theme) => ({
 }));
 
 // Generate a project card from markdown content
-function Project({ project, fluidImage, gifImage }) {
+function ProjectCard({ project, fluidImage, gifImage }) {
     const {
         cardStyle,
         imageStyle,
         contentStyle,
         titleTextStyle,
+        desktopBodyStyle,
+        mobileBodyStyle,
         dividerStyle,
         textStyle,
         actionsStyle,
@@ -107,8 +130,24 @@ function Project({ project, fluidImage, gifImage }) {
     const [isExpanded, setExpansion] = useState(false);
     const toggleExpansion = () => setExpansion(!isExpanded);
 
+    const bodyElement = useMemo(
+        () => (
+            <React.Fragment>
+                <Divider className={dividerStyle} />
+                <MarkdownInjector
+                    markdown={project}
+                    components={markdownComponents}
+                />
+            </React.Fragment>
+        ),
+        [dividerStyle, project]
+    );
+
+    const id = `${urlify(title)}`;
+
     return (
         <Card className={cardStyle}>
+            <AnchorTarget id={id} />
             {fluidImage && (
                 <Image className={imageStyle} alt={title} fluid={fluidImage} />
             )}
@@ -130,7 +169,7 @@ function Project({ project, fluidImage, gifImage }) {
                         variant='h5'
                         component='h6'
                     >
-                        <AnchorLink id={`${urlify(title)}-gallery-project`}>
+                        <AnchorLink id={id} setID={false}>
                             {title}
                         </AnchorLink>
                     </Typography>
@@ -143,12 +182,9 @@ function Project({ project, fluidImage, gifImage }) {
                     {authors}
                 </Typography>
                 <ProjectAwards frontmatter={project.frontmatter} />
-                <Collapse in={isExpanded || !isAccordion}>
-                    <Divider className={dividerStyle} />
-                    <MarkdownInjector
-                        markdown={project}
-                        components={markdownComponents}
-                    />
+                <div className={desktopBodyStyle}>{bodyElement}</div>
+                <Collapse in={isExpanded} className={mobileBodyStyle}>
+                    {bodyElement}
                 </Collapse>
             </CardContent>
             <CardActions className={actionsStyle}>
@@ -179,4 +215,4 @@ function Project({ project, fluidImage, gifImage }) {
     );
 }
 
-export default Project;
+export default ProjectCard;

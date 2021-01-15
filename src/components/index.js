@@ -1,5 +1,6 @@
 export * from './common';
 export * from './Footer';
+export * from './Gallery';
 export * from './HomePage';
 export * from './Navbar';
 export * from './PageLayout';

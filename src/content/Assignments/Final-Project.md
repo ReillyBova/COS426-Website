@@ -7,6 +7,8 @@ assignmentNumber: -1
 available: true
 # Submission url
 submitURL: ""
+# Gallery url
+galleryID: "Final-Project"
 # Feedback url
 feedbackURL: ""
 # Is this assignment listed on the assignments page?

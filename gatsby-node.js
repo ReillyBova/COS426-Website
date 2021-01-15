@@ -16,7 +16,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     });
 };
 
-// Create slugs for pages from assignment markdown
+// Create slugs for pages from assignment/gallery markdown
 exports.onCreateNode = ({ node, getNode, actions }) => {
     if (node.internal.type === `MarkdownRemark`) {
         const fileNode = getNode(node.parent);
@@ -36,6 +36,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
                 node,
                 name: `type`,
                 value: `assignment`,
+            });
+        } else if (fileNode.relativeDirectory === 'Gallery/Galleries') {
+            const { createNodeField } = actions;
+            const slug = createFilePath({
+                node,
+                getNode,
+                basePath: `Gallery/Galleries`,
+            });
+            createNodeField({
+                node,
+                name: `slug`,
+                value: `gallery${slug}`,
+            });
+            createNodeField({
+                node,
+                name: `type`,
+                value: `gallery`,
             });
         }
     }
@@ -88,6 +105,14 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                 });
             }
+        } else if (node.fields && node.fields.type === 'gallery') {
+            createPage({
+                path: node.fields.slug,
+                component: path.resolve(`./src/templates/GalleryTemplate.jsx`),
+                context: {
+                    slug: node.fields.slug,
+                },
+            });
         }
     });
 };
