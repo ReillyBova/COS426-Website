@@ -51,7 +51,6 @@ canvas {
 
 .katex-display {
     overflow-x: auto;
-    overflow-x: overlay;
     overflow-y: hidden;
 }
 
