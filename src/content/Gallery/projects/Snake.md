@@ -20,4 +20,4 @@ instructorMentions: ""
 studentAwards: ""
 studentMentions: ""
 ---
-For our final project, we decided to implement a 3D version of the classic Snake game in Three.js. In this version, you are a little red spherical snake in someone’s front yard. Eat the mice to get bigger, but don’t hit the fence! The game is played in first person for more ~intrigue~ and an extra challenge as well.
+For our final project, we decided to implement a 3D version of the classic Snake game in ThreeJS. In this version, you are a little red spherical snake in someone’s front yard. Eat the mice to get bigger, but don’t hit the fence! The game is played in first person for more ~intrigue~ and an extra challenge as well.
