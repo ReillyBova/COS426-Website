@@ -9,14 +9,13 @@ import {
     HoverImage,
     MarkdownPage,
     GalleryCards,
-    InternalLink
+    InternalLink,
 } from 'components';
 import { urlify, injectProjectHeaders } from 'utils';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
 
 const galleryStyles = makeStyles(() => ({
     textOverflow: {
@@ -112,17 +111,16 @@ function GalleryTemplate({ data }) {
             <MarkdownPage
                 title={`${longTitle} Art Contest Selection`}
                 subtitle={
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <InternalLink color="inherit" to="/gallery" >
-                            {"Gallery"}
+                    <Breadcrumbs aria-label='breadcrumb'>
+                        <InternalLink color='inherit' to='/gallery'>
+                            {'Gallery'}
                         </InternalLink>
                         <Typography>{longTitle}</Typography>
                     </Breadcrumbs>
                 }
                 markdown={{ ...data.gallery, headings: newHeadings }}
                 components={customComponents}
-            >
-  </MarkdownPage>
+            ></MarkdownPage>
         </PageLayout>
     );
 }
