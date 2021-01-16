@@ -22,4 +22,4 @@ studentMentions: ""
 ---
 This project implements hardware-accelerated ink wash painting for 3D objects
 based on the work of [Park et al.](http://www.myeglab.com/Content/sumi_e_painting.pdf)
-and adapted for the web using GLSL and ThreeJS.
+and adapted for the web using GLSL and ThreeJS. Enjoy!

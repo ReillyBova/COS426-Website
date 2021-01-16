@@ -20,4 +20,6 @@ instructorMentions: ""
 studentAwards: ""
 studentMentions: ""
 ---
-In this infinite runner game, play as Aang the Last Airbender and overcome obstacles using four different elemental attacks. Control the Avatar using your keyboard. The goal of the game is to survive for as long as possible.  
+In this infinite runner game, you will play as play as Aang --- the Last Airbender --- and overcome obstacles using four different elemental attacks. Control the Avatar using your keyboard.
+
+The goal of the game is to survive for as long as possible. Good luck!
