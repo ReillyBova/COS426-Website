@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 // Custom styling for component
 const markdownStyles = makeStyles((theme) => ({
     paragraph: {
-        overflowWrap: 'anywhere'
+        overflowWrap: 'anywhere',
     },
     code: {
         fontSize: 16,
@@ -26,7 +26,7 @@ const markdownStyles = makeStyles((theme) => ({
 }));
 
 // Wrapper for pages generated from markdown content
-function MarkdownInjector({ markdown, components = {} }) {
+function MarkdownInjector({ markdown, components = {}, settings = {} }) {
     // Query piazza URl from site configuration
     const { site } = useStaticQuery(
         graphql`
@@ -96,6 +96,7 @@ function MarkdownInjector({ markdown, components = {} }) {
             // Additional custom components proveded by caller
             ...components,
         },
+        ...settings,
     }).Compiler;
 
     // Markdown data

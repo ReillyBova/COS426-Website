@@ -8,6 +8,7 @@ import {
     ProjectGallery,
     HoverImage,
     MarkdownPage,
+    GalleryCards,
 } from 'components';
 import { urlify, injectProjectHeaders } from 'utils';
 // UI imports
@@ -41,6 +42,9 @@ const injectPrizeIcon = (text) => {
 function GalleryTemplate({ data }) {
     // Custom class
     const { textOverflow } = galleryStyles();
+
+    // Extract Frontmatter
+    const { id, shortTitle, longTitle } = data.gallery.frontmatter;
 
     // Custom components to generate from markdown html
     const customComponents = {
@@ -76,6 +80,7 @@ function GalleryTemplate({ data }) {
 
         ['project-winners']: () => <ProjectGallery hasAward />,
         ['project-mentions']: () => <ProjectGallery />,
+        galleries: () => <GalleryCards excludeID={id} />,
     };
 
     const { headings } = data.gallery;
@@ -97,8 +102,6 @@ function GalleryTemplate({ data }) {
             return heading;
         })
         .flat();
-
-    const { shortTitle, longTitle } = data.gallery.frontmatter;
 
     // Render
     return (
@@ -122,6 +125,7 @@ export const pageQuery = graphql`
                 depth
             }
             frontmatter {
+                id
                 shortTitle
                 longTitle
             }

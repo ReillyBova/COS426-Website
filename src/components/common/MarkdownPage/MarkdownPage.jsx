@@ -22,7 +22,7 @@ const markdownStyles = makeStyles(() => ({
 }));
 
 // Wrapper for pages generated from markdown content
-function MarkdownPage({ title, subtitle, markdown, components = {} }) {
+function MarkdownPage({ title, subtitle, markdown, components = {}, tableOfContents=true }) {
     // Custom CSS classes
     const { flexWrapper, grow } = markdownStyles();
 
@@ -53,7 +53,7 @@ function MarkdownPage({ title, subtitle, markdown, components = {} }) {
                     <MarkdownInjector markdown={markdown} components={components} />
                 </Content>
             </div>
-            <TableOfContents headings={headings} />
+            { tableOfContents && <TableOfContents headings={headings} /> }
         </div>
     );
 }

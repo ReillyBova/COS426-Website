@@ -1,4 +1,5 @@
 ---
+id: "Final-Project"
 shortTitle: "Project"
 longTitle: "Final Project"
 ---
@@ -13,3 +14,7 @@ longTitle: "Final Project"
 ### project-mentions-headers
 
 <div><project-mentions></project-mentions></div>
+
+# Other Art Galleries
+
+<div><galleries></galleries></div>

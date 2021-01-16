@@ -2,16 +2,24 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
-import { PageLayout, MarkdownPage } from 'components';
+import { PageLayout, MarkdownPage, GalleryCards } from 'components';
 
 // Generate gallery from markdown content
 function Gallery({ data }) {
+    const customComponents = {
+        galleries: () => (
+            <GalleryCards />
+        )
+    };
+
     // Render
     return (
         <PageLayout title={'Gallery'}>
             <MarkdownPage
                 title={'Art Gallery'}
-                markdown={data.markdownRemark}
+                markdown={data.gallery}
+                tableOfContents={false}
+                components={customComponents}
             />
         </PageLayout>
     );
@@ -20,14 +28,10 @@ function Gallery({ data }) {
 // Query markdown content
 export const pageQuery = graphql`
     query {
-        markdownRemark(
+        gallery: markdownRemark(
             fileAbsolutePath: {regex: "/Gallery\\/Gallery\\.md$/"}
         ) {
             htmlAst
-            headings {
-              value
-              depth
-            }
         }
     }
 `;

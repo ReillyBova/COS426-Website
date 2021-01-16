@@ -63,12 +63,14 @@ const projectCardStyles = makeStyles((theme) => ({
         },
     },
     mobileBodyStyle: {
-        display: 'block',
+        display: 'none',
         '@media screen and (min-width: 768px)': {
-            display: 'none',
-            [theme.breakpoints.down('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 display: 'block',
             },
+        },
+        [theme.breakpoints.down('xs')]: {
+            display: 'block',
         },
     },
     actionsStyle: {

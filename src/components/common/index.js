@@ -5,6 +5,7 @@ export * from './Content';
 export * from './ExternalLink';
 export * from './HoverImage';
 export * from './InternalLink';
+export * from './InternalCardActionArea';
 export * from './InternalButtonLink';
 export * from './MarkdownPage';
 export * from './MarkdownInjector';
