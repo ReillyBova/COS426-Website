@@ -1,11 +1,7 @@
 // Library imports
 import React, { Fragment } from 'react';
 // Project imports
-import {
-    Content,
-    TableOfContents,
-    MarkdownInjector
-} from 'components';
+import { Content, TableOfContents, MarkdownInjector } from 'components';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -18,11 +14,18 @@ const markdownStyles = makeStyles(() => ({
     grow: {
         flexGrow: 1,
         minWidth: 0,
-    }
+    },
 }));
 
 // Wrapper for pages generated from markdown content
-function MarkdownPage({ title, subtitle, markdown, components = {}, tableOfContents=true, children }) {
+function MarkdownPage({
+    title,
+    subtitle,
+    markdown,
+    components = {},
+    tableOfContents = true,
+    children,
+}) {
     // Custom CSS classes
     const { flexWrapper, grow } = markdownStyles();
 
@@ -51,10 +54,13 @@ function MarkdownPage({ title, subtitle, markdown, components = {}, tableOfConte
                         </Fragment>
                     )}
                     {children}
-                    <MarkdownInjector markdown={markdown} components={components} />
+                    <MarkdownInjector
+                        markdown={markdown}
+                        components={components}
+                    />
                 </Content>
             </div>
-            { tableOfContents && <TableOfContents headings={headings} /> }
+            {tableOfContents && <TableOfContents headings={headings} />}
         </div>
     );
 }

@@ -31,10 +31,8 @@ function HoverImage({ className, ...props }) {
                 <img className={imageShadow} {...props} />
             </ExternalLink>
         );
-    } else  {
-        return (
-            <img className={clsx(className, imageShadow)} {...props} />
-        );
+    } else {
+        return <img className={clsx(className, imageShadow)} {...props} />;
     }
 }
 

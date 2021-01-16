@@ -27,7 +27,7 @@ function Precept({ date, precept, preceptNumber, className, nowrap }) {
         <TableRow className={className}>
             <TableCell className={nowrap}>{date}</TableCell>
             <TableCell colSpan={2}>
-                {(preceptNumber < numPreceptsPosted && preceptNumber !== 5) ? (
+                {preceptNumber < numPreceptsPosted && preceptNumber !== 5 ? (
                     <a
                         target='_blank'
                         rel='noopener noreferrer'

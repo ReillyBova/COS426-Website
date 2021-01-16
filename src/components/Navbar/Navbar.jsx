@@ -47,7 +47,14 @@ function Navbar({ classes }) {
     };
 
     // CSS classes for styling
-    const { grow, appBar, scrolling, brandLogo, brandLink, menuButton } = classes;
+    const {
+        grow,
+        appBar,
+        scrolling,
+        brandLogo,
+        brandLink,
+        menuButton,
+    } = classes;
 
     // Render
     return (

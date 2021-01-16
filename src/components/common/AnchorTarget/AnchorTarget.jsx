@@ -15,9 +15,7 @@ const anchorTargetStyles = makeStyles(() => ({
 const AnchorTarget = ({ id }) => {
     const { anchorTarget } = anchorTargetStyles();
 
-    return (
-        <a className={anchorTarget} id={id}/>
-    );
+    return <a className={anchorTarget} id={id} />;
 };
 
 export default AnchorTarget;

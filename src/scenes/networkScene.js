@@ -133,7 +133,7 @@ class NetworkScene extends SceneBase {
             mouseTarget,
             oddFrame,
             movingCamera,
-            opacity
+            opacity,
         } = this.params;
 
         // Move camera

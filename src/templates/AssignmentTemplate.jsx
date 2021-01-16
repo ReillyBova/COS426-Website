@@ -56,9 +56,17 @@ function AssignmentTemplate({ data }) {
         ),
         'assignment-link': ({ children }) => (
             <ExternalLink
-                to={(assignmentNumber < 0) ?
-                    withPrefix(`zips/COS-426-${assignmentName.replace(/\s+/g, '-')}.zip`)
-                    : withPrefix(`zips/COS-426-Assignment-${assignmentNumber}.zip`)
+                to={
+                    assignmentNumber < 0
+                        ? withPrefix(
+                              `zips/COS-426-${assignmentName.replace(
+                                  /\s+/g,
+                                  '-'
+                              )}.zip`
+                          )
+                        : withPrefix(
+                              `zips/COS-426-Assignment-${assignmentNumber}.zip`
+                          )
                 }
             >
                 {children}
@@ -67,9 +75,7 @@ function AssignmentTemplate({ data }) {
         'submit-link': ({ children }) => (
             <ExternalLink to={submitURL}>{children}</ExternalLink>
         ),
-        img: (props) => (
-            <HoverImage {...props} />
-        ),
+        img: (props) => <HoverImage {...props} />,
         total: () => (
             <code className={codeStyle}>{requiredPoints + optionalPoints}</code>
         ),

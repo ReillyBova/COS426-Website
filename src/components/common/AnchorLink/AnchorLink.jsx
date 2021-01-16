@@ -32,7 +32,7 @@ const AnchorLink = ({ children, id, setID = true }) => {
 
     return (
         <div className={anchorWrapper}>
-            { setID && <AnchorTarget id={id} /> }
+            {setID && <AnchorTarget id={id} />}
             {children}
             <a className={anchorSource} href={`#${id}`} aria-label='anchor'>
                 <svg viewBox='0 0 16 16'>

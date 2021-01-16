@@ -32,7 +32,7 @@ module.exports = {
         'key-spacing': 'error',
         'keyword-spacing': 'error',
         'linebreak-style': ['error', 'unix'],
-        "no-control-regex": 'off',
+        'no-control-regex': 'off',
         'no-console': 'off',
         'no-param-reassign': 'error',
         'no-tabs': 'error',

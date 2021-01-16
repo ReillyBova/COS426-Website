@@ -82,7 +82,8 @@ const materials = {
             due: { week: 12, day: 'Thursday' },
         },
         {
-            title: 'Final Project Presentations over Zoom (Scheduling and Logistics TBD)',
+            title:
+                'Final Project Presentations over Zoom (Scheduling and Logistics TBD)',
             due: { week: 13, day: 'Thursday' },
         },
     ],

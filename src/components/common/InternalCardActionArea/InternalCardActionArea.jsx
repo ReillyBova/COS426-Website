@@ -5,17 +5,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 
 // Gatsby Link wrapped in a material UI Button
 const InternalCardActionArea = React.forwardRef(function Link(
-    {  ...props },
+    { ...props },
     ref
 ) {
-
-    return (
-        <CardActionArea
-            component={GatsbyLink}
-            ref={ref}
-            {...props}
-        />
-    );
+    return <CardActionArea component={GatsbyLink} ref={ref} {...props} />;
 });
 
 export default InternalCardActionArea;

@@ -7,9 +7,7 @@ import { PageLayout, MarkdownPage, GalleryCards } from 'components';
 // Generate gallery from markdown content
 function Gallery({ data }) {
     const customComponents = {
-        galleries: () => (
-            <GalleryCards />
-        )
+        galleries: () => <GalleryCards />,
     };
 
     // Render

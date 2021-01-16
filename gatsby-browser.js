@@ -17,7 +17,8 @@ exports.onClientEntry = () => {
     document.head.appendChild(linkOpenSans);
 
     // Load Material Icons
-    const pathIcons = 'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap';
+    const pathIcons =
+        'https://fonts.googleapis.com/icon?family=Material+Icons&display=swap';
     const loadIcons = document.createElement('link');
     const linkIcons = document.createElement('link');
     loadIcons.setAttribute('rel', 'preload');

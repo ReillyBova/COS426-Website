@@ -13,7 +13,7 @@ import CardContent from '@material-ui/core/CardContent';
 // Custom styling for component
 const assignmentCardStyles = makeStyles((theme) => ({
     gridStyle: {
-        padding: theme.spacing(1)
+        padding: theme.spacing(1),
     },
     cardStyle: {
         height: '100%',
@@ -53,7 +53,7 @@ const assignmentCardStyles = makeStyles((theme) => ({
 }));
 
 // A card preview of an assignment
-function GalleryCards({excludeID}) {
+function GalleryCards({ excludeID }) {
     const { galleryCards, galleries } = useStaticQuery(
         graphql`
             query {
@@ -85,7 +85,12 @@ function GalleryCards({excludeID}) {
     );
 
     // Custom styling
-    const { gridStyle, cardStyle, imageStyle, contentStyle } = assignmentCardStyles();
+    const {
+        gridStyle,
+        cardStyle,
+        imageStyle,
+        contentStyle,
+    } = assignmentCardStyles();
 
     // Map images and gifs by name
     const nameMap = {};
