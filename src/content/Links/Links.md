@@ -68,7 +68,7 @@ This is a growing list, so expect more links to appear here as the semester cont
 * [Approximating Newtonian Mechanics (Störmer–Verlet)](https://en.wikipedia.org/wiki/Verlet_integration)
 
 # Final Project Hall of Fame
-A selection of the best final projects from previous years. Links to the demos and source code for these projects are available below for students' collective inspiration, interest, and entertainment.
+Here you will find a selection of the best final projects from previous years. Links to the demos and source code for these projects are available below for students' collective inspiration, interest, and entertainment.
 
 #### hall-of-fame-headers
 
