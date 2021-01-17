@@ -73,18 +73,3 @@ A selection of the best final projects from previous years. Links to the demos a
 #### hall-of-fame-headers
 
 <div><hall-of-fame></hall-of-fame></div>
-
-### Spring 2019 Selectionz
-
-* [ColoRing](https://beckybarber18.github.io/coloring/): Color the arena faster than your opponent can before time runs out in this two-player retro arcade game ([src](https://github.com/beckybarber18/coloring)) --- Bianca Catoto, Ilene E, and Rebecca Barber
-
-* [Shape Battles: The Final Frontier](http://shape-battles.herokuapp.com/): Control a spaceship with your mouse and try to explode enemies before they destroy you in this competitive top-down arcade game ([src](https://github.com/jimmyyhwu/shape-battles)) --- Derek Sawicki, Hector Solis, Jimmy Wu
-
-* [Color Maze](https://kattusite.github.io/colormaze/): Collect artifacts and unlock graphical gameplay in this maze of hidden dimensions ([src](https://github.com/Kattusite/colormaze)) --- William Sweeny, Kevin Jeon, and Aditya Kohli
-
-* [Collideoscope](https://collideoscope.github.io): How far can you make it in this extremely addicting kaleidoscope infinite runner? ([src](https://github.com/ewilden/collideoscope)) --- Noah Moss and Evan Wildenhain
-
-* [CTRL-Z](https://qdonohue.github.io/ctrlz/): Defend your fort while being sent back in time as you accumulate damage in this two-player arcade game ([src](https://github.com/qdonohue/ctrlz)) --- Quinn Donohue, Cody Sedillo, and Victor Riveros
-
-
-* [Death Star Assault](https://ajayp15.github.io/DeathStarAssault/): Relive final battle from the classic 1977 film *Star Wars* through the X-Wing of Luke Skywalker in this arcade game ([src](https://github.com/ajayp15/DeathStarAssault/)) --- Ajay Penmatcha and Antony Toron
