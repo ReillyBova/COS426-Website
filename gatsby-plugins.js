@@ -36,7 +36,8 @@ module.exports = [
                 components: './components', // <- will become ./src/components
                 content: './content', // <- will become ./src/content
                 scenes: './scenes', // <- will become ./src/scenes
-                shaders: './shaders', // <- will become ./src/scenes
+                shaders: './shaders', // <- will become ./src/shaders
+                theming: './theming', // <- will become ./src/theming
                 utils: './utils', // <- will become ./src/utils
             },
         },

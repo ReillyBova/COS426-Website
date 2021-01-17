@@ -6,7 +6,11 @@ import PropTypes from 'prop-types';
 import { PrincetonShield } from 'images';
 import { urlify } from 'utils';
 // Local imports
-import { NavbarDropdownButton, NavbarButton } from './subcomponents';
+import {
+    NavbarDropdownButton,
+    NavbarButton,
+    DarkModeToggle,
+} from './subcomponents';
 // UI imports
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
@@ -48,12 +52,13 @@ function Navbar({ classes }) {
 
     // CSS classes for styling
     const {
-        grow,
+        courseWrapper,
         appBar,
         scrolling,
         brandLogo,
         brandLink,
         menuButton,
+        darkModeButton,
     } = classes;
 
     // Render
@@ -64,7 +69,11 @@ function Navbar({ classes }) {
                     <Link to='/'>
                         <img src={PrincetonShield} className={brandLogo} />
                     </Link>
-                    <Typography variant='h4' color='inherit' className={grow}>
+                    <Typography
+                        variant='h4'
+                        color='inherit'
+                        className={courseWrapper}
+                    >
                         <Link to='/' className={brandLink}>
                             <span style={{ fontWeight: '800' }}>{'COS'}</span>
                             <span style={{ fontWeight: '400' }}>{' 426'}</span>
@@ -86,6 +95,7 @@ function Navbar({ classes }) {
                             </NavbarButton>
                         );
                     })}
+                    <DarkModeToggle className={darkModeButton} />
                     <div>
                         <IconButton
                             aria-owns={

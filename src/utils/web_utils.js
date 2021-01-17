@@ -123,3 +123,46 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
     );
     return formatDate(result);
 };
+
+// Set local storage with expiry
+// Adapted from: https://www.sohamkamani.com/blog/javascript-localstorage-with-ttl-expiry/#full-example
+export const setLocalStorage = (key, value, hoursToLive) => {
+    // Convert hoursToLive to msToLive
+    const msToLive = hoursToLive * 60 * 60 * 1000;
+
+    // Place an object in localStorage[key] with value and expiry
+    const now = new Date();
+    const item = {
+        value: value,
+        expiry: now.getTime() + msToLive,
+    };
+
+    window.localStorage.setItem(key, JSON.stringify(item));
+};
+
+export const getLocalStorage = (key) => {
+    const itemString = localStorage.getItem(key);
+
+    // If the item doesn't exist, return null
+    if (!itemString) {
+        return null;
+    }
+
+    const item = JSON.parse(itemString);
+
+    // Test to make sure the expiry field is present
+    const { value, expiry } = item;
+    if (!expiry) {
+        return null;
+    }
+
+    // Test for expiration
+    const now = new Date();
+    if (now.getTime() > expiry) {
+        // Delete and return null if expired
+        window.localStorage.removeItem(key);
+        return null;
+    }
+
+    return value;
+};

@@ -6,22 +6,22 @@ import { AnchorTarget } from 'components';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Custom styling for component
-const anchorLinkStyles = makeStyles(() => ({
+const anchorLinkStyles = makeStyles((theme) => ({
     anchorWrapper: {
         '&:hover $anchorSource': {
             display: 'inline-block',
         },
     },
     anchorSource: {
+        color: theme.palette.text.primary,
         display: 'none',
         padding: '0 8px',
-        '&:hover': {
-            '& svg': {
-                fill: 'currentColor',
-            },
-        },
         '& svg': {
+            fill: 'currentColor',
             width: '0.7em',
+        },
+        '&:hover': {
+            color: theme.palette.primary.main,
         },
     },
 }));

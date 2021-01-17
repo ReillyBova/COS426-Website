@@ -3,8 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Styling for navbar elements
 const navbarStyles = makeStyles((theme) => ({
-    grow: {
+    courseWrapper: {
         flexGrow: 1,
+        [theme.breakpoints.up('md')]: {
+            marginRight: theme.spacing(1.5),
+        },
     },
     appBar: {
         // Orange border
@@ -54,6 +57,12 @@ const navbarStyles = makeStyles((theme) => ({
             // Toggle display of mobile dropdown
             display: 'none',
         },
+        '&:hover': {
+            // Brighten the hover color
+            backgroundColor: '#282828',
+        },
+    },
+    darkModeButton: {
         '&:hover': {
             // Brighten the hover color
             backgroundColor: '#282828',
