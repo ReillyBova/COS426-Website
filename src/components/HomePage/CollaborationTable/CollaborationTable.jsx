@@ -36,6 +36,11 @@ const collabStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
+    appbar_wrapper: {
+        '&>header': {
+            backgroundColor: theme.palette.type === 'dark' && theme.palette.secondary.main,
+        },
+    },
     tableRow_mobile: {
         '&&>th': {
             paddingLeft: '56px',
@@ -118,46 +123,51 @@ function CollaborationTable() {
                     ))}
                 </TableBody>
             </Table>
-            <AppBar
-                className={classes.table_mobile}
-                position='static'
-                color='default'
-            >
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    indicatorColor='primary'
-                    textColor='primary'
-                    variant='scrollable'
-                    scrollButtons='on'
+            <div className={classes.appbar_wrapper}>
+                <AppBar
+                    className={classes.table_mobile}
+                    position='static'
+                    color='default'
                 >
-                    {table.headers.map((columnName, i) => (
-                        <Tab
-                            key={i}
-                            className={classes.label}
-                            label={columnName}
-                        />
-                    ))}
-                </Tabs>
-            </AppBar>
-            <Table className={classes.table_mobile}>
-                <TableBody>
-                    {table.rows.map((rowName, i) => (
-                        <TableRow key={i} className={classes.tableRow_mobile}>
-                            <TableCell component='th' scope='row'>
-                                {rowName}
-                            </TableCell>
-                            <TableCell>
-                                {table.values[i][value] ? (
-                                    <CheckIcon color='primary' />
-                                ) : (
-                                    <CancelIcon color='secondary' />
-                                )}
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor='primary'
+                        textColor='primary'
+                        variant='scrollable'
+                        scrollButtons='on'
+                    >
+                        {table.headers.map((columnName, i) => (
+                            <Tab
+                                key={i}
+                                className={classes.label}
+                                label={columnName}
+                            />
+                        ))}
+                    </Tabs>
+                </AppBar>
+                <Table className={classes.table_mobile}>
+                    <TableBody>
+                        {table.rows.map((rowName, i) => (
+                            <TableRow
+                                key={i}
+                                className={classes.tableRow_mobile}
+                            >
+                                <TableCell component='th' scope='row'>
+                                    {rowName}
+                                </TableCell>
+                                <TableCell>
+                                    {table.values[i][value] ? (
+                                        <CheckIcon color='primary' />
+                                    ) : (
+                                        <CancelIcon color='secondary' />
+                                    )}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </div>
         </Paper>
     );
 }
