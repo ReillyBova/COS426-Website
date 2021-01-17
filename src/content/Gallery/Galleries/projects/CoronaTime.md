@@ -6,7 +6,7 @@ authors: "Audrey Cheng, Christine Lu"
 # Project Image
 imageName: "corona_time"
 # Demo url
-demoURL: "https://audrey1656.github.io/coronatime/"
+demoURL: ""
 # Repo url
 repoURL: "https://github.com/Audrey1656/coronatime"
 # Writeup url
