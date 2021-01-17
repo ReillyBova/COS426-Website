@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"I1v/":function(e,t,n){"use strict";n.r(t),n.d(t,"pageQuery",(function(){return o}));var a=n("q1tI"),r=n.n(a),l=n("Kvkj");var o="1937266949";t.default=function(e){var t=e.data,n={galleries:function(){return r.a.createElement(l.j,null)}};return r.a.createElement(l.t,{title:"Gallery"},r.a.createElement(l.q,{title:"Art Gallery",markdown:t.gallery,tableOfContents:!1,components:n}))}}}]);
+//# sourceMappingURL=component---src-pages-gallery-jsx-ad800ddce04debed1be2.js.map
