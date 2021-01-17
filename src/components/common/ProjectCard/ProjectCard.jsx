@@ -1,5 +1,5 @@
 // Library imports
-import React, { useState, useMemo } from 'react';
+import React, { Fragment, useState, useMemo } from 'react';
 import Image from 'gatsby-image';
 // Project imports
 import { AnchorLink, AnchorTarget, MarkdownInjector } from 'components';
@@ -134,13 +134,13 @@ function ProjectCard({ project, fluidImage, gifImage }) {
 
     const bodyElement = useMemo(
         () => (
-            <React.Fragment>
+            <Fragment>
                 <Divider className={dividerStyle} />
                 <MarkdownInjector
                     markdown={project}
                     components={markdownComponents}
                 />
-            </React.Fragment>
+            </Fragment>
         ),
         [dividerStyle, project]
     );

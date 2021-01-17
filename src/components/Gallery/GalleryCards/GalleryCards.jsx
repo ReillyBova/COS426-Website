@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Project imports
 import { MarkdownInjector, InternalCardActionArea } from 'components';
@@ -120,12 +120,12 @@ function GalleryCards({ excludeID }) {
                 </Grid>
             );
         },
-        a: ({ children }) => <React.Fragment>{children}</React.Fragment>,
-        p: ({ children }) => <React.Fragment>{children}</React.Fragment>,
-        div: ({ children }) => <React.Fragment>{children}</React.Fragment>,
+        a: ({ children }) => <Fragment>{children}</Fragment>,
+        p: ({ children }) => <Fragment>{children}</Fragment>,
+        div: ({ children }) => <Fragment>{children}</Fragment>,
     };
 
-    const settings = { Fragment: React.Fragment };
+    const settings = { Fragment: Fragment };
 
     // Render
     return (

@@ -1,5 +1,5 @@
 // Library imports
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Project imports
 import { ProjectCard } from 'components';
@@ -78,7 +78,7 @@ function Gallery({ hasAward }) {
 
     // Render
     return (
-        <React.Fragment>
+        <Fragment>
             {filteredProjects.map(({ node }) => {
                 const { title, imageName } = node.frontmatter;
                 return (
@@ -90,7 +90,7 @@ function Gallery({ hasAward }) {
                     />
                 );
             })}
-        </React.Fragment>
+        </Fragment>
     );
 }
 
