@@ -6,8 +6,8 @@ import { ProjectCard } from 'components';
 import { ProjectGIFs } from 'gifs';
 import { hasProjectAward, visibilityCmp } from 'utils';
 
-// Generate gallery from markdown content
-function Gallery({ hasAward }) {
+// Generate project gallery cards markdown content
+function ProjectGallery({ hasAward }) {
     const { projects, projectImages } = useStaticQuery(
         graphql`
             query {
@@ -94,4 +94,4 @@ function Gallery({ hasAward }) {
     );
 }
 
-export default Gallery;
+export default ProjectGallery;

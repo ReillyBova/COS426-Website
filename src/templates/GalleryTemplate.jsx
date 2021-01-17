@@ -96,9 +96,9 @@ function GalleryTemplate({ data }) {
 
             // Inject project headings
             if (value === 'project-winners-headers') {
-                return injectProjectHeaders(data.projects, true, depth);
+                return injectProjectHeaders(data.projects.edges, true, depth);
             } else if (value === 'project-mentions-headers') {
-                return injectProjectHeaders(data.projects, false, depth);
+                return injectProjectHeaders(data.projects.edges, false, depth);
             }
 
             return heading;
@@ -120,7 +120,7 @@ function GalleryTemplate({ data }) {
                 }
                 markdown={{ ...data.gallery, headings: newHeadings }}
                 components={customComponents}
-            ></MarkdownPage>
+            />
         </PageLayout>
     );
 }
@@ -142,7 +142,7 @@ export const pageQuery = graphql`
         }
         projects: allMarkdownRemark(
             filter: {
-                fileAbsolutePath: {regex: "/\\/src\\/content\\/Gallery\\/Galleries\\/projects/.*\\.md$/"}
+                fileAbsolutePath: {regex: "/\\/src\\/content\\/Gallery\\/Galleries\\/projects\\/.*\\.md$/"}
             }
         ) {
             edges {

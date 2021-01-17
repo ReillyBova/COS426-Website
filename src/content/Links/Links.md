@@ -70,7 +70,11 @@ This is a growing list, so expect more links to appear here as the semester cont
 # Final Project Hall of Fame
 A selection of the best final projects from previous years. Links to the demos and source code for these projects are available below for students' collective inspiration, interest, and entertainment.
 
-### Spring 2019 Selection
+#### hall-of-fame-headers
+
+<div><hall-of-fame></hall-of-fame></div>
+
+### Spring 2019 Selectionz
 
 * [ColoRing](https://beckybarber18.github.io/coloring/): Color the arena faster than your opponent can before time runs out in this two-player retro arcade game ([src](https://github.com/beckybarber18/coloring)) --- Bianca Catoto, Ilene E, and Rebecca Barber
 

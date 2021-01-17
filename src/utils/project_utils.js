@@ -32,8 +32,8 @@ export const visibilityCmp = (propsA, propsB) => {
 };
 
 // Inject project headers into headings array
-export const injectProjectHeaders = (projectsData, hasAward, depth) => {
-    const projects = projectsData.edges
+export const injectProjectHeaders = (projectsEdges, hasAward, depth) => {
+    const projects = projectsEdges
         ?.filter(
             hasAward ? hasProjectAward : (project) => !hasProjectAward(project)
         )
@@ -43,3 +43,16 @@ export const injectProjectHeaders = (projectsData, hasAward, depth) => {
         return { value: node.frontmatter.title, depth: depth };
     });
 };
+
+// Extract unique years from graphql project query
+export const extractSelectionYears = (projectsEdges) =>
+    [
+        ...new Set(
+            projectsEdges
+                .map(({ node }) => parseInt(node.frontmatter.year))
+                .filter((year) => !!year)
+        ),
+    ].sort((a, b) => b - a);
+
+export const buildSelectionHeader 
+ = (year) => `Spring ${year} Selection`;
