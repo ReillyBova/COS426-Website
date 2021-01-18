@@ -21,6 +21,7 @@ const courseworkStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('lg')]: {
             float: 'right',
         },
+        background: theme.palette.type === 'dark' && theme.palette.grey[500]
     },
     image: {
         padding: 8,
@@ -31,7 +32,7 @@ const courseworkStyles = makeStyles((theme) => ({
 function Coursework() {
     const { piechart, image } = courseworkStyles();
     return (
-        <Card raised className={piechart}>
+        <Card className={piechart}>
             <CardActions>
                 <img className={image} src={GradeChart} />
             </CardActions>

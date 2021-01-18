@@ -24,6 +24,7 @@ const collabStyles = makeStyles((theme) => ({
         marginRight: 'auto',
         marginLeft: 'auto',
         overflowX: 'auto',
+        color: theme.palette.type === 'dark' ? 'white' : theme.palette.secondary.main
     },
     table_desktop: {
         whiteSpace: 'nowrap',
@@ -38,7 +39,8 @@ const collabStyles = makeStyles((theme) => ({
     },
     appbar_wrapper: {
         '&>header': {
-            backgroundColor: theme.palette.type === 'dark' && theme.palette.secondary.main,
+            backgroundColor:
+                theme.palette.type === 'dark' && theme.palette.secondary.main,
         },
     },
     tableRow_mobile: {
@@ -115,7 +117,7 @@ function CollaborationTable() {
                                     {permission ? (
                                         <CheckIcon color='primary' />
                                     ) : (
-                                        <CancelIcon color='secondary' />
+                                        <CancelIcon color='inherit' />
                                     )}
                                 </TableCell>
                             ))}
@@ -160,7 +162,7 @@ function CollaborationTable() {
                                     {table.values[i][value] ? (
                                         <CheckIcon color='primary' />
                                     ) : (
-                                        <CancelIcon color='secondary' />
+                                        <CancelIcon color='inherit' />
                                     )}
                                 </TableCell>
                             </TableRow>
