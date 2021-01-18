@@ -3,7 +3,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 // Project imports
 import { PageLayout, MarkdownPage, HallOfFame } from 'components';
-import { injectProjectHeaders, extractSelectionYears, buildSelectionHeader } from 'utils';
+import {
+    injectProjectHeaders,
+    extractSelectionYears,
+    buildSelectionHeader,
+} from 'utils';
 
 // Generate exercises from markdown content
 function Links({ data }) {

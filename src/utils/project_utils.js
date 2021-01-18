@@ -54,5 +54,4 @@ export const extractSelectionYears = (projectsEdges) =>
         ),
     ].sort((a, b) => b - a);
 
-export const buildSelectionHeader 
- = (year) => `Spring ${year} Selection`;
+export const buildSelectionHeader = (year) => `Spring ${year} Selection`;

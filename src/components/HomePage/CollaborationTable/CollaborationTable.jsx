@@ -24,7 +24,10 @@ const collabStyles = makeStyles((theme) => ({
         marginRight: 'auto',
         marginLeft: 'auto',
         overflowX: 'auto',
-        color: theme.palette.type === 'dark' ? 'white' : theme.palette.secondary.main
+        color:
+            theme.palette.type === 'dark'
+                ? 'white'
+                : theme.palette.secondary.main,
     },
     table_desktop: {
         whiteSpace: 'nowrap',

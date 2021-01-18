@@ -1,5 +1,5 @@
 // Library imports
-import React, {forwardRef} from 'react';
+import React, { forwardRef } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 // UI imports
 import MuiLink from '@material-ui/core/Link';
