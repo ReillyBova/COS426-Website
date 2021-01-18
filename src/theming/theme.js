@@ -40,8 +40,8 @@ export const dark_theme = responsiveFontSizes(
                 main: '#221e20',
             },
             background: {
-                default: '#2d292b',
-                paper: '#434041',
+                default: '#292527',
+                paper: '#312f31',
             },
             contrastThreshold: 2,
         },
