@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 // Project imports
 import { ToggleThemeContext } from 'theming';
+import { isAprilFoolsDay } from 'utils';
 // UI imports
 import { useTheme } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,11 +16,12 @@ function DarkModeToggle({ className }) {
     const toggleContext = useContext(ToggleThemeContext);
 
     const isLightThemeActive = theme.palette.type === 'light';
+    const isAprilFools = isAprilFoolsDay();
 
     // Render
     if (isLightThemeActive) {
         return (
-            <Tooltip title={'Toggle Dark Mode'}>
+            <Tooltip title={isAprilFools? 'Toggle Nassau-Orange Mode' : 'Toggle Dark Mode'}>
                 <IconButton
                     onClick={toggleContext}
                     className={className}
@@ -31,7 +33,7 @@ function DarkModeToggle({ className }) {
         );
     } else {
         return (
-            <Tooltip title={'Toggle Light Mode'}>
+            <Tooltip title={isAprilFools? 'Toggle Harvard Mode' : 'Toggle Light Mode'}>
                 <IconButton
                     onClick={toggleContext}
                     className={className}
