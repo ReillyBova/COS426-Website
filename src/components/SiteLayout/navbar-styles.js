@@ -62,6 +62,13 @@ const navbarStyles = makeStyles((theme) => ({
             backgroundColor: '#282828',
         },
     },
+    mobileMenu: {
+        [theme.breakpoints.up('md')]: {
+            // Toggle display of mobile dropdown
+            display: 'none',
+        },
+
+    },
     darkModeButton: {
         '&:hover': {
             // Brighten the hover color

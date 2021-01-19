@@ -73,6 +73,7 @@ function Footer({ classes }) {
                                 to={`https://www.${relatedLinks.university}`}
                             >
                                 <img
+                                    alt='Princeton University'
                                     src={PrincetonSignature}
                                     className={brandSignature}
                                 />

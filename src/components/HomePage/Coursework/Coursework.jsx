@@ -34,7 +34,7 @@ function Coursework() {
     return (
         <Card className={piechart}>
             <CardActions>
-                <img className={image} src={GradeChart} />
+                <img alt='Grade Chart' className={image} src={GradeChart} />
             </CardActions>
         </Card>
     );

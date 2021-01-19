@@ -16,6 +16,7 @@ import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -59,6 +60,7 @@ function Navbar({ classes }) {
         brandLink,
         menuButton,
         darkModeButton,
+        mobileMenu,
     } = classes;
 
     // Render
@@ -67,7 +69,11 @@ function Navbar({ classes }) {
             <AppBar position='fixed' className={appBar} color='secondary'>
                 <Toolbar component='nav' className={scrolling}>
                     <Link to='/'>
-                        <img src={PrincetonShield} className={brandLogo} />
+                        <img
+                            alt='Home'
+                            src={PrincetonShield}
+                            className={brandLogo}
+                        />
                     </Link>
                     <Typography
                         variant='h4'
@@ -97,17 +103,19 @@ function Navbar({ classes }) {
                     })}
                     <DarkModeToggle className={darkModeButton} />
                     <div>
-                        <IconButton
-                            aria-owns={
-                                isDropdownOpen ? 'menu-appbar' : undefined
-                            }
-                            aria-haspopup='true'
-                            className={menuButton}
-                            onClick={handleMenu}
-                            color='inherit'
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                        <Tooltip title='Menu'>
+                            <IconButton
+                                aria-owns={
+                                    isDropdownOpen ? 'menu-appbar' : undefined
+                                }
+                                aria-haspopup='true'
+                                className={menuButton}
+                                onClick={handleMenu}
+                                color='inherit'
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </Tooltip>
                         <Menu
                             id='menu-appbar'
                             anchorEl={dropdownAnchor}
@@ -122,6 +130,7 @@ function Navbar({ classes }) {
                             open={isDropdownOpen}
                             onClose={handleClose}
                             disableScrollLock
+                            className={mobileMenu}
                         >
                             {navigation.map((pageName) => {
                                 const isHomePage = pageName === homePage;

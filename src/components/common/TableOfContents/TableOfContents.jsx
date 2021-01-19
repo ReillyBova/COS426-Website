@@ -251,38 +251,39 @@ function TableOfContents({ headings }) {
                             if (depth > 1) {
                                 // Nested headers are arrays of values
                                 return (
-                                    <ul
-                                        className={contentList}
-                                        key={`${i}-${depth}`}
-                                    >
-                                        {values.map(({ value, index }) => (
-                                            <Typography
-                                                color={
-                                                    index === contentIndex
-                                                        ? 'textPrimary'
-                                                        : 'textSecondary'
-                                                }
-                                                component='li'
-                                                key={value}
-                                            >
-                                                <a
-                                                    className={clsx(
-                                                        contentItem,
-                                                        nestedItem,
-                                                        index ===
-                                                            contentIndex &&
-                                                            'active'
-                                                    )}
-                                                    id={`${urlify(
-                                                        value
-                                                    )}-toc-link`}
-                                                    href={`#${urlify(value)}`}
+                                    <li key={`${i}-${depth}`}>
+                                        <ul className={contentList}>
+                                            {values.map(({ value, index }) => (
+                                                <Typography
+                                                    color={
+                                                        index === contentIndex
+                                                            ? 'textPrimary'
+                                                            : 'textSecondary'
+                                                    }
+                                                    component='li'
+                                                    key={value}
                                                 >
-                                                    {value}
-                                                </a>
-                                            </Typography>
-                                        ))}
-                                    </ul>
+                                                    <a
+                                                        className={clsx(
+                                                            contentItem,
+                                                            nestedItem,
+                                                            index ===
+                                                                contentIndex &&
+                                                                'active'
+                                                        )}
+                                                        id={`${urlify(
+                                                            value
+                                                        )}-toc-link`}
+                                                        href={`#${urlify(
+                                                            value
+                                                        )}`}
+                                                    >
+                                                        {value}
+                                                    </a>
+                                                </Typography>
+                                            ))}
+                                        </ul>
+                                    </li>
                                 );
                             } else {
                                 // Primary header at depth 1 is a one-element array

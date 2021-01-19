@@ -26,9 +26,18 @@ function HoverImage({ className, ...props }) {
 
     // Add a link for non gatsby wrapped images
     if (!className) {
+        let alt = '';
+        const imagePath = props.src.split('.');
+        if (imagePath.length > 0) {
+            const imagePathComponents = imagePath[0].split('/');
+            alt = imagePathComponents[imagePathComponents.length - 1];
+        } else {
+            alt = '';
+        }
+
         return (
             <ExternalLink to={props.src}>
-                <img className={imageShadow} {...props} />
+                <img className={imageShadow} alt={alt} {...props} />
             </ExternalLink>
         );
     } else {
