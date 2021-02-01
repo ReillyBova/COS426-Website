@@ -70,12 +70,8 @@ const materials = {
     ],
     other: [
         {
-            title: 'Exam POSTPONED due to COVID-19',
+            title: 'Virtual Exam',
             due: { week: 6, day: 'Thursday' },
-        },
-        {
-            title: 'Virtual Midterm Exam (see Piazza)',
-            due: { week: 7, day: 'Friday' },
         },
         {
             title: 'Project Proposals over Zoom',
