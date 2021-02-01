@@ -18,7 +18,7 @@
   "private": false,
   "scripts": {
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy-gh": "gatsby build --prefix-paths && gh-pages -d public",
     "format": "prettier --write '*.js' '*.jsx' 'src/**/*.js' 'src/**/*.jsx'",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths",
