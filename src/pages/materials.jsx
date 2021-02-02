@@ -120,7 +120,6 @@ function Materials({ data }) {
 
     // Condense schedule into array of arrays of objects
     const simplifiedSchedule = masterSchedule.map((week, i) => {
-        console.log(week, i)
         let simplifiedWeek = [
             ...week.Monday,
             ...week.Tuesday,

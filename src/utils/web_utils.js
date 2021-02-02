@@ -110,11 +110,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
 
     // Compute result
     let adjustedWeekNumber = weekNumber;
-    if (adjustedWeekNumber > 5) {
-        // Add an extra week for spring break
-        //adjustedWeekNumber += 1;
-    }
-    if (adjustedWeekNumber > 12) {
+    if (adjustedWeekNumber > 11 && dayOfWeek !== "Monday" && dayOfWeek !== "Tuesday") {
         // Add an extra week for reading period
         adjustedWeekNumber += 1;
     }

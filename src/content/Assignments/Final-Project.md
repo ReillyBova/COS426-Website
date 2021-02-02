@@ -15,7 +15,7 @@ feedbackURL: ""
 visible: true
 # Assignment due date
 dueWeek: 13
-dueDay: 'Tuesday'
+dueDay: 'Wednesday'
 dueTime: '11:55pm'
 # Name as displayed on materials page
 calendarName: "Dean's Date: Final Project"
