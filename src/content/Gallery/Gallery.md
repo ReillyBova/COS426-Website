@@ -4,4 +4,4 @@ This art gallery contains a curated selection of student artwork from this semes
 
 It is still early in the semester, so no art galleries have been posted yet. Please check back here shortly after the first assignment has been graded!
 
-<div><galleries></galleries></div>
+<!--<div><galleries></galleries></div>-->
