@@ -4,7 +4,7 @@ name: "Joanna Kuo"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
 role: "Undergraduate TA"
 # Filename for headshot
-image: "reilly_bova"
+image: "joanna_kuo"
 # Email
 email: "jkuo@princeton.edu"
 # Link associated with headshot button
@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "TBD"
+officeHours: "Monday 12pm-2pm"
 ---

@@ -4,7 +4,7 @@ name: "Catherine Yu"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
 role: "Undergraduate TA"
 # Filename for headshot
-image: "reilly_bova"
+image: "catherine_yu"
 # Email
 email: "cjy@princeton.edu"
 # Link associated with headshot button
@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "TBD"
+officeHours: "Tuesday 9pm-11pm"
 ---

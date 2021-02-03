@@ -4,7 +4,7 @@ name: "Sahan Paliskara"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
 role: "Undergraduate TA"
 # Filename for headshot
-image: "reilly_bova"
+image: "sahan_paliskara"
 # Email
 email: "sahanp@princeton.edu"
 # Link associated with headshot button
@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "TBD"
+officeHours: "Wednesday 3pm-5pm"
 ---
