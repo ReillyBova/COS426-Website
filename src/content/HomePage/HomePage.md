@@ -58,10 +58,12 @@ In particular, students should not expect LabTAs to give them the answer to an a
 ### Nota Bene
 Unless a student has a JavaScript syntax question, **instructors will not look at any code** until the student has demonstrated that they understand the solution to the problem they need help with (see the last bullet point above). Second, unless it's a syntax issue, instructors will not fix a student's code for them. They will simply state what region of the code looks wrong. Also, if a student's explanation is incorrect, instructors will not fix it for them. Course staff will either state what part of it is wrong, and / or ask a question to give the student something to think about.
 
+<!--
 ### Schedule
 Undergraduate LabTAs are available to help students during both precepts. LabTAs are also available in the Friend Fishbowl room Friday 11am–4pm, Saturday 12–3pm, and Sunday 1–5pm & 9–11pm.
 
 Graduate course staff are available over Zoom from 3–5pm on Mondays, and 1–2pm on Tuesdays. Professor Heide's office hours are held Tuesday after class in the Zoom lecture meeting.
+-->
 
 # Coursework
 ### Course Grades
