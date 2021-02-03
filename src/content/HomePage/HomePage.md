@@ -10,7 +10,7 @@ The course is appropriate for students who have taken COS 217 and COS 226 (or eq
 ### Lectures and Precepts
 Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM over Zoom.
 
-Precept is held on Wednesday and Thursday from 7:30–8:20PM in Friend Center 008. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
+Precept is held on Wednesday and Thursday from 7:30–8:20PM over Zoom. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
 
 ### Required Reading
 
