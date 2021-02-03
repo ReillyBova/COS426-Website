@@ -27,6 +27,9 @@ function Footer({ classes }) {
                         }
                         navigation
                         homePage
+                        courseSettings {
+                            semester
+                        }
                     }
                 }
             }
@@ -37,6 +40,7 @@ function Footer({ classes }) {
     const relatedLinks = site.siteMetadata.relatedLinks;
     const sitePages = site.siteMetadata.navigation;
     const homePage = site.siteMetadata.homePage;
+    const semester = site.siteMetadata.courseSettings.semester;
 
     // CSS classes for styling
     const {
@@ -93,7 +97,7 @@ function Footer({ classes }) {
                         <div className={legalese}>
                             <div>{'COS 426: Computer Graphics'}</div>
                             <div>
-                                {'© 2020 The Trustees of Princeton University'}
+                                {`© ${semester} The Trustees of Princeton University`}
                             </div>
                             <div>
                                 <ExternalLink

@@ -5,9 +5,7 @@ import { TextbookCover } from 'images';
 // UI imports
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 
 const textbookStyles = makeStyles((theme) => ({
     textbookCard: {
@@ -34,17 +32,6 @@ function Textbook() {
                 image={TextbookCover}
                 title='Computer Graphics with OpenGL'
             />
-            <CardActions>
-                <Button
-                    size='small'
-                    color='primary'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='http://www.labyrinthbooks.com/all_detail.aspx?isbn=9780136053583'
-                >
-                    {'Labyrinth'}
-                </Button>
-            </CardActions>
         </Card>
     );
 }
