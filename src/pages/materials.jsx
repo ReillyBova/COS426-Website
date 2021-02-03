@@ -64,17 +64,17 @@ function Materials({ data }) {
 
             // Add data to schedule
             if (firstLectureData) {
-                weekSchedule[firstLecture].push({
+                weekSchedule[week < 6 ? firstLecture : secondLecture].push({
                     lecture: firstLectureData,
                     readings: firstReadingsData,
-                    date: semesterOffsetToDateString(week, firstLecture),
+                    date: semesterOffsetToDateString(week, week < 6 ? firstLecture : secondLecture),
                 });
             }
             if (secondLectureData) {
-                weekSchedule[secondLecture].push({
+                weekSchedule[week < 6 ? secondLecture : firstLecture].push({
                     lecture: secondLectureData,
                     readings: secondReadingsData,
-                    date: semesterOffsetToDateString(week, secondLecture),
+                    date: semesterOffsetToDateString(week < 6 ? week : week + 1, week < 6 ? secondLecture : firstLecture),
                 });
             }
         }
@@ -83,10 +83,10 @@ function Materials({ data }) {
         if (weekToAssignments[week]) {
             weekToAssignments[week].forEach((assignment) => {
                 const day = assignment.dueDay;
-                const date = semesterOffsetToDateString(
-                    week,
-                    assignment.dueDay
-                );
+                let date = semesterOffsetToDateString(week, day);
+                if (week > 5 && (day === "Monday" || day === "Tuesday")) {
+                    date = semesterOffsetToDateString(week + 1, day);
+                }
                 weekSchedule[day].push({ assignment: assignment, date });
             });
         }
@@ -96,27 +96,31 @@ function Materials({ data }) {
             const preceptData = materials.precepts[week];
             if (preceptData) {
                 // Precept appears after last lecture for week
-                weekSchedule[secondLecture].push({
+                weekSchedule[week < 6 ? secondLecture : firstLecture].push({
                     precept: preceptData,
                     date: `Precept`,
                 });
             }
         }
-        masterSchedule.push(weekSchedule);
 
         // Events have last priority
         if (weekToEvents[week]) {
             weekToEvents[week].forEach((otherEvent) => {
                 const day = otherEvent.due.day;
-                const date = semesterOffsetToDateString(week, day);
+                let date = semesterOffsetToDateString(week, day);
+                if (week > 5 && (day === "Monday" || day === "Tuesday")) {
+                    date = semesterOffsetToDateString(week + 1, day);
+                }
                 weekSchedule[day].push({ otherEvent: otherEvent, date });
             });
         }
+
+        masterSchedule.push(weekSchedule);
     }
 
     // Condense schedule into array of arrays of objects
-    const simplifiedSchedule = masterSchedule.map((week) => {
-        const simplifiedWeek = [
+    const simplifiedSchedule = masterSchedule.map((week, i) => {
+        let simplifiedWeek = [
             ...week.Monday,
             ...week.Tuesday,
             ...week.Wednesday,
@@ -125,6 +129,18 @@ function Materials({ data }) {
             ...week.Saturday,
             ...week.Sunday,
         ];
+
+        if (i > 5) {
+            simplifiedWeek = [
+                ...week.Wednesday,
+                ...week.Thursday,
+                ...week.Friday,
+                ...week.Saturday,
+                ...week.Sunday,
+                ...week.Monday,
+                ...week.Tuesday,
+            ];
+        }
 
         return simplifiedWeek;
     });

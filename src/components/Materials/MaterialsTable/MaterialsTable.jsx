@@ -61,6 +61,7 @@ function MaterialsTable({ schedule }) {
     } = materialTableStyles();
     let lectureCount = 0;
     let preceptCount = 0;
+
     return (
         <TableContainer component={Paper}>
             <Table size='small' className={table}>
