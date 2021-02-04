@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "TBD"
+officeHours: "Monday 8pm-10pm"
 ---

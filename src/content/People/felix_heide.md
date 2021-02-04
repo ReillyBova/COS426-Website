@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: "https://www.cs.princeton.edu/~fheide/"
 # Office Hours
-officeHours: "TBD"
+officeHours: "Thursday after lecture"
 ---
