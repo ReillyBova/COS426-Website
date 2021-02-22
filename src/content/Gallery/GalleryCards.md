@@ -1,6 +1,6 @@
-<!--
-<div><gallery id="A0"><img alt="" src="./Galleries/art/a0/gjroth1.png"></img></gallery></div>
+<div><gallery id="A0"><img alt="" src="./Galleries/art/a0/ccosta1.gif"></img></gallery></div>
 
+<!--
 <div><gallery id="A1"><img alt="" src="./Galleries/art/a1/jkuo.gif"></img></gallery></div>
 
 <div><gallery id="A2"><img alt="" src="./Galleries/art/a2/dwey.png"></img></gallery></div>

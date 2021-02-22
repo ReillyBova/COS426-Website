@@ -22,7 +22,7 @@ const materials = {
         'Character Animation', // Week 10
         'Production F/X',
         '3D Fabrication', // Week 11
-        'Virtual & Augmented Reality (Doug Lanman, Facebook Reality Labs)',
+        'Guest Lecture (TBD)',
         '', // Week 12
     ],
     precepts: [
