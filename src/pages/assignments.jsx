@@ -59,10 +59,10 @@ function Assignments({ data }) {
                         const gifImage = gifMap[imageName];
 
                         // Compute due date string
-                        const date = semesterOffsetToDateString(
-                            dueWeek - 1,
-                            dueDay
-                        );
+                        let date = semesterOffsetToDateString(dueWeek - 1, dueDay);
+                        if (dueWeek > 6 && (dueDay === "Monday" || dueDay === "Tuesday")) {
+                            date = semesterOffsetToDateString(dueWeek, dueDay);
+                        }
 
                         return (
                             <Grid key={slug} item md={4} sm={6} xs={12}>
