@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: "https://ethan-tseng.github.io"
 # Office Hours
-officeHours: "Friday 12pm-2pm"
+officeHours: "Tuesday 6pm-8pm"
 ---
