@@ -22,7 +22,7 @@ const materials = {
         'Character Animation', // Week 10
         'Production F/X',
         '3D Fabrication', // Week 11
-        'Guest Lecture (TBD)',
+        'Final Project Logistics',
         '', // Week 12
     ],
     precepts: [
