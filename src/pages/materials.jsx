@@ -42,7 +42,7 @@ function Materials({ data }) {
 
     // Build semester schedule week by week
     const masterSchedule = [];
-    for (let week = 0; week < 13; week++) {
+    for (let week = 0; week < 14; week++) {
         // Initialize empty schedule for the week
         const weekSchedule = {
             Monday: [],
