@@ -14,8 +14,8 @@ feedbackURL: ""
 # Is this assignment listed on the assignments page?
 visible: true
 # Assignment due date
-dueWeek: 13
-dueDay: 'Wednesday'
+dueWeek: 14
+dueDay: 'Monday'
 dueTime: '11:55pm'
 # Name as displayed on materials page
 calendarName: "Dean's Date: Final Project Intermediary Report"
@@ -37,10 +37,10 @@ As outlined above, this project is fairly open-ended, but there are a few hard r
 * **You must work in groups of two to four.** Naturally, we will hold larger groups to a higher standard when evaluating their final project, although we will take diminishing marginal returns somewhat into account. If you have an extremely compelling reason to either work alone or work in a group of five, please make a private post on <piazza-link></piazza-link> and we will consider your case. In our experience, solo projects struggle to get off the ground, whereas projects from groups of five or more suffer from having too many cooks in the kitchen.
 * **The source code for your project, as well as your project's written report, must be published to a public GitHub repository --- no exceptions.** We also expect you to use the repository for version-control and project collaboration, but we will not enforce this. If you are not familiar with `git` protocol, now is an excellent time to learn!
 * **You must host a live demo of your project online, preferably through GitHub pages** (which is lightning fast to set up if your source code is already in a repository). As we expect most projects to be built on ThreeJS, this should be fairly straightforward for most of you. If, however, you are really drawn to a project that cannot be integrated into a browser runtime, please make a private <piazza-link></piazza-link>, and we will consider your case.
-* **You must submit the link to your live demo, repository, and finalized writeup on Dean's Date.** You are permitted to continue editing your demo and source code after Dean's Date in preparation for your final presentation, but your written report should be locked-in.
+* **You must submit the link to your live demo, repository, and intermediary writeup on Dean's Date.** You are permitted to continue editing your demo and source code after Dean's Date in preparation for your final presentation, but your written intermediary report should be locked-in.
 * **You must give an elevator pitch during the in-class proposal lecture, and you must present during the final project presentation session.** If extenuating circumstances renders your presence impossible for either of these presentations, please make a private post on <piazza-link></piazza-link> explaining your situation, and we will do our best to find a solution.
 
-Note that while almost all of the points you accrue through this final project will count towards your Final Project grade in this class, there will be a couple opportunities to improve your Participation grade for this course as well through peer-to-peer feedback (more on this later)! Finally, we will be holding an art contest for the final project, and as usual, the contest winners will be awarded a small amount of extra credit. The top projects from this semester will also be honored with an induction into the [Final Project Hall of Fame](/links#final-project-hall-of-fame).
+Finally, we will be holding an art contest for the final project, and as usual, the contest winners will be awarded a small amount of extra credit. The top projects from this semester will also be honored with an induction into the [Final Project Hall of Fame](/links#final-project-hall-of-fame).
 
 ### Policy on Sources
 Whereas you were asked to build programs from scratch for assignments in this course, we encourage you to leverage existing resources available through online communities in your final project. While we will provide some simple ThreeJS starter code for this project (since many students will be using ThreeJS), you might find that your project needs a little more help getting off the ground. At the very least, you are welcome to source infrastructure, tools, and even bits of code from the extensive list of [ThreeJS examples](https://threejs.org/examples/). Sometimes, students even choose to start with a ThreeJS example and build from, with great success.
@@ -53,10 +53,10 @@ As always, you should be very clear about which parts of your submission is your
 
 # Deliverables
 ### Dean's Date
-The main submission deadline for this project is Dean's Date. By midnight of that day, you must submit links to your live demo, repository, and finalized written report. After Dean's Date, you should not modify your report, although you are allowed to make slight modifications to your source code and live demo in preparation for the final presentation. This said, these should really only be finishing-touches and bug-fixes. While we will look through your code, we are only directly grading your written report and final presentation; thus, if you want to receive credit for a feature, it must be included in your report (and therefore finished before Dean's Date).
+By midnight of that day, you must submit links to your live demo, repository, and written intermediary report. After Dean's Date, you should not modify your report, although you are allowed to make modifications to your source code and live demo in preparation for the final presentation. While we will look through your code, we are only directly grading your written report and final presentation.
 
 ### Miscellaneous Forms
-Over the next few weeks, there will be occasional forms posted to <piazza-link></piazza-link>. A couple of these forms will help us manage logistics, such as identifying groups and scheduling presentations. Other forms will be used to collect peer to peer feedback, which factors into your Participation grade. In any case, please check <piazza-link></piazza-link> regularly, and keep an eye out for these forms.
+Over the next few weeks, there will be occasional forms posted to <piazza-link></piazza-link>. These forms will help us manage logistics, such as identifying groups and scheduling presentations.
 
 ### Scoring
 Your grade will primarily be determined from the quality of your written report and your final presentation, adjusted for your group size. While we will not share our rubric, we will be measuring the quality of your work, the ambition of your goals, the difficulty of your project, the clarity of your presentation, the effort manifested in your progress, and the overall polish of your final product, among others. Beyond these metrics, you should expect for the project proposal presentation to account for 5% of your entire project grade.
@@ -111,8 +111,6 @@ If you have pressing questions about your project idea that need to be answered 
 
 ### Feedback and Participation
 After the proposal session is over, each group will receive light feedback from instructors regarding their proposed project idea. Generally, our notes are a mix of encouraging comments, implementation advice, potential extensions, and reference examples that you may want to consider; occasionally, however, we might voice concerns about your proposal and either suggest an alternative direction, or, vary rarely, a total project switch.
-
-In addition to receiving feedback from instructors, you will also receive feedback from your peers. Reciprocally, **you are asked to provide brief proposal feedback to your peers** via a short Google form that you should fill out during each group's elevator pitch. For every group you provide sufficiently-meaningful feedback and suggestions to (i.e. not empty and not repeated), you will earn credit towards your Participation grade in this course.
 
 ## III. Implementation
 ### ThreeJS Tutorials
@@ -224,9 +222,9 @@ As mentioned in the requirements section, you will need to host a live demo of y
 If you are using the provided starter code, publishing to GitHub Pages is extremely easy. First, ensure that (1) your project is part of a repository, and (2) you have correctly set up your project's `package.json` file (see the starter code's `README.md` for details on how to do this). Finally, run `npm run deploy`, and if everything went well, your project will be live at `https://USERNAME.github.io/REPONAME/`.
 
 ### Written Report
-Each team will submit a written report on Dean's Date. The report must hosted live in the GitHub repository for the project, and it should be formatted as either a PDF or an HTML file. Ideally, the writeup should measure about **four to six single-spaced pages** in length (roughly two single-spaced pages for each teammate in your group), before images, diagrams, charts, code blocks, or other vertical-space hogs are accounted for. Note that a longer written report is not necessarily better written report.
+Each team will submit a written intermediary report on Dean's Date. The report must hosted live in the GitHub repository for the project, and it should be formatted as either a PDF or an HTML file. Ideally, the writeup should measure about **four to six single-spaced pages** in length (roughly two single-spaced pages for each teammate in your group), before images, diagrams, charts, code blocks, or other vertical-space hogs are accounted for. Note that a longer written report is not necessarily better written report.
 
-At the very least, your report should begin with a short abstract (a brief description of your project and what you accomplished) and contain descriptions of your project's goals, execution, and outcome. Make sure to document and justify (where appropriate) the approach you chose, the implementation hurdles you encountered, the features you implemented, and the results you generated. Additionally, you should briefly touch on related work when introducing your topic. We welcome you to also include simple diagrams of your project's overall architecture, as well as the occasional code block wherever they might provide any illuminating information. Finally, please touch on future directions for the project and any known issues as well. Please also provide a breakdown of each group member's specific contributions to the overall project, and include an informal works cited section (no specific/official format required).
+At the very least, your report should begin with a short abstract (a brief description of your project and what you accomplished) and contain descriptions of your project's goals, execution, and outcome. Make sure to document and justify (where appropriate) the approach you chose, the implementation hurdles you encountered, the features you implemented, and the results you generated/will generate. Additionally, you should briefly touch on related work when introducing your topic. We welcome you to also include simple diagrams of your project's overall architecture, as well as the occasional code block wherever they might provide any illuminating information. Finally, please touch on next steps for the project and any known issues as well. Please also provide a breakdown of each group member's specific contributions to the overall project, and include an informal works cited section (no specific/official format required).
 
 The following is a brief outline you might follow; however, this is just a guideline to help you think about what to say, and these specific items may not match your topic.
 
