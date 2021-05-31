@@ -26,16 +26,17 @@ const processAwards = (awardsString = '', isInstructor, isAward) => {
             }
 
             if (isInstructor) {
-                const firstSpaceIndex = awardString.indexOf(' ');
-                const emojiIcon = awardString.substr(0, firstSpaceIndex);
-                const titleString = awardString.substr(firstSpaceIndex + 1);
-                label = (
-                    <span>
-                        {emojiIcon} <span> </span>
-                        <span> </span> {titleString}
-                    </span>
-                );
-                key = `${titleString}-${i}`;
+                //const firstSpaceIndex = awardString.indexOf(' ');
+                //const emojiIcon = awardString.substr(0, firstSpaceIndex);
+                //const titleString = awardString.substr(firstSpaceIndex + 1);
+                //label = (
+                //    <span>
+                //        {emojiIcon} <span> </span>
+                //        <span> </span> {titleString}
+                //    </span>
+                //);
+                label = `${awardString} (Instructors' Choice)`;
+                key = `${awardString}-${i}`;
             } else {
                 label = `${awardString} (Students' Choice)`;
                 key = `${awardString}-${i}`;

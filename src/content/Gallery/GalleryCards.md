@@ -8,6 +8,4 @@
 
 <div><gallery id="A5"><img alt="" src="./Galleries/art/a5/mlegaspi_2.gif"></img></gallery></div>
 
-<!--
 <div><gallery id="Final-Project"><img alt="" src="./Galleries/art/final-project-gallery-card/dream_world.gif"></img></gallery></div>
--->
