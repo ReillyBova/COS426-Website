@@ -4,7 +4,7 @@ title: "Core Crawler"
 # Project Authors
 authors: "Epi Torres, Jorge Zreik"
 # Project Image
-imageName: ""
+imageName: "CoreCrawler"
 # Demo url
 demoURL: "https://jorgezreik.github.io/426-final/"
 # Repo url

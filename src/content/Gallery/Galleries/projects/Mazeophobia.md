@@ -4,7 +4,7 @@ title: "Mazeophobia"
 # Project Authors
 authors: "Watson Jia, Sten Sjoberg"
 # Project Image
-imageName: ""
+imageName: "Mazeophobia"
 # Demo url
 demoURL: "https://stensjoberg.github.io/mazeophobia/"
 # Repo url

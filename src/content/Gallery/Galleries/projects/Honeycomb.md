@@ -4,7 +4,7 @@ title: "Honeycomb Construction Sim"
 # Project Authors
 authors: "Joe Bartusek, Skyler Liu"
 # Project Image
-imageName: ""
+imageName: "Honeycomb"
 # Demo url
 demoURL: "https://skyliu10.github.io/BeeHiveSim/"
 # Repo url

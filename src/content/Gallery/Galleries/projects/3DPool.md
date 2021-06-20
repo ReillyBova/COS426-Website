@@ -4,7 +4,7 @@ title: "3D Pool"
 # Project Authors
 authors: "Kyra Acquah, Soumya Gottipati"
 # Project Image
-imageName: ""
+imageName: "3DPool"
 # Demo url
 demoURL: "https://kyracq.github.io/3d-pool/"
 # Repo url

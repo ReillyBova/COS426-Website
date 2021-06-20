@@ -4,7 +4,7 @@ title: "e-Motional e-Music"
 # Project Authors
 authors: "Charlies Liu, Nick Sum"
 # Project Image
-imageName: ""
+imageName: "eMotionaleMusic"
 # Demo url
 demoURL: "https://nicksum107.github.io/emotionalemusic/"
 # Repo url

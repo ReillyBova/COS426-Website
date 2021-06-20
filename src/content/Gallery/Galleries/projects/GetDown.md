@@ -4,7 +4,7 @@ title: "Get Down"
 # Project Authors
 authors: "Zoe Kahana, Willie Chang, Khatna Bold"
 # Project Image
-imageName: ""
+imageName: "GetDown"
 # Demo url
 demoURL: "https://khatna.github.io/getdown/"
 # Repo url

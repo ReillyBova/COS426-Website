@@ -4,7 +4,7 @@ title: "Rhythm Game"
 # Project Authors
 authors: "Alex Dipasupil, Daniel Lee"
 # Project Image
-imageName: ""
+imageName: "RhythmGame"
 # Demo url
 demoURL: "https://alexdipz.github.io/cos426-final-project/"
 # Repo url

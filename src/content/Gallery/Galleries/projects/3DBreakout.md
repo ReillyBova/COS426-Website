@@ -4,7 +4,7 @@ title: "3D Breakout"
 # Project Authors
 authors: "AnneMarie Caballero, Karen Li, Justin Bi"
 # Project Image
-imageName: ""
+imageName: "3DBreakout"
 # Demo url
 demoURL: "https://justin-bi.github.io/3D-Breakout/"
 # Repo url

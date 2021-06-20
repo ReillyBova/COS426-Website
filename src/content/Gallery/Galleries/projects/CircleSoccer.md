@@ -4,7 +4,7 @@ title: "Circle Soccer"
 # Project Authors
 authors: "Benjamin Coles, Martin Hito"
 # Project Image
-imageName: ""
+imageName: "CircleSoccer"
 # Demo url
 demoURL: "https://bcoles1.github.io/COS426FinalProj/"
 # Repo url

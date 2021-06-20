@@ -4,7 +4,7 @@ title: "Sphere Defense"
 # Project Authors
 authors: "Nathan Alam, Liam Johansson"
 # Project Image
-imageName: ""
+imageName: "SphereDefense"
 # Demo url
 demoURL: "https://nathanalam.github.io/spheredefense/"
 # Repo url

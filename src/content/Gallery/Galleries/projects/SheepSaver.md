@@ -4,7 +4,7 @@ title: "Sheep Saver"
 # Project Authors
 authors: "Justin Chang, Jayson Badal, Vedant Dhopte"
 # Project Image
-imageName: ""
+imageName: "SheepSaver"
 # Demo url
 demoURL: "https://jchang19.github.io/cos426-final-proj/"
 # Repo url

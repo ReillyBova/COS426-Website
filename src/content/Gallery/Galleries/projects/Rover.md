@@ -4,7 +4,7 @@ title: "Rover"
 # Project Authors
 authors: "Connor Hainje"
 # Project Image
-imageName: ""
+imageName: "Rover"
 # Demo url
 demoURL: "https://cmhainje.github.io/rover426/"
 # Repo url

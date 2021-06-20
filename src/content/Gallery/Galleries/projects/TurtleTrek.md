@@ -4,7 +4,7 @@ title: "Turtle Trek"
 # Project Authors
 authors: "Isabel Greene, Natalie O'Leary"
 # Project Image
-imageName: ""
+imageName: "TurtleTrek"
 # Demo url
 demoURL: "https://natsoleary.github.io/turtletrek/"
 # Repo url

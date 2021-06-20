@@ -4,7 +4,7 @@ title: "Cave Climber"
 # Project Authors
 authors: "Bharat Govil, Raiden Evans"
 # Project Image
-imageName: ""
+imageName: "CaveClimber"
 # Demo url
 demoURL: "https://derndeff.github.io/cave-climber/"
 # Repo url

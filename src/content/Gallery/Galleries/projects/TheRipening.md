@@ -4,7 +4,7 @@ title: "The Ripening"
 # Project Authors
 authors: "Will Drury, Chandler Ault"
 # Project Image
-imageName: ""
+imageName: "TheRipening"
 # Demo url
 demoURL: "https://wdrury337.github.io/TheRipening/"
 # Repo url

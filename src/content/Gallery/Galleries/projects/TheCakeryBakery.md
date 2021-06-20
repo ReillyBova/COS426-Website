@@ -4,7 +4,7 @@ title: "The Cakery Bakery"
 # Project Authors
 authors: "Alicia Liu, Cheyenne Zhang"
 # Project Image
-imageName: ""
+imageName: "TheCakeryBakery"
 # Demo url
 demoURL: "https://cz10.github.io/thecakerybakery/"
 # Repo url

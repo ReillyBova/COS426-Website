@@ -4,7 +4,7 @@ title: "Labyrinth"
 # Project Authors
 authors: "Julianne Knott, Charlie Smith"
 # Project Image
-imageName: ""
+imageName: "Labyrinth"
 # Demo url
 demoURL: "https://cmsmith11.github.io/Labyrinth/"
 # Repo url

@@ -4,7 +4,7 @@ title: "DJ Simulator"
 # Project Authors
 authors: "Matthew Fastow, Gregory Smith"
 # Project Image
-imageName: ""
+imageName: "DJSimulator"
 # Demo url
 demoURL: "https://mattfast.github.io/dj-simulator/"
 # Repo url

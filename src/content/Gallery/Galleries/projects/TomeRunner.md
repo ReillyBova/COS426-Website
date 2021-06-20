@@ -4,7 +4,7 @@ title: "Tome Runner"
 # Project Authors
 authors: "Bates Brodie, Beatrice Caruntu"
 # Project Image
-imageName: ""
+imageName: "TomeRunner"
 # Demo url
 demoURL: "https://b3brodie.github.io/426Final/"
 # Repo url

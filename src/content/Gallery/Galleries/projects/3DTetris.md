@@ -4,7 +4,7 @@ title: "3D Tetris"
 # Project Authors
 authors: "Anthony Gartner, Edward Gartner, Daniel Goodman"
 # Project Image
-imageName: ""
+imageName: "3DTetris"
 # Demo url
 demoURL: "https://edgartner.github.io/3DTetris"
 # Repo url

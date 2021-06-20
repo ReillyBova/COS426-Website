@@ -4,7 +4,7 @@ title: "VSKeys"
 # Project Authors
 authors: "Diego Zamalloa-Chion, Aaron Skepasts"
 # Project Image
-imageName: ""
+imageName: "VSKeys"
 # Demo url
 demoURL: "https://deegzc.github.io/VSKeys/"
 # Repo url

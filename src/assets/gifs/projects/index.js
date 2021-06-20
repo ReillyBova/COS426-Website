@@ -1,7 +1,8 @@
-export { default as dream_world } from './dream_world.gif';
-export { default as drivers_ed } from './drivers_ed.gif';
-export { default as cat_dash } from './cat_dash.gif';
-export { default as death_star_assault } from './death_star_assault.gif';
-export { default as collideoscope } from './collideoscope.gif';
-export { default as shape_battles } from './shape_battles.gif';
-export { default as colo_ring } from './colo_ring.gif';
+export { default as CoreCrawler } from './CoreCrawler.gif';
+export { default as DJSimulator } from './DJSimulator.gif';
+export { default as GetDown } from './GetDown.gif';
+export { default as Portal_Half } from './Portal_Half.gif';
+export { default as SailingSim } from './SailingSim.gif';
+export { default as TheCakeryBakery } from './TheCakeryBakery.gif';
+export { default as VSKeys } from './VSKeys.gif';
+export { default as PsychedelicSimulator } from './PsychedelicSimulator.gif';

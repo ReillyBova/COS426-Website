@@ -4,7 +4,7 @@ title: "Club Penguin"
 # Project Authors
 authors: "Sara Dardik, Yael Stochel, Joseph Rubin, Noa Zarur"
 # Project Image
-imageName: ""
+imageName: "ClubPenguin"
 # Demo url
 demoURL: "https://josephrubin.github.io/penguin-club/"
 # Repo url

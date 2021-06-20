@@ -4,7 +4,7 @@ title: "Portal 0.5"
 # Project Authors
 authors: "Allen Dai, Edward Yang"
 # Project Image
-imageName: ""
+imageName: "Portal_Half"
 # Demo url
 demoURL: "https://efyang.dev/portal-0.5/"
 # Repo url

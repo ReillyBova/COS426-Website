@@ -4,7 +4,7 @@ title: "Sailing Sim"
 # Project Authors
 authors: "Caio Costa"
 # Project Image
-imageName: ""
+imageName: "SailingSim"
 # Demo url
 demoURL: "https://caiodcosta.github.io/SailingSimulator/"
 # Repo url

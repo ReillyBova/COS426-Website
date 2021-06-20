@@ -4,7 +4,7 @@ title: "Hello, World"
 # Project Authors
 authors: "Ishani Kulkarni, Abhinaya Raghunathan, Monique Legaspi, Al Liang"
 # Project Image
-imageName: ""
+imageName: "HelloWorld"
 # Demo url
 demoURL: "https://abhinaya-r.github.io/hello-world/"
 # Repo url

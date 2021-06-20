@@ -4,7 +4,7 @@ title: "Psychedelic Simulator"
 # Project Authors
 authors: "Kasey McFadden, Isabel Zaller"
 # Project Image
-imageName: ""
+imageName: "PsychedelicSimulator"
 # Demo url
 demoURL: "https://kasey-mcfadden.github.io/princeton-psychedelic-simulator/"
 # Repo url
