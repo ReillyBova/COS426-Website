@@ -1,16 +1,16 @@
 const plugins = require('./gatsby-plugins.js');
 
 // Weekly Settings
-const numLecturesPosted = 22; // Increment every time a lecture is posted
-const numPreceptsPosted = 12; // Increment every time a precept is posted
+const numLecturesPosted = 0; // Increment every time a lecture is posted
+const numPreceptsPosted = 0; // Increment every time a precept is posted
 // Annual Settings
-const semester = 2021; // Increment every year
-const firstDayOfSemester = '02-01'; // Adjust based off of academic calendar
+const semester = 2022; // Increment every year
+const firstDayOfSemester = '01-24'; // Adjust based off of academic calendar
 const firstLecture = 'Tuesday'; // Change based off of Registrar scheduling
 const secondLecture = 'Thursday'; // Change based off of Registrar scheduling
-const piazzaURL = 'https://piazza.com/princeton/spring2021/cos426/home'; // Piazza Link
+const piazzaURL = 'https://piazza.com/princeton/spring2022/cos426/home'; // Piazza Link
 // NB: INCLUDE a leading slash; EXCLUDE a trailing slash
-const pathURL = '/courses/archive/spring21/cos426'; // Subfolder location; necessary for internal links.
+const pathURL = '/courses/archive/spring22/cos426'; // Subfolder location; necessary for internal links.
 const baseURL = 'https://www.cs.princeton.edu'; // Root host domain for site
 
 module.exports = {

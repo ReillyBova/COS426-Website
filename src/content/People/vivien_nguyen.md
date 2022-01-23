@@ -1,18 +1,18 @@
 ---
 # Full Name
-name: "Catherine Yu"
+name: "Vivien Nguyen"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
-role: "Undergraduate TA"
+role: "Graduate TA"
 # Filename for headshot
-image: "catherine_yu"
+image: "vivien_nguyen"
 # Email
-email: "cjy@princeton.edu"
+email: "vivienn@cs.princeton.edu"
 # Link associated with headshot button
-featuredURL: ""
+featuredURL: "https://viviehn.github.io"
 # Github URL
 githubURL: ""
 # Website URL
-websiteURL: ""
+websiteURL: "https://viviehn.github.io"
 # Office Hours
-officeHours: "Tuesday 9pm-11pm"
+officeHours: "TBD"
 ---

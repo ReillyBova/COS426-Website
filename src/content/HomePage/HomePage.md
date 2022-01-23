@@ -8,9 +8,9 @@ Topics include: color theory, sampling, image processing, image compositing, mes
 The course is appropriate for students who have taken COS 217 and COS 226 (or equivalent). JavaScript will be the main programming language; however no prior knowledge of the language is required for students who wish to enroll in this course.
 
 ### Lectures and Precepts
-Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM over Zoom.
+Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM.
 
-Precept is held on Wednesday and Thursday from 7:30–8:20PM over Zoom. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
+Precept is held on Wednesday and Thursday from 7:30–8:20PM. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
 
 ### Required Reading
 

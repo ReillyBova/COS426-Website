@@ -1,18 +1,18 @@
 ---
 # Full Name
-name: "Zheng Shi"
+name: "Yuting Yang"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
 role: "Graduate TA"
 # Filename for headshot
-image: "zheng_shi"
+image: "yuting_yang"
 # Email
-email: "zhengshi@cs.princeton.edu"
+email: "yutingy@cs.princeton.edu"
 # Link associated with headshot button
-featuredURL: ""
+featuredURL: "https://www.cs.princeton.edu/~yutingy/"
 # Github URL
 githubURL: ""
 # Website URL
-websiteURL: ""
+websiteURL: "https://www.cs.princeton.edu/~yutingy/"
 # Office Hours
-officeHours: "Sunday 10am-12pm"
+officeHours: "TBD"
 ---

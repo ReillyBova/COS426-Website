@@ -70,16 +70,16 @@ const materials = {
     ],
     other: [
         {
-            title: 'Virtual Exam',
+            title: 'Exam',
             due: { week: 6, day: 'Thursday' },
         },
         {
-            title: 'Project Proposals over Zoom',
+            title: 'Project Proposals',
             due: { week: 12, day: 'Tuesday' },
         },
         {
             title:
-                'Final Project Presentations over Zoom (Scheduling and Logistics TBD)',
+                'Final Project Presentations (Scheduling and Logistics TBD)',
             due: { week: 14, day: 'Friday' },
         },
     ],

@@ -1,12 +1,12 @@
 ---
 # Full Name
-name: "Joanna Kuo"
+name: "Chloe Qiu"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
-role: "Undergraduate TA"
+role: "Graduate TA"
 # Filename for headshot
-image: "joanna_kuo"
+image: "chloe_qiu"
 # Email
-email: "jkuo@princeton.edu"
+email: "shiyunq@cs.princeton.edu"
 # Link associated with headshot button
 featuredURL: ""
 # Github URL
@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: ""
 # Office Hours
-officeHours: "Monday 12pm-2pm"
+officeHours: "TBD"
 ---

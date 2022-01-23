@@ -1,18 +1,18 @@
 ---
 # Full Name
-name: "Sahan Paliskara"
+name: "Edward Yang"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
 role: "Undergraduate TA"
 # Filename for headshot
-image: "sahan_paliskara"
+image: "edward_yang"
 # Email
-email: "sahanp@princeton.edu"
+email: "efyang@princeton.edu"
 # Link associated with headshot button
-featuredURL: ""
+featuredURL: "https://efyang.dev"
 # Github URL
 githubURL: ""
 # Website URL
-websiteURL: ""
+websiteURL: "https://efyang.dev"
 # Office Hours
-officeHours: "Sunday 12pm-2pm"
+officeHours: "TBD"
 ---
