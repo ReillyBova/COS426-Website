@@ -10,7 +10,7 @@ The course is appropriate for students who have taken COS 217 and COS 226 (or eq
 ### Lectures and Precepts
 Lectures are held on Tuesdays and Thursdays from 3:00–4:20PM.
 
-Precept is held on Wednesday and Thursday from 7:30–8:20PM. Students may attend either (or both) during any week, regardless of their registration. In general, precept attendance is highly encouraged.
+Precept is held on Thursday from 7:30–8:20PM and Friday from 10:00–10:50AM and 11:00–11:50AM. Students may attend any precept during any week, regardless of their registration. In general, precept attendance is highly encouraged.
 
 ### Required Reading
 
