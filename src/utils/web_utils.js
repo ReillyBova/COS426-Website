@@ -102,6 +102,7 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
 
     // Allocate fresh memory for the result
     const result = new Date(firstDay);
+
     // Corner case
     if (dayToNumber[dayOfWeek] === undefined) {
         console.warn(`Error: ${dayOfWeek} is not a day of the week`);
@@ -110,13 +111,20 @@ export const semesterOffsetToDateString = (weekNumber, dayOfWeek) => {
 
     // Compute result
     let adjustedWeekNumber = weekNumber;
-    if (adjustedWeekNumber > 11 && dayOfWeek !== "Monday" && dayOfWeek !== "Tuesday") {
+    if (adjustedWeekNumber > 5) {
+        // Add an extra week for spring break
+        adjustedWeekNumber += 1;
+    }
+
+    if (adjustedWeekNumber > 12) {
         // Add an extra week for reading period
         adjustedWeekNumber += 1;
     }
+
     result.setUTCDate(
         result.getUTCDate() + 7 * adjustedWeekNumber + dayToNumber[dayOfWeek]
     );
+
     return formatDate(result);
 };
 
