@@ -75,12 +75,12 @@ const materials = {
         },
         {
             title: 'Project Proposals',
-            due: { week: 12, day: 'Tuesday' },
+            due: { week: 12, day: 'Thursday' },
         },
         {
             title:
                 'Final Project Presentations (Scheduling and Logistics TBD)',
-            due: { week: 14, day: 'Friday' },
+            due: { week: 13, day: 'Thursday' },
         },
     ],
 };
