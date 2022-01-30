@@ -1,18 +1,18 @@
 ---
 # Full Name
-name: "Ethan Tseng"
+name: "Caio Costa"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
-role: "Graduate TA"
+role: "Undergraduate TA"
 # Filename for headshot
-image: "ethan_tseng"
+image: "caio_costa"
 # Email
-email: "eftseng@cs.princeton.edu"
+email: "ccosta@princeton.edu"
 # Link associated with headshot button
-featuredURL: "https://ethan-tseng.github.io"
+featuredURL: ""
 # Github URL
 githubURL: ""
 # Website URL
-websiteURL: "https://ethan-tseng.github.io"
+websiteURL: ""
 # Office Hours
 officeHours: "TBD"
 ---

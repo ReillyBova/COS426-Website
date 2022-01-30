@@ -1,18 +1,18 @@
 ---
 # Full Name
-name: "Ethan Tseng"
+name: "Vedant Dhopte"
 # Role ("Professor", "Graduate TA", or "Undergraduate TA")
-role: "Graduate TA"
+role: "Undergraduate TA"
 # Filename for headshot
-image: "ethan_tseng"
+image: "vedant_dhopte"
 # Email
-email: "eftseng@cs.princeton.edu"
+email: "vdhopte@princeton.edu"
 # Link associated with headshot button
-featuredURL: "https://ethan-tseng.github.io"
+featuredURL: ""
 # Github URL
 githubURL: ""
 # Website URL
-websiteURL: "https://ethan-tseng.github.io"
+websiteURL: ""
 # Office Hours
 officeHours: "TBD"
 ---
