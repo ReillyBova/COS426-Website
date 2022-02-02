@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: "https://viviehn.github.io"
 # Office Hours
-officeHours: "TBD"
+officeHours: "Sunday 12pm-2pm (in-person)"
 ---
