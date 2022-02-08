@@ -14,5 +14,5 @@ githubURL: ""
 # Website URL
 websiteURL: "https://efyang.dev"
 # Office Hours
-officeHours: "TBD"
+officeHours: "Friday 2pm-4pm (in-person)"
 ---
