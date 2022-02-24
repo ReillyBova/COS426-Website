@@ -31,7 +31,7 @@ const materials = {
         'Image Processing II', // Week 3
         'Halfedge Structure', // Week 4
         'Mesh Processing', // Week 5
-        'Open Office Hours (Wed only; no Thu precept)', // Week 6
+        'No Precept This Week', // Week 6
         'GLSL & Raytracing I', // Week 7
         'Raytracing II', // Week 8
         'Rasterization', // Week 9
