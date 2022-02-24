@@ -7,6 +7,7 @@ authors: "Jeongmin (JM) Cho, Claire Guthrie, Heidi Kim, Oliver Schwartz"
 year: 2020
 # Project Image
 imageName: "going_viral"
+imageType: "png"
 # Demo url
 demoURL: "https://oliverschwartz.github.io/going-viral/"
 # Repo url

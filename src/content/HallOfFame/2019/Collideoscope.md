@@ -7,6 +7,7 @@ authors: "Noah Moss, Evan Wildenhain"
 year: 2019
 # Project Image
 imageName: "collideoscope"
+imageType: "gif"
 # Demo url
 demoURL: "https://collideoscope.github.io/"
 # Repo url

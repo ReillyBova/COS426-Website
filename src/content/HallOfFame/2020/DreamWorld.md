@@ -7,6 +7,7 @@ authors: "Elizabeth Petrov, Lydia You, Lauren Johnston, Joanna Kuo"
 year: 2020
 # Project Image
 imageName: "dream_world"
+imageType: "gif"
 # Demo url
 demoURL: "http://dreamworld-426.github.io/dreamworld"
 # Repo url

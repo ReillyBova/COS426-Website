@@ -7,6 +7,7 @@ authors: "Zak Dasaro, Jason Kim"
 year: 2020
 # Project Image
 imageName: "solar_system_survey"
+imageType: "png"
 # Demo url
 demoURL: "https://zdasaro.github.io/Solar-System-Survey/"
 # Repo url

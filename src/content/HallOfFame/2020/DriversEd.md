@@ -7,6 +7,7 @@ authors: "Dora Zhao, Karen Ying, Sharon Zhang, Brandy Chen"
 year: 2020
 # Project Image
 imageName: "drivers_ed"
+imageType: "gif"
 # Demo url
 demoURL: "https://karenying.github.io/drivers-ed/"
 # Repo url

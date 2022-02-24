@@ -49,6 +49,11 @@ module.exports = {
             'Links',
         ],
         homePage: 'Overview',
+        hallOfFameUrlRoots: [
+            ["2018", "https://www.cs.princeton.edu/courses/archive/spring20/cos426/hall-of-fame"],
+            ["2019", "https://www.cs.princeton.edu/courses/archive/spring20/cos426/hall-of-fame"],
+            ["2020", "https://www.cs.princeton.edu/courses/archive/spring20/cos426/hall-of-fame"],
+        ]
     },
     pathPrefix: pathURL,
     plugins: plugins,

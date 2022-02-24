@@ -7,6 +7,7 @@ authors: "Jerry Zhu, Daniel Wey, Michael Fletcher, Hollis Ma"
 year: 2020
 # Project Image
 imageName: "pac_atac"
+imageType: "png"
 # Demo url
 demoURL: "https://michaelf49.github.io/Pacman3D/"
 # Repo url

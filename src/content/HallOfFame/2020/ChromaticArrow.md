@@ -7,6 +7,7 @@ authors: "William Li, Anna Qin, David Todd"
 year: 2020
 # Project Image
 imageName: "chromatic_arrow"
+imageType: "png"
 # Demo url
 demoURL: "https://willpower264.github.io/Chromatic-Arrow"
 # Repo url

@@ -7,6 +7,7 @@ authors: "Hanson Kang, Greg Umali, Johan Ospina"
 year: 2020
 # Project Image
 imageName: "mp_three"
+imageType: "png"
 # Demo url
 demoURL: "https://mayoyoyo.github.io/mp3js/"
 # Repo url

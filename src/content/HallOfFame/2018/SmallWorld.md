@@ -7,6 +7,7 @@ authors: "Reilly Bova, Jad Bechara"
 year: 2018
 # Project Image
 imageName: "small_world"
+imageType: "png"
 # Demo url
 demoURL: "https://reillybova.github.io/SmallWorld/"
 # Repo url

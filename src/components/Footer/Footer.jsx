@@ -123,7 +123,7 @@ function Footer({ classes }) {
                     >
                         <div className={engineer}>
                             {'Website by '}
-                            <ExternalLink to={`mailto:rbova@princeton.edu`}>
+                            <ExternalLink to={`mailto:rbova@alumni.princeton.edu`}>
                                 {`Reilly Bova ’20`}
                             </ExternalLink>
                         </div>
