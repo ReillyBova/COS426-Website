@@ -7,6 +7,7 @@ authors: "Allen Dai, Edward Yang"
 year: 2021
 # Project Image
 imageName: "Portal_Half"
+imageType: "gif"
 # Demo url
 demoURL: "https://efyang.dev/portal-0.5/"
 # Repo url

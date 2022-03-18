@@ -7,6 +7,7 @@ authors: "Joe Bartusek, Skyler Liu"
 year: 2021
 # Project Image
 imageName: "Honeycomb"
+imageType: "png"
 # Demo url
 demoURL: "https://skyliu10.github.io/BeeHiveSim/"
 # Repo url

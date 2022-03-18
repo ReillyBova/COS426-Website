@@ -7,6 +7,7 @@ authors: "Bianca Catoto, Ilene E, Rebecca Barber"
 year: 2019
 # Project Image
 imageName: "colo_ring"
+imageType: "gif"
 # Demo url
 demoURL: "https://beckybarber18.github.io/coloring/"
 # Repo url

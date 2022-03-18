@@ -7,6 +7,7 @@ authors: "William Sweeny, Kevin Jeon, Aditya Kohli"
 year: 2019
 # Project Image
 imageName: "color_maze"
+imageType: "png"
 # Demo url
 demoURL: "https://kattusite.github.io/colormaze/"
 # Repo url

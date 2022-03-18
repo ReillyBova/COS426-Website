@@ -7,6 +7,7 @@ authors: "Xi Chen"
 year: 2020
 # Project Image
 imageName: "cat_dash"
+imageType: "gif"
 # Demo url
 demoURL: "https://littlecatevelyn.github.io/Cat-Dash/"
 # Repo url

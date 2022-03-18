@@ -7,6 +7,7 @@ authors: "Zoe Kahana, Willie Chang, Khatna Bold"
 year: 2021
 # Project Image
 imageName: "GetDown"
+imageType: "gif"
 # Demo url
 demoURL: "https://khatna.github.io/getdown/"
 # Repo url

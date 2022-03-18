@@ -7,6 +7,7 @@ authors: "Christy Lee, Christine Kwon, Anabelle Chang, Donovan Coronado"
 year: 2020
 # Project Image
 imageName: "type_type_revenge"
+imageType: "png"
 # Demo url
 demoURL: "https://belle-chang.github.io/type-type-revenge/"
 # Repo url

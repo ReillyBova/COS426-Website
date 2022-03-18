@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Project imports
 import { ProjectCard, AnchorLink } from 'components';
-import { ProjectGIFs } from 'gifs';
 import {
     urlify,
     extractSelectionYears,
@@ -13,11 +12,28 @@ import {
 // UI imports
 import Typography from '@material-ui/core/Typography';
 
+const processHallOfFameUrls = (site) => {
+    const result = {};
+
+    if (site?.siteMetadata?.hallOfFameUrlRoots?.length > 0) {
+        site.siteMetadata.hallOfFameUrlRoots.forEach(([year, url]) => {
+            result[year] = url;
+        });
+    }
+
+    return result;
+};
+
 // Generate gallery from markdown content
 function HallOfFame() {
-    const { hallOfFame, hallOfFameImages } = useStaticQuery(
+    const { hallOfFame, site } = useStaticQuery(
         graphql`
             query {
+                site {
+                    siteMetadata {
+                        hallOfFameUrlRoots
+                    }
+                }
                 hallOfFame: allMarkdownRemark(
                     filter: {
                         fileAbsolutePath: {regex: "/\\/src\\/content\\/HallOfFame\\/.*\\.md$/"}
@@ -31,6 +47,7 @@ function HallOfFame() {
                                 authors
                                 year
                                 imageName
+                                imageType
                                 demoURL
                                 repoURL
                                 writeupURL
@@ -43,36 +60,15 @@ function HallOfFame() {
                         }
                     }
                 }
-                hallOfFameImages: allFile(
-                    filter: {
-                        sourceInstanceName: { eq: "content" }
-                        relativeDirectory: { eq: "HallOfFame/images" }
-                    }
-                ) {
-                    nodes {
-                        name
-                        childImageSharp {
-                            fluid(maxWidth: 480, quality: 100) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
             }
         `
     );
 
-    // Build image map for projects
-    const imageMap = {};
-    hallOfFameImages.nodes.forEach(({ name, childImageSharp }) => {
-        imageMap[name] = childImageSharp.fluid;
-    });
-    const gifMap = {};
-    Object.entries(ProjectGIFs).forEach(([name, gif]) => {
-        gifMap[name] = gif;
-    });
+    const hallOfFameUrlRoots = processHallOfFameUrls(site);
 
     const selectionYears = extractSelectionYears(hallOfFame.edges);
+
+    console.log(selectionYears)
 
     // Render
     return (
@@ -81,6 +77,8 @@ function HallOfFame() {
                 const projectSelection = [...hallOfFame.edges].filter(
                     ({ node }) => node.frontmatter.year === year
                 );
+
+                const imageURLRoot = hallOfFameUrlRoots[year];
 
                 const selectionHeaderText = buildSelectionHeader(year);
                 const selectionHeader = (
@@ -94,12 +92,14 @@ function HallOfFame() {
                 return [
                     selectionHeader,
                     ...projectSelection.sort(visibilityCmp).map(({ node }) => {
-                        const { title, imageName } = node.frontmatter;
+                        const { title, imageName, imageType } = node.frontmatter;
+
+                        const staticImageOrGifUrl = imageURLRoot && imageName && imageType && `${imageURLRoot}/${imageName}.${imageType}`;
+
                         return (
                             <ProjectCard
                                 project={node}
-                                fluidImage={imageMap[imageName]}
-                                gifImage={gifMap[imageName]}
+                                gifImage={staticImageOrGifUrl}
                                 key={title}
                             />
                         );

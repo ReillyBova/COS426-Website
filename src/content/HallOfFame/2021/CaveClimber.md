@@ -7,6 +7,7 @@ authors: "Bharat Govil, Raiden Evans"
 year: 2021
 # Project Image
 imageName: "CaveClimber"
+imageType: "png"
 # Demo url
 demoURL: "https://derndeff.github.io/cave-climber/"
 # Repo url

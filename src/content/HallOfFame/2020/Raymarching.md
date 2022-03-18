@@ -7,6 +7,7 @@ authors: "Jake Waksbaum, Benjamin Huang, Anvay Grover"
 year: 2020
 # Project Image
 imageName: "raymarching"
+imageType: "png"
 # Demo url
 demoURL: "https://jbaum98.github.io/cos426_final_project/editor"
 # Repo url

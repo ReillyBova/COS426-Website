@@ -7,6 +7,7 @@ authors: "Jessica Edouard, Emmanuel Teferi, Justin Tran, Henry Wang"
 year: 2020
 # Project Image
 imageName: "space_odyssey"
+imageType: "png"
 # Demo url
 demoURL: "https://teferiemmanuel.github.io/2020-A-Princeton-Space-Odyssey/"
 # Repo url

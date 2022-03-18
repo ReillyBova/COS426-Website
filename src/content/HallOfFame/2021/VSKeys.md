@@ -7,6 +7,7 @@ authors: "Diego Zamalloa-Chion, Aaron Skepasts"
 year: 2021
 # Project Image
 imageName: "VSKeys"
+imageType: "gif"
 # Demo url
 demoURL: "https://deegzc.github.io/VSKeys/"
 # Repo url

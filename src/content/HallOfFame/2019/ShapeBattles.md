@@ -7,6 +7,7 @@ authors: "Derek Sawicki, Hector Solis, Jimmy Wu"
 year: 2019
 # Project Image
 imageName: "shape_battles"
+imageType: "gif"
 # Demo url
 demoURL: "http://shape-battles.herokuapp.com/"
 # Repo url

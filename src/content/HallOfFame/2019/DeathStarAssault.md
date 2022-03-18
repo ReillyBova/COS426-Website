@@ -7,6 +7,7 @@ authors: "Ajay Penmatcha, Antony Toron"
 year: 2019
 # Project Image
 imageName: "death_star_assault"
+imageType: "gif"
 # Demo url
 demoURL: "https://ajayp15.github.io/DeathStarAssault/"
 # Repo url

@@ -7,6 +7,7 @@ authors: "Caio Costa"
 year: 2021
 # Project Image
 imageName: "SailingSim"
+imageType: "gif"
 # Demo url
 demoURL: "https://caiodcosta.github.io/SailingSimulator/"
 # Repo url

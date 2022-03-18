@@ -7,6 +7,7 @@ authors: "Alicia Liu, Cheyenne Zhang"
 year: 2021
 # Project Image
 imageName: "TheCakeryBakery"
+imageType: "gif"
 # Demo url
 demoURL: "https://cz10.github.io/thecakerybakery/"
 # Repo url

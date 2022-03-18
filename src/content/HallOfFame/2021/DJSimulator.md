@@ -7,6 +7,7 @@ authors: "Matthew Fastow, Gregory Smith"
 year: 2021
 # Project Image
 imageName: "DJSimulator"
+imageType: "gif"
 # Demo url
 demoURL: "https://mattfast.github.io/dj-simulator/"
 # Repo url

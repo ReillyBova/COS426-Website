@@ -7,6 +7,7 @@ authors: "Epi Torres, Jorge Zreik"
 year: 2021
 # Project Image
 imageName: "CoreCrawler"
+imageType: "gif"
 # Demo url
 demoURL: "https://jorgezreik.github.io/426-final/"
 # Repo url

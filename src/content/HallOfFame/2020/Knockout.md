@@ -7,6 +7,7 @@ authors: "Richard Wolf, Jonah Lytle, Jacob Schachner"
 year: 2020
 # Project Image
 imageName: "knockout"
+imageType: "png"
 # Demo url
 demoURL: "https://jlytle21.github.io/knockout/"
 # Repo url

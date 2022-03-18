@@ -7,6 +7,7 @@ authors: "Quinn Donohue, Cody Sedillo, Victor Riveros"
 year: 2019
 # Project Image
 imageName: "ctrl_z"
+imageType: "png"
 # Demo url
 demoURL: "https://qdonohue.github.io/ctrlz/"
 # Repo url
