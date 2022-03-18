@@ -2,8 +2,6 @@
  <div><gallery id="A1"><img alt="" src="./Galleries/art/a1/dborts_1.gif"></img></gallery></div>
  <div><gallery id="A2"><img alt="" src="./Galleries/art/a2/andywang2.png"></img></gallery></div>
 
- <div><gallery id="A1"><img alt="" src="./Galleries/art/a1/bonat_0.gif"></img></gallery></div>
-
  <!-- <div><gallery id="A2"><img alt="" src="./Galleries/art/a2/izaller.gif"></img></gallery></div> !-->
 
  <!-- <div><gallery id="A3"><img alt="" src="./Galleries/art/a3/art-ccosta-reflection.gif"></img></gallery></div> !-->
