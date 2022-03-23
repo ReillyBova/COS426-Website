@@ -15,12 +15,12 @@ const materials = {
         'Rendering & Raycasting',
         'Lighting & Reflectance', // Week 7
         'Global Illumination',
-        '3D Rasterization Pipeline', // Week 8
-        'Scan Conversion',
-        'Non-photorealistic Rendering', // Week 9
-        'Passive Dynamics & Particle Systems',
-        'Character Animation', // Week 10
-        'Production F/X',
+        'Reverse Classroom, Ray Tracing', // Week 8
+        '3D Rasterization Pipeline',
+        'Scan Conversion', // Week 9
+        'Non-photorealistic Rendering',
+        'Passive Dynamics & Particle Systems', // Week 10
+        'Character Animation',
         '3D Fabrication', // Week 11
         'Final Project Logistics',
         '', // Week 12
@@ -58,11 +58,11 @@ const materials = {
         [{ text: 'Ch. 16 & 21.1' }],
         [{ text: 'Ch. 17–18' }], // Week 7
         [{ text: 'Ch. 21' }],
-        [{ text: 'Ch. 6' }], // Week 8
-        [],
+        [], // Week 8
+        [{ text: 'Ch. 6' }],
         [], // Week 9
-        [{ link: 'Reeves83' }, { link: 'Witkin01a' }, { link: 'Witkin01b' }],
-        [], // Week 10
+        [],
+        [{ link: 'Reeves83' }, { link: 'Witkin01a' }, { link: 'Witkin01b' }], // Week 10
         [],
         [], // Week 11
         [],
