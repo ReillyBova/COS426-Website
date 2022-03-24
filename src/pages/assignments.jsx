@@ -50,6 +50,7 @@ function Assignments({ data }) {
                             imageName,
                             dueWeek,
                             dueDay,
+                            date,
                             dueTime,
                         } = frontmatter;
                         const { slug } = fields;
@@ -59,10 +60,10 @@ function Assignments({ data }) {
                         const gifImage = gifMap[imageName];
 
                         // Compute due date string
-                        let date = semesterOffsetToDateString(dueWeek - 1, dueDay);
-                        if (dueWeek > 6 && (dueDay === "Monday" || dueDay === "Tuesday")) {
-                            date = semesterOffsetToDateString(dueWeek, dueDay);
-                        }
+                        // let date = semesterOffsetToDateString(dueWeek - 1, dueDay);
+                        // if (dueWeek > 6 && (dueDay === "Monday" || dueDay === "Tuesday")) {
+                        //     date = semesterOffsetToDateString(dueWeek, dueDay);
+                        // }
 
                         return (
                             <Grid key={slug} item md={4} sm={6} xs={12}>
@@ -98,6 +99,7 @@ export const pageQuery = graphql`
                         dueWeek
                         dueDay
                         dueTime
+                        date
                         imageName
                         submitURL
                         galleryID

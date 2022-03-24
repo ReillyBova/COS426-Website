@@ -17,6 +17,7 @@ visible: true
 dueWeek: 13
 dueDay: 'Tuesday'
 dueTime: '11:55pm'
+date: 'Tue, May 3'
 # Name as displayed on materials page
 calendarName: "Dean's Date: Final Project"
 # Image for assignment

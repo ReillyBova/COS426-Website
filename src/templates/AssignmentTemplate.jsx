@@ -32,6 +32,7 @@ function AssignmentTemplate({ data }) {
         assignmentName,
         submitURL,
         dueWeek,
+        date,
         dueDay,
         dueTime,
         requiredPoints,
@@ -99,10 +100,10 @@ function AssignmentTemplate({ data }) {
     };
 
     // Compute due date string for the assignment
-    let date = semesterOffsetToDateString(dueWeek - 1, dueDay);
-    if (dueWeek > 6 && (dueDay === "Monday" || dueDay === "Tuesday")) {
-        date = semesterOffsetToDateString(dueWeek, dueDay);
-    }
+    // let date = semesterOffsetToDateString(dueWeek - 1, dueDay);
+    // if (dueWeek > 6 && (dueDay === "Monday" || dueDay === "Tuesday")) {
+    //     date = semesterOffsetToDateString(dueWeek, dueDay);
+   //  }
     const dueString = `Due: ${date} at ${dueTime}`;
 
     // Compute strings for titles
@@ -137,6 +138,7 @@ export const pageQuery = graphql`
                 assignmentName
                 assignmentNumber
                 dueWeek
+                date
                 dueDay
                 dueTime
                 submitURL
