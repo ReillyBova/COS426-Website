@@ -6,6 +6,10 @@ export { default as SailingSim } from './2021/SailingSim.gif';
 export { default as TheCakeryBakery } from './2021/TheCakeryBakery.gif';
 export { default as VSKeys } from './2021/VSKeys.gif';
 export { default as PsychedelicSimulator } from './2021/PsychedelicSimulator.gif';
+export { default as Synesthesia } from './2022/Synesthesia.gif';
+export { default as Glider } from './2022/Glider.gif';
+export { default as LifeFlight } from './2022/LifeFlight.gif';
+export { default as Princetemon } from './2022/Princetemon.gif';
 
 export { default as cat_dash } from './2020/cat_dash.gif';
 export { default as dream_world } from './2020/dream_world.gif';
