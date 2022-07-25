@@ -11,6 +11,9 @@ demoURL: "https://harveyw24.github.io/Glider/"
 repoURL: "https://github.com/harveyw24/Glider"
 # Writeup url
 writeupURL: "https://github.com/harveyw24/Glider/blob/main/writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 6
 # Awards
 instructorAwards: "🏆 Best Overall Award, 🎮 Gameplay Award"
 instructorMentions: ""

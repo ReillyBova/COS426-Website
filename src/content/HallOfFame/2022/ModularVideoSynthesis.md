@@ -4,16 +4,19 @@ title: "Modular Video Synthesis"
 # Project Authors
 authors: "David Borts, Anna Lucas"
 # Project Image
-imageName: ""
+imageName: "ModularVideoSynthesis"
 # Demo url
 demoURL: "https://davidborts.github.io/ModularVideoSynthesizer/"
 # Repo url
 repoURL: "https://github.com/DavidBorts/ModularVideoSynthesizer"
 # Writeup url
 writeupURL: "https://github.com/DavidBorts/ModularVideoSynthesizer/blob/main/ModularVideoSynthesizer_writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 2
 # Awards
-instructorAwards: ""
-instructorMentions: "💡 Innovation Award"
+instructorAwards: "💡 Innovation Award"
+instructorMentions: ""
 studentAwards: "💡 Innovation Award"
 studentMentions: ""
 ---

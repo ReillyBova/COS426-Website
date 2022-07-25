@@ -11,6 +11,9 @@ demoURL: "https://rx1334.github.io/COS426-Final-Project/"
 repoURL: "https://github.com/RX1334/COS426-Final-Project"
 # Writeup url
 writeupURL: "https://github.com/RX1334/COS426-Final-Project/blob/master/Final%20Report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 2
 # Awards
 instructorAwards: ""
 instructorMentions: ""

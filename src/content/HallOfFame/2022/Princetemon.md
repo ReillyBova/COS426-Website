@@ -10,10 +10,13 @@ demoURL: "https://stephanieyen.github.io/princetemon/"
 # Repo url
 repoURL: "https://github.com/stephanieyen/princetemon"
 # Writeup url
-writeupURL: "https://github.com/stephanieyen/princetemon/blob/main/Princete%CC%81mon%20Written%20Report.pdf"
+writeupURL: "https://github.com/stephanieyen/princetemon/blob/main/Princet%C3%A9mon%20Written%20Report.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 5
 # Awards
-instructorAwards: "💻 Interaction Award, 🎧 Audio Award"
-instructorMentions: "🤪 Meme Award"
+instructorAwards: "🤪 Meme Award"
+instructorMentions: ""
 studentAwards: "🏆 Best Overall Award, 🎮 Gameplay Award"
 studentMentions: ""
 ---

@@ -11,6 +11,9 @@ demoURL: "https://danielbentleymacleod.github.io/test/"
 repoURL: "https://github.com/DanielBentleyMacLeod/test"
 # Writeup url
 writeupURL: "https://github.com/DanielBentleyMacLeod/test/blob/main/Cos426FinalProjectReport.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 2
 # Awards
 instructorAwards: "🎨 Art Direction Award"
 instructorMentions: ""

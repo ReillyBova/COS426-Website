@@ -11,9 +11,12 @@ demoURL: "https://davidborts.github.io/ModularVideoSynthesizer/"
 repoURL: "https://github.com/DavidBorts/ModularVideoSynthesizer"
 # Writeup url
 writeupURL: "https://github.com/DavidBorts/ModularVideoSynthesizer/blob/main/ModularVideoSynthesizer_writeup.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 2
 # Awards
-instructorAwards: ""
-instructorMentions: "💡 Innovation Award"
+instructorAwards: "💡 Innovation Award"
+instructorMentions: ""
 studentAwards: "💡 Innovation Award"
 studentMentions: ""
 ---

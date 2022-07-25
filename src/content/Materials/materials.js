@@ -21,8 +21,8 @@ const materials = {
         'Non-photorealistic Rendering',
         'Passive Dynamics & Particle Systems', // Week 10
         'Character Animation',
-        '3D Fabrication', // Week 11
-        'Final Project Logistics',
+        'Neural Rendering', // Week 11
+        'Final Project Logistics and Q&A in Class',
         '', // Week 12
     ],
     precepts: [

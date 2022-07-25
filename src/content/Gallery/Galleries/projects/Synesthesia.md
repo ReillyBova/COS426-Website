@@ -11,6 +11,9 @@ demoURL: "https://dawnluong.github.io/426-synesthesia/"
 repoURL: "https://github.com/dawnluong/426-synesthesia"
 # Writeup url
 writeupURL: "https://github.com/dawnluong/426-synesthesia/blob/main/FinalReport.pdf"
+# A value that determines project visibility. The higher the number, the closer it will appear to the top
+# For instance, the project that wins "Best Overall Award" should be given the highest visibilityRank
+visibilityRank: 2
 # Awards
 instructorAwards: ""
 instructorMentions: ""
