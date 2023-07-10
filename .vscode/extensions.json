@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "mike-co.import-sorter",
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint",
+        "kamikillerto.vscode-colorize",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
