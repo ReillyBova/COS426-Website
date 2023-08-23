@@ -1,0 +1,8 @@
+{
+    "cSpell.words": ["Bova", "Katex", "oldschool", "rehype", "TTFB"],
+    "prettier.configPath": ".prettierrc",
+    "prettier.requireConfig": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "importSorter.generalConfiguration.sortOnBeforeSave": true
+}

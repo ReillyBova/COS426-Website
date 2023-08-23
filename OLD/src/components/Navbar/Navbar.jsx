@@ -1,16 +1,12 @@
 // Library imports
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 // Project imports
 import { PrincetonShield } from 'images';
 import { urlify } from 'utils';
 // Local imports
-import {
-    NavbarDropdownButton,
-    NavbarButton,
-    DarkModeToggle,
-} from './subcomponents';
+import { NavbarDropdownButton, NavbarButton, DarkModeToggle } from './subcomponents';
 // UI imports
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
@@ -52,16 +48,7 @@ function Navbar({ classes }) {
     };
 
     // CSS classes for styling
-    const {
-        courseWrapper,
-        appBar,
-        scrolling,
-        brandLogo,
-        brandLink,
-        menuButton,
-        darkModeButton,
-        mobileMenu,
-    } = classes;
+    const { courseWrapper, appBar, scrolling, brandLogo, brandLink, menuButton, darkModeButton, mobileMenu } = classes;
 
     // Render
     return (
@@ -69,17 +56,9 @@ function Navbar({ classes }) {
             <AppBar position='fixed' className={appBar} color='secondary'>
                 <Toolbar component='nav' className={scrolling}>
                     <Link to='/'>
-                        <img
-                            alt='Home'
-                            src={PrincetonShield}
-                            className={brandLogo}
-                        />
+                        <img alt='Home' src={PrincetonShield} className={brandLogo} />
                     </Link>
-                    <Typography
-                        variant='h4'
-                        color='inherit'
-                        className={courseWrapper}
-                    >
+                    <Typography variant='h4' color='inherit' className={courseWrapper}>
                         <Link to='/' className={brandLink}>
                             <span style={{ fontWeight: '800' }}>{'COS'}</span>
                             <span style={{ fontWeight: '400' }}>{' 426'}</span>
@@ -87,16 +66,9 @@ function Navbar({ classes }) {
                     </Typography>
                     {navigation.map((pageName) => {
                         const isHomePage = pageName === homePage;
-                        const targetURL = isHomePage
-                            ? '/'
-                            : `/${urlify(pageName)}`;
+                        const targetURL = isHomePage ? '/' : `/${urlify(pageName)}`;
                         return (
-                            <NavbarButton
-                                to={targetURL}
-                                exact={isHomePage}
-                                key={pageName}
-                                classes={classes}
-                            >
+                            <NavbarButton to={targetURL} exact={isHomePage} key={pageName} classes={classes}>
                                 {pageName}
                             </NavbarButton>
                         );
@@ -105,9 +77,7 @@ function Navbar({ classes }) {
                     <div>
                         <Tooltip title='Menu'>
                             <IconButton
-                                aria-owns={
-                                    isDropdownOpen ? 'menu-appbar' : undefined
-                                }
+                                aria-owns={isDropdownOpen ? 'menu-appbar' : undefined}
                                 aria-haspopup='true'
                                 className={menuButton}
                                 onClick={handleMenu}
@@ -134,9 +104,7 @@ function Navbar({ classes }) {
                         >
                             {navigation.map((pageName) => {
                                 const isHomePage = pageName === homePage;
-                                const targetURL = isHomePage
-                                    ? '/'
-                                    : `/${urlify(pageName)}`;
+                                const targetURL = isHomePage ? '/' : `/${urlify(pageName)}`;
                                 return (
                                     <NavbarDropdownButton
                                         to={targetURL}

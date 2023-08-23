@@ -1,0 +1,55 @@
+/* Apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Reset */
+html,
+body,
+div {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    min-width: 300px;
+    overflow: auto;
+
+    /* Helps fonts on OSX look more consistent with other systems */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Use momentum-based scrolling on iOS devices */
+    -webkit-overflow-scrolling: touch;
+
+    /* Adjust text sizes */
+    -webkit-text-size-adjust: 100%;
+}
+
+body.scroll-freeze {
+    overflow-y: hidden;
+}
+
+a {
+    color: #f58025;
+}
+
+a:not(:hover) {
+    text-decoration: none;
+}
+
+canvas {
+    display: block;
+}
+
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}

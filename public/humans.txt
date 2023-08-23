@@ -1,0 +1,14 @@
+/* TEAM */
+Creator: Reilly Bova
+URL: https://reillybova.github.io/COS426-Website/
+Description: Website for COS 426: Computer Graphics
+
+/* THANKS */
+ReactJS
+Vite
+Material UI
+ThreeJS
+
+/* SITE */
+Standards: HTML5, CSS3, Material Design
+Components: ReactJS, Vite, ThreeJS, Material UI

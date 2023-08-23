@@ -1,24 +1,32 @@
 module.exports = {
     env: {
         browser: true,
-        es6: true,
+        es2021: true,
         node: true,
-        mocha: true,
     },
-    globals: {
-        expect: true,
-    },
-    parser: 'babel-eslint',
-    parserOptions: {
-        ecmaVersion: 6,
-        ecmaFeatures: {
-            experimentalObjectRestSpread: true,
-            jsx: true,
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:react/jsx-runtime',
+    ],
+    overrides: [
+        {
+            env: {
+                node: true,
+            },
+            files: ['.eslintrc.{js,cjs}'],
+            parserOptions: {
+                sourceType: 'script',
+            },
         },
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react'],
-    extends: ['eslint:recommended', 'plugin:react/recommended'],
+    plugins: ['@typescript-eslint', 'react', 'react-hooks'],
     rules: {
         'arrow-spacing': 'error',
         'block-spacing': 'error',
@@ -48,5 +56,8 @@ module.exports = {
         'space-in-parens': 'error',
         'react/display-name': 'off',
         'react/prop-types': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
+        '@typescript-eslint/no-namespace': 'off',
     },
 };

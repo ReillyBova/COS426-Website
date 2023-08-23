@@ -1,10 +1,12 @@
 import { Scene, WebGLRenderer } from 'three';
-import { mobileCheck } from 'utils';
 import Stats from 'stats-js';
+import { GraphicsUtils } from '../Utils/GraphicsUtils';
+
+const { mobileCheck } = GraphicsUtils;
 
 // A base class for ThreeJS scenes that handles common functionality
 // API adapted from https://github.com/tengbao/vanta/blob/master/src/_base.js
-class SceneBase {
+export class SceneBase {
     constructor(containerElement, options = {}) {
         // Function bindings
         this.onMouseMoveWrapper = this.onMouseMoveWrapper.bind(this);
@@ -29,11 +31,11 @@ class SceneBase {
         this.isDev = process.env.NODE_ENV === 'development';
         if (this.isDev) {
             this.stats = new Stats();
-            this.stats.dom.style.bottom = '52px';
-            this.stats.dom.style.top = 'auto';
+            this.stats.dom.style.bottom = '0';
             this.stats.dom.style.position = 'absolute';
             this.el.appendChild(this.stats.dom);
             this.statsSet = false;
+            console.log('hello');
         }
 
         // Attempt to initialize subclass
@@ -249,5 +251,3 @@ class SceneBase {
         }
     }
 }
-
-export default SceneBase;

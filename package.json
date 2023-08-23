@@ -1,56 +1,72 @@
 {
-  "name": "cos-426-website",
-  "description": "Powers the course website for Princeton University's 'COS 426: Computer Graphics' class",
-  "version": "2.0.0",
-  "license": "MIT",
-  "homepage": "https://github.com/ReillyBova/COS426-Website",
-  "author": "ReillyBova",
-  "keywords": [
-    "COS 426",
-    "Princeton",
-    "Graphics",
-    "Computer Science",
-    "Spring 2019"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ReillyBova/COS426-Website"
-  },
-  "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "deploy-gh": "react-scripts build && gh-pages -d build"
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.38",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "cos-426-website",
+    "description": "Powers the course website for Princeton University's 'COS 426: Computer Graphics' class",
+    "version": "2.0.0",
+    "license": "MIT",
+    "homepage": "https://github.com/ReillyBova/COS426-Website/",
+    "author": "ReillyBova",
+    "keywords": [
+        "COS 426",
+        "Princeton",
+        "Graphics",
+        "Computer Science",
+        "CS",
+        "3D",
+        "Education"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ReillyBova/COS426-Website/"
+    },
+    "private": true,
+    "scripts": {
+        "develop": "vite --port 42600",
+        "build": "vite build",
+        "deploy-gh": "vite build && gh-pages -d build"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.14.3",
+        "@mui/material": "^5.13.7",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-helmet": "^6.1.0",
+        "react-router-dom": "^6.14.1",
+        "rehype-katex": "^6.0.3",
+        "rehype-prism": "^2.2.2",
+        "rehype-raw": "^6.1.1",
+        "rehype-react": "^7.2.0",
+        "remark-parse": "^10.0.2",
+        "remark-rehype": "^10.1.0",
+        "remark-smartypants": "^2.0.0",
+        "stats-js": "^1.0.1",
+        "three": "^0.155.0",
+        "unified": "^10.1.2",
+        "vite-plugin-checker": "^0.6.1",
+        "vite-raw-plugin": "^1.0.2",
+        "web-vitals": "^3.3.2"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.1",
+        "@types/react": "^18.2.14",
+        "@types/react-dom": "^18.2.6",
+        "@types/react-helmet": "^6.1.6",
+        "@types/three": "^0.155.1",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "@vitejs/plugin-react": "^4.0.3",
+        "eslint": "^8.47.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.2",
+        "vite-plugin-markdown": "^2.2.0-2",
+        "vite-svg-loader": "^4.0.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ]
+    }
 }
