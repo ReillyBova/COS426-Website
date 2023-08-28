@@ -97,7 +97,7 @@ export const TableOfContents = ({ headings = [] }: IProps) => {
         let scrollOffsets: number[] = [];
 
         /** Scroll event handler */
-        const handleScroll = () => {
+        const handleScroll = WebUtils.withThrottling(() => {
             /** Read current window scroll position, and add small offset for aesthetic behavior */
             const target = pageScrollBoxElement.scrollTop + AESTHETIC_OFFSET_PIXELS;
 
@@ -167,10 +167,10 @@ export const TableOfContents = ({ headings = [] }: IProps) => {
                     }
                 }
             }
-        };
+        }, 50);
 
         /** Resize event handler */
-        function handleResize() {
+        const handleResize = WebUtils.withThrottling(() => {
             /** (Re)compute scroll offset of each header on window resize */
             scrollOffsets = headings.map(({ value }) => {
                 const element = document.getElementById(WebUtils.makeURL(value));
@@ -178,7 +178,7 @@ export const TableOfContents = ({ headings = [] }: IProps) => {
             });
 
             handleScroll();
-        }
+        }, 500);
 
         /** Register event handlers on component mount */
         pageScrollBoxElement.addEventListener('scroll', handleScroll, false);

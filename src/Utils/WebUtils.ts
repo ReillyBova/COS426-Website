@@ -87,4 +87,30 @@ export namespace WebUtils {
 
     /** Evaluate browser height */
     export const windowHeight = () => window.innerHeight || (document.documentElement || document.body).clientHeight;
+
+    export const withThrottling = (callback: () => void, maxRateMs = 200) => {
+        let isThrottled = false;
+        let isScheduled = false;
+
+        const clearThrottle = () => {
+            if (isScheduled) {
+                callback();
+            }
+
+            isThrottled = false;
+            isScheduled = false;
+        };
+
+        return () => {
+            if (!isThrottled) {
+                isThrottled = true;
+
+                callback();
+
+                setTimeout(clearThrottle, maxRateMs);
+            } else {
+                isScheduled = true;
+            }
+        };
+    };
 }
