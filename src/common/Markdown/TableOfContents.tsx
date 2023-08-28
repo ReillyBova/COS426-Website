@@ -231,8 +231,6 @@ export const TableOfContents = ({ headings = [] }: IProps) => {
         return result;
     }, [headings]);
 
-    console.log(headings, groupedHeadings, isVisible);
-
     /** On small screens, we render nothing */
     if (!isVisible) {
         return null;

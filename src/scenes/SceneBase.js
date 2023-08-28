@@ -35,7 +35,6 @@ export class SceneBase {
             this.stats.dom.style.position = 'absolute';
             this.el.appendChild(this.stats.dom);
             this.statsSet = false;
-            console.log('hello');
         }
 
         // Attempt to initialize subclass

@@ -102,7 +102,7 @@ export const Navbar = React.memo(() => {
                     flex='1'
                     display='flex'
                     marginRight={1.5}
-                    textDecoration='none'
+                    sx={{ textDecoration: 'none' }}
                     alignItems='center'
                     component={InternalLink}
                     to='/'

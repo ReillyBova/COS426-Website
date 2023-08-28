@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState } from 'react';
 
 import { Box } from '@mui/material';
 
+import { Footer } from './Footer/Footer';
 import { Navbar } from './Navbar/Navbar';
 
 interface IProps {
@@ -29,7 +30,7 @@ export const SiteLayout = ({ children }: IProps) => {
                 <Box maxHeight='100%'>
                     <PageScrollBoxContext.Provider value={pageScrollBoxElement}>
                         {children}
-                        {/* <Footer /> */}
+                        <Footer />
                     </PageScrollBoxContext.Provider>
                 </Box>
             </Box>
