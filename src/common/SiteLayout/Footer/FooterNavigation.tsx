@@ -11,7 +11,7 @@ const styles: StylesGroup = {
         fontSize: '18px !important',
         [theme.breakpoints.down('sm')]: {
             fontSize: '15px !important',
-            [theme.breakpoints.down('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 fontSize: '12px !important',
             },
         },
@@ -25,10 +25,7 @@ const styles: StylesGroup = {
             color: 'white !important',
         },
     },
-    grid: {
-        justify: 'space-evenly',
-        alignItems: 'center',
-    },
+    grid: {},
 };
 
 interface IFooterLinkProps {
@@ -42,10 +39,7 @@ const FooterLink = ({ isHomepage, page }: IFooterLinkProps) => {
     const isActive = WebUtils.useIsLinkActive(isHomepage ? '/' : targetURL, isHomepage);
 
     return (
-        <InternalLink
-            className={[styles.navLinkBase, !isActive && styles.navLinkInactive]}
-            to={isHomepage ? '/' : targetURL}
-        >
+        <InternalLink sx={[styles.navLinkBase, !isActive && styles.navLinkInactive]} to={isHomepage ? '/' : targetURL}>
             {isHomepage ? COURSE_CONFIG.homePage : page}
         </InternalLink>
     );
@@ -56,7 +50,7 @@ export const FooterNavigation = () => {
     const homePage = COURSE_CONFIG.homePage;
 
     return (
-        <Grid container item xs={12} sx={styles.grid}>
+        <Grid container item xs={12} justifyContent='space-evenly' alignItems='center'>
             {sitePages.map((page, i) => {
                 if (page === homePage) {
                     return <FooterLink page={page} isHomepage key='homepage' />;

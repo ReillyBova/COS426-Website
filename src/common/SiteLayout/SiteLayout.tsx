@@ -25,14 +25,15 @@ export const SiteLayout = ({ children }: IProps) => {
                 flex='1'
                 overflow='scroll'
                 position='relative'
+                maxHeight='100%'
+                display='flex'
+                flexDirection='column'
                 ref={(element: HTMLDivElement) => setScrollBoxElement(element)}
             >
-                <Box maxHeight='100%'>
-                    <PageScrollBoxContext.Provider value={pageScrollBoxElement}>
-                        {children}
-                        <Footer />
-                    </PageScrollBoxContext.Provider>
-                </Box>
+                <PageScrollBoxContext.Provider value={pageScrollBoxElement}>
+                    {children}
+                    <Footer />
+                </PageScrollBoxContext.Provider>
             </Box>
         </Box>
     );

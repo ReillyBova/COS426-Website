@@ -12,6 +12,8 @@ interface IProps {
 export const PageLayout = ({ title, description, children }: IProps) => (
     <>
         <Seo pageTitle={title} pageDescription={description} />
-        <Box component='main'>{children}</Box>
+        <Box component='main' flexGrow={1}>
+            {children}
+        </Box>
     </>
 );

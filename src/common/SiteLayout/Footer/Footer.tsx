@@ -11,10 +11,11 @@ const styles: StylesGroup = {
         width: '100%',
         flex: 'initial',
         position: 'relative',
+        fontWeight: 600,
         zIndex: 1,
         py: 2,
         px: 4,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             py: 1,
             px: 2,
         },
@@ -38,7 +39,7 @@ const styles: StylesGroup = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width: '100%',
             textAlign: 'center',
             alignItems: 'center',
@@ -54,7 +55,7 @@ const styles: StylesGroup = {
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-start',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             justifyContent: 'center',
         },
     }),
@@ -73,9 +74,6 @@ const styles: StylesGroup = {
             color: 'white !important',
         },
     },
-    outerGrid: { justify: 'space-between', alignItems: 'center' },
-    innerGrid: { justify: 'flex-end', alignItems: 'center' },
-    bottomGrid: { justify: 'center', alignItems: 'center' },
 };
 
 export const Footer = () => {
@@ -85,7 +83,7 @@ export const Footer = () => {
     return (
         <footer>
             <Box sx={styles.footerContainer}>
-                <Grid container spacing={2} sx={styles.outerGrid}>
+                <Grid container spacing={2} justifyContent='space-between' alignItems='center'>
                     <FooterNavigation />
                     <Grid item xs={12}>
                         <Divider sx={styles.divider} />
@@ -102,7 +100,7 @@ export const Footer = () => {
                             </ExternalLink>
                         </Box>
                     </Grid>
-                    <Grid container item sx={styles.innerGrid} lg={6} md={6} sm={6} xs={12}>
+                    <Grid container item lg={6} md={6} sm={6} xs={12} justifyContent='flex-end' alignItems='center'>
                         <Box sx={styles.legalese}>
                             <div>{'COS 426: Computer Graphics'}</div>
                             <div>{`© ${semester} The Trustees of Princeton University`}</div>
@@ -117,7 +115,7 @@ export const Footer = () => {
                             </div>
                         </Box>
                     </Grid>
-                    <Grid container item sx={styles.bottomGrid} xs={12}>
+                    <Grid container item xs={12} justifyContent='center' alignItems='center'>
                         <Box sx={styles.engineer}>
                             {'Website by '}
                             <ExternalLink to={`mailto:rbova@alumni.princeton.edu`}>{`Reilly Bova ’20`}</ExternalLink>
