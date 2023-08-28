@@ -16,6 +16,7 @@ import {
 
 import PrincetonShieldImage from '../../../../assets/princeton_shield.svg?url';
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
+import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
 import { DarkModeToggle } from './DarkModeToggle';
@@ -24,12 +25,32 @@ import { NavbarDropdownButton } from './NavbarDropdownButton';
 
 const PrincetonShield = styled('img')({ margin: 3 });
 
+const styles: StylesGroup = {
+    appBar: {
+        borderBottom: 4,
+        borderColor: 'primary.main',
+        backgroundImage: 'none',
+        backgroundColor: 'secondary.main',
+    },
+    toolbar: { overflowX: 'auto' },
+    title: {
+        maxHeight: 48,
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+    },
+    hamburgerMenu: {
+        '&:hover': {
+            backgroundColor: '#FFFFFF10',
+        },
+    },
+};
+
 export const Navbar = React.memo(() => {
     const { navigation, homePage } = COURSE_CONFIG;
 
     const isDesktopView = useMediaQuery<Theme>((theme) => theme.breakpoints.up('md'));
 
-    /** Hook for toggling mobile menu dropdown */
+    /** State for toggling mobile menu dropdown */
     const [dropdownAnchor, setDropdownAnchor] = useState<Element>();
     const isDropdownOpen = !!dropdownAnchor;
 
@@ -74,35 +95,20 @@ export const Navbar = React.memo(() => {
     );
 
     return (
-        <AppBar
-            position='static'
-            sx={{
-                borderBottom: 4,
-                borderColor: 'primary.main',
-                backgroundImage: 'none',
-                backgroundColor: 'secondary.main',
-            }}
-        >
-            <Toolbar component='nav' sx={{ overflowX: 'auto' }}>
+        <AppBar position='static' sx={styles.appBar}>
+            <Toolbar component='nav' sx={styles.toolbar}>
                 <Box
                     role='group'
                     flex='1'
                     display='flex'
-                    sx={{ marginRight: 1.5, textDecoration: 'none' }}
+                    marginRight={1.5}
+                    textDecoration='none'
                     alignItems='center'
                     component={InternalLink}
                     to='/'
                 >
                     <PrincetonShield alt='Princeton University Logo' src={PrincetonShieldImage} height={42} />
-                    <Typography
-                        variant='h4'
-                        color='white'
-                        sx={{
-                            maxHeight: 48,
-                            overflow: 'hidden',
-                            whiteSpace: 'nowrap',
-                        }}
-                    >
+                    <Typography variant='h4' color='white' sx={styles.title}>
                         <Box component='span' fontWeight='800' fontSize='34px'>
                             {'COS'}
                         </Box>
@@ -119,11 +125,7 @@ export const Navbar = React.memo(() => {
                             <IconButton
                                 aria-owns={isDropdownOpen ? 'menu-appbar' : undefined}
                                 aria-haspopup='true'
-                                sx={{
-                                    '&:hover': {
-                                        backgroundColor: '#FFFFFF10',
-                                    },
-                                }}
+                                sx={styles.hamburgerMenu}
                                 onClick={handleMenu}
                                 color='inherit'
                             >

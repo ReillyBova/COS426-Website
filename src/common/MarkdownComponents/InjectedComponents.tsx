@@ -3,6 +3,7 @@ import { Children } from 'react';
 import { Box, Typography } from '@mui/material';
 
 import { COURSE_CONFIG } from '../../COURSE_CONFIG';
+import { Styles } from '../../typings';
 import { WebUtils } from '../../Utils/WebUtils';
 import { AnchorLink } from '../AnchorLink/AnchorLink';
 import { ExternalLink } from '../Routing/ExternalLink';
@@ -36,26 +37,23 @@ export const InjectedH3 = ({ children }: IInjectedComponentProps) => (
     </Typography>
 );
 
+const stylesInjectedP: Styles = {
+    overflowWrap: 'anywhere',
+};
+
 export const InjectedP = ({ children }: IInjectedComponentProps) => (
-    <Typography
-        variant='body1'
-        sx={{
-            overflowWrap: 'anywhere',
-        }}
-        paragraph
-    >
+    <Typography variant='body1' sx={stylesInjectedP} paragraph>
         {children}
     </Typography>
 );
 
+const stylesInjectedCode: Styles = {
+    fontSize: 16,
+    lineHeight: '1rem',
+};
+
 export const InjectedCode = ({ children }: IInjectedComponentProps) => (
-    <Box
-        component='code'
-        sx={{
-            fontSize: 16,
-            lineHeight: '1rem',
-        }}
-    >
+    <Box component='code' sx={stylesInjectedCode}>
         {children}
     </Box>
 );
@@ -72,15 +70,14 @@ export const InjectedOl = ({ children }: IInjectedComponentProps) => (
     </Typography>
 );
 
+const stylesInjectedTable: Styles = {
+    width: '100%',
+    marginBottom: 2,
+    tableLayout: 'fixed',
+};
+
 export const InjectedTable = ({ children }: IInjectedComponentProps) => (
-    <Box
-        component='table'
-        sx={{
-            width: '100%',
-            marginBottom: 2,
-            tableLayout: 'fixed',
-        }}
-    >
+    <Box component='table' sx={stylesInjectedTable}>
         {children}
     </Box>
 );

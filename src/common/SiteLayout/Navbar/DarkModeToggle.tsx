@@ -4,9 +4,10 @@ import { Brightness4, BrightnessHigh } from '@mui/icons-material';
 import { IconButton, Tooltip, useTheme } from '@mui/material';
 
 import { InvertThemeCallbackContext } from '../../../Theming/theme';
+import { Styles } from '../../../typings';
 import { DateTimeUtils } from '../../../Utils/DateTimeUtils';
 
-const styles = {
+const styles: Styles = {
     '&:hover': {
         backgroundColor: '#FFFFFF10',
     },

@@ -1,8 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Box, CircularProgress } from '@mui/material';
-
+import { Loader } from './Common/Loader/Loader';
 import { SiteLayout } from './Common/SiteLayout/SiteLayout';
 import { WebUtils } from './Utils/WebUtils';
 
@@ -10,13 +9,7 @@ const Overview = lazy(() => import('./Pages/Overview/Overview'));
 
 export const App = () => (
     <SiteLayout>
-        <Suspense
-            fallback={
-                <Box sx={{ display: 'flex', m: 6, alignItems: 'center', flexDirection: 'column' }}>
-                    <CircularProgress />
-                </Box>
-            }
-        >
+        <Suspense fallback={<Loader />}>
             <Routes>
                 <Route path={WebUtils.withPrefix('/')} element={<Overview />} />
                 <Route path={WebUtils.withPrefix('/materials')} element={'Materials'} />

@@ -2,9 +2,15 @@ import { useEffect, useRef } from 'react';
 
 import { Box } from '@mui/material';
 
-import { NetworkScene } from '../../scenes/NetworkScene';
+import { NetworkScene } from '../../Scenes/NetworkScene';
+import { Styles } from '../../typings';
 
 const DELAY = 400;
+
+const styles: Styles = {
+    height: '100%',
+    background: 'linear-gradient(230deg, rgb(245, 128, 37), rgb(232, 88, 159))',
+};
 
 export const ThreeContainer = () => {
     const ref = useRef();
@@ -21,13 +27,5 @@ export const ThreeContainer = () => {
         };
     });
 
-    return (
-        <Box
-            sx={{
-                height: '100%',
-                background: 'linear-gradient(230deg, rgb(245, 128, 37), rgb(232, 88, 159))',
-            }}
-            ref={ref}
-        />
-    );
+    return <Box sx={styles} ref={ref} />;
 };

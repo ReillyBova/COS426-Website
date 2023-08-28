@@ -80,4 +80,11 @@ export namespace WebUtils {
                 .replace(/:/g, '')
                 .toLowerCase()
         );
+
+    /** Get the current scroll offset for what the user is looking at */
+    export const scrollTop = () =>
+        window.scrollY || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+    /** Evaluate browser height */
+    export const windowHeight = () => window.innerHeight || (document.documentElement || document.body).clientHeight;
 }

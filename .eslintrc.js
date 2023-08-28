@@ -52,7 +52,7 @@ module.exports = {
         semi: ['error', 'always'],
         'semi-spacing': 'error',
         'space-before-blocks': 'error',
-        'space-before-function-paren': ['error', 'never'],
+        'space-before-function-paren': 'off',
         'space-in-parens': 'error',
         'react/display-name': 'off',
         'react/prop-types': 'off',

@@ -1,10 +1,9 @@
 import { Box } from '@mui/material';
 
 import { Banner } from '../../Common/Banner/Banner';
-import { MarkdownPage } from '../../Common/MarkdownPage/MarkdownPage';
+import { MarkdownPage } from '../../Common/Markdown/MarkdownPage';
 import { PageLayout } from '../../Common/PageLayout/PageLayout';
 import { ThreeContainer } from '../../Common/ThreeContainer/ThreeContainer';
-import { markdown } from '../../Content/Overview.md';
 import { Textbook } from './Textbook';
 import { Title } from './Title';
 
@@ -38,7 +37,7 @@ const Overview = () => {
                 <Title />
                 <ThreeContainer />
             </Banner>
-            <MarkdownPage markdown={markdown} components={overviewComponents} />
+            <MarkdownPage markdownSrc={'Overview'} components={overviewComponents} />
         </PageLayout>
     );
 };

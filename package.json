@@ -22,13 +22,15 @@
     "scripts": {
         "develop": "vite --port 42600",
         "build": "vite build",
-        "deploy-gh": "vite build && gh-pages -d build"
+        "deploy-gh": "vite build && gh-pages -d dist",
+        "generate-icons": "pwa-assets-generator --preset minimal public/favicon.svg"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.14.3",
         "@mui/material": "^5.13.7",
+        "mdast": "^3.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-helmet": "^6.1.0",
@@ -43,6 +45,8 @@
         "stats-js": "^1.0.1",
         "three": "^0.155.0",
         "unified": "^10.1.2",
+        "unist-util-visit": "^5.0.0",
+        "vfile": "^6.0.1",
         "vite-plugin-checker": "^0.6.1",
         "vite-raw-plugin": "^1.0.2",
         "web-vitals": "^3.3.2"
@@ -55,13 +59,16 @@
         "@types/three": "^0.155.1",
         "@typescript-eslint/eslint-plugin": "^6.4.1",
         "@typescript-eslint/parser": "^6.4.1",
+        "@vite-pwa/assets-generator": "^0.0.8",
         "@vitejs/plugin-react": "^4.0.3",
         "eslint": "^8.47.0",
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
+        "gh-pages": "^6.0.0",
         "typescript": "^5.1.6",
         "vite": "^4.4.2",
         "vite-plugin-markdown": "^2.2.0-2",
+        "vite-plugin-pwa": "^0.16.4",
         "vite-svg-loader": "^4.0.0"
     },
     "eslintConfig": {

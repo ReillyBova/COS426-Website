@@ -7,5 +7,7 @@ interface IProps {
 }
 
 export const Banner = ({ children, height = '66vh', minHeight = '250px' }: IProps) => (
-    <Box sx={{ height, minHeight }}>{children}</Box>
+    <Box height={height} minHeight={minHeight}>
+        {children}
+    </Box>
 );

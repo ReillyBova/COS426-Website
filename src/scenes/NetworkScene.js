@@ -15,8 +15,8 @@ import {
 import OpacityFragmentShader from '../shaders/opacityFragmentShader.frag';
 import OpacityVertexShader from '../shaders/opacityVertexShader.vert';
 import CircleTexture from '../../assets/circle.png';
-import { SceneBase } from './SceneBase';
 import { GraphicsUtils } from '../Utils/GraphicsUtils';
+import { SceneBase } from './SceneBase';
 
 const { randFloat, randInt, mobileCheck, clamp } = GraphicsUtils;
 
@@ -221,7 +221,7 @@ export class NetworkScene extends SceneBase {
         delete this.params.lineOpacities;
     }
 
-    // Memory cleaup for deletion
+    // Memory cleanup for deletion
     onDestroy() {
         this.onRestart();
         this.scene.remove(this.camera);

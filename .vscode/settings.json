@@ -1,5 +1,20 @@
 {
-    "cSpell.words": ["Bova", "Katex", "oldschool", "rehype", "TTFB"],
+    "cSpell.words": [
+        "appbar",
+        "Bova",
+        "dropoff",
+        "glsl",
+        "Katex",
+        "linebreak",
+        "mdast",
+        "oldschool",
+        "prismjs",
+        "rehype",
+        "TTFB",
+        "unsubmit",
+        "vfile",
+        "writeups"
+    ],
     "prettier.configPath": ".prettierrc",
     "prettier.requireConfig": true,
     "editor.formatOnSave": true,
