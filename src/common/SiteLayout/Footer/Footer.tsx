@@ -118,7 +118,9 @@ export const Footer = () => {
                     <Grid container item xs={12} justifyContent='center' alignItems='center'>
                         <Box sx={styles.engineer}>
                             {'Website by '}
-                            <ExternalLink to={`mailto:rbova@alumni.princeton.edu`}>{`Reilly Bova ’20`}</ExternalLink>
+                            <ExternalLink to={'https://www.linkedin.com/in/reilly-bova-75461412b/'}>
+                                {'Reilly Bova ’20'}
+                            </ExternalLink>
                         </Box>
                     </Grid>
                 </Grid>

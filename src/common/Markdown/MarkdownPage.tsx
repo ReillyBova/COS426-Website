@@ -15,11 +15,13 @@ interface IProps {
 
 /** Wrapper for pages generated from markdown content */
 export const MarkdownPage = ({ title, subtitle, markdownSrc, components, noTableOfContents }: IProps) => {
-    const { markdownAsReactElement, headings } = MarkdownUtils.useMarkdown(markdownSrc, components);
+    const loadedMarkdown = MarkdownUtils.useMarkdownLoader(markdownSrc);
+
+    const { reactElement, headings = [] } = MarkdownUtils.useMarkdownProcessor(loadedMarkdown?.markdown, components);
 
     return (
         <Box display='flex'>
-            {markdownAsReactElement ? (
+            {reactElement ? (
                 <>
                     <Box flexGrow={1} minWidth={0}>
                         <Content>
@@ -35,7 +37,7 @@ export const MarkdownPage = ({ title, subtitle, markdownSrc, components, noTable
                                     )}
                                 </>
                             )}
-                            {markdownAsReactElement}
+                            {reactElement}
                         </Content>
                     </Box>
                     {!noTableOfContents && <TableOfContents headings={headings} />}

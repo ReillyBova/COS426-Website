@@ -27,6 +27,7 @@ import {
 
 interface ILoadedMarkdown {
     markdown: string;
+    attributes: object;
 }
 
 interface IProcessedMarkdown {
@@ -40,12 +41,12 @@ export interface IMarkdownHeading {
 }
 
 export namespace MarkdownUtils {
-    export const useMarkdown = (markdownSrc: string, components?: Record<string, React.ComponentType>) => {
+    export const useMarkdownLoader = (markdownSrc: string) => {
         const [loadedMarkdown, setLoadedMarkdown] = useState<ILoadedMarkdown | undefined>();
 
         useEffect(() => {
             const loadMarkdown = async () => {
-                const loadedMarkdown = await import(`../Content/${markdownSrc}.md`);
+                const loadedMarkdown = await import(`/src/Content/${markdownSrc}.md`);
 
                 setLoadedMarkdown(loadedMarkdown);
             };
@@ -53,14 +54,30 @@ export namespace MarkdownUtils {
             loadMarkdown();
         }, [markdownSrc]);
 
-        const { reactElement, headings = [] } = useMarkdownProcessor(loadedMarkdown?.markdown, components);
+        return loadedMarkdown;
+    };
 
-        return { markdownAsReactElement: reactElement, headings };
+    export const useQueriedMarkdownFiles = (queriedFiles: Record<string, () => Promise<unknown>>) => {
+        const [loadedMarkdownResults, setLoadedMarkdownResults] = useState<ILoadedMarkdown[] | undefined>();
+
+        useEffect(() => {
+            const loadMarkdownResults = async () => {
+                const loadedMarkdownResults = await Promise.all(
+                    Object.values(queriedFiles).map((loadFile) => loadFile() as Promise<ILoadedMarkdown>)
+                );
+
+                setLoadedMarkdownResults(loadedMarkdownResults);
+            };
+
+            loadMarkdownResults();
+        }, [queriedFiles]);
+
+        return loadedMarkdownResults;
     };
 
     const NO_COMPONENTS = {};
 
-    const useMarkdownProcessor = (
+    export const useMarkdownProcessor = (
         rawMarkdown?: string,
         components: Record<string, React.ComponentType> = NO_COMPONENTS
     ) => {
