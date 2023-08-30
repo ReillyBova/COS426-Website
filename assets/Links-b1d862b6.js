@@ -1,0 +1,1 @@
+import{j as s,L as t,J as e}from"./root-0f840e61.js";import{a as n}from"./MarkdownPage-c62cfc74.js";const o=Object.assign({"/src/Content/Pages/Links.md":()=>e(()=>import("./Links-0e788079.js"),[])}),i={h4:()=>null},l=()=>s.jsx(t,{title:"Links",children:s.jsx(n,{title:"Useful Links",markdownFile:o,components:i})});export{l as default};

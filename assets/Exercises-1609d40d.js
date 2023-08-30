@@ -1,1 +1,0 @@
-import{j as s,L as a,G as r}from"./root-7b875cb2.js";import{a as o,A as t,g as i}from"./MarkdownPage-90114b03.js";const n={h1:({children:e})=>s.jsx(r,{variant:"h6",children:s.jsx(t,{id:i(e),children:e})})},m=()=>s.jsx(a,{title:"Exercises",children:s.jsx(o,{title:"Exercises",markdownSrc:"Pages/Exercises",components:n})});export{m as default};
