@@ -6,9 +6,9 @@ import { IPerson, ProfileCard } from './ProfileCard';
 const peopleFIles = import.meta.glob('/src/Content/People/*.md');
 
 export const StaffGrid = () => {
-    const markdown = MarkdownUtils.useQueriedMarkdownFiles(peopleFIles);
+    const markdownFiles = MarkdownUtils.useMarkdownFileLoader(peopleFIles);
 
-    const peopleData = markdown ? markdown.map(({ attributes }) => attributes as IPerson) : [];
+    const peopleData = markdownFiles ? markdownFiles.map(({ attributes }) => attributes as IPerson) : [];
 
     const professors = peopleData.filter((person) => person.role === 'Professor');
     const gradTAs = peopleData.filter((person) => person.role === 'Graduate TA');

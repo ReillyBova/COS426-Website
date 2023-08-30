@@ -41,38 +41,22 @@ export interface IMarkdownHeading {
 }
 
 export namespace MarkdownUtils {
-    export const useMarkdownLoader = (markdownSrc: string) => {
-        const [loadedMarkdown, setLoadedMarkdown] = useState<ILoadedMarkdown | undefined>();
-
-        useEffect(() => {
-            const loadMarkdown = async () => {
-                const loadedMarkdown = await import(`/src/Content/${markdownSrc}.md`);
-
-                setLoadedMarkdown(loadedMarkdown);
-            };
-
-            loadMarkdown();
-        }, [markdownSrc]);
-
-        return loadedMarkdown;
-    };
-
-    export const useQueriedMarkdownFiles = (queriedFiles: Record<string, () => Promise<unknown>>) => {
-        const [loadedMarkdownResults, setLoadedMarkdownResults] = useState<ILoadedMarkdown[] | undefined>();
+    export const useMarkdownFileLoader = (markdownFiles: Record<string, () => Promise<unknown>>) => {
+        const [loadedMarkdownFiles, setLoadedMarkdownFiles] = useState<ILoadedMarkdown[]>([]);
 
         useEffect(() => {
             const loadMarkdownResults = async () => {
-                const loadedMarkdownResults = await Promise.all(
-                    Object.values(queriedFiles).map((loadFile) => loadFile() as Promise<ILoadedMarkdown>)
+                const loadedMarkdownFiles = await Promise.all(
+                    Object.values(markdownFiles).map((loadFile) => loadFile() as Promise<ILoadedMarkdown>)
                 );
 
-                setLoadedMarkdownResults(loadedMarkdownResults);
+                setLoadedMarkdownFiles(loadedMarkdownFiles);
             };
 
             loadMarkdownResults();
-        }, [queriedFiles]);
+        }, [markdownFiles]);
 
-        return loadedMarkdownResults;
+        return loadedMarkdownFiles;
     };
 
     const NO_COMPONENTS = {};

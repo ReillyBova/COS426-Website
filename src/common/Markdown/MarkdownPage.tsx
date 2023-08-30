@@ -6,7 +6,7 @@ import { Loader } from '../Loader/Loader';
 import { TableOfContents } from './TableOfContents';
 
 interface IProps {
-    markdownSrc: string;
+    markdownFile: Record<string, () => Promise<unknown>>;
     title?: string;
     subtitle?: string;
     components?: Record<string, React.ComponentType>;
@@ -14,8 +14,8 @@ interface IProps {
 }
 
 /** Wrapper for pages generated from markdown content */
-export const MarkdownPage = ({ title, subtitle, markdownSrc, components, noTableOfContents }: IProps) => {
-    const loadedMarkdown = MarkdownUtils.useMarkdownLoader(markdownSrc);
+export const MarkdownPage = ({ title, subtitle, markdownFile, components, noTableOfContents }: IProps) => {
+    const [loadedMarkdown] = MarkdownUtils.useMarkdownFileLoader(markdownFile);
 
     const { reactElement, headings = [] } = MarkdownUtils.useMarkdownProcessor(loadedMarkdown?.markdown, components);
 

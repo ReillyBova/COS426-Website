@@ -10,6 +10,8 @@ import Staff from './Staff/Staff';
 import { Textbook } from './Textbook';
 import { Title } from './Title';
 
+const srcFile = import.meta.glob('/src/Content/Pages/Overview.md');
+
 const overviewPageComponents = {
     textbook: Textbook as React.ComponentType,
     staff: Staff as React.ComponentType,
@@ -33,16 +35,14 @@ const overviewPageComponents = {
 };
 
 /** Home page of website  */
-const Overview = () => {
-    return (
-        <PageLayout>
-            <Banner height='66vh'>
-                <Title />
-                <ThreeContainer />
-            </Banner>
-            <MarkdownPage markdownSrc='Pages/Overview' components={overviewPageComponents} />
-        </PageLayout>
-    );
-};
+const Overview = () => (
+    <PageLayout>
+        <Banner height='66vh'>
+            <Title />
+            <ThreeContainer />
+        </Banner>
+        <MarkdownPage markdownFile={srcFile} components={overviewPageComponents} />
+    </PageLayout>
+);
 
 export default Overview;

@@ -5,6 +5,8 @@ import { MarkdownPage } from '../../Common/Markdown/MarkdownPage';
 import { getHeaderId } from '../../Common/MarkdownComponents/InjectedComponents';
 import { PageLayout } from '../../Common/PageLayout/PageLayout';
 
+const srcFile = import.meta.glob('/src/Content/Pages/Exercises.md');
+
 const exercisesPageComponents = {
     h1: (({ children }: { children: React.ReactNode }) => (
         <Typography variant='h6'>
@@ -15,7 +17,7 @@ const exercisesPageComponents = {
 
 const Exercises = () => (
     <PageLayout title='Exercises'>
-        <MarkdownPage title='Exercises' markdownSrc='Pages/Exercises' components={exercisesPageComponents} />
+        <MarkdownPage title='Exercises' markdownFile={srcFile} components={exercisesPageComponents} />
     </PageLayout>
 );
 

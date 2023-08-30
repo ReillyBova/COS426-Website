@@ -1,6 +1,8 @@
 import { MarkdownPage } from '../../Common/Markdown/MarkdownPage';
 import { PageLayout } from '../../Common/PageLayout/PageLayout';
 
+const srcFile = import.meta.glob('/src/Content/Pages/Links.md');
+
 const linksPageComponents = {
     h4: () => null,
     // ['hall-of-fame']: () => <HallOfFame />,
@@ -43,7 +45,7 @@ const Links = () => {
 
     return (
         <PageLayout title='Links'>
-            <MarkdownPage title='Useful Links' markdownSrc='Pages/Links' components={linksPageComponents} />
+            <MarkdownPage title='Useful Links' markdownFile={srcFile} components={linksPageComponents} />
         </PageLayout>
     );
 };
