@@ -10,7 +10,7 @@ import Staff from './Staff/Staff';
 import { Textbook } from './Textbook';
 import { Title } from './Title';
 
-const overviewComponents = {
+const overviewPageComponents = {
     textbook: Textbook as React.ComponentType,
     staff: Staff as React.ComponentType,
     coursework: Coursework as React.ComponentType,
@@ -40,7 +40,7 @@ const Overview = () => {
                 <Title />
                 <ThreeContainer />
             </Banner>
-            <MarkdownPage markdownSrc='Pages/Overview' components={overviewComponents} />
+            <MarkdownPage markdownSrc='Pages/Overview' components={overviewPageComponents} />
         </PageLayout>
     );
 };

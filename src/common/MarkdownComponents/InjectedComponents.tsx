@@ -13,7 +13,7 @@ interface IInjectedComponentProps {
     children: React.ReactNode;
 }
 
-const getHeaderId = (children: React.ReactNode) => {
+export const getHeaderId = (children: React.ReactNode) => {
     const firstChild = Children.toArray(children)[0];
 
     return firstChild ? WebUtils.makeURL(firstChild as string) : '';
