@@ -1,0 +1,1 @@
+const n={name:"Joanna Kuo",role:"Undergraduate TA",image:"yuting_yang.jpg",email:"jkuo@princeton.edu",featuredURL:"https://www.linkedin.com/in/joanna-kuo-1217b61a8/",githubURL:"",websiteURL:"",linkedInURL:"https://www.linkedin.com/in/joanna-kuo-1217b61a8/",officeHours:"Saturday 6pm-8pm (online)"},a="";export{n as attributes,a as markdown};

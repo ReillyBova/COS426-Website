@@ -1,0 +1,1 @@
+const e={name:"Adam Finkelstein",role:"Professor",image:"szymon_rusinkiewicz.jpeg",email:"af@cs.princeton.edu",featuredURL:"https://www.cs.princeton.edu/~af/",githubURL:"",websiteURL:"https://www.cs.princeton.edu/~af/",linkedInURL:"",officeHours:"TBD"},t="";export{e as attributes,t as markdown};
