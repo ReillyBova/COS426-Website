@@ -1,9 +1,12 @@
+import { useContext } from 'react';
+
 import { Grid } from '@mui/material';
 
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
 import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { PageScrollBoxContext } from '../SiteLayout';
 
 const styles: StylesGroup = {
     navLinkBase: (theme) => ({
@@ -38,8 +41,18 @@ const FooterLink = ({ isHomepage, page }: IFooterLinkProps) => {
 
     const isActive = WebUtils.useIsLinkActive(isHomepage ? '/' : targetURL, isHomepage);
 
+    const pageScrollBoxElement = useContext(PageScrollBoxContext);
+
     return (
-        <InternalLink sx={[styles.navLinkBase, !isActive && styles.navLinkInactive]} to={isHomepage ? '/' : targetURL}>
+        <InternalLink
+            sx={[styles.navLinkBase, !isActive && styles.navLinkInactive]}
+            to={isHomepage ? '/' : targetURL}
+            onClick={() => {
+                if (pageScrollBoxElement) {
+                    pageScrollBoxElement.scrollTop = 0;
+                }
+            }}
+        >
             {isHomepage ? COURSE_CONFIG.homePage : page}
         </InternalLink>
     );

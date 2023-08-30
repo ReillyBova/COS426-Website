@@ -1,5 +1,3 @@
-import { Box } from '@mui/material';
-
 import { Seo } from './Seo';
 
 interface IProps {
@@ -12,8 +10,6 @@ interface IProps {
 export const PageLayout = ({ title, description, children }: IProps) => (
     <>
         <Seo pageTitle={title} pageDescription={description} />
-        <Box component='main' flexGrow={1}>
-            {children}
-        </Box>
+        {children}
     </>
 );

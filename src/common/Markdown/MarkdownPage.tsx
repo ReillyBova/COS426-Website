@@ -43,7 +43,7 @@ export const MarkdownPage = ({ title, subtitle, markdownFile, components, noTabl
                     {!noTableOfContents && <TableOfContents headings={headings} />}
                 </>
             ) : (
-                <Loader />
+                <Loader fullPage />
             )}
         </Box>
     );

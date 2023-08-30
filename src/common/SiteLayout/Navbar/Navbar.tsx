@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
 
 import { Menu as MenuIcon } from '@mui/icons-material';
 import {
@@ -19,6 +19,7 @@ import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
 import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { PageScrollBoxContext } from '../SiteLayout';
 import { DarkModeToggle } from './DarkModeToggle';
 import { NavbarButton } from './NavbarButton';
 import { NavbarDropdownButton } from './NavbarDropdownButton';
@@ -47,6 +48,14 @@ const styles: StylesGroup = {
 
 export const Navbar = React.memo(() => {
     const { navigation, homePage } = COURSE_CONFIG;
+
+    const pageScrollBoxElement = useContext(PageScrollBoxContext);
+
+    const scrollUp = useCallback(() => {
+        if (pageScrollBoxElement) {
+            pageScrollBoxElement.scrollTop = 0;
+        }
+    }, [pageScrollBoxElement]);
 
     const isDesktopView = useMediaQuery<Theme>((theme) => theme.breakpoints.up('md'));
 
@@ -86,12 +95,20 @@ export const Navbar = React.memo(() => {
                 const targetURL = isHomePage ? '/' : `/${WebUtils.makeURL(pageName)}`;
 
                 return (
-                    <NavbarDropdownButton to={targetURL} exact={isHomePage} key={pageName} onClick={handleClose}>
+                    <NavbarDropdownButton
+                        to={targetURL}
+                        exact={isHomePage}
+                        key={pageName}
+                        onClick={() => {
+                            handleClose();
+                            scrollUp();
+                        }}
+                    >
                         {pageName}
                     </NavbarDropdownButton>
                 );
             }),
-        [navigation, homePage]
+        [navigation, homePage, scrollUp]
     );
 
     return (
@@ -106,8 +123,9 @@ export const Navbar = React.memo(() => {
                     alignItems='center'
                     component={InternalLink}
                     to='/'
+                    onClick={scrollUp}
                 >
-                    <PrincetonShield alt='Princeton University Logo' src={PrincetonShieldImage} height={42} />
+                    <PrincetonShield alt='Princeton University Logo' src={PrincetonShieldImage} height='42px' />
                     <Typography variant='h4' color='white' sx={styles.title}>
                         <Box component='span' fontWeight='800' fontSize='34px'>
                             {'COS'}
