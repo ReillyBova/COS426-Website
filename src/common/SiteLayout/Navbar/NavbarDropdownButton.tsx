@@ -1,8 +1,8 @@
 import { MenuItem } from '@mui/material';
 
-import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { StylesGroup } from '../../Types';
 
 interface IProps {
     onClick: () => void;

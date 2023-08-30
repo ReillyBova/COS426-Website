@@ -16,9 +16,9 @@ import {
 
 import PrincetonShieldImage from '../../../../assets/princeton_shield.svg?url';
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
-import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { StylesGroup } from '../../Types';
 import { PageScrollBoxContext } from '../SiteLayout';
 import { DarkModeToggle } from './DarkModeToggle';
 import { NavbarButton } from './NavbarButton';

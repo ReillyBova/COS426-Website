@@ -16,7 +16,7 @@ import {
     useMediaQuery,
 } from '@mui/material';
 
-import { StylesGroup } from '../../typings';
+import { StylesGroup } from '../../Common/Types';
 
 const styles: StylesGroup = {
     container: (theme) => ({

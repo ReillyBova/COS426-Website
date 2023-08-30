@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
-import { StylesGroup } from '../../typings';
 import { AnchorTarget } from '../AnchorTarget/AnchorTarget';
+import { StylesGroup } from '../Types';
 
 interface IProps {
     id: string;

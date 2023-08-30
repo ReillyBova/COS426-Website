@@ -1,7 +1,7 @@
 import { Box, Card, CardActions } from '@mui/material';
 
 import GradeChart from '../../../assets/grade_chart.png?url';
-import { StylesGroup } from '../../typings';
+import { StylesGroup } from '../../Common/Types';
 
 const styles: StylesGroup = {
     pieChart: (theme) => ({

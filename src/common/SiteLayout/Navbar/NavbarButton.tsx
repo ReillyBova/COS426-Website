@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 import { Button } from '@mui/material';
 
-import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { StylesGroup } from '../../Types';
 import { PageScrollBoxContext } from '../SiteLayout';
 
 interface IProps {

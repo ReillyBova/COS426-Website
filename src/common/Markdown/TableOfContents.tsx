@@ -2,11 +2,11 @@ import { useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { Box, Typography, useMediaQuery } from '@mui/material';
 
-import { StylesGroup } from '../../typings';
 import { IMarkdownHeading } from '../../Utils/MarkdownUtils';
 import { WebUtils } from '../../Utils/WebUtils';
 import { Content } from '../Content/Content';
 import { PageScrollBoxContext } from '../SiteLayout/SiteLayout';
+import { StylesGroup } from '../Types';
 
 const styles: StylesGroup = {
     container: {

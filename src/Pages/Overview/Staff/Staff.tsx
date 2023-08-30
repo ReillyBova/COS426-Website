@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Box, Button, Slide, Theme, Typography, useMediaQuery } from '@mui/material';
 
-import { Styles } from '../../../typings';
+import { Styles } from '../../../Common/Types';
 import { StaffGrid } from './StaffGrid';
 
 const styles: Styles = {

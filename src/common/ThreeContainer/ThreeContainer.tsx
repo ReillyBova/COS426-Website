@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 
 import { NetworkScene } from '../../Scenes/NetworkScene';
-import { Styles } from '../../typings';
+import { Styles } from '../Types';
 
 const DELAY = 400;
 

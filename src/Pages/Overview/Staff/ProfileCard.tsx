@@ -1,8 +1,8 @@
 import { Email, GitHub, LinkedIn, Public } from '@mui/icons-material';
 import { Box, Card, CardActions, CardContent, Fab, IconButton, Typography } from '@mui/material';
 
+import { StylesGroup } from '../../../Common/Types';
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
-import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 
 const styles: StylesGroup = {

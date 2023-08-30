@@ -2,8 +2,8 @@ import { Box, Divider, Grid } from '@mui/material';
 
 import PrincetonSignatureImage from '../../../../assets/princeton_signature.svg?url';
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
-import { StylesGroup } from '../../../typings';
 import { ExternalLink } from '../../Routing/ExternalLink';
+import { StylesGroup } from '../../Types';
 import { FooterNavigation } from './FooterNavigation';
 
 const styles: StylesGroup = {

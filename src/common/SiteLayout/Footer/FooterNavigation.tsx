@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import { Grid } from '@mui/material';
 
 import { COURSE_CONFIG } from '../../../COURSE_CONFIG';
-import { StylesGroup } from '../../../typings';
 import { WebUtils } from '../../../Utils/WebUtils';
 import { InternalLink } from '../../Routing/InternalLink';
+import { StylesGroup } from '../../Types';
 import { PageScrollBoxContext } from '../SiteLayout';
 
 const styles: StylesGroup = {

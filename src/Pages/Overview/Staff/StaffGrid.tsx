@@ -3,12 +3,10 @@ import { Grid } from '@mui/material';
 import { MarkdownUtils } from '../../../Utils/MarkdownUtils';
 import { IPerson, ProfileCard } from './ProfileCard';
 
-const peopleFIles = import.meta.glob('/src/Content/People/*.md');
+const peopleFiles = import.meta.glob('/src/Content/People/*.md', { as: 'frontmatter' });
 
 export const StaffGrid = () => {
-    const markdownFiles = MarkdownUtils.useMarkdownFileLoader(peopleFIles);
-
-    const peopleData = markdownFiles ? markdownFiles.map(({ attributes }) => attributes as IPerson) : [];
+    const peopleData = MarkdownUtils.useFrontmatterLoader(peopleFiles) as IPerson[];
 
     const professors = peopleData.filter((person) => person.role === 'Professor');
     const gradTAs = peopleData.filter((person) => person.role === 'Graduate TA');

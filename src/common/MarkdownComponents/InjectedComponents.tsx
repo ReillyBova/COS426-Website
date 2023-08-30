@@ -3,11 +3,11 @@ import { Children } from 'react';
 import { Box, Typography } from '@mui/material';
 
 import { COURSE_CONFIG } from '../../COURSE_CONFIG';
-import { Styles } from '../../typings';
 import { WebUtils } from '../../Utils/WebUtils';
 import { AnchorLink } from '../AnchorLink/AnchorLink';
 import { ExternalLink } from '../Routing/ExternalLink';
 import { InternalLink } from '../Routing/InternalLink';
+import { Styles } from '../Types';
 
 interface IInjectedComponentProps {
     children: React.ReactNode;

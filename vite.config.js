@@ -4,9 +4,9 @@ import { checker } from 'vite-plugin-checker';
 import svgLoader from 'vite-svg-loader';
 import { COURSE_CONFIG } from './src/COURSE_CONFIG';
 import { resolve } from 'path';
-import mdPlugin, { Mode } from 'vite-plugin-markdown';
 import viteRawLoader from 'vite-raw-plugin';
 import { VitePWA } from 'vite-plugin-pwa';
+import { viteMarkdownLoader } from './src/Plugins/viteMarkdownLoader';
 
 /** https://vitejs.dev/config/ */
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
             typescript: true,
         }),
         svgLoader(),
-        mdPlugin({ mode: [Mode.MARKDOWN] }),
+        viteMarkdownLoader(),
         viteRawLoader({
             fileRegex: /\.(glsl|vs|fs|vert|frag)$/,
         }),

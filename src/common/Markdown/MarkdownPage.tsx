@@ -15,7 +15,7 @@ interface IProps {
 
 /** Wrapper for pages generated from markdown content */
 export const MarkdownPage = ({ title, subtitle, markdownFile, components, noTableOfContents }: IProps) => {
-    const [loadedMarkdown] = MarkdownUtils.useMarkdownFileLoader(markdownFile);
+    const [loadedMarkdown] = MarkdownUtils.useMarkdownLoader(markdownFile);
 
     const { reactElement, headings = [] } = MarkdownUtils.useMarkdownProcessor(loadedMarkdown?.markdown, components);
 

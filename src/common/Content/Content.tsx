@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { Styles } from '../../typings';
+import { Styles } from '../Types';
 
 interface IProps {
     children: React.ReactNode;

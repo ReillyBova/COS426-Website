@@ -46,7 +46,7 @@ export const COURSE_CONFIG = {
         copyright: 'princeton.edu/meet-princeton/copyright-infringement',
         privacy: 'princeton.edu/privacy-notice',
     },
-    navigation: ['Overview', 'Materials', 'Assignments', 'Exercises', 'Gallery', 'Links'],
+    navigation: ['Overview', 'Syllabus', 'Assignments', 'Exercises', 'Gallery', 'Links'],
     homePage: 'Overview',
     assetServer: {
         baseURL: sanitizedAssetServerBaseURL,

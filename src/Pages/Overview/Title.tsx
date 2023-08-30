@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 
+import { StylesGroup } from '../../Common/Types';
 import { COURSE_CONFIG } from '../../COURSE_CONFIG';
-import { StylesGroup } from '../../typings';
 
 const styles: StylesGroup = {
     wrapper: (theme) => ({

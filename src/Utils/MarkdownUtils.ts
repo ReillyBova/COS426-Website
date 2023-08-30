@@ -30,6 +30,10 @@ interface ILoadedMarkdown {
     attributes: object;
 }
 
+interface ILoadedFrontmatter {
+    attributes: object;
+}
+
 interface IProcessedMarkdown {
     reactElement?: React.ReactElement;
     headings?: IMarkdownHeading[];
@@ -41,14 +45,16 @@ export interface IMarkdownHeading {
 }
 
 export namespace MarkdownUtils {
-    export const useMarkdownFileLoader = (markdownFiles: Record<string, () => Promise<unknown>>) => {
+    export const useMarkdownLoader = (markdownFiles: Record<string, () => Promise<unknown>>) => {
         const [loadedMarkdownFiles, setLoadedMarkdownFiles] = useState<ILoadedMarkdown[]>([]);
 
         useEffect(() => {
             const loadMarkdownResults = async () => {
-                const loadedMarkdownFiles = await Promise.all(
-                    Object.values(markdownFiles).map((loadFile) => loadFile() as Promise<ILoadedMarkdown>)
-                );
+                const markdownLoaders = Object.entries(markdownFiles)
+                    .filter(([filename]) => filename.endsWith('.md'))
+                    .map(([, loader]) => loader as () => Promise<ILoadedMarkdown>);
+
+                const loadedMarkdownFiles = await Promise.all(markdownLoaders.map((loadFile) => loadFile()));
 
                 setLoadedMarkdownFiles(loadedMarkdownFiles);
             };
@@ -57,6 +63,39 @@ export namespace MarkdownUtils {
         }, [markdownFiles]);
 
         return loadedMarkdownFiles;
+    };
+
+    export const useFrontmatterLoader = (markdownFiles: Record<string, () => Promise<unknown>>) => {
+        const [loadedFrontmatterFiles, setLoadedFrontmatterFiles] = useState<object[]>([]);
+
+        useEffect(() => {
+            const loadFrontmatterResults = async () => {
+                const frontmatterLoaders = Object.entries(markdownFiles)
+                    .filter(([filename]) => filename.endsWith('.md'))
+                    .map(([, loader]) => loader as () => Promise<ILoadedFrontmatter | ILoadedMarkdown>);
+
+                const loadedFrontmatterFiles = await Promise.all(frontmatterLoaders.map((loadFile) => loadFile()));
+
+                const isImportedAsFrontmatter = loadedFrontmatterFiles.every(
+                    (result) => (result as ILoadedMarkdown).markdown === undefined
+                );
+
+                /**
+                 * Glob queries require static definitions and do not (currently) infer module types. Therefore, the only safe way to ensure the user used the correct import is to manually enforce the expected import type
+                 *
+                 * If you are hitting this code path, try "import.meta.glob(<QUERY>, { as: 'frontmatter' });", which will transform "*.md" into "*.md?frontmatter" when the request is dynamically issued.
+                 * */
+                if (isImportedAsFrontmatter) {
+                    setLoadedFrontmatterFiles(
+                        (loadedFrontmatterFiles as ILoadedFrontmatter[]).map(({ attributes }) => attributes)
+                    );
+                }
+            };
+
+            loadFrontmatterResults();
+        }, [markdownFiles]);
+
+        return loadedFrontmatterFiles;
     };
 
     const NO_COMPONENTS = {};
